@@ -1,0 +1,149 @@
+{
+  "institutionName": "yjyjyjty ",
+  "institutionComment": "tt  yjyjty ty ty ",
+  "selectedDays": [
+    "Lundi",
+    "Jeudi",
+    "Mercredi"
+  ],
+  "periods": [
+    {
+      "name": "p1",
+      "description": ""
+    }
+  ],
+  "subjects": [
+    {
+      "name": "m1",
+      "longName": "",
+      "code": "",
+      "comments": ""
+    },
+    {
+      "name": "m2",
+      "longName": "",
+      "code": "",
+      "comments": ""
+    }
+  ],
+  "teachers": [
+    {
+      "name": "e1",
+      "longName": "",
+      "code": "",
+      "targetHours": 0,
+      "qualifiedSubjects": [
+        "m1"
+      ],
+      "comments": ""
+    },
+    {
+      "name": "e2",
+      "longName": "",
+      "code": "",
+      "targetHours": 0,
+      "qualifiedSubjects": [
+        "m2"
+      ],
+      "comments": ""
+    }
+  ],
+  "students": [
+    {
+      "name": "a1",
+      "longName": "",
+      "code": "",
+      "studentCount": 0,
+      "comments": ""
+    },
+    {
+      "name": "a2",
+      "longName": "",
+      "code": "",
+      "studentCount": 0,
+      "comments": ""
+    }
+  ],
+  "rooms": [
+    {
+      "name": "s1",
+      "longName": "",
+      "code": "",
+      "capacity": 10,
+      "comments": ""
+    }
+  ],
+  "balises": [
+    {
+      "name": "zefezfz",
+      "longName": "",
+      "code": "",
+      "Imprimable": "true",
+      "comments": ""
+    },
+    {
+      "name": "zefzefzef",
+      "longName": "",
+      "code": "",
+      "Imprimable": "true",
+      "comments": ""
+    }
+  ],
+  "activities": [
+    {
+      "subject": "m1",
+      "student": "a1",
+      "teacher": "e1",
+      "balise": "zefezfz",
+      "durations": [
+        1,
+        3
+      ]
+    },
+    {
+      "subject": "m2",
+      "student": "a2",
+      "teacher": "e2",
+      "balise": "zefzefzef",
+      "durations": [
+        1
+      ]
+    },
+    {
+      "subject": "m1",
+      "student": "a2",
+      "teacher": "e1",
+      "balise": "zefezfz",
+      "durations": [
+        1
+      ]
+    }
+  ],
+  "ConstraintBreakTimes": [
+    {
+      "Day": "Lundi",
+      "Hour": "p1"
+    },
+    {
+      "Day": "Jeudi",
+      "Hour": "p1"
+    }
+  ],
+  "ConstraintTeacherNotAvailableTimes": [],
+  "ConstraintTeacherMaxDaysPerWeek": [],
+  "ConstraintTeacherMinDaysPerWeek": [
+    {
+      "Teacher": "",
+      "Minimum_Days_Per_Week": 1
+    }
+  ],
+  "ConstraintTeacherNoTwoConsecutiveDays": [],
+  "ConstraintTeacherMaxGapsPerDay": [],
+  "ConstraintTeacherMaxGapsPerWeek": [],
+  "ConstraintTeacherMaxSingleGapsInSelectedTimeSlots": [],
+  "ConstraintTeacherMaxHoursDailyInInterval": [],
+  "ConstraintTeacherMaxHoursDaily": [],
+  "ConstraintTeacherPairOfMutuallyExclusiveTimeSlots": [],
+  "ConstraintTeacherMaxSpanPerDay": [],
+  "ConstraintTeacherActivityTagMaxHoursDaily": []
+}

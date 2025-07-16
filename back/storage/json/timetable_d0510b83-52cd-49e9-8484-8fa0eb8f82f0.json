@@ -1,0 +1,138 @@
+{
+  "institutionName": "srgfesgr",
+  "institutionComment": "rgzrgrg  gergerg erg erg",
+  "selectedDays": [
+    "Lundi",
+    "Mardi",
+    "Mercredi"
+  ],
+  "periods": [
+    {
+      "name": "p1",
+      "description": "ergerger"
+    },
+    {
+      "name": "p2",
+      "description": "rgergerg"
+    }
+  ],
+  "subjects": [
+    {
+      "name": "ergerger",
+      "longName": "",
+      "code": "",
+      "comments": ""
+    },
+    {
+      "name": "ergerg",
+      "longName": "",
+      "code": "",
+      "comments": ""
+    },
+    {
+      "name": "ergergerdd",
+      "longName": "",
+      "code": "",
+      "comments": ""
+    }
+  ],
+  "teachers": [
+    {
+      "name": "fdgdfgdfgdf",
+      "longName": "",
+      "code": "fdgdfgdfgdf",
+      "targetHours": 0,
+      "qualifiedSubjects": [
+        "ergerg",
+        "ergerger"
+      ],
+      "comments": ""
+    },
+    {
+      "name": "dfbdbfb",
+      "longName": "",
+      "code": "dfbdbfb",
+      "targetHours": 3,
+      "qualifiedSubjects": [],
+      "comments": ""
+    }
+  ],
+  "students": [
+    {
+      "name": "ergerg",
+      "longName": "",
+      "code": "",
+      "studentCount": 7,
+      "comments": ""
+    },
+    {
+      "name": "rrrrr",
+      "longName": "",
+      "code": "",
+      "studentCount": 0,
+      "comments": ""
+    }
+  ],
+  "rooms": [
+    {
+      "name": "rrrr",
+      "longName": "",
+      "code": "",
+      "capacity": 0,
+      "comments": ""
+    },
+    {
+      "name": "ffff",
+      "longName": "",
+      "code": "",
+      "capacity": 0,
+      "comments": ""
+    }
+  ],
+  "balises": [
+    {
+      "name": "b1",
+      "longName": "",
+      "code": "",
+      "comments": "",
+      "Imprimable": "true"
+    },
+    {
+      "name": "b2",
+      "longName": "",
+      "code": "",
+      "comments": "",
+      "Imprimable": "true"
+    }
+  ],
+  "activities": [
+    {
+      "subject": "ergerger",
+      "teacher": "fdgdfgdfgdf",
+      "student": "ergerg",
+      "durations": [
+        1
+      ],
+      "balise": ""
+    },
+    {
+      "subject": "ergerg",
+      "teacher": "dfbdbfb",
+      "student": "rrrrr",
+      "durations": [
+        2
+      ],
+      "balise": ""
+    }
+  ],
+  "ConstraintBreakTimes": [
+    {
+      "Day": "Lundi",
+      "Hour": "p1"
+    },
+    {
+      "Day": "Mardi",
+      "Hour": "p1"
+    }
+  ]
+}

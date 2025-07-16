@@ -1,0 +1,120 @@
+{
+  "institutionName": "srgfesgr",
+  "institutionComment": "rgzrgrg  gergerg erg erg",
+  "selectedDays": [
+    "Lundi",
+    "Mardi",
+    "Mercredi"
+  ],
+  "periods": [
+    {
+      "name": "ergerger",
+      "description": ""
+    },
+    {
+      "name": "rgergerg",
+      "description": ""
+    }
+  ],
+  "subjects": [
+    {
+      "name": "ergerger",
+      "longName": "",
+      "code": "",
+      "comments": ""
+    },
+    {
+      "name": "ergerg",
+      "longName": "",
+      "code": "",
+      "comments": ""
+    },
+    {
+      "name": "ergergerdd",
+      "longName": "",
+      "code": "",
+      "comments": ""
+    }
+  ],
+  "teachers": [
+    {
+      "name": "ergergerg",
+      "longName": "",
+      "code": "fdgdfgdfgdf",
+      "targetHours": 0,
+      "qualifiedSubjects": [
+        "ergerg",
+        "ergerger"
+      ],
+      "comments": ""
+    },
+    {
+      "name": "ergerggre",
+      "longName": "",
+      "code": "dfbdbfb",
+      "targetHours": 3,
+      "qualifiedSubjects": [],
+      "comments": ""
+    }
+  ],
+  "students": [
+    {
+      "name": "ergerg",
+      "longName": "",
+      "code": "",
+      "studentCount": 7,
+      "comments": ""
+    },
+    {
+      "name": "rrrrr",
+      "longName": "",
+      "code": "",
+      "studentCount": 0,
+      "comments": ""
+    }
+  ],
+  "rooms": [
+    {
+      "name": "rrrr",
+      "longName": "",
+      "code": "",
+      "capacity": 0,
+      "comments": ""
+    }
+  ],
+  "balises": [],
+  "activities": [
+    {
+      "subject": "ergerger",
+      "student": "ergerg",
+      "teacher": "ergergerg",
+      "balise" : "",
+      "durations": [
+        1,
+        2
+      ]
+    },
+    {
+      "subject": "ergerg",
+      "student": "rrrrr",
+      "teacher": "ergerggre",
+      "balise" : "",
+      "durations": [
+        2
+      ]
+    }
+  ],
+  "ConstraintBreakTimes":[],
+  "ConstraintTeacherNotAvailableTimes": [],
+  "ConstraintTeacherMaxDaysPerWeek": [],
+  "ConstraintTeacherMinDaysPerWeek": [],
+  "ConstraintTeacherNoTwoConsecutiveDays": [],
+  "ConstraintTeacherMaxGapsPerDay": [],
+  "ConstraintTeacherMaxGapsPerWeek": [],
+  "ConstraintTeacherMaxSingleGapsInSelectedTimeSlots": [],
+  "ConstraintTeacherMaxHoursDailyInInterval": [],
+  "ConstraintTeacherMaxHoursDaily": [],
+  "ConstraintTeacherPairOfMutuallyExclusiveTimeSlots": [],
+  "ConstraintTeacherMaxSpanPerDay": [],
+  "ConstraintTeacherActivityTagMaxHoursDaily": []
+}

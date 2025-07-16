@@ -1,0 +1,91 @@
+body {
+        background-color: #f8f9fa;
+    }
+    .form-container {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    }
+    .btn-add {
+        margin-top: 1rem;
+    }
+    .period-item, .subject-item, .teacher-item, .student-item, .room-item, .activity-item {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border: 1px solid #dee2e6;
+        border-radius: 0.25rem;
+        background-color: #f8f9fa;
+    }
+    .duration-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    .duration-item input {
+        flex-grow: 1;
+    }
+    .table-responsive {
+        margin-top: 1rem;
+    }
+    #jsonData {
+        max-height: 500px;
+        overflow-y: auto;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+    .card {
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    }
+    .card-header {
+        font-weight: bold;
+    }
+    #xmlData {
+        max-height: 500px;
+        overflow-y: auto;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        font-family: monospace;
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 0.25rem;
+        padding: 1rem;
+    }
+    .xml-tag {
+        color: #007bff;
+    }
+    .xml-attr {
+        color: #e83e8c;
+    }
+    .xml-value {
+        color: #28a745;
+    }
+    .nav-tabs {
+        display: flex;
+        width: 100%;
+    }
+    .nav-tabs .nav-item {
+        flex: 1;
+        text-align: center;
+    }
+    .nav-tabs .nav-link {
+        width: 100%;
+        white-space: nowrap; 
+        overflow: hidden;   
+        text-overflow: ellipsis;
+    }
+
+    .nav-tabs{
+        background-color: #e0e0e08c !important;
+    }
+    .nav-link{
+        color: black !important;
+    }
+    .nav-link.active{
+        background: grey !important;
+        color: white !important;
+    }
+    .accordion-button{
+        background: #cfe2ff !important;
+    }
