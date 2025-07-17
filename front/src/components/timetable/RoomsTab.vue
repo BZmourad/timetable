@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-5">
+  <div>
     <div class="rooms-container">
       <div class="row">
         <div class="col-md-6" v-for="(room, index) in rooms" :key="'room-'+index">

@@ -1,0 +1,303 @@
+{
+  "institutionName": "Nom de l'institution",
+  "institutionComment": "Commentaire",
+  "selectedDays": [
+    "Lundi",
+    "Mardi",
+    "Mercredi",
+    "Jeudi",
+    "Vendredi",
+    "Samedi"
+  ],
+  "periods": [
+    {
+      "name": "P1",
+      "description": ""
+    },
+    {
+      "name": "P2",
+      "description": ""
+    },
+    {
+      "name": "P3",
+      "description": ""
+    },
+    {
+      "name": "P4",
+      "description": ""
+    }
+  ],
+  "subjects": [
+    {
+      "name": "m1",
+      "longName": "",
+      "code": "",
+      "comments": ""
+    },
+    {
+      "name": "m2",
+      "longName": "",
+      "code": "",
+      "comments": ""
+    },
+    {
+      "name": "m3",
+      "longName": "",
+      "code": "",
+      "comments": ""
+    },
+    {
+      "name": "m4",
+      "longName": "",
+      "code": "",
+      "comments": ""
+    },
+    {
+      "name": "m5",
+      "longName": "",
+      "code": "",
+      "comments": ""
+    },
+    {
+      "name": "m6",
+      "longName": "",
+      "code": "",
+      "comments": ""
+    },
+    {
+      "name": "m7",
+      "longName": "",
+      "code": "",
+      "comments": ""
+    }
+  ],
+  "teachers": [
+    {
+      "name": "e1",
+      "longName": "",
+      "code": "",
+      "targetHours": 0,
+      "qualifiedSubjects": [
+        "m1"
+      ],
+      "comments": ""
+    },
+    {
+      "name": "e2",
+      "longName": "",
+      "code": "",
+      "targetHours": 0,
+      "qualifiedSubjects": [
+        "m2"
+      ],
+      "comments": ""
+    },
+    {
+      "name": "e3",
+      "longName": "",
+      "code": "",
+      "targetHours": 0,
+      "qualifiedSubjects": [
+        "m3"
+      ],
+      "comments": ""
+    },
+    {
+      "name": "e4",
+      "longName": "",
+      "code": "",
+      "targetHours": 0,
+      "qualifiedSubjects": [
+        "m4"
+      ],
+      "comments": ""
+    },
+    {
+      "name": "e5",
+      "longName": "",
+      "code": "",
+      "targetHours": 0,
+      "qualifiedSubjects": [
+        "m5"
+      ],
+      "comments": ""
+    },
+    {
+      "name": "e6",
+      "longName": "",
+      "code": "",
+      "targetHours": 0,
+      "qualifiedSubjects": [
+        "m6"
+      ],
+      "comments": ""
+    },
+    {
+      "name": "e7",
+      "longName": "",
+      "code": "",
+      "targetHours": 0,
+      "qualifiedSubjects": [
+        "m7"
+      ],
+      "comments": ""
+    }
+  ],
+  "students": [
+    {
+      "name": "c1",
+      "longName": "",
+      "code": "",
+      "studentCount": 10,
+      "comments": ""
+    },
+    {
+      "name": "c2",
+      "longName": "",
+      "code": "",
+      "studentCount": 10,
+      "comments": ""
+    }
+  ],
+  "rooms": [
+    {
+      "name": "s1",
+      "longName": "",
+      "code": "",
+      "capacity": 20,
+      "comments": ""
+    },
+    {
+      "name": "s2",
+      "longName": "",
+      "code": "",
+      "capacity": 20,
+      "comments": ""
+    }
+  ],
+  "balises": [
+    {
+      "name": "b1",
+      "longName": "",
+      "code": "",
+      "comments": "",
+      "Imprimable": "true"
+    },
+    {
+      "name": "b2",
+      "longName": "",
+      "code": "",
+      "Imprimable": "true",
+      "comments": ""
+    },
+    {
+      "name": "b3",
+      "longName": "",
+      "code": "",
+      "Imprimable": "true",
+      "comments": ""
+    }
+  ],
+  "activities": [
+    {
+      "subject": "m1",
+      "student": "c1",
+      "teacher": "e1",
+      "balise": "b1",
+      "durations": [
+        1
+      ]
+    },
+    {
+      "subject": "m1",
+      "student": "c2",
+      "teacher": "e1",
+      "balise": "b1",
+      "durations": [
+        1
+      ]
+    },
+    {
+      "subject": "m2",
+      "student": "c1",
+      "teacher": "e2",
+      "balise": "b1",
+      "durations": [
+        1
+      ]
+    },
+    {
+      "subject": "m2",
+      "student": "c2",
+      "teacher": "e2",
+      "balise": "b1",
+      "durations": [
+        1
+      ]
+    },
+    {
+      "subject": "m3",
+      "student": "c1",
+      "teacher": "e3",
+      "balise": "b1",
+      "durations": [
+        1
+      ]
+    },
+    {
+      "subject": "m4",
+      "student": "c1",
+      "teacher": "e4",
+      "balise": "b2",
+      "durations": [
+        1
+      ]
+    },
+    {
+      "subject": "m5",
+      "student": "c1",
+      "teacher": "e5",
+      "balise": "b2",
+      "durations": [
+        1
+      ]
+    },
+    {
+      "subject": "m6",
+      "student": "c2",
+      "teacher": "e6",
+      "balise": "b2",
+      "durations": [
+        1,
+        1
+      ]
+    },
+    {
+      "subject": "m7",
+      "student": "c2",
+      "teacher": "e7",
+      "balise": "b3",
+      "durations": [
+        1
+      ]
+    }
+  ],
+  "ConstraintBreakTimes": [
+    {
+      "Day": "Vendredi",
+      "Hour": "P4"
+    }
+  ],
+  "ConstraintTeacherNotAvailableTimes": [],
+  "ConstraintTeacherMaxDaysPerWeek": [],
+  "ConstraintTeacherMinDaysPerWeek": [],
+  "ConstraintTeacherNoTwoConsecutiveDays": [],
+  "ConstraintTeacherMaxGapsPerDay": [],
+  "ConstraintTeacherMaxGapsPerWeek": [],
+  "ConstraintTeacherMaxSingleGapsInSelectedTimeSlots": [],
+  "ConstraintTeacherMaxHoursDailyInInterval": [],
+  "ConstraintTeacherMaxHoursDaily": [],
+  "ConstraintTeacherPairOfMutuallyExclusiveTimeSlots": [],
+  "ConstraintTeacherMaxSpanPerDay": [],
+  "ConstraintTeacherActivityTagMaxHoursDaily": []
+}

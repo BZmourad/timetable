@@ -1,0 +1,10 @@
+﻿Conflits légers de timetable_5_1752738816649.fet
+Généré avec FET 7.2.6 le 17/07/2025 08:53
+
+Nombre de contraintes légères rompues : 0
+Total des conflits légers : 0
+
+Liste des conflits légers (par ordre décroissant) :
+
+
+Fin de fichier.

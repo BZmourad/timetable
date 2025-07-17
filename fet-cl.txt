@@ -1,0 +1,94 @@
+To run FET in interface mode, you just need to run the executable named fet or fet.exe.
+
+GNU/Linux, and maybe Mac OS X:
+chdir to the directory where the fet executable is (for instance, "cd ~/fet-v.v.v/") and run it with "./fet" or with the suitable command
+for your platform. Alternatively, you may run the executable named fet from the fet-v.v.v directory, using another method. The fet executable
+will be located inside the fet-v.v.v directory after a successful compilation.
+
+Note for Mac OS X about using translations (if you want to run FET into other language): it seems that you need to copy the contents
+of the "translations/" directory into the directory fet-v.v.v/fet.app/Contents/MacOS/translations/ or into the directory /usr/share/fet/translations/
+(if you compiled/installed FET by yourself). Or copy the whole directory translations/ into fet-v.v.v/fet.app/Contents/MacOS/ or into usr/share/fet/
+More notes for the Mac OS X platform, from a user: copying the translations/ directory into the directory fet.app/Contents/MacOS/ is
+possible from the command line in X11 xterm (but it is not possible with the finder program, because the file extension ".app" is
+exclusive for applications, so the program finder interprets a directory with the extension ".app" as an application).
+
+Windows:
+Run the executable fet.exe (its location is inside the fet-v.v.v directory, you can find it there if you have FET precompiled for Windows or after you compiled it).
+
+COMMAND LINE: no GUI, just run "fet-cl --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t]
+ [--writetimetableconflicts=wt1] [--writetimetablesstatistics=wt2] [--writetimetablesxml=wt3] [--writetimetablesdayshorizontal=wt4]
+ [--writetimetablesdaysvertical=wt5] [--writetimetablestimehorizontal=wt6] [--writetimetablestimevertical=wt7] [--writetimetablessubgroups=wt8]
+ [--writetimetablesgroups=wt9] [--writetimetablesyears=wt10] [--writetimetablesteachers=wt11] [--writetimetablesteachersfreeperiods=wt12]
+ [--writetimetablesrooms=wt13] [--writetimetablessubjects=wt14] [--writetimetablesactivitytags=wt15] [--writetimetablesactivities=wt16]
+ [--printactivitytags=a] [--printnotavailable=u] [--printbreak=b] [--dividetimeaxisbydays=v] [--duplicateverticalheaders=e]
+ [--printsimultaneousactivities=w] [--randomseedx=rx --randomseedy=ry] [--warnifusingnotperfectconstraints=s]
+ [--warnifusingstudentsminhoursdailywithallowemptydays=p] [--warnsubgroupswiththesameactivities=ssa]
+ [--printdetailedtimetables=pdt] [--printdetailedteachersfreeperiodstimetables=pdtfp]
+ [--exportcsv=ecsv] [--overwritecsv=ocsv] [--firstlineisheadingcsv=flhcsv] [--quotescsv=qcsv] [--fieldseparatorcsv=fscsv]
+ [--verbose=r]",
+where	x is the input file, for instance "data.fet"
+		d is the path to results directory, without trailing slash or backslash (default is current working path).
+			Make sure you have write permissions there.
+		y is integer (seconds) (default 2000000000, which is practically infinite).
+		z is integer from 0 to 7 and represents the detail level for the generated HTML timetables
+			(default 2, larger values have more details/facilities and larger file sizes).
+		t is one of ar, ca, cs, da, de, el, en_GB, en_US, es, eu, fa, fr, gl, he, hu, id, it, ja, lt, mk, ms, nl, pl, pt_BR, ro, ru, si, sk, sq, sr, tr,
+			uk, uz, vi, zh_CN, zh_TW (default en_US).
+		wt1 to wt16 are either true or false and represent whether you want the corresponding timetables to be written on the disk (default true).
+		a is either true or false and represets if you want activity tags to be present in the final HTML timetables (default true).
+		u is either "true" or "false" and represents if you want -x- (for true) or --- (for false) in the generated timetables for the
+			not available slots (default true).
+		b is either "true" or "false" and represents if you want -X- (for true) or --- (for false) in the generated timetables for the
+			break slots (default true).
+		v is either true or false, represents if you want the HTML timetables with time-axis divided by days (default false).
+		e is either true or false, represents if you want the HTML timetables to duplicate vertical headers to the right of the tables,
+			for easier reading (default false).
+		w is either true or false, represents if you want the HTML timetables to show related activities which have constraints with same starting time (default false).
+			(for instance, if A1 (T1, G1) and A2 (T2, G2) have constraint activities same starting time, then in T1's timetable will appear also A2, at the same slot
+			as A1).
+		rx is the random seed X component, minimum 1 to maximum 2147483646, ry is the random seed Y component, minimum 1 to maximum 2147483398
+			(you can get the same timetable if the input file is identical, if the FET version is the same and if the random seed X and Y components are the same).
+		s is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains not perfect constraints
+			(activity tag max hours daily or students max gaps per day) (default true).
+		p is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains nonstandard constraints
+			students min hours daily with allow empty days (default true).
+		ssa is either true or false, represents whether you want a message box to be show, with a warning, if your input file contains subgroups which have
+			the same activities (default true).
+		pdt is either true or false, represents whether you want to show the detailed (true) or less detailed (false) years and groups timetables (default true).
+		pdtfp is either true or false, represents whether you want to show the detailed (true) or less detailed (false) teachers free periods timetables (default true).
+		ecsv is either true or false, represents whether you want to export the CSV file and timetables (default false).
+		ocsv is either true or false, represents whether you want to overwrite old CSV files, if they exist (default false).
+		flhcsv is either true or false, represents whether you want the heading of the CSV files to be header (true) or data (false). The default value is true.
+		qcsv is one value from the set [doublequotes|singlequotes|none] (write a single value from these three exactly as it is written here). The default value
+			is doublequotes.
+		fscsv is one value from the set [comma|semicolon|verticalbar] (write a single value from these three exactly as it is written here). The default value is comma.
+		r is either true or false, represents whether you want additional generation messages and other messages to be shown on the command line (default false).
+
+Alternatively, you can run "fet-cl --version [--outputdir=d]" to get the current FET version.
+where d is the path to results directory, without trailing slash or backslash (default is current working path).
+Make sure you have write permissions there.
+(If you specify the "--version" argument, FET just prints version number on the command line prompt and in the output directory and exits.)
+
+You can ask the FET command line process to stop the timetable generation, by sending it the SIGTERM signal.
+FET will then write the current timetable and the highest stage timetable and exit.
+(If you send the FET command line the SIGKILL signal it will stop immediately, without writing the timetable.)
+
+The result of the operation is logged into file outputdir/logs/result.txt.
+
+Also, you have in logs the initial order of activities and a list of maximum placed number of activities. If your timetable is impossible, say it stops
+at maximum n placed activities, look at the n+1-st activity in the initial order, for it or its students/teachers may be the problem.
+
+For the command line version, probably the most useful output to use internally in an application might be the activities_timetable.xml.
+You have of course also the xml timetables for students and teachers and the nicely formatted HTML timetables to present directly.
+
+You'll get a console output to help you with data, along with the files in the directory outputdir/logs/.
+
+If you are a programmer, in the file src/engine/messageboxes.cpp you'll find the implementation of the various messages. You
+can modify these functions, catching them in your program. Also, you can catch the end of the program (successful or unsuccessful) in
+the file src/interface/fet.cpp, in the command-line code part.
+
+If you want to be completely independent from Qt, using only standard C++, you can remove all the Qt includes and
+reimplement the used Qt classes QString, QList, QSet, and others (only the member functions which are necessary). Or just get the corresponding
+code from Qt (Please review the Qt licensing options, in this case. Currently, they include LGPL and commercial).
+The program should have independence of a particular implementation of QSet and QHash so, if you reimplement these two containers,
+any order of elements should lead to the same generation results. Contrary behavior should be reported as a bug.

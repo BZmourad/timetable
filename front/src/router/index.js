@@ -4,6 +4,7 @@ import CreateTimetable from '../views/CreateTimetable.vue'
 import EditTimetable from '../views/EditTimetable.vue'
 import ShowTimetable from '../views/ShowTimetable.vue'
 import FetXmlImporter from '../views/FetXmlImporter.vue'
+import TestTimetable from '../views/TestTimetable.vue'
 
 const routes = [
   {
@@ -32,6 +33,11 @@ const routes = [
     path: '/upload',
     name: 'FetXmlImporter',
     component: FetXmlImporter
+  },
+  {
+    path: '/test',
+    name: 'TestTimetable',
+    component: TestTimetable
   }
 ]
 

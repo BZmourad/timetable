@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-5">
+  <div>
     <div class="balises-container">
       <div class="row">
         <div class="col-md-4" v-for="(balise, index) in balises" :key="'balise-'+index">

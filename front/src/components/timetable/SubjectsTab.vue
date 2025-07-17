@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-5">
+  <div>
     <div class="subjects-container">
       <div class="row">
         <div class="col-md-6" v-for="(subject, index) in subjects" :key="'subject-'+index">

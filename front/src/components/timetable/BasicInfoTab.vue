@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="row mt-4">
-      <div class="col-sm-6">
+      <div class="col-sm-5">
         <div class="mb-3">
           <label for="institutionName" class="form-label">Nom de l'institution:</label>
           <input type="text" class="form-control" :class="{'is-invalid': errors.institutionName}" id="institutionName" v-model="formData.institutionName">
@@ -11,7 +11,7 @@
           <textarea class="form-control" id="institutionComment" v-model="formData.institutionComment" rows="3"></textarea>
         </div>
       </div>
-      <div class="col-sm-6">
+      <div class="col-sm-7">
         <div class="mb-4">
         <div class="mb-3">
           <label class="form-label">Jours d'ouverture:</label>

@@ -1,0 +1,1 @@
+fet-cl --inputfile="C:\laragon\www\timetable\input\test01.fet" --outputdir="C:\laragon\www\timetable\output" --htmllevel=7 --language=fr

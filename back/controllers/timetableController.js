@@ -8,6 +8,13 @@ const storagePath = path.join(__dirname, '../storage/json');
 
 const { js2xml } = require('xml-js');
 
+//const { exec } = require('child_process');
+const { promisify } = require('util');
+const exec = promisify(require('child_process').exec);
+
+
+
+
 // Créer le dossier de stockage s'il n'existe pas
 if (!fs.existsSync(storagePath)) {
     fs.mkdirSync(storagePath, { recursive: true });
@@ -145,16 +152,103 @@ exports.getTimetableShow = async (req, res) => {
         
         const xmlData = convertToFetXml(data);
 
+        // Path configuration
+        const baseDir = process.env.BASE_DIR || "C:/laragon/www/timetable";
+        const inputDir = path.join(baseDir, "input");
+        const outputDir = path.join(baseDir, "front/public/output");
+        const fetCl = process.env.FET_CL_PATH || "C:/laragon/www/timetableold/fet-7.2.6/fet-cl";
+
+        // Create directories if they don't exist
+        [inputDir, outputDir].forEach(dir => {
+            if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+        });
+
+        // Generate unique filename
+        const filename = `timetable_${id}_${Date.now()}`;
+        const inputFilePath = path.join(inputDir, `${filename}.fet`);
+        
+        // Save XML data
+        fs.writeFileSync(inputFilePath, xmlData);
+
+        const command = `"${fetCl}" --inputfile="${inputFilePath}" --outputdir="${outputDir}" --htmllevel=7 --language=fr`;
+
+        const result = runFet(command);
+
         res.json({
             ...timetable.toJSON(), // Inclut created_at
             data,
-            xmlData
+            xmlData,
+            inputFilePath,
+            command,
+            result
         });
     } catch (error) {
         console.error("Erreur lors de la récupération:", error);
         res.status(500).json({ error: "Une erreur est survenue", "error":error });
     }
 };
+/*
+exports.getTimetableTest = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const timetable = await Timetable.findByPk(id);
+
+        if (!timetable) {
+            return res.status(404).json({ error: "Emploi du temps non trouvé" });
+        }
+
+
+        const data = JSON.parse(fs.readFileSync(timetable.path_json, 'utf8'));
+        const xmlData = convertToFetXml(data);
+        const baseDir = process.env.BASE_DIR;
+        const inputDir = process.env.INPUT_DIR;
+        const outputDir = process.env.OUTPUT_DIR;
+
+
+
+        [inputDir, outputDir].forEach(dir => {
+            if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+        });
+        const filename = `timetable_${id}_${Date.now()}`;
+        const inputFilePath = path.join(inputDir, `${filename}.fet`);
+
+        fs.writeFileSync(inputFilePath, xmlData);
+        
+
+        const fetCl = process.env.FET_CL_PATH;
+        const command = `"${fetCl}" --inputfile="${inputFilePath}" --outputdir="${outputDir}" --htmllevel=7 --language=fr`;
+        const result = runFet(command);
+        const output_html = `${process.env.HTML_OUT_URL}/${filename}/${filename}_index.html`;
+
+        res.json({
+            ...timetable.toJSON(), // Inclut created_at
+            data,
+            xmlData,
+            inputFilePath,
+            command,
+            output_html,
+            result
+        });
+    } catch (error) {
+        console.error("Erreur lors de la récupération:", error);
+        res.status(500).json({ error: "Une erreur est survenue", "error":error });
+    }
+};*/
+
+async function runFet(command) {
+    exec(command, (error, stdout, stderr) => {
+        if (error) {
+            console.error(`Erreur d'exécution: ${error.message}`);
+            return error.message;
+        }
+        if (stderr) {
+            console.error(`Erreur: ${stderr}`);
+            return stderr;
+        }
+        console.log(`Sortie: ${stdout}`);
+        return stdout;
+    });
+}
 
 // Fonction de conversion JSON vers XML FET
 function convertToFetXml(jsonData) {
@@ -454,4 +548,119 @@ function convertToFetXml(jsonData) {
     fetData.fet.Time_Constraints_List = timeConstraints;
 
     return js2xml(fetData, { compact: true, spaces: 4, fullTagEmptyElement: true });
+}
+
+exports.getTimetableTest = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const timetable = await Timetable.findByPk(id);
+
+        if (!timetable) {
+            return res.status(404).json({ error: "Emploi du temps non trouvé" });
+        }
+
+        const data = JSON.parse(fs.readFileSync(timetable.path_json, 'utf8'));
+        const xmlData = convertToFetXml(data);
+        const baseDir = process.env.BASE_DIR;
+        const inputDir = process.env.INPUT_DIR;
+        const outputDir = process.env.OUTPUT_DIR;
+
+        [inputDir, outputDir].forEach(dir => {
+            if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+        });
+        
+        const filename = `timetable_${id}_${Date.now()}`;
+        const inputFilePath = path.join(inputDir, `${filename}.fet`);
+        fs.writeFileSync(inputFilePath, xmlData);
+        
+        const fetCl = process.env.FET_CL_PATH;
+        const command = `"${fetCl}" --inputfile="${inputFilePath}" --outputdir="${outputDir}" --htmllevel=7 --language=fr`;
+        try {
+            // Run FET and wait for generation to be successful
+            const { stdout, stderr } = await exec(command);
+            console.log('stdout', stdout);
+            if (!stdout.includes("Generation successful")) {
+                throw new Error("Generation failed: " + (stderr || stdout));
+            }
+            
+            // Check for output HTML file existence
+            const outputPath = path.join(outputDir, 'timetables', filename);
+            const outputHtmlPath = path.join(outputDir, 'timetables', filename, `${filename}_index.html`);
+            const maxAttempts = 100;
+            const delay = 5000; // milliseconds
+            
+            let attempts = 0;
+            let htmlExists = false;
+            
+            while (attempts < maxAttempts && !htmlExists) {
+                attempts++;
+                htmlExists = fs.existsSync(outputHtmlPath);
+                if (!htmlExists) {
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                }
+            }
+            
+            if (!htmlExists) {
+                throw new Error("HTML output file was not created");
+            } else {
+                const files = fs.readdirSync(outputPath);
+                for (const file of files) {
+                    const filePath = path.join(outputPath, file);
+                    if (fs.statSync(filePath).isFile()) {
+                        let content = fs.readFileSync(filePath, 'utf8');
+                        content = content.replace(
+                            new RegExp(escapeRegExp(process.env.FET_NAME), 'g'),
+                            process.env.APP_NAME
+                        );
+                        fs.writeFileSync(filePath, content);
+                    }
+                }
+            }
+            
+            const output_html = `${process.env.HTML_OUT_URL}/${filename}/${filename}_index.html`;
+
+            res.json({
+                ...timetable.toJSON(), // Inclut created_at
+                data,
+                xmlData,
+                inputFilePath,
+                command,
+                output_html,
+                result: stdout
+            });
+        } catch (execError) {
+            // Handle execution errors specifically
+            const warningsPath = path.join(outputDir, 'logs', 'warnings.txt');
+            let warningsContent = 'No warnings file found';
+            
+            try {
+                if (fs.existsSync(warningsPath)) {
+                    warningsContent = fs.readFileSync(warningsPath, 'utf8');
+                }
+            } catch (readError) {
+                warningsContent = `Could not read warnings file: ${readError.message}`;
+            }
+            
+            console.error("FET Execution Error:", execError);
+            console.error("Warnings:", warningsContent);
+            
+            res.json({ 
+                ...timetable.toJSON(), // Inclut created_at
+                data,
+                xmlData,
+                error: "FET generation failed",
+                details: execError.message,
+                warnings: warningsContent,
+                stdout: execError.stdout,
+                stderr: execError.stderr
+            });
+        }
+    } catch (error) {
+        console.error("Erreur lors de la récupération:", error);
+        res.status(500).json({ error: "Une erreur est survenue", details: error.message });
+    }
+};
+
+function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }

@@ -10,9 +10,16 @@ require('dotenv').config();
 const app = express();
 
 // Middleware
-app.use(cors());
+
+app.use(cors({
+    origin: process.env.FRONT_PATH, 
+    credentials: true
+}));
+//app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes API
 app.use('/api', timetableRoutes);

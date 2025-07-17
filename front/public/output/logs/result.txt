@@ -1,0 +1,5 @@
+This file contains the result (log) of last operation
+
+FET command line generation started on 17/07/2025 21:05
+
+Cannot read input file (not existing, in use, or incorrect file) - aborting

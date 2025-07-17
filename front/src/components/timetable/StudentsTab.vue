@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-5">
+  <div>
     <div class="students-container">
       <div class="row">
         <div class="col-md-6" v-for="(student, index) in students" :key="'student-'+index">

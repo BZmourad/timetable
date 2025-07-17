@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-5">
+  <div>
     <div class="activities-container">
       <div class="activity-item mb-3" v-for="(activity, index) in activities" :key="'activity-'+index">
         <div class="row">

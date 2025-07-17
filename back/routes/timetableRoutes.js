@@ -9,5 +9,6 @@ router.get('/timetables/:id', timetableController.getTimetable);
 router.put('/timetables/:id', timetableController.updateTimetable);
 router.delete('/timetables/:id', timetableController.deleteTimetable);
 router.get('/timetables/:id/show', timetableController.getTimetableShow);
+router.get('/timetables/:id/data', timetableController.getTimetableTest);
 
 module.exports = router;

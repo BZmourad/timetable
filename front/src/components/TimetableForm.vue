@@ -2,7 +2,7 @@
     <form @submit.prevent="validateAndSubmit">
         <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
             <div class="container-fluid">
-                <h2 class="navbar-brand text-white" href="#"><i class="fas fa-calendar-plus me-2"></i>{{ isEditMode ? 'Modifier' : 'Créer' }} un nouvel emploi du temps</h2>
+                <h2 class="navbar-brand text-white" ><i class="fas fa-calendar-plus me-2"></i>{{ isEditMode ? 'Modifier' : 'Créer' }} un nouvel emploi du temps</h2>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -22,41 +22,63 @@
             </div>
         </nav>
         <div class="p-2 mt-4">
+            <div v-if="loading" class="loading-overlay">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p class="mt-2">Chargement des données...</p>
+            </div>
             <div class="card">
                 <div class="card-body">
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li v-for="tab in tabs" :key="tab.id" class="nav-item" role="presentation">
-                            <button class="nav-link" :class="{ active: activeTab === tab.id }" :id="`${tab.id}-tab`" data-bs-toggle="tab" :data-bs-target="`#${tab.id}`" type="button" role="tab" @click="activeTab = tab.id">
-                                <i :class="tab.icon + ' me-1'"></i> {{ tab.label }}
-                            </button>
-                        </li>
-                    </ul>
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade" :class="{ 'show active': activeTab === 'base' }" id="base" role="tabpanel">
-                            <BasicInfoTab :formData="formData" :errors="errors" :daysOfWeek="daysOfWeek" @add-period="addPeriod" @remove-period="removePeriod" />
+                    <div class="row">
+                        <!-- Colonne pour les onglets verticaux -->
+                        <div class="col-md-4 col-lg-2">
+                            <div class="nav flex-column nav-pills" id="v-tabs-tab" role="tablist" aria-orientation="vertical">
+                                <button v-for="tab in tabs" 
+                                        :key="tab.id" 
+                                        class="nav-link text-start mb-2" 
+                                        :class="{ active: activeTab === tab.id }" 
+                                        :id="`v-${tab.id}-tab`" 
+                                        data-bs-toggle="pill" 
+                                        :data-bs-target="`#v-${tab.id}`" 
+                                        type="button" 
+                                        role="tab" 
+                                        @click="activeTab = tab.id">
+                                    <i :class="tab.icon + ' me-1'"></i> {{ tab.label }}
+                                </button>
+                            </div>
                         </div>
-                        <div class="tab-pane fade" :class="{ 'show active': activeTab === 'subjects' }" id="subjects" role="tabpanel">
-                            <SubjectsTab :subjects="formData.subjects" :errors="errors" @add-subject="addSubject" @remove-subject="removeSubject" />
-                        </div>
-                        <div class="tab-pane fade" :class="{ 'show active': activeTab === 'teachers' }" id="teachers" role="tabpanel">
-                            <TeachersTab :teachers="formData.teachers" :subjects="formData.subjects" :errors="errors" @add-teacher="addTeacher" @remove-teacher="removeTeacher" @update-qualified-subjects="updateQualifiedSubjects" />
-                        </div>
-                        <div class="tab-pane fade" :class="{ 'show active': activeTab === 'students' }" id="students" role="tabpanel">
-                            <StudentsTab :students="formData.students" :errors="errors" @add-student="addStudent" @remove-student="removeStudent" />
-                        </div>
-                        <div class="tab-pane fade" :class="{ 'show active': activeTab === 'rooms' }" id="rooms" role="tabpanel">
-                            <RoomsTab :rooms="formData.rooms" :errors="errors" @add-room="addRoom" @remove-room="removeRoom" />
-                        </div>
-                        <div class="tab-pane fade" :class="{ 'show active': activeTab === 'balises' }" id="balises" role="tabpanel">
-                            <BalisesTab :balises="formData.balises" :errors="errors" @add-balise="addBalise" @remove-balise="removeBalise" />
-                        </div>
-                        <div class="tab-pane fade" :class="{ 'show active': activeTab === 'activities' }" id="activities" role="tabpanel">
-                            <ActivitiesTab 
-                                :activities="formData.activities" :subjects="formData.subjects" :teachers="formData.teachers" :balises="formData.balises" :students="formData.students" :errors="errors"
-                                @add-activity="addActivity" @remove-activity="removeActivity" @add-duration="addDuration" @remove-duration="removeDuration" />
-                        </div>
-                        <div class="tab-pane fade" :class="{ 'show active': activeTab === 'contraintes' }" id="contraintes" role="tabpanel">
-                            <ContraintesTab :formData="formData" />
+                        
+                        <!-- Colonne pour le contenu des onglets -->
+                        <div class="col-md-8 col-lg-10">
+                            <div class="tab-content" id="v-tabs-tabContent">
+                                <div class="tab-pane fade" :class="{ 'show active': activeTab === 'base' }" id="v-base" role="tabpanel">
+                                    <BasicInfoTab :formData="formData" :errors="errors" :daysOfWeek="daysOfWeek" @add-period="addPeriod" @remove-period="removePeriod" />
+                                </div>
+                                <div class="tab-pane fade" :class="{ 'show active': activeTab === 'subjects' }" id="v-subjects" role="tabpanel">
+                                    <SubjectsTab :subjects="formData.subjects" :errors="errors" @add-subject="addSubject" @remove-subject="removeSubject" />
+                                </div>
+                                <div class="tab-pane fade" :class="{ 'show active': activeTab === 'teachers' }" id="v-teachers" role="tabpanel">
+                                    <TeachersTab :teachers="formData.teachers" :subjects="formData.subjects" :errors="errors" @add-teacher="addTeacher" @remove-teacher="removeTeacher" @update-qualified-subjects="updateQualifiedSubjects" />
+                                </div>
+                                <div class="tab-pane fade" :class="{ 'show active': activeTab === 'students' }" id="v-students" role="tabpanel">
+                                    <StudentsTab :students="formData.students" :errors="errors" @add-student="addStudent" @remove-student="removeStudent" />
+                                </div>
+                                <div class="tab-pane fade" :class="{ 'show active': activeTab === 'rooms' }" id="v-rooms" role="tabpanel">
+                                    <RoomsTab :rooms="formData.rooms" :errors="errors" @add-room="addRoom" @remove-room="removeRoom" />
+                                </div>
+                                <div class="tab-pane fade" :class="{ 'show active': activeTab === 'balises' }" id="v-balises" role="tabpanel">
+                                    <BalisesTab :balises="formData.balises" :errors="errors" @add-balise="addBalise" @remove-balise="removeBalise" />
+                                </div>
+                                <div class="tab-pane fade" :class="{ 'show active': activeTab === 'activities' }" id="v-activities" role="tabpanel">
+                                    <ActivitiesTab 
+                                        :activities="formData.activities" :subjects="formData.subjects" :teachers="formData.teachers" :balises="formData.balises" :students="formData.students" :errors="errors"
+                                        @add-activity="addActivity" @remove-activity="removeActivity" @add-duration="addDuration" @remove-duration="removeDuration" />
+                                </div>
+                                <div class="tab-pane fade" :class="{ 'show active': activeTab === 'contraintes' }" id="v-contraintes" role="tabpanel">
+                                    <ContraintesTab :formData="formData" />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -181,7 +203,8 @@ export default {
                 ConstraintTeacherActivityTagMaxHoursDaily: []
             },
             errors: {},
-            submitted: false
+            submitted: false,
+            loading: false,
         };
     },
     created() {
@@ -472,9 +495,11 @@ export default {
             return isValid;
         },
         validateAndSubmit() {
+            this.loading = true;
             if (this.validateForm()) {
                 this.submitForm();
             } else {
+                this.loading = false;
                 this.$nextTick(() => {
                     const firstError = document.querySelector('.is-invalid');
                     if (firstError) {
@@ -491,6 +516,7 @@ export default {
                         `${process.env.VUE_APP_API_BASE_URL}/timetables/${this.timetableId}`,
                         this.formData
                     );
+                    this.loading = false;
                     toastr.success("Emploi du temps mis à jour avec succès!");
                     this.$router.push(`/show/${response.data.data.id}`);
                 } else {
@@ -498,10 +524,12 @@ export default {
                         `${process.env.VUE_APP_API_BASE_URL}/timetables`,
                         this.formData
                     );
+                    this.loading = false;
                     toastr.success("Emploi du temps créé avec succès!");
                     this.$router.push(`/show/${response.data.data.id}`);
                 }
             } catch (error) {
+                this.loading = false;
                 console.error('Erreur:', error);
                 toastr.error(error.response?.data?.error || `Erreur lors de ${this.isEditMode ? 'la mise à jour' : 'la création'}`);
             }
@@ -512,4 +540,23 @@ export default {
 
 <style scoped>
 @import 'https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css';
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loading-overlay p {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #333;
+}
 </style>
