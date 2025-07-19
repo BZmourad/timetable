@@ -294,10 +294,43 @@
   "ConstraintTeacherNoTwoConsecutiveDays": [],
   "ConstraintTeacherMaxGapsPerDay": [],
   "ConstraintTeacherMaxGapsPerWeek": [],
-  "ConstraintTeacherMaxSingleGapsInSelectedTimeSlots": [],
+  "ConstraintTeacherMaxSingleGapsInSelectedTimeSlots": [
+    {
+      "Teacher": "e1",
+      "Max_Single_Gaps": 0,
+      "Selected_Time_Slot": [
+        {
+          "Day": "Lundi",
+          "Hour": "P1"
+        }
+      ]
+    }
+  ],
   "ConstraintTeacherMaxHoursDailyInInterval": [],
   "ConstraintTeacherMaxHoursDaily": [],
   "ConstraintTeacherPairOfMutuallyExclusiveTimeSlots": [],
   "ConstraintTeacherMaxSpanPerDay": [],
-  "ConstraintTeacherActivityTagMaxHoursDaily": []
+  "ConstraintTeacherActivityTagMaxHoursDaily": [],
+  "ConstraintTeacherMaxActivityTagsPerDayFromSet": [
+    {
+      "Teacher": "e2",
+      "Maximum_Allowed_Activity_Tags": 0,
+      "Activity_Tags": [
+        {
+          "Activity_Tag": "b3"
+        },
+        {
+          "Activity_Tag": "b1"
+        }
+      ]
+    }
+  ],
+  "ConstraintTeacherMinHoursDaily": [],
+  "ConstraintTeacherActivityTagMinHoursDaily": [],
+  "ConstraintTeacherMaxHoursContinuously": [],
+  "ConstraintTeacherActivityTagMaxHoursContinuously": [],
+  "ConstraintTeacherMinGapsBetweenActivityTag": [],
+  "ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags": [],
+  "ConstraintTeacherIntervalMaxDaysPerWeek": [],
+  "ConstraintTeacherMinRestingHours": []
 }

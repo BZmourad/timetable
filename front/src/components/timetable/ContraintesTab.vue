@@ -87,9 +87,27 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Teacher Tab 2 -->
+                            <div class="tab-pane fade" id="temporelenseignant2" role="tabpanel">
+                                <div class="accordion p-3" id="temporelenseignant2Accordion">
+                                    <div v-for="(constraint, index) in teacherConstraints2" :key="index" class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="`#temporelenseignant2Accordion${index < 10 ? '0' + index : index}`">
+                                                {{ constraint.label }}
+                                            </button>
+                                        </h2>
+                                        <div :id="`temporelenseignant2Accordion${index < 10 ? '0' + index : index}`" class="accordion-collapse collapse" data-bs-parent="#temporelenseignant2Accordion">
+                                            <div class="accordion-body">
+                                                <component :is="constraint.component" :formData="formData" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             
                             <!-- Other teacher tabs -->
-                            <div v-for="(tab, index) in teacherTabs.slice(1)" :key="index" class="tab-pane fade" :id="tab.id" role="tabpanel"></div>
+                            <div v-for="(tab, index) in teacherTabs.slice(2)" :key="index" class="tab-pane fade" :id="tab.id" role="tabpanel"></div>
                         </div>
                     </div>
                     
@@ -124,19 +142,28 @@
 </template>
 
 <script>
-import BreakTimesConstraint from './contraintes/temporel/BreakTimesConstraint.vue';
-import ConstraintTeacherNotAvailableTimes from './contraintes/temporel/Enseignant/ConstraintTeacherNotAvailableTimes.vue';
-import ConstraintTeacherMaxDaysPerWeek from './contraintes/temporel/Enseignant/ConstraintTeacherMaxDaysPerWeek.vue';
-import ConstraintTeacherMinDaysPerWeek from './contraintes/temporel/Enseignant/ConstraintTeacherMinDaysPerWeek.vue';
-import ConstraintTeacherNoTwoConsecutiveDays from './contraintes/temporel/Enseignant/ConstraintTeacherNoTwoConsecutiveDays.vue';
-import ConstraintTeacherMaxGapsPerDay from './contraintes/temporel/Enseignant/ConstraintTeacherMaxGapsPerDay.vue';
-import ConstraintTeacherMaxGapsPerWeek from './contraintes/temporel/Enseignant/ConstraintTeacherMaxGapsPerWeek.vue';
-import ConstraintTeacherMaxSingleGapsInSelectedTimeSlots from './contraintes/temporel/Enseignant/ConstraintTeacherMaxSingleGapsInSelectedTimeSlots.vue';
-import ConstraintTeacherMaxHoursDailyInInterval from './contraintes/temporel/Enseignant/ConstraintTeacherMaxHoursDailyInInterval.vue';
-import ConstraintTeacherMaxHoursDaily from './contraintes/temporel/Enseignant/ConstraintTeacherMaxHoursDaily.vue';
-import ConstraintTeacherPairOfMutuallyExclusiveTimeSlots from './contraintes/temporel/Enseignant/ConstraintTeacherPairOfMutuallyExclusiveTimeSlots.vue';
-import ConstraintTeacherMaxSpanPerDay from './contraintes/temporel/Enseignant/ConstraintTeacherMaxSpanPerDay.vue';
-import ConstraintTeacherActivityTagMaxHoursDaily from './contraintes/temporel/Enseignant/ConstraintTeacherActivityTagMaxHoursDaily.vue';
+import BreakTimesConstraint from './contraintes/temporel/General/BreakTimesConstraint.vue';
+import ConstraintTeacherNotAvailableTimes from './contraintes/temporel/Enseignant1/ConstraintTeacherNotAvailableTimes.vue';
+import ConstraintTeacherMaxDaysPerWeek from './contraintes/temporel/Enseignant1/ConstraintTeacherMaxDaysPerWeek.vue';
+import ConstraintTeacherMinDaysPerWeek from './contraintes/temporel/Enseignant1/ConstraintTeacherMinDaysPerWeek.vue';
+import ConstraintTeacherNoTwoConsecutiveDays from './contraintes/temporel/Enseignant1/ConstraintTeacherNoTwoConsecutiveDays.vue';
+import ConstraintTeacherMaxGapsPerDay from './contraintes/temporel/Enseignant1/ConstraintTeacherMaxGapsPerDay.vue';
+import ConstraintTeacherMaxGapsPerWeek from './contraintes/temporel/Enseignant1/ConstraintTeacherMaxGapsPerWeek.vue';
+import ConstraintTeacherMaxSingleGapsInSelectedTimeSlots from './contraintes/temporel/Enseignant1/ConstraintTeacherMaxSingleGapsInSelectedTimeSlots.vue';
+import ConstraintTeacherMaxHoursDailyInInterval from './contraintes/temporel/Enseignant1/ConstraintTeacherMaxHoursDailyInInterval.vue';
+import ConstraintTeacherMaxHoursDaily from './contraintes/temporel/Enseignant1/ConstraintTeacherMaxHoursDaily.vue';
+import ConstraintTeacherPairOfMutuallyExclusiveTimeSlots from './contraintes/temporel/Enseignant1/ConstraintTeacherPairOfMutuallyExclusiveTimeSlots.vue';
+import ConstraintTeacherMaxSpanPerDay from './contraintes/temporel/Enseignant1/ConstraintTeacherMaxSpanPerDay.vue';
+import ConstraintTeacherActivityTagMaxHoursDaily from './contraintes/temporel/Enseignant1/ConstraintTeacherActivityTagMaxHoursDaily.vue';
+import ConstraintTeacherMaxActivityTagsPerDayFromSet from './contraintes/temporel/Enseignant2/ConstraintTeacherMaxActivityTagsPerDayFromSet.vue';
+import ConstraintTeacherMinHoursDaily from './contraintes/temporel/Enseignant2/ConstraintTeacherMinHoursDaily.vue';
+import ConstraintTeacherActivityTagMinHoursDaily from './contraintes/temporel/Enseignant2/ConstraintTeacherActivityTagMinHoursDaily.vue';
+import ConstraintTeacherMaxHoursContinuously from './contraintes/temporel/Enseignant2/ConstraintTeacherMaxHoursContinuously.vue';
+import ConstraintTeacherActivityTagMaxHoursContinuously from './contraintes/temporel/Enseignant2/ConstraintTeacherActivityTagMaxHoursContinuously.vue';
+import ConstraintTeacherMinGapsBetweenActivityTag from './contraintes/temporel/Enseignant2/ConstraintTeacherMinGapsBetweenActivityTag.vue';
+import ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags from './contraintes/temporel/Enseignant2/ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags.vue';
+import ConstraintTeacherIntervalMaxDaysPerWeek from './contraintes/temporel/Enseignant2/ConstraintTeacherIntervalMaxDaysPerWeek.vue';
+import ConstraintTeacherMinRestingHours from './contraintes/temporel/Enseignant2/ConstraintTeacherMinRestingHours.vue';
 
 export default {
     name: 'ContraintesTab',
@@ -159,7 +186,16 @@ export default {
         ConstraintTeacherMaxHoursDaily,
         ConstraintTeacherPairOfMutuallyExclusiveTimeSlots,
         ConstraintTeacherMaxSpanPerDay,
-        ConstraintTeacherActivityTagMaxHoursDaily
+        ConstraintTeacherActivityTagMaxHoursDaily,
+        ConstraintTeacherMaxActivityTagsPerDayFromSet,
+        ConstraintTeacherMinHoursDaily,
+        ConstraintTeacherActivityTagMinHoursDaily,
+        ConstraintTeacherMaxHoursContinuously,
+        ConstraintTeacherActivityTagMaxHoursContinuously,
+        ConstraintTeacherMinGapsBetweenActivityTag,
+        ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags,
+        ConstraintTeacherIntervalMaxDaysPerWeek,
+        ConstraintTeacherMinRestingHours
     },
     data() {
         return {
@@ -234,6 +270,44 @@ export default {
                 { 
                     label: 'Limite heures quotidiennes avec un code activité pour un enseignant',
                     component: 'ConstraintTeacherActivityTagMaxHoursDaily'
+                }
+            ],
+            teacherConstraints2: [
+                { 
+                    label: 'Limite codes activité depuis un jeu par jour pour un enseignant',
+                    component: 'ConstraintTeacherMaxActivityTagsPerDayFromSet'
+                },
+                { 
+                    label: 'Heures minimum quotidiennes pour un enseignant',
+                    component: 'ConstraintTeacherMinHoursDaily'
+                },
+                { 
+                    label: 'Minimum heures quotidiennes avec un code activité pour un enseignant',
+                    component: 'ConstraintTeacherActivityTagMinHoursDaily'
+                },
+                { 
+                    label: 'Limite heures continues pour un enseignant',
+                    component: 'ConstraintTeacherMaxHoursContinuously'
+                },
+                { 
+                    label: 'Limite heures continues avec un code activité pour un enseignant',
+                    component: 'ConstraintTeacherActivityTagMaxHoursContinuously'
+                },
+                { 
+                    label: 'Vides minimum entre un code activité pour un enseignant',
+                    component: 'ConstraintTeacherMinGapsBetweenActivityTag'
+                },
+                { 
+                    label: 'Vides minimum entre un couple ordonné de codes activité pour un enseignant',
+                    component: 'ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags'
+                },
+                { 
+                    label: 'Un enseignant travaille dans un intervalle horaire limite jours par semaine',
+                    component: 'ConstraintTeacherIntervalMaxDaysPerWeek'
+                },
+                { 
+                    label: 'Heures de repos minimum pour un enseignant',
+                    component: 'ConstraintTeacherMinRestingHours'
                 }
             ]
         }

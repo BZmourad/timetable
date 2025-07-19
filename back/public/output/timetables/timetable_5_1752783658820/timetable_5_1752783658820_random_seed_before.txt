@@ -1,7 +1,0 @@
-﻿Génération débutée à : 17/07/2025 21:20
-
-Le noyau aléatoire en début de génération est :
-	s10=1752783658, s11=839215700, s12=0,
-	s20=1752783658, s21=839215700, s22=0.
-
-Ce fichier a été généré automatiquement avec TimeTable.

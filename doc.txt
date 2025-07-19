@@ -1,1 +1,29 @@
 fet-cl --inputfile="C:\laragon\www\timetable\input\test01.fet" --outputdir="C:\laragon\www\timetable\output" --htmllevel=7 --language=fr
+
+
+## Tous les enseignants (1)
+Temps non disponibles pour tous les enseignants
+Limite jours par semaine pour les enseignants
+Jours minimum par semaine pour les enseignants
+Tous les enseignants ne doivent pas travailler deux jours consécutifs
+Limite vides quotidiens pour les enseignants
+Limite vides par semaine pour les enseignants
+Limite vide unique dans les créneaux horaires sélectionnés pour tous les enseignants
+Limite heures quotidiennes pour les enseignants
+Limite heures quotidiennes dans un intervalle horaire pour tous les enseignants
+Tous les enseignants ont une paire de créneaux horaires mutuellement exclusifs
+Limite amplitude quotidienne pour tous les enseignants
+Limite heures quotidiennes avec un code activité pour les enseignants
+
+
+
+## Tous les enseignants (2)
+Limite codes activité depuis un jeu par jour pour tous les enseignants
+Heures minimum quotidiennes pour les enseignants
+Minimum heures quotidiennes avec un code activité pour les enseignants
+Limite heures continues pour les enseignants
+Limite heures continues avec un code activité pour les enseignants
+Vides minimum entre un code activité pour tous les enseignants
+Vides minimum entre un couple ordonné de codes activité pour tous les enseignants
+Tous les enseignants travaillent dans un intervalle horaire limite jours par semaine
+Heures de repos minimum pour tous les enseignants

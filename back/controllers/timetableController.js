@@ -545,6 +545,123 @@ function convertToFetXml(jsonData) {
             };
         });
     }
+
+    if (jsonData.ConstraintTeacherMaxActivityTagsPerDayFromSet.length) {
+        timeConstraints.ConstraintTeacherMaxActivityTagsPerDayFromSet = jsonData.ConstraintTeacherMaxActivityTagsPerDayFromSet.map(item => {
+            const Activity_Tags = item.Activity_Tags.map(item2 => {
+                return {
+                    Activity_Tag: item2.Activity_Tag
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Teacher: item.Teacher,
+                Maximum_Allowed_Activity_Tags: item.Maximum_Allowed_Activity_Tags,
+                Number_of_Activity_Tags: item.Activity_Tags.length,
+                Activity_Tag: Activity_Tags.map(bt => bt.Activity_Tag),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintTeacherMinHoursDaily.length) {
+        timeConstraints.ConstraintTeacherMinHoursDaily = jsonData.ConstraintTeacherMinHoursDaily.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Teacher: item.Teacher,
+                Minimum_Hours_Daily: item.Minimum_Hours_Daily,
+                Allow_Empty_Days: item.Allow_Empty_Days ? 'true' : 'false',
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintTeacherActivityTagMinHoursDaily.length) {
+        timeConstraints.ConstraintTeacherActivityTagMinHoursDaily = jsonData.ConstraintTeacherActivityTagMinHoursDaily.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Teacher: item.Teacher,
+                Minimum_Hours_Daily: item.Minimum_Hours_Daily,
+                Minimum_Days_With_Tag: item.Minimum_Days_With_Tag,
+                Activity_Tag: item.Activity_Tag,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintTeacherMaxHoursContinuously.length) {
+        timeConstraints.ConstraintTeacherMaxHoursContinuously = jsonData.ConstraintTeacherMaxHoursContinuously.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Teacher: item.Teacher,
+                Maximum_Hours_Continuously: item.Maximum_Hours_Continuously,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintTeacherActivityTagMaxHoursContinuously.length) {
+        timeConstraints.ConstraintTeacherActivityTagMaxHoursContinuously = jsonData.ConstraintTeacherActivityTagMaxHoursContinuously.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Teacher: item.Teacher,
+                Activity_Tag: item.Activity_Tag,
+                Maximum_Hours_Continuously: item.Maximum_Hours_Continuously,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintTeacherMinGapsBetweenActivityTag.length) {
+        timeConstraints.ConstraintTeacherMinGapsBetweenActivityTag = jsonData.ConstraintTeacherMinGapsBetweenActivityTag.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Teacher: item.Teacher,
+                Activity_Tag: item.Activity_Tag,
+                MinGaps: item.MinGaps,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags.length) {
+        timeConstraints.ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags = jsonData.ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Teacher: item.Teacher,
+                First_Activity_Tag: item.First_Activity_Tag,
+                Second_Activity_Tag: item.Second_Activity_Tag,
+                MinGaps: item.MinGaps,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintTeacherIntervalMaxDaysPerWeek.length) {
+        timeConstraints.ConstraintTeacherIntervalMaxDaysPerWeek = jsonData.ConstraintTeacherIntervalMaxDaysPerWeek.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Teacher: item.Teacher,
+                Interval_Start_Hour: item.Interval_Start_Hour,
+                Interval_End_Hour: item.Interval_End_Hour,
+                Max_Days_Per_Week: item.Max_Days_Per_Week,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintTeacherMinRestingHours.length) {
+        timeConstraints.ConstraintTeacherMinRestingHours = jsonData.ConstraintTeacherMinRestingHours.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Teacher: item.Teacher,
+                Minimum_Resting_Hours: item.Minimum_Resting_Hours,
+                Circular: item.Circular ? 'true' : 'false',
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
     fetData.fet.Time_Constraints_List = timeConstraints;
 
     return js2xml(fetData, { compact: true, spaces: 4, fullTagEmptyElement: true });
@@ -631,11 +748,14 @@ exports.getTimetableTest = async (req, res) => {
         } catch (execError) {
             // Handle execution errors specifically
             const warningsPath = path.join(outputDir, 'logs', 'warnings.txt');
+            const errorsPath = path.join(outputDir, 'logs', 'errors.txt');
             let warningsContent = 'No warnings file found';
             
             try {
                 if (fs.existsSync(warningsPath)) {
                     warningsContent = fs.readFileSync(warningsPath, 'utf8');
+                } else if (fs.existsSync(errorsPath)) {
+                    warningsContent = fs.readFileSync(errorsPath, 'utf8');
                 }
             } catch (readError) {
                 warningsContent = `Could not read warnings file: ${readError.message}`;

@@ -95,7 +95,6 @@ import StudentsTab from '@/components/timetable/StudentsTab.vue';
 import RoomsTab from '@/components/timetable/RoomsTab.vue';
 import BalisesTab from '@/components/timetable/BalisesTab.vue';
 import ActivitiesTab from '@/components/timetable/ActivitiesTab.vue';
-import ConstraintsTab from '@/components/timetable/ConstraintsTab.vue';
 import ContraintesTab from '@/components/timetable/ContraintesTab.vue';
 
 import axios from 'axios';
@@ -119,7 +118,6 @@ export default {
         RoomsTab,
         BalisesTab,
         ActivitiesTab,
-        ConstraintsTab,
         ContraintesTab
     },
     data() {
@@ -200,7 +198,16 @@ export default {
                 ConstraintTeacherMaxHoursDaily: [],
                 ConstraintTeacherPairOfMutuallyExclusiveTimeSlots: [],
                 ConstraintTeacherMaxSpanPerDay: [],
-                ConstraintTeacherActivityTagMaxHoursDaily: []
+                ConstraintTeacherActivityTagMaxHoursDaily: [],
+                ConstraintTeacherMaxActivityTagsPerDayFromSet: [],
+                ConstraintTeacherMinHoursDaily: [],
+                ConstraintTeacherActivityTagMinHoursDaily: [],
+                ConstraintTeacherMaxHoursContinuously: [],
+                ConstraintTeacherActivityTagMaxHoursContinuously: [],
+                ConstraintTeacherMinGapsBetweenActivityTag: [],
+                ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags: [],
+                ConstraintTeacherIntervalMaxDaysPerWeek: [],
+                ConstraintTeacherMinRestingHours: [],
             },
             errors: {},
             submitted: false,

@@ -1,7 +1,0 @@
-﻿Génération terminée à : 17/07/2025 21:20
-
-Le noyau aléatoire en fin de génération est :
-	s10=2011181285, s11=1686587303, s12=2501114686,
-	s20=2789155032, s21=2658883871, s22=2497583018.
-
-Ce fichier a été généré automatiquement avec TimeTable.
