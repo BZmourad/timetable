@@ -88,7 +88,7 @@ export default {
         },
         removeDuration(index, i) {
             if (this.formData.ConstraintTeacherMaxSingleGapsInSelectedTimeSlots[index].Selected_Time_Slot.length > 1) {
-                this.formData.ConstraintTeacherMaxSingleGapsInSelectedTimeSlots[index].Selected_Time_Slot.splice(index, 1);
+                this.formData.ConstraintTeacherMaxSingleGapsInSelectedTimeSlots[index].Selected_Time_Slot.splice(i, 1);
             } else {
                 toastr.warning("Vous devez avoir au moins une péride.");
             }

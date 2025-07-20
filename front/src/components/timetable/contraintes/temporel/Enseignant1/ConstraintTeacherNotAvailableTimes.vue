@@ -83,7 +83,7 @@ export default {
         },
         removeDuration(index, i) {
             if (this.formData.ConstraintTeacherNotAvailableTimes[index].Not_Available_Time.length > 1) {
-                this.formData.ConstraintTeacherNotAvailableTimes[index].Not_Available_Time.splice(index, 1);
+                this.formData.ConstraintTeacherNotAvailableTimes[index].Not_Available_Time.splice(i, 1);
             } else {
                 toastr.warning("Vous devez avoir au moins une péride.");
             }

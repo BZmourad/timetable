@@ -326,20 +326,7 @@ function convertToFetXml(jsonData) {
                 }))
             },
             Activities_List: {
-                Activity: jsonData.activities.map((activity, index) => ({
-                    Teacher: jsonData.teachers.find(t => t.name === activity.teacher)?.code || 
-                            activity.teacher.replace(/\s+/g, ''),
-                    Subject: jsonData.subjects.find(s => s.name === activity.subject)?.code || 
-                             activity.subject.replace(/\s+/g, ''),
-                    Students: jsonData.students.find(s => s.name === activity.student)?.code || 
-                              activity.student.replace(/\s+/g, ''),
-                    Duration: activity.durations[0] || 1,
-                    Total_Duration: activity.durations.reduce((sum, d) => sum + d, 0),
-                    Id: index + 1,
-                    Activity_Group_Id: 0,
-                    Active: 'true',
-                    Comments: ''
-                }))
+                Activity: []
             },
             Rooms_List: {
                 Room: jsonData.rooms.map(room => ({
@@ -350,16 +337,54 @@ function convertToFetXml(jsonData) {
                     Virtual: 'false',
                     Comments: room.comments || ''
                 }))
-            },
-            Space_Constraints_List: {
-                ConstraintBasicCompulsorySpace: {
-                    Weight_Percentage: 100,
-                    Active: 'true',
-                    Comments: '',
-                }
             }
         }
     };
+    let activityId = 1;
+    const activities = [];
+
+    jsonData.activities.forEach((activity) => {
+        const totalDuration = activity.durations.reduce((sum, d) => sum + d, 0);
+        if (activity.durations.length > 1) {
+            let firstId = 0;
+            activity.durations.forEach((duration, i) => {
+                if (i == 0) {
+                    firstId = activityId;
+                }
+                const newActivity = {
+                    Teacher: activity.teacher,
+                    Subject: activity.subject,
+                    Students: activity.student,
+                    Activity_Tag: activity.balise,
+                    Duration: duration,
+                    Total_Duration: totalDuration, 
+                    Id: activityId,
+                    Activity_Group_Id: firstId, 
+                    Active: 'true',
+                    Comments: ''
+                };
+                activities.push(newActivity);
+                activityId++;
+            });
+        } else {
+            const newActivity = {
+                Teacher: activity.teacher,
+                Subject: activity.subject,
+                Students: activity.student,
+                Activity_Tag: activity.balise,
+                Duration: activity.durations[0] || 1,
+                Total_Duration: totalDuration,
+                Id: activityId,
+                Activity_Group_Id: 0,
+                Active: 'true',
+                Comments: ''
+            };
+            activities.push(newActivity);
+            activityId++;
+        }
+    });
+    activities.sort((a, b) => a.Id - b.Id);
+    fetData.fet.Activities_List.Activity = activities;
     const timeConstraints = {
         ConstraintBasicCompulsoryTime: {
             Weight_Percentage: 100,
@@ -545,7 +570,6 @@ function convertToFetXml(jsonData) {
             };
         });
     }
-
     if (jsonData.ConstraintTeacherMaxActivityTagsPerDayFromSet.length) {
         timeConstraints.ConstraintTeacherMaxActivityTagsPerDayFromSet = jsonData.ConstraintTeacherMaxActivityTagsPerDayFromSet.map(item => {
             const Activity_Tags = item.Activity_Tags.map(item2 => {
@@ -662,7 +686,258 @@ function convertToFetXml(jsonData) {
             };
         });
     }
+    if (jsonData.ConstraintTeachersMaxDaysPerWeek.Active) {
+        timeConstraints.ConstraintTeachersMaxDaysPerWeek = {
+            Weight_Percentage: 100,
+            Max_Days_Per_Week: jsonData.ConstraintTeachersMaxGapsPerDay.Max_Days_Per_Week,
+            Active: 'true',
+            Comments: ''
+        };
+    }
+    if (jsonData.ConstraintTeachersMaxDaysPerWeek.Active) {
+        timeConstraints.ConstraintTeachersMaxDaysPerWeek = {
+            Weight_Percentage: 100,
+            Max_Days_Per_Week: jsonData.ConstraintTeachersMaxGapsPerDay.Max_Days_Per_Week,
+            Active: 'true',
+            Comments: ''
+        };
+    }
+    if (jsonData.ConstraintTeachersMinDaysPerWeek.Active) {
+        timeConstraints.ConstraintTeachersMinDaysPerWeek = {
+            Weight_Percentage: 100,
+            Minimum_Days_Per_Week: jsonData.ConstraintTeachersMaxGapsPerDay.Minimum_Days_Per_Week,
+            Active: 'true',
+            Comments: ''
+        };
+    }
+    if (jsonData.ConstraintTeachersNoTwoConsecutiveDays.Active) {
+        timeConstraints.ConstraintTeachersNoTwoConsecutiveDays = {
+            Weight_Percentage: 100,
+            Active: 'true',
+            Comments: ''
+        };
+    }
+    if (jsonData.ConstraintTeachersMaxGapsPerDay.Active) {
+        timeConstraints.ConstraintTeachersMaxGapsPerDay = {
+            Weight_Percentage: 100,
+            Max_Gaps: jsonData.ConstraintTeachersMaxGapsPerDay.Max_Gaps,
+            Active: 'true',
+            Comments: ''
+        };
+    }
+    if (jsonData.ConstraintTeachersMaxGapsPerWeek.Active) {
+        timeConstraints.ConstraintTeachersMaxGapsPerWeek = {
+            Weight_Percentage: 100,
+            Max_Gaps: jsonData.ConstraintTeachersMaxGapsPerWeek.Max_Gaps,
+            Active: 'true',
+            Comments: ''
+        };
+    }
+    if (jsonData.ConstraintTeachersMaxHoursDaily.Active) {
+        timeConstraints.ConstraintTeachersMaxHoursDaily = {
+            Weight_Percentage: 100,
+            Maximum_Hours_Daily: jsonData.ConstraintTeachersMaxHoursDaily.Maximum_Hours_Daily,
+            Active: 'true',
+            Comments: ''
+        };
+    }
+    if (jsonData.ConstraintTeachersMaxHoursDailyInInterval.Active) {
+        timeConstraints.ConstraintTeachersMaxHoursDailyInInterval = {
+            Weight_Percentage: 100,
+            Maximum_Hours_Daily: jsonData.ConstraintTeachersMaxHoursDailyInInterval.Maximum_Hours_Daily,
+            Interval_Start_Hour: jsonData.ConstraintTeachersMaxHoursDailyInInterval.Interval_Start_Hour,
+            Interval_End_Hour: jsonData.ConstraintTeachersMaxHoursDailyInInterval.Interval_End_Hour,
+            Active: 'true',
+            Comments: ''
+        };
+    }
+    if (jsonData.ConstraintTeachersMaxSpanPerDay.Active) {
+        timeConstraints.ConstraintTeachersMaxSpanPerDay = {
+            Weight_Percentage: 100,
+            Max_Span: jsonData.ConstraintTeachersMaxSpanPerDay.Max_Span,
+            Allow_One_Day_Exception_of_Plus_One: jsonData.ConstraintTeachersMaxSpanPerDay.Allow_One_Day_Exception_of_Plus_One ? 'true' : 'false',
+            Active: 'true',
+            Comments: ''
+        };
+    }
+    if (jsonData.ConstraintTeachersActivityTagMaxHoursDaily.Active) {
+        timeConstraints.ConstraintTeachersActivityTagMaxHoursDaily = {
+            Weight_Percentage: 100,
+            Maximum_Hours_Daily: jsonData.ConstraintTeachersActivityTagMaxHoursDaily.Maximum_Hours_Daily,
+            Activity_Tag: jsonData.ConstraintTeachersActivityTagMaxHoursDaily.Activity_Tag,
+            Active: 'true',
+            Comments: ''
+        };
+    }
+    if (jsonData.ConstraintTeachersActivityTagMaxHoursDaily.Active) {
+        timeConstraints.ConstraintTeachersActivityTagMaxHoursDaily = {
+            Weight_Percentage: 100,
+            First_Time_Slot: {
+                Day: jsonData.ConstraintTeachersActivityTagMaxHoursDaily.First_Time_Slot.Day,
+                Hour: jsonData.ConstraintTeachersActivityTagMaxHoursDaily.First_Time_Slot.Day,
+            },
+            Second_Time_Slot: {
+                Day: jsonData.ConstraintTeachersActivityTagMaxHoursDaily.Second_Time_Slot.Day,
+                Hour: jsonData.ConstraintTeachersActivityTagMaxHoursDaily.Second_Time_Slot.Day,
+            },
+            Active: 'true',
+            Comments: ''
+        };
+    }
+    if (jsonData.ConstraintTeachersMaxSingleGapsInSelectedTimeSlots.Active) {
+        const Selected_Time_Slots = jsonData.ConstraintTeachersMaxSingleGapsInSelectedTimeSlots.Selected_Time_Slot.map(item => {
+            return {
+                Selected_Time_Slot: {
+                    Day: item.Day,
+                    Hour: item.Hour
+                }
+            };
+        });
+        timeConstraints.ConstraintTeachersMaxSingleGapsInSelectedTimeSlots = {
+            Weight_Percentage: 100,
+            Max_Single_Gaps: jsonData.ConstraintTeachersMaxSingleGapsInSelectedTimeSlots.Max_Single_Gaps,
+            Selected_Time_Slot: Selected_Time_Slots.map(bt => bt.Selected_Time_Slot),
+            Active: 'true',
+            Comments: ''
+        };
+    }
     fetData.fet.Time_Constraints_List = timeConstraints;
+    const spaceConstraints = {
+        ConstraintBasicCompulsorySpace: {
+            Weight_Percentage: 100,
+            Active: 'true',
+            Comments: '',
+        }
+    };
+    if (jsonData.ConstraintSubjectPreferredRooms.length) {
+        spaceConstraints.ConstraintSubjectPreferredRooms = jsonData.ConstraintSubjectPreferredRooms.map(item => {
+            const Preferred_Rooms = item.Preferred_Room.map(item2 => {
+                return {
+                    Preferred_Room: item2.Preferred_Room
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Subject: item.Subject,
+                Number_of_Preferred_Rooms: item.Preferred_Room.Number_of_Preferred_Rooms,
+                Preferred_Room: Preferred_Rooms.map(bt => bt.Preferred_Room),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintActivityTagPreferredRooms.length) {
+        spaceConstraints.ConstraintActivityTagPreferredRooms = jsonData.ConstraintActivityTagPreferredRooms.map(item => {
+            const Preferred_Rooms = item.Preferred_Room.map(item2 => {
+                return {
+                    Preferred_Room: item2.Preferred_Room
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Activity_Tag: item.Activity_Tag,
+                Number_of_Preferred_Rooms: item.Preferred_Room.Number_of_Preferred_Rooms,
+                Preferred_Room: Preferred_Rooms.map(bt => bt.Preferred_Room),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintSubjectActivityTagPreferredRooms.length) {
+        spaceConstraints.ConstraintSubjectActivityTagPreferredRooms = jsonData.ConstraintSubjectActivityTagPreferredRooms.map(item => {
+            const Preferred_Rooms = item.Preferred_Room.map(item2 => {
+                return {
+                    Preferred_Room: item2.Preferred_Room
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Activity_Tag: item.Activity_Tag,
+                Subject: item.Subject,
+                Number_of_Preferred_Rooms: item.Preferred_Room.Number_of_Preferred_Rooms,
+                Preferred_Room: Preferred_Rooms.map(bt => bt.Preferred_Room),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintRoomNotAvailableTimes.length) {
+        spaceConstraints.ConstraintRoomNotAvailableTimes = jsonData.ConstraintRoomNotAvailableTimes.map(item => {
+            const Not_Available_Times = item.Not_Available_Time.map(item2 => {
+                return {
+                    Not_Available_Time: {
+                        Day: item2.Day,
+                        Hour: item2.Hour
+                    }
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Room: item.Room,
+                Number_of_Not_Available_Times: item.Not_Available_Time.length,
+                Selected_Time_Slot: Not_Available_Times.map(bt => bt.Not_Available_Time),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintTeacherRoomNotAvailableTimes.length) {
+        spaceConstraints.ConstraintTeacherRoomNotAvailableTimes = jsonData.ConstraintTeacherRoomNotAvailableTimes.map(item => {
+            const Not_Available_Times = item.Not_Available_Time.map(item2 => {
+                return {
+                    Not_Available_Time: {
+                        Day: item2.Day,
+                        Hour: item2.Hour
+                    }
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Teacher: item.Teacher,
+                Number_of_Not_Available_Times: item.Not_Available_Time.length,
+                Selected_Time_Slot: Not_Available_Times.map(bt => bt.Not_Available_Time),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintRoomMaxActivityTagsPerDayFromSet.length) {
+        spaceConstraints.ConstraintRoomMaxActivityTagsPerDayFromSet = jsonData.ConstraintRoomMaxActivityTagsPerDayFromSet.map(item => {
+            const Activity_Tags = item.Activity_Tag.map(item2 => {
+                return {
+                    Activity_Tag: item2.Activity_Tag
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Room: item.Room,
+                Maximum_Allowed_Activity_Tags: item.Maximum_Allowed_Activity_Tags,
+                Number_of_Activity_Tags: item.Activity_Tag.length,
+                Activity_Tag: Activity_Tags.map(bt => bt.Activity_Tag),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintRoomMaxActivityTagsPerWeekFromSet.length) {
+        spaceConstraints.ConstraintRoomMaxActivityTagsPerWeekFromSet = jsonData.ConstraintRoomMaxActivityTagsPerWeekFromSet.map(item => {
+            const Activity_Tags = item.Activity_Tag.map(item2 => {
+                return {
+                    Activity_Tag: item2.Activity_Tag
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Room: item.Room,
+                Maximum_Allowed_Activity_Tags: item.Maximum_Allowed_Activity_Tags,
+                Number_of_Activity_Tags: item.Activity_Tag.length,
+                Activity_Tag: Activity_Tags.map(bt => bt.Activity_Tag),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    fetData.fet.Space_Constraints_List = spaceConstraints;
 
     return js2xml(fetData, { compact: true, spaces: 4, fullTagEmptyElement: true });
 }

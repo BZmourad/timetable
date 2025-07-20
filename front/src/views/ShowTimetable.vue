@@ -10,6 +10,9 @@
                     <router-link to="/" class="btn btn-white me-2">
                         <i class="fas fa-arrow-left me-1"></i>Retour
                     </router-link>
+                    <button @click="actualiser" class="btn btn-warning">
+                        <i class="fas fa-arrows-rotate me-1"></i> Actualiser
+                    </button>
                     <router-link :to="'/edit/' + id" class="btn btn-primary">
                         <i class="fas fa-edit me-1"></i> Modifier
                     </router-link>
@@ -155,6 +158,9 @@ export default {
         }
     },
     methods: {
+        actualiser() {
+            this.generateTimetable();
+        },
         async loadTimetableData() {
             this.loading = true;
             this.error = null;

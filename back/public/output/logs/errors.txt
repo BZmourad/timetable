@@ -1,4 +1,0 @@
-﻿Titre : FET Avertissement
-Message : Impossible de lire le fichier - erreur d'analyse XML à la ligne 368, colonne 76 :
-Le nombre de codes activité autorisés maximum dans une contrainte enseignant limite codes activité par jour depuis le jeu devrait être 1 ou 2
-

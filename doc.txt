@@ -2,7 +2,6 @@ fet-cl --inputfile="C:\laragon\www\timetable\input\test01.fet" --outputdir="C:\l
 
 
 ## Tous les enseignants (1)
-Temps non disponibles pour tous les enseignants
 Limite jours par semaine pour les enseignants
 Jours minimum par semaine pour les enseignants
 Tous les enseignants ne doivent pas travailler deux jours consécutifs

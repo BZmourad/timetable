@@ -1,0 +1,29 @@
+<template>
+    <div class="row p-1 mb-2" >
+        <div class="col-4">
+            <label class="form-label"><input type="checkbox" v-model="formData.ConstraintTeachersActivityTagMaxHoursDaily.Active"> Active</label>
+        </div>
+        <div class="col-4" v-if="formData.ConstraintTeachersActivityTagMaxHoursDaily.Active">
+            <label class="form-label">Amplitude maximale par jour :</label>
+            <input type="number" min="0" class="form-control" v-model="formData.ConstraintTeachersActivityTagMaxHoursDaily.Maximum_Hours_Daily">
+        </div>
+        <div class="col-4" v-if="formData.ConstraintTeachersActivityTagMaxHoursDaily.Active">
+            <label class="form-label">Balise :</label>
+            <select class="form-control" v-model="formData.ConstraintTeachersActivityTagMaxHoursDaily.Activity_Tag">
+                <option v-for="balise in formData.balises.filter(balise => balise.name !== '')" :key="balise.name" :value="balise.name">{{ balise.name }}</option>
+            </select>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    name: 'ConstraintTeachersActivityTagMaxHoursDaily',
+    props: {
+        formData: {
+            type: Object,
+            required: true
+        }
+    }
+}
+</script>

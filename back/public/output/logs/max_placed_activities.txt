@@ -1,2 +1,4 @@
 ﻿C'est la liste des activités placées au maximum, chronologiquement. Si FET peut atteindre au maximum la n-ième activité, regardez le n+1-ième activité dans l'ordre initial des activités
 
+À 0 h 0 m 0 s ,FET a atteint 1 activités placées
+À 0 h 0 m 0 s ,FET a atteint 2 activités placées

@@ -2,7 +2,7 @@
     <form @submit.prevent="validateAndSubmit">
         <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
             <div class="container-fluid">
-                <h2 class="navbar-brand text-white" ><i class="fas fa-calendar-plus me-2"></i>{{ isEditMode ? 'Modifier' : 'Créer' }} un nouvel emploi du temps</h2>
+                <h2 class="navbar-brand text-white"><i class="fas fa-calendar-plus me-2"></i>{{ isEditMode ? 'Modifier' : 'Créer' }} un nouvel emploi du temps</h2>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -14,7 +14,7 @@
                         <router-link :to="'/show/' + timetableId" class="btn btn-info me-2" v-if="isEditMode">
                             <i class="fas fa-eye me-1"></i> Voir
                         </router-link>
-                        <button type="button" class="btn btn-success" @click="validateAndSubmit">
+                        <button type="button" class="btn btn-success" @click="validateAndSubmit" v-if="currentStep === steps.length - 1">
                             <i class="fas fa-save me-1"></i>Soumettre
                         </button>
                     </div>
@@ -30,55 +30,71 @@
             </div>
             <div class="card">
                 <div class="card-body">
-                    <div class="row">
-                        <!-- Colonne pour les onglets verticaux -->
-                        <div class="col-md-4 col-lg-2">
-                            <div class="nav flex-column nav-pills" id="v-tabs-tab" role="tablist" aria-orientation="vertical">
-                                <button v-for="tab in tabs" 
-                                        :key="tab.id" 
-                                        class="nav-link text-start mb-2" 
-                                        :class="{ active: activeTab === tab.id }" 
-                                        :id="`v-${tab.id}-tab`" 
-                                        data-bs-toggle="pill" 
-                                        :data-bs-target="`#v-${tab.id}`" 
-                                        type="button" 
-                                        role="tab" 
-                                        @click="activeTab = tab.id">
-                                    <i :class="tab.icon + ' me-1'"></i> {{ tab.label }}
-                                </button>
+                    <!-- Navigation buttons -->
+                    <div class="d-flex justify-content-between mb-3">
+                        <button type="button" class="btn btn-secondary" 
+                                @click="prevStep" :disabled="currentStep === 0">
+                            <i class="fas fa-arrow-left me-1"></i> Précédent
+                        </button>
+                        <button type="button" class="btn btn-primary" 
+                                @click="nextStep" v-if="currentStep < steps.length - 1">
+                            Suivant <i class="fas fa-arrow-right ms-1"></i>
+                        </button>
+                        <button type="button" class="btn btn-success" 
+                                @click="validateAndSubmit" v-if="currentStep === steps.length - 1">
+                            <i class="fas fa-save me-1"></i> Soumettre
+                        </button>
+                    </div>
+
+                    <!-- Stepper -->
+                    <div class="stepper-wrapper mb-4">
+                        <div class="stepper-item" v-for="(step, index) in steps" :key="step.id" 
+                             :class="{ active: currentStep === index, completed: currentStep > index }"
+                             @click="goToStep(index)">
+                            <div class="step-counter">
+                                <i :class="step.icon"></i>
                             </div>
+                            <div class="step-name">{{ step.label }}</div>
                         </div>
-                        
-                        <!-- Colonne pour le contenu des onglets -->
-                        <div class="col-md-8 col-lg-10">
-                            <div class="tab-content" id="v-tabs-tabContent">
-                                <div class="tab-pane fade" :class="{ 'show active': activeTab === 'base' }" id="v-base" role="tabpanel">
-                                    <BasicInfoTab :formData="formData" :errors="errors" :daysOfWeek="daysOfWeek" @add-period="addPeriod" @remove-period="removePeriod" />
-                                </div>
-                                <div class="tab-pane fade" :class="{ 'show active': activeTab === 'subjects' }" id="v-subjects" role="tabpanel">
-                                    <SubjectsTab :subjects="formData.subjects" :errors="errors" @add-subject="addSubject" @remove-subject="removeSubject" />
-                                </div>
-                                <div class="tab-pane fade" :class="{ 'show active': activeTab === 'teachers' }" id="v-teachers" role="tabpanel">
-                                    <TeachersTab :teachers="formData.teachers" :subjects="formData.subjects" :errors="errors" @add-teacher="addTeacher" @remove-teacher="removeTeacher" @update-qualified-subjects="updateQualifiedSubjects" />
-                                </div>
-                                <div class="tab-pane fade" :class="{ 'show active': activeTab === 'students' }" id="v-students" role="tabpanel">
-                                    <StudentsTab :students="formData.students" :errors="errors" @add-student="addStudent" @remove-student="removeStudent" />
-                                </div>
-                                <div class="tab-pane fade" :class="{ 'show active': activeTab === 'rooms' }" id="v-rooms" role="tabpanel">
-                                    <RoomsTab :rooms="formData.rooms" :errors="errors" @add-room="addRoom" @remove-room="removeRoom" />
-                                </div>
-                                <div class="tab-pane fade" :class="{ 'show active': activeTab === 'balises' }" id="v-balises" role="tabpanel">
-                                    <BalisesTab :balises="formData.balises" :errors="errors" @add-balise="addBalise" @remove-balise="removeBalise" />
-                                </div>
-                                <div class="tab-pane fade" :class="{ 'show active': activeTab === 'activities' }" id="v-activities" role="tabpanel">
-                                    <ActivitiesTab 
-                                        :activities="formData.activities" :subjects="formData.subjects" :teachers="formData.teachers" :balises="formData.balises" :students="formData.students" :errors="errors"
-                                        @add-activity="addActivity" @remove-activity="removeActivity" @add-duration="addDuration" @remove-duration="removeDuration" />
-                                </div>
-                                <div class="tab-pane fade" :class="{ 'show active': activeTab === 'contraintes' }" id="v-contraintes" role="tabpanel">
-                                    <ContraintesTab :formData="formData" />
-                                </div>
-                            </div>
+                    </div>
+                    
+                    <!-- Step content -->
+                    <div class="step-content">
+                        <div v-show="currentStep === 0">
+                            <BasicInfoTab :formData="formData" :errors="errors" :daysOfWeek="daysOfWeek" 
+                                         @add-period="addPeriod" @remove-period="removePeriod" />
+                        </div>
+                        <div v-show="currentStep === 1">
+                            <SubjectsTab :subjects="formData.subjects" :errors="errors" 
+                                         @add-subject="addSubject" @remove-subject="removeSubject" />
+                        </div>
+                        <div v-show="currentStep === 2">
+                            <TeachersTab :teachers="formData.teachers" :subjects="formData.subjects" :errors="errors" 
+                                         @add-teacher="addTeacher" @remove-teacher="removeTeacher" 
+                                         @update-qualified-subjects="updateQualifiedSubjects" />
+                        </div>
+                        <div v-show="currentStep === 3">
+                            <StudentsTab :students="formData.students" :errors="errors" 
+                                        @add-student="addStudent" @remove-student="removeStudent" />
+                        </div>
+                        <div v-show="currentStep === 4">
+                            <RoomsTab :rooms="formData.rooms" :errors="errors" 
+                                       @add-room="addRoom" @remove-room="removeRoom" />
+                        </div>
+                        <div v-show="currentStep === 5">
+                            <BalisesTab :balises="formData.balises" :errors="errors" 
+                                        @add-balise="addBalise" @remove-balise="removeBalise" />
+                        </div>
+                        <div v-show="currentStep === 6">
+                            <ActivitiesTab 
+                                :activities="formData.activities" :subjects="formData.subjects" 
+                                :teachers="formData.teachers" :balises="formData.balises" 
+                                :students="formData.students" :errors="errors"
+                                @add-activity="addActivity" @remove-activity="removeActivity" 
+                                @add-duration="addDuration" @remove-duration="removeDuration" />
+                        </div>
+                        <div v-show="currentStep === 7">
+                            <ContraintesTab :formData="formData" />
                         </div>
                     </div>
                 </div>
@@ -96,7 +112,6 @@ import RoomsTab from '@/components/timetable/RoomsTab.vue';
 import BalisesTab from '@/components/timetable/BalisesTab.vue';
 import ActivitiesTab from '@/components/timetable/ActivitiesTab.vue';
 import ContraintesTab from '@/components/timetable/ContraintesTab.vue';
-
 import axios from 'axios';
 import toastr from 'toastr';
 import $ from 'jquery';
@@ -124,8 +139,8 @@ export default {
         return {
             isEditMode: false,
             isLoaded: false,
-            activeTab: 'base',
-            tabs: [
+            currentStep: 0,
+            steps: [
                 { id: 'base', label: 'Informations de base', icon: 'fas fa-info-circle' },
                 { id: 'subjects', label: 'Matières', icon: 'fas fa-book' },
                 { id: 'teachers', label: 'Enseignants', icon: 'fas fa-chalkboard-teacher' },
@@ -208,6 +223,70 @@ export default {
                 ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags: [],
                 ConstraintTeacherIntervalMaxDaysPerWeek: [],
                 ConstraintTeacherMinRestingHours: [],
+                ConstraintTeachersMaxDaysPerWeek: {
+                    Active: 0,
+                    Max_Days_Per_Week: 0
+                },
+                ConstraintTeachersMinDaysPerWeek: {
+                    Active: 0,
+                    Minimum_Days_Per_Week: 0
+                },
+                ConstraintTeachersNoTwoConsecutiveDays: {
+                    Active: 0
+                },
+                ConstraintTeachersMaxGapsPerDay: {
+                    Active: 0,
+                    Max_Gaps: 0
+                },
+                ConstraintTeachersMaxGapsPerWeek: {
+                    Active: 0,
+                    Max_Gaps: 0
+                },
+                ConstraintTeachersMaxSingleGapsInSelectedTimeSlots: {
+                    Active: 0,
+                    Max_Single_Gaps: 0,
+                    Selected_Time_Slot: [{
+                        Day: '',
+                        Hour: ''
+                    }]
+                },
+                ConstraintTeachersMaxHoursDaily: {
+                    Active: 0,
+                    Maximum_Hours_Daily: 0
+                },
+                ConstraintTeachersMaxHoursDailyInInterval: {
+                    Active: 0,
+                    Maximum_Hours_Daily: 0,
+                    Interval_Start_Hour: '',
+                    Interval_End_Hour: ''
+                },
+                ConstraintTeachersPairOfMutuallyExclusiveTimeSlots: {
+                    First_Time_Slot: {
+                        Day: '',
+                        Hour: ''
+                    },
+                    Second_Time_Slot: {
+                        Day: '',
+                        Hour: ''
+                    }
+                },
+                ConstraintTeachersMaxSpanPerDay: {
+                    Active: 0,
+                    Max_Span: 0,
+                    Allow_One_Day_Exception_of_Plus_One: 0
+                },
+                ConstraintTeachersActivityTagMaxHoursDaily: {
+                    Active: 0,
+                    Maximum_Hours_Daily: 0,
+                    Activity_Tag: ''
+                },
+                ConstraintSubjectPreferredRooms: [],
+                ConstraintActivityTagPreferredRooms: [],
+                ConstraintSubjectActivityTagPreferredRooms: [],
+                ConstraintRoomNotAvailableTimes: [],
+                ConstraintTeacherRoomNotAvailableTimes: [],
+                ConstraintRoomMaxActivityTagsPerDayFromSet: [],
+                ConstraintRoomMaxActivityTagsPerWeekFromSet: [],
             },
             errors: {},
             submitted: false,
@@ -221,7 +300,6 @@ export default {
         }
     },
     mounted() {
-        //this.initSelect2();
         toastr.options = {
             closeButton: true,
             progressBar: true,
@@ -229,32 +307,18 @@ export default {
             timeOut: 3000
         };
     },
-    updated() {
-        /*this.$nextTick(() => {
-            this.initSelect2();
-        });*/
-    },
     methods: {
         async loadTimetableData() {
             try {
                 const response = await axios.get(`${process.env.VUE_APP_API_BASE_URL}/timetables/${this.timetableId}`);
                 this.formData = response.data.data;
                 this.isLoaded = true;
-                /*this.$nextTick(() => {
-                    this.initSelect2();
-                });*/
             } catch (error) {
                 console.error('Erreur:', error);
                 toastr.error("Erreur lors du chargement des données");
                 this.$router.push('/');
             }
         },
-        /*initSelect2() {
-            $('.qualified-subjects-select').select2({
-                placeholder: "Sélectionnez des matières",
-                allowClear: true
-            });
-        },*/
         updateQualifiedSubjects(index, event) {
             this.formData.teachers[index].qualifiedSubjects = $(event.target).val();
         },
@@ -298,9 +362,6 @@ export default {
                 qualifiedSubjects: [],
                 comments: ''
             });
-            /*this.$nextTick(() => {
-                this.initSelect2();
-            });*/
         },
         removeTeacher(index) {
             if (this.formData.teachers.length > 1) {
@@ -389,130 +450,150 @@ export default {
                 this.formData.activities[activityIndex].durations.splice(durationIndex, 1);
             }
         },
-        validateForm() {
+        prevStep() {
+            if (this.currentStep > 0) {
+                this.currentStep--;
+            }
+        },
+        nextStep() {
+            if (this.validateCurrentStep()) {
+                this.currentStep++;
+            }
+        },
+        goToStep(index) {
+            if (index < this.currentStep) {
+                this.currentStep = index;
+            } else {
+                // Pour aller à une étape suivante, on valide d'abord l'étape courante
+                if (this.validateCurrentStep()) {
+                    this.currentStep = index;
+                }
+            }
+        },
+        validateCurrentStep() {
             this.errors = {};
             let isValid = true;
             let errorMessages = [];
-            
-            // Validation des champs obligatoires
-            if (!this.formData.institutionName.trim()) {
-                this.errors.institutionName = true;
-                errorMessages.push("- Le nom de l'institution est obligatoire");
-                isValid = false;
-            }
-            
-            if (this.formData.selectedDays.length === 0) {
-                this.errors.selectedDays = true;
-                errorMessages.push("- Vous devez sélectionner au moins un jour d'ouverture");
-                isValid = false;
-            }
-            
-            // Validation des périodes
-            this.errors.periods = {};
-            this.formData.periods.forEach((period, index) => {
-                if (!period.name.trim()) {
-                    this.errors.periods[index] = true;
-                    errorMessages.push(`- Le nom de la période ${index + 1} est obligatoire`);
-                    isValid = false;
-                }
-            });
-            
-            // Validation des matières
-            this.errors.subjects = {};
-            this.formData.subjects.forEach((subject, index) => {
-                if (!subject.name.trim()) {
-                    this.errors.subjects[index] = true;
-                    errorMessages.push(`- Le nom de la matière ${index + 1} est obligatoire`);
-                    isValid = false;
-                }
-            });
-            
-            // Validation des enseignants
-            this.errors.teachers = {};
-            this.formData.teachers.forEach((teacher, index) => {
-                if (!teacher.name.trim()) {
-                    this.errors.teachers[index] = true;
-                    errorMessages.push(`- Le nom de l'enseignant ${index + 1} est obligatoire`);
-                    isValid = false;
-                }
-            });
-            
-            // Validation des apprenants
-            this.errors.students = {};
-            this.formData.students.forEach((student, index) => {
-                if (!student.name.trim()) {
-                    this.errors.students[index] = true;
-                    errorMessages.push(`- Le nom du groupe d'apprenants ${index + 1} est obligatoire`);
-                    isValid = false;
-                }
-            });
-            
-            // Validation des salles
-            this.errors.rooms = {};
-            this.formData.rooms.forEach((room, index) => {
-                if (!room.name.trim()) {
-                    this.errors.rooms[index] = true;
-                    errorMessages.push(`- Le nom de la salle ${index + 1} est obligatoire`);
-                    isValid = false;
-                }
-            });
-            
-            // Validation des activités
-            this.errors.activities = {};
-            this.formData.activities.forEach((activity, index) => {
-                this.errors.activities[index] = {};
-                let hasError = false;
-                
-                if (!activity.subject) {
-                    this.errors.activities[index].subject = true;
-                    errorMessages.push(`- La matière de l'activité ${index + 1} est obligatoire`);
-                    hasError = true;
-                }
-                
-                if (!activity.student) {
-                    this.errors.activities[index].student = true;
-                    errorMessages.push(`- Le groupe d'apprenants de l'activité ${index + 1} est obligatoire`);
-                    hasError = true;
-                }
-                
-                if (!activity.teacher) {
-                    this.errors.activities[index].teacher = true;
-                    errorMessages.push(`- L'enseignant de l'activité ${index + 1} est obligatoire`);
-                    hasError = true;
-                }
-                
-                this.errors.activities[index].durations = [];
-                activity.durations.forEach((duration, durIndex) => {
-                    if (!duration || duration <= 0) {
-                        this.errors.activities[index].durations[durIndex] = true;
-                        errorMessages.push(`- La durée ${durIndex + 1} de l'activité ${index + 1} doit être un nombre positif`);
-                        hasError = true;
+
+            switch (this.currentStep) {
+                case 0: // Informations de base
+                    if (!this.formData.institutionName.trim()) {
+                        this.errors.institutionName = true;
+                        errorMessages.push("- Le nom de l'institution est obligatoire");
+                        isValid = false;
                     }
-                });
+                    if (this.formData.selectedDays.length === 0) {
+                        this.errors.selectedDays = true;
+                        errorMessages.push("- Vous devez sélectionner au moins un jour d'ouverture");
+                        isValid = false;
+                    }
+                    this.errors.periods = {};
+                    this.formData.periods.forEach((period, index) => {
+                        if (!period.name.trim()) {
+                            this.errors.periods[index] = true;
+                            errorMessages.push(`- Le nom de la période ${index + 1} est obligatoire`);
+                            isValid = false;
+                        }
+                    });
+                    break;
                 
-                if (hasError) {
-                    isValid = false;
-                }
-            });
-            
+                case 1: // Matières
+                    this.errors.subjects = {};
+                    this.formData.subjects.forEach((subject, index) => {
+                        if (!subject.name.trim()) {
+                            this.errors.subjects[index] = true;
+                            errorMessages.push(`- Le nom de la matière ${index + 1} est obligatoire`);
+                            isValid = false;
+                        }
+                    });
+                    break;
+                
+                case 2: // Enseignants
+                    this.errors.teachers = {};
+                    this.formData.teachers.forEach((teacher, index) => {
+                        if (!teacher.name.trim()) {
+                            this.errors.teachers[index] = true;
+                            errorMessages.push(`- Le nom de l'enseignant ${index + 1} est obligatoire`);
+                            isValid = false;
+                        }
+                    });
+                    break;
+                
+                case 3: // Apprenants
+                    this.errors.students = {};
+                    this.formData.students.forEach((student, index) => {
+                        if (!student.name.trim()) {
+                            this.errors.students[index] = true;
+                            errorMessages.push(`- Le nom du groupe d'apprenants ${index + 1} est obligatoire`);
+                            isValid = false;
+                        }
+                    });
+                    break;
+                
+                case 4: // Salles
+                    this.errors.rooms = {};
+                    this.formData.rooms.forEach((room, index) => {
+                        if (!room.name.trim()) {
+                            this.errors.rooms[index] = true;
+                            errorMessages.push(`- Le nom de la salle ${index + 1} est obligatoire`);
+                            isValid = false;
+                        }
+                    });
+                    break;
+                
+                case 6: // Activités
+                    this.errors.activities = {};
+                    this.formData.activities.forEach((activity, index) => {
+                        this.errors.activities[index] = {};
+                        let hasError = false;
+                        if (!activity.subject) {
+                            this.errors.activities[index].subject = true;
+                            errorMessages.push(`- La matière de l'activité ${index + 1} est obligatoire`);
+                            hasError = true;
+                        }
+                        if (!activity.student) {
+                            this.errors.activities[index].student = true;
+                            errorMessages.push(`- Le groupe d'apprenants de l'activité ${index + 1} est obligatoire`);
+                            hasError = true;
+                        }
+                        if (!activity.teacher) {
+                            this.errors.activities[index].teacher = true;
+                            errorMessages.push(`- L'enseignant de l'activité ${index + 1} est obligatoire`);
+                            hasError = true;
+                        }
+                        this.errors.activities[index].durations = [];
+                        activity.durations.forEach((duration, durIndex) => {
+                            if (!duration || duration <= 0) {
+                                this.errors.activities[index].durations[durIndex] = true;
+                                errorMessages.push(`- La durée ${durIndex + 1} de l'activité ${index + 1} doit être un nombre positif`);
+                                hasError = true;
+                            }
+                        });
+                        if (hasError) {
+                            isValid = false;
+                        }
+                    });
+                    break;
+            }
+
             if (!isValid) {
                 toastr.error(errorMessages.join('<br>'));
-            }
-            
-            return isValid;
-        },
-        validateAndSubmit() {
-            this.loading = true;
-            if (this.validateForm()) {
-                this.submitForm();
-            } else {
-                this.loading = false;
                 this.$nextTick(() => {
                     const firstError = document.querySelector('.is-invalid');
                     if (firstError) {
                         firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     }
                 });
+            }
+
+            return isValid;
+        },
+        validateAndSubmit() {
+            this.loading = true;
+            if (this.validateCurrentStep()) {
+                this.submitForm();
+            } else {
+                this.loading = false;
             }
         },
         async submitForm() {
@@ -547,6 +628,7 @@ export default {
 
 <style scoped>
 @import 'https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css';
+
 .loading-overlay {
     position: fixed;
     top: 0;
@@ -565,5 +647,82 @@ export default {
     margin-top: 1rem;
     font-size: 1.2rem;
     color: #333;
+}
+
+/* Stepper styles */
+.stepper-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.stepper-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    cursor: pointer;
+}
+
+.stepper-item::before {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid #ccc;
+    width: 100%;
+    top: 20px;
+    left: -50%;
+    z-index: 2;
+}
+
+.stepper-item::after {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid #ccc;
+    width: 100%;
+    top: 20px;
+    left: 50%;
+    z-index: 2;
+}
+
+.stepper-item .step-counter {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ccc;
+    margin-bottom: 6px;
+    color: white;
+}
+
+.stepper-item.active .step-counter {
+    background: #0d6efd;
+}
+
+.stepper-item.completed .step-counter {
+    background: #198754;
+}
+
+.stepper-item:first-child::before,
+.stepper-item:last-child::after {
+    content: none;
+}
+
+.step-name {
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Step content */
+.step-content {
+    min-height: 300px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 </style>

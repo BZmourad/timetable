@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Activities_Timetable>
+  <Activity>
+    <Id>1</Id>
+    <Day>Lundi</Day>
+    <Hour>p1</Hour>
+    <Room></Room>
+  </Activity>
+  <Activity>
+    <Id>2</Id>
+    <Day>Lundi</Day>
+    <Hour>p1</Hour>
+    <Room></Room>
+  </Activity>
+</Activities_Timetable>

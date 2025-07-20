@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Teachers_Timetable>
+  <Teacher name="fdgdfgdfgdf">
+    <Day name="Lundi">
+      <Hour name="p1">
+      </Hour>
+      <Hour name="p2">
+      </Hour>
+    </Day>
+    <Day name="Mardi">
+      <Hour name="p1">
+      </Hour>
+      <Hour name="p2">
+      </Hour>
+    </Day>
+    <Day name="Mercredi">
+      <Hour name="p1">
+        <Activity id="1"></Activity>
+        <Subject name="ergerger"></Subject>
+        <Students name="ergerg"></Students>
+      </Hour>
+      <Hour name="p2">
+      </Hour>
+    </Day>
+  </Teacher>
+  <Teacher name="dfbdbfb">
+    <Day name="Lundi">
+      <Hour name="p1">
+      </Hour>
+      <Hour name="p2">
+      </Hour>
+    </Day>
+    <Day name="Mardi">
+      <Hour name="p1">
+        <Activity id="2"></Activity>
+        <Subject name="ergerg"></Subject>
+        <Students name="rrrrr"></Students>
+      </Hour>
+      <Hour name="p2">
+        <Activity id="2"></Activity>
+        <Subject name="ergerg"></Subject>
+        <Students name="rrrrr"></Students>
+      </Hour>
+    </Day>
+    <Day name="Mercredi">
+      <Hour name="p1">
+      </Hour>
+      <Hour name="p2">
+      </Hour>
+    </Day>
+  </Teacher>
+</Teachers_Timetable>

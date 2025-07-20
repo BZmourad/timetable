@@ -104,7 +104,7 @@
       ]
     }
   ],
-  "ConstraintBreakTimes":[],
+  "ConstraintBreakTimes": [],
   "ConstraintTeacherNotAvailableTimes": [],
   "ConstraintTeacherMaxDaysPerWeek": [],
   "ConstraintTeacherMinDaysPerWeek": [],
@@ -116,5 +116,80 @@
   "ConstraintTeacherMaxHoursDaily": [],
   "ConstraintTeacherPairOfMutuallyExclusiveTimeSlots": [],
   "ConstraintTeacherMaxSpanPerDay": [],
-  "ConstraintTeacherActivityTagMaxHoursDaily": []
+  "ConstraintTeacherActivityTagMaxHoursDaily": [],
+  "ConstraintTeacherMaxActivityTagsPerDayFromSet": [],
+  "ConstraintTeacherMinHoursDaily": [],
+  "ConstraintTeacherActivityTagMinHoursDaily": [],
+  "ConstraintTeacherMaxHoursContinuously": [],
+  "ConstraintTeacherActivityTagMaxHoursContinuously": [],
+  "ConstraintTeacherMinGapsBetweenActivityTag": [],
+  "ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags": [],
+  "ConstraintTeacherIntervalMaxDaysPerWeek": [],
+  "ConstraintTeacherMinRestingHours": [],
+  "ConstraintTeachersMaxDaysPerWeek": {
+    "Active": 0,
+    "Max_Days_Per_Week": 0
+  },
+  "ConstraintTeachersMinDaysPerWeek": {
+    "Active": 0,
+    "Minimum_Days_Per_Week": 0
+  },
+  "ConstraintTeachersNoTwoConsecutiveDays": {
+    "Active": 0
+  },
+  "ConstraintTeachersMaxGapsPerDay": {
+    "Active": 0,
+    "Max_Gaps": 0
+  },
+  "ConstraintTeachersMaxGapsPerWeek": {
+    "Active": 0,
+    "Max_Gaps": 0
+  },
+  "ConstraintTeachersMaxSingleGapsInSelectedTimeSlots": {
+    "Active": 0,
+    "Max_Single_Gaps": 0,
+    "Selected_Time_Slot": [
+      {
+        "Day": "",
+        "Hour": ""
+      }
+    ]
+  },
+  "ConstraintTeachersMaxHoursDaily": {
+    "Active": 0,
+    "Maximum_Hours_Daily": 0
+  },
+  "ConstraintTeachersMaxHoursDailyInInterval": {
+    "Active": 0,
+    "Maximum_Hours_Daily": 0,
+    "Interval_Start_Hour": "",
+    "Interval_End_Hour": ""
+  },
+  "ConstraintTeachersPairOfMutuallyExclusiveTimeSlots": {
+    "First_Time_Slot": {
+      "Day": "",
+      "Hour": ""
+    },
+    "Second_Time_Slot": {
+      "Day": "",
+      "Hour": ""
+    }
+  },
+  "ConstraintTeachersMaxSpanPerDay": {
+    "Active": 0,
+    "Max_Span": 0,
+    "Allow_One_Day_Exception_of_Plus_One": 0
+  },
+  "ConstraintTeachersActivityTagMaxHoursDaily": {
+    "Active": 0,
+    "Maximum_Hours_Daily": 0,
+    "Activity_Tag": ""
+  },
+  "ConstraintSubjectPreferredRooms": [],
+  "ConstraintActivityTagPreferredRooms": [],
+  "ConstraintSubjectActivityTagPreferredRooms": [],
+  "ConstraintRoomNotAvailableTimes": [],
+  "ConstraintTeacherRoomNotAvailableTimes": [],
+  "ConstraintRoomMaxActivityTagsPerDayFromSet": [],
+  "ConstraintRoomMaxActivityTagsPerWeekFromSet": []
 }
