@@ -1,22 +1,7 @@
 fet-cl --inputfile="C:\laragon\www\timetable\input\test01.fet" --outputdir="C:\laragon\www\timetable\output" --htmllevel=7 --language=fr
 
 
-## Tous les enseignants (1)
-Limite jours par semaine pour les enseignants
-Jours minimum par semaine pour les enseignants
-Tous les enseignants ne doivent pas travailler deux jours consécutifs
-Limite vides quotidiens pour les enseignants
-Limite vides par semaine pour les enseignants
-Limite vide unique dans les créneaux horaires sélectionnés pour tous les enseignants
-Limite heures quotidiennes pour les enseignants
-Limite heures quotidiennes dans un intervalle horaire pour tous les enseignants
-Tous les enseignants ont une paire de créneaux horaires mutuellement exclusifs
-Limite amplitude quotidienne pour tous les enseignants
-Limite heures quotidiennes avec un code activité pour les enseignants
 
-
-
-## Tous les enseignants (2)
 Limite codes activité depuis un jeu par jour pour tous les enseignants
 Heures minimum quotidiennes pour les enseignants
 Minimum heures quotidiennes avec un code activité pour les enseignants
@@ -26,3 +11,46 @@ Vides minimum entre un code activité pour tous les enseignants
 Vides minimum entre un couple ordonné de codes activité pour tous les enseignants
 Tous les enseignants travaillent dans un intervalle horaire limite jours par semaine
 Heures de repos minimum pour tous les enseignants
+
+
+
+<ConstraintTeachersMaxActivityTagsPerDayFromSet>
+    <Maximum_Allowed_Activity_Tags>2</Maximum_Allowed_Activity_Tags>
+    <Number_of_Activity_Tags>2</Number_of_Activity_Tags>
+    <Activity_Tag>b1</Activity_Tag>
+    <Activity_Tag>b2</Activity_Tag>
+</ConstraintTeachersMaxActivityTagsPerDayFromSet>
+<ConstraintTeachersMinHoursDaily>
+    <Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+    <Allow_Empty_Days>true</Allow_Empty_Days>
+</ConstraintTeachersMinHoursDaily>
+<ConstraintTeachersActivityTagMinHoursDaily>
+    <Activity_Tag>b1</Activity_Tag>
+    <Minimum_Hours_Daily>1</Minimum_Hours_Daily>
+    <Minimum_Days_With_Tag>0</Minimum_Days_With_Tag>
+</ConstraintTeachersActivityTagMinHoursDaily>
+<ConstraintTeachersMaxHoursContinuously>
+    <Maximum_Hours_Continuously>2</Maximum_Hours_Continuously>
+</ConstraintTeachersMaxHoursContinuously>
+<ConstraintTeachersActivityTagMaxHoursContinuously>
+    <Activity_Tag>b1</Activity_Tag>
+    <Maximum_Hours_Continuously>2</Maximum_Hours_Continuously>
+</ConstraintTeachersActivityTagMaxHoursContinuously>
+<ConstraintTeachersMinGapsBetweenActivityTag>
+    <Activity_Tag>b1</Activity_Tag>
+    <MinGaps>1</MinGaps>
+</ConstraintTeachersMinGapsBetweenActivityTag>
+<ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags>
+    <First_Activity_Tag>b2</First_Activity_Tag>
+    <Second_Activity_Tag>b1</Second_Activity_Tag>
+    <MinGaps>1</MinGaps>
+</ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags>
+<ConstraintTeachersIntervalMaxDaysPerWeek>
+    <Interval_Start_Hour>H2</Interval_Start_Hour>
+    <Interval_End_Hour></Interval_End_Hour>
+    <Max_Days_Per_Week>3</Max_Days_Per_Week>
+</ConstraintTeachersIntervalMaxDaysPerWeek>
+<ConstraintTeachersMinRestingHours>
+    <Minimum_Resting_Hours>1</Minimum_Resting_Hours>
+    <Circular>true</Circular>
+</ConstraintTeachersMinRestingHours>

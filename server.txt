@@ -1,0 +1,49 @@
+ssh ubuntu@141.94.20.121
+password   :    j2508&ixYR3yz#Caat7
+
+ssh ubuntu@141.94.20.121
+
+sudo git clone https://github.com/BZmourad/timetable.git
+BZmourad
+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
+
+
+
+pm2 start npm --name "TimeTable" -- run start
+pm2 stop TimeTable
+
+********************************************************************************
+
+ssh ubuntu@141.94.20.121
+password   :    j2508&ixYR3yz#Caat7
+
+
+http://141.94.20.121:3000
+cd timetable
+pm2 start server.js --name timetable
+
+
+## Mettre à jour le projet
+ssh ubuntu@141.94.20.121
+password   :    j2508&ixYR3yz#Caat7
+cd timetable
+pm2 stop server.js
+cd ..
+rm -r timetable
+git clone https://BZmourad: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@github.com/BZmourad/timetable.git
+cd timetable
+rm -r fet-7.1.2
+cp -r /home/ubuntu/fet-7.1.2 /home/ubuntu/timetable
+nano .env
+mkdir timetables
+cd public
+mkdir timetables
+cd ..
+pm2 start server.js --name timetable
+http://141.94.20.121:3000
+
+
+
+scp ubuntu@141.94.20.121:/home/ubuntu/timetable/timetables/timetable_1744/876551019.fet "C:\FET\fet\fet-7.1.2\examples\TESTS"
+
+fet-cl --inputfile="C:\FET\fet\fet-7.1.2\examples\TESTS\timetable_1744876551019.fet" --outputdir="C:\FET\fet\fet-7.1.2\examples\TESTS\OUT" --language=fr

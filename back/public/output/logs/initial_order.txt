@@ -1,7 +1,0 @@
-﻿C'est l'ordre d'évaluation initial des activités calculé par FET. Si la génération se bloque après un certain nombre d'activités, merci de vérifier l'activité correspondant au numéro n + 1. Vous pourriez découvrir des erreurs dans votre saisie.
-
-L'ordre initial des activités (IDs) :
-
-No : 1, ID : 2, Durée : 2, Enseignants : dfbdbfb, Matière : ergerg, Balises : , Apprenants : rrrrr
-No : 2, ID : 1, Durée : 1, Enseignants : fdgdfgdfgdf, Matière : ergerger, Balises : , Apprenants : ergerg
-Fin - l'ordre des activités (IDs)

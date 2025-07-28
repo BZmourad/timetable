@@ -265,7 +265,7 @@ function convertToFetXml(jsonData) {
     var fetData = {
         _declaration: { _attributes: { version: '1.0', encoding: 'UTF-8' } },
         fet: {
-            _attributes: { version: '7.2.6' },
+            _attributes: { version: process.env.FET_VERSION },
             Mode: 'Official',
             Institution_Name: jsonData.institutionName || 'Institution par défaut',
             Comments: jsonData.institutionComment || 'Commentaire par défaut',
@@ -819,7 +819,7 @@ function convertToFetXml(jsonData) {
             return {
                 Weight_Percentage: 100,
                 Subject: item.Subject,
-                Number_of_Preferred_Rooms: item.Preferred_Room.Number_of_Preferred_Rooms,
+                Number_of_Preferred_Rooms: item.Preferred_Room.length,
                 Preferred_Room: Preferred_Rooms.map(bt => bt.Preferred_Room),
                 Active: 'true',
                 Comments: ''
@@ -836,7 +836,7 @@ function convertToFetXml(jsonData) {
             return {
                 Weight_Percentage: 100,
                 Activity_Tag: item.Activity_Tag,
-                Number_of_Preferred_Rooms: item.Preferred_Room.Number_of_Preferred_Rooms,
+                Number_of_Preferred_Rooms: item.Preferred_Room.length,
                 Preferred_Room: Preferred_Rooms.map(bt => bt.Preferred_Room),
                 Active: 'true',
                 Comments: ''
@@ -854,7 +854,7 @@ function convertToFetXml(jsonData) {
                 Weight_Percentage: 100,
                 Activity_Tag: item.Activity_Tag,
                 Subject: item.Subject,
-                Number_of_Preferred_Rooms: item.Preferred_Room.Number_of_Preferred_Rooms,
+                Number_of_Preferred_Rooms: item.Preferred_Room.length,
                 Preferred_Room: Preferred_Rooms.map(bt => bt.Preferred_Room),
                 Active: 'true',
                 Comments: ''
@@ -932,6 +932,51 @@ function convertToFetXml(jsonData) {
                 Maximum_Allowed_Activity_Tags: item.Maximum_Allowed_Activity_Tags,
                 Number_of_Activity_Tags: item.Activity_Tag.length,
                 Activity_Tag: Activity_Tags.map(bt => bt.Activity_Tag),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintActivityPreferredRooms.length) {
+        spaceConstraints.ConstraintActivityPreferredRooms = jsonData.ConstraintActivityPreferredRooms.map(item => {
+            const Preferred_Rooms = item.Preferred_Room.map(item2 => {
+                return {
+                    Preferred_Room: item2.Preferred_Room
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Activity_Id: getActivityId(jsonData.activities, item.Activity_Id),
+                Number_of_Preferred_Rooms: item.Preferred_Room.length,
+                Preferred_Room: Preferred_Rooms.map(bt => bt.Preferred_Room),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintActivitiesSameRoomIfConsecutive.length) {
+        spaceConstraints.ConstraintActivitiesSameRoomIfConsecutive = jsonData.ConstraintActivitiesSameRoomIfConsecutive.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Number_of_Activities: 1,
+                Activity_Id: getActivityId(jsonData.activities, item.Activity_Id),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintActivitiesOccupyMaxDifferentRooms.length) {
+        spaceConstraints.ConstraintActivitiesOccupyMaxDifferentRooms = jsonData.ConstraintActivitiesOccupyMaxDifferentRooms.map(item => {
+            const Activity_Ids = item.Activity.map(item2 => {
+                return {
+                    Activity_Id: getActivityId(jsonData.activities, item2.Activity_Id)
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Number_of_Activities: item.Activity.length,
+                Activity_Id: Activity_Ids.map(bt => bt.Activity_Id),
+                Max_Number_of_Different_Rooms: item.Max_Number_of_Different_Rooms,
                 Active: 'true',
                 Comments: ''
             };
@@ -1058,4 +1103,28 @@ exports.getTimetableTest = async (req, res) => {
 
 function escapeRegExp(string) {
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function getActivityId(activities, id) {
+    let activityId = 1;
+    activities.forEach((activity, index) => {
+        if (activity.durations.length > 1) {
+            let firstId = 0;
+            if (id == index) {
+                return activityId;
+            }
+            activity.durations.forEach((duration, i) => {
+                if (i == 0) {
+                    firstId = activityId;
+                }
+                activityId++;
+            });
+        } else {
+            if (id == index) {
+                return activityId;
+            }
+            activityId++;
+        }
+    });
+    return 0;
 }

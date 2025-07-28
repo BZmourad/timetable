@@ -206,5 +206,8 @@
   "ConstraintRoomNotAvailableTimes": [],
   "ConstraintTeacherRoomNotAvailableTimes": [],
   "ConstraintRoomMaxActivityTagsPerDayFromSet": [],
-  "ConstraintRoomMaxActivityTagsPerWeekFromSet": []
+  "ConstraintRoomMaxActivityTagsPerWeekFromSet": [],
+  "ConstraintActivityPreferredRooms":[],
+  "ConstraintActivitiesSameRoomIfConsecutive":[],
+  "ConstraintActivitiesOccupyMaxDifferentRooms":[]
 }

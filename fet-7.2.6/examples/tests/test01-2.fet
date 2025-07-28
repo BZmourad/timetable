@@ -57,6 +57,13 @@
       <Printable>true</Printable>
       <Comments></Comments>
     </Activity_Tag>
+    <Activity_Tag>
+      <Name>b2</Name>
+      <Long_Name></Long_Name>
+      <Code></Code>
+      <Printable>true</Printable>
+      <Comments></Comments>
+    </Activity_Tag>
   </Activity_Tags_List>
   <Teachers_List>
     <Teacher>
@@ -150,136 +157,74 @@
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintBasicCompulsoryTime>
-    <ConstraintBreakTimes>
+    <ConstraintTeachersMaxActivityTagsPerDayFromSet>
       <Weight_Percentage>100</Weight_Percentage>
-      <Number_of_Break_Times>2</Number_of_Break_Times>
-      <Break_Time>
-        <Day>D1</Day>
-        <Hour>H1</Hour>
-      </Break_Time>
-      <Break_Time>
-        <Day>D2</Day>
-        <Hour>H1</Hour>
-      </Break_Time>
+      <Maximum_Allowed_Activity_Tags>2</Maximum_Allowed_Activity_Tags>
+      <Number_of_Activity_Tags>2</Number_of_Activity_Tags>
+      <Activity_Tag>b1</Activity_Tag>
+      <Activity_Tag>b2</Activity_Tag>
       <Active>true</Active>
       <Comments></Comments>
-    </ConstraintBreakTimes>
-    <ConstraintTeacherNotAvailableTimes>
+    </ConstraintTeachersMaxActivityTagsPerDayFromSet>
+    <ConstraintTeachersMinHoursDaily>
       <Weight_Percentage>100</Weight_Percentage>
-      <Teacher>fdgdfgdfgdf</Teacher>
-      <Number_of_Not_Available_Times>3</Number_of_Not_Available_Times>
-      <Not_Available_Time>
-        <Day>D1</Day>
-        <Hour>H1</Hour>
-      </Not_Available_Time>
-      <Not_Available_Time>
-        <Day>D2</Day>
-        <Hour>H2</Hour>
-      </Not_Available_Time>
-      <Not_Available_Time>
-        <Day>D3</Day>
-        <Hour>H1</Hour>
-      </Not_Available_Time>
+      <Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+      <Allow_Empty_Days>true</Allow_Empty_Days>
       <Active>true</Active>
       <Comments></Comments>
-    </ConstraintTeacherNotAvailableTimes>
-    <ConstraintTeacherMaxDaysPerWeek>
+    </ConstraintTeachersMinHoursDaily>
+    <ConstraintTeachersActivityTagMinHoursDaily>
       <Weight_Percentage>100</Weight_Percentage>
-      <Teacher>fdgdfgdfgdf</Teacher>
-      <Max_Days_Per_Week>3</Max_Days_Per_Week>
+      <Activity_Tag>b1</Activity_Tag>
+      <Minimum_Hours_Daily>1</Minimum_Hours_Daily>
+      <Minimum_Days_With_Tag>0</Minimum_Days_With_Tag>
       <Active>true</Active>
       <Comments></Comments>
-    </ConstraintTeacherMaxDaysPerWeek>
-    <ConstraintTeacherMinDaysPerWeek>
+    </ConstraintTeachersActivityTagMinHoursDaily>
+    <ConstraintTeachersMaxHoursContinuously>
       <Weight_Percentage>100</Weight_Percentage>
-      <Teacher>fdgdfgdfgdf</Teacher>
-      <Minimum_Days_Per_Week>2</Minimum_Days_Per_Week>
+      <Maximum_Hours_Continuously>2</Maximum_Hours_Continuously>
       <Active>true</Active>
       <Comments></Comments>
-    </ConstraintTeacherMinDaysPerWeek>
-    <ConstraintTeacherNoTwoConsecutiveDays>
+    </ConstraintTeachersMaxHoursContinuously>
+    <ConstraintTeachersActivityTagMaxHoursContinuously>
       <Weight_Percentage>100</Weight_Percentage>
-      <Teacher>dfbdbfb</Teacher>
+      <Activity_Tag>b1</Activity_Tag>
+      <Maximum_Hours_Continuously>2</Maximum_Hours_Continuously>
       <Active>true</Active>
       <Comments></Comments>
-    </ConstraintTeacherNoTwoConsecutiveDays>
-    <ConstraintTeacherMaxGapsPerDay>
+    </ConstraintTeachersActivityTagMaxHoursContinuously>
+    <ConstraintTeachersMinGapsBetweenActivityTag>
       <Weight_Percentage>100</Weight_Percentage>
-      <Teacher>dfbdbfb</Teacher>
-      <Max_Gaps>1</Max_Gaps>
+      <Activity_Tag>b1</Activity_Tag>
+      <MinGaps>1</MinGaps>
       <Active>true</Active>
       <Comments></Comments>
-    </ConstraintTeacherMaxGapsPerDay>
-    <ConstraintTeacherMaxGapsPerWeek>
+    </ConstraintTeachersMinGapsBetweenActivityTag>
+    <ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags>
       <Weight_Percentage>100</Weight_Percentage>
-      <Teacher>fdgdfgdfgdf</Teacher>
-      <Max_Gaps>3</Max_Gaps>
+      <First_Activity_Tag>b2</First_Activity_Tag>
+      <Second_Activity_Tag>b1</Second_Activity_Tag>
+      <MinGaps>1</MinGaps>
       <Active>true</Active>
       <Comments></Comments>
-    </ConstraintTeacherMaxGapsPerWeek>
-    <ConstraintTeacherMaxSingleGapsInSelectedTimeSlots>
+    </ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags>
+    <ConstraintTeachersIntervalMaxDaysPerWeek>
       <Weight_Percentage>100</Weight_Percentage>
-      <Teacher>fdgdfgdfgdf</Teacher>
-      <Max_Single_Gaps>0</Max_Single_Gaps>
-      <Number_of_Selected_Time_Slots>2</Number_of_Selected_Time_Slots>
-      <Selected_Time_Slot>
-        <Day>D1</Day>
-        <Hour>H1</Hour>
-      </Selected_Time_Slot>
-      <Selected_Time_Slot>
-        <Day>D1</Day>
-        <Hour>H2</Hour>
-      </Selected_Time_Slot>
-      <Active>true</Active>
-      <Comments></Comments>
-    </ConstraintTeacherMaxSingleGapsInSelectedTimeSlots>
-    <ConstraintTeacherMaxHoursDailyInInterval>
-      <Weight_Percentage>100</Weight_Percentage>
-      <Teacher>fdgdfgdfgdf</Teacher>
       <Interval_Start_Hour>H2</Interval_Start_Hour>
       <Interval_End_Hour></Interval_End_Hour>
       <!-- Interval_End_Hour void means the end of the day (which has no name) -->
-      <Maximum_Hours_Daily>1</Maximum_Hours_Daily>
+      <Max_Days_Per_Week>3</Max_Days_Per_Week>
       <Active>true</Active>
       <Comments></Comments>
-    </ConstraintTeacherMaxHoursDailyInInterval>
-    <ConstraintTeacherMaxHoursDaily>
+    </ConstraintTeachersIntervalMaxDaysPerWeek>
+    <ConstraintTeachersMinRestingHours>
       <Weight_Percentage>100</Weight_Percentage>
-      <Teacher>fdgdfgdfgdf</Teacher>
-      <Maximum_Hours_Daily>2</Maximum_Hours_Daily>
+      <Minimum_Resting_Hours>1</Minimum_Resting_Hours>
+      <Circular>true</Circular>
       <Active>true</Active>
       <Comments></Comments>
-    </ConstraintTeacherMaxHoursDaily>
-    <ConstraintTeacherPairOfMutuallyExclusiveTimeSlots>
-      <Weight_Percentage>100</Weight_Percentage>
-      <Teacher>fdgdfgdfgdf</Teacher>
-      <First_Time_Slot>
-        <Day>D1</Day>
-        <Hour>H1</Hour>
-      </First_Time_Slot>
-      <Second_Time_Slot>
-        <Day>D1</Day>
-        <Hour>H2</Hour>
-      </Second_Time_Slot>
-      <Active>true</Active>
-      <Comments></Comments>
-    </ConstraintTeacherPairOfMutuallyExclusiveTimeSlots>
-    <ConstraintTeacherMaxSpanPerDay>
-      <Weight_Percentage>100</Weight_Percentage>
-      <Teacher>fdgdfgdfgdf</Teacher>
-      <Max_Span>2</Max_Span>
-      <Allow_One_Day_Exception_of_Plus_One>true</Allow_One_Day_Exception_of_Plus_One>
-      <Active>true</Active>
-      <Comments></Comments>
-    </ConstraintTeacherMaxSpanPerDay>
-    <ConstraintTeacherActivityTagMaxHoursDaily>
-      <Weight_Percentage>100</Weight_Percentage>
-      <Teacher>dfbdbfb</Teacher>
-      <Activity_Tag>b1</Activity_Tag>
-      <Maximum_Hours_Daily>2</Maximum_Hours_Daily>
-      <Active>true</Active>
-      <Comments></Comments>
-    </ConstraintTeacherActivityTagMaxHoursDaily>
+    </ConstraintTeachersMinRestingHours>
   </Time_Constraints_List>
   <Space_Constraints_List>
     <ConstraintBasicCompulsorySpace>

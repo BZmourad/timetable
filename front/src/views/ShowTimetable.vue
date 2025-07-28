@@ -35,7 +35,29 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
             </div>
         </div>
-        <div class="row">
+        <div v-if="APP_ENV==='prod'">
+            <div class="card">
+                <div class="card-body">
+                    <div v-if="timetable.output_html">
+                        <iframe 
+                            :src="timetable.output_html" 
+                            frameborder="0" 
+                            style="width: 100%; height: 800px;"
+                            @load="iframeLoaded"
+                            @error="iframeError"
+                        ></iframe>
+                    </div>
+                    
+                    <div v-else class="alert alert-warning">
+                        No HTML output was generated.
+                        <button @click="loadTimetableData" class="btn btn-sm btn-primary ms-2">
+                            Retry
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div v-else class="row">
             <div class="col-md-3">
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     <button class="nav-link active" id="v-pills-info-tab" data-bs-toggle="pill" data-bs-target="#v-pills-info" type="button" role="tab">
@@ -141,7 +163,8 @@ export default {
             },
             loading: true,
             error: null,
-            warnings: null
+            warnings: null,
+            APP_ENV: 'local'
         };
     },
     computed: {

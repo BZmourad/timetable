@@ -14,6 +14,11 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
+-- Dumping database structure for timetable_db
+CREATE DATABASE IF NOT EXISTS `timetable_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `timetable_db`;
+
 -- Dumping structure for table timetable_db.timetables
 CREATE TABLE IF NOT EXISTS `timetables` (
   `id` int NOT NULL AUTO_INCREMENT,

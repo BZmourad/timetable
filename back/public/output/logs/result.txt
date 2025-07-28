@@ -1,6 +1,5 @@
 This file contains the result (log) of last operation
 
-FET command line generation started on 20/07/2025 14:31
+FET command line generation started on 22/07/2025 20:53
 
-Starting timetable generation...
-Generation successful
+Cannot read input file (not existing, in use, or incorrect file) - aborting
