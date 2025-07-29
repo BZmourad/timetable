@@ -290,7 +290,6 @@ export default {
                 ConstraintActivityPreferredRooms:[],
                 ConstraintActivitiesSameRoomIfConsecutive:[],
                 ConstraintActivitiesOccupyMaxDifferentRooms:[],
-                
                 ConstraintTeachersMaxActivityTagsPerDayFromSet: [],
                 ConstraintTeachersMinHoursDaily: {
                     Active: false,
@@ -298,12 +297,19 @@ export default {
                     Allow_Empty_Days: false
                 },
                 ConstraintTeachersActivityTagMinHoursDaily: [],
-                ConstraintTeachersMaxHoursContinuously: [],
+                ConstraintTeachersMaxHoursContinuously: {
+                    Active: false,
+                    Maximum_Hours_Continuously: 0,
+                },
                 ConstraintTeachersActivityTagMaxHoursContinuously: [],
                 ConstraintTeachersMinGapsBetweenActivityTag: [],
                 ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags: [],
                 ConstraintTeachersIntervalMaxDaysPerWeek: [],
-                ConstraintTeachersMinRestingHours: [],
+                ConstraintTeachersMinRestingHours: {
+                    Active: false,
+                    Minimum_Resting_Hours: 0,
+                    Circular: false,
+                },
             },
             errors: {},
             submitted: false,

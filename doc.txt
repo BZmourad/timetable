@@ -2,55 +2,41 @@ fet-cl --inputfile="C:\laragon\www\timetable\input\test01.fet" --outputdir="C:\l
 
 
 
-Limite codes activité depuis un jeu par jour pour tous les enseignants
-Heures minimum quotidiennes pour les enseignants
-Minimum heures quotidiennes avec un code activité pour les enseignants
-Limite heures continues pour les enseignants
-Limite heures continues avec un code activité pour les enseignants
-Vides minimum entre un code activité pour tous les enseignants
-Vides minimum entre un couple ordonné de codes activité pour tous les enseignants
-Tous les enseignants travaillent dans un intervalle horaire limite jours par semaine
-Heures de repos minimum pour tous les enseignants
+>> Temps > Activités > Temps préférés
+Une activité a un temps préféré de démarrage
+Une activité a un jeu de temps préférés de démarrage
+Un activité a un jeu de créneaux horaires préférés
+Un jeu d'activités a un jeu de temps préférés de démarrage
+Un jeu d'activités a un jeu de créneaux horaires préférés
+Un jeu de sous-activités a un jeu de temps préférés de démarrage
+Un jeu de sous-activités a un jeu de créneaux horaires préférés
 
 
+>> Temps > Activités > Autres (1)
+Jours minimum entre un jeu d'activités
+Limite jours entre un jeu d'activités
+Une activité débute la journée des apprenants
+Un jeu d'activités débute la journée des apprenants
+Une activité débute journée enseignants
+Un jeu d'activités débute la journée des enseignants
+Une activité termine la journée des apprenants
+Un jeu d'activités termine la journée des apprenants
+Une activité termine la journée des enseignants
+Un jeu d'activités termine la journée des enseignants
+Un jeu d'activités a le même temps de démarrage (jour et heure)
+Un jeu d'activités a le même jour de démarrage (n'importe quelle heure) Un jeu d'activités a la même heure de démarrage (n'importe quel jour)
 
-<ConstraintTeachersMaxActivityTagsPerDayFromSet>
-    <Maximum_Allowed_Activity_Tags>2</Maximum_Allowed_Activity_Tags>
-    <Number_of_Activity_Tags>2</Number_of_Activity_Tags>
-    <Activity_Tag>b1</Activity_Tag>
-    <Activity_Tag>b2</Activity_Tag>
-</ConstraintTeachersMaxActivityTagsPerDayFromSet>
-<ConstraintTeachersMinHoursDaily>
-    <Minimum_Hours_Daily>2</Minimum_Hours_Daily>
-    <Allow_Empty_Days>true</Allow_Empty_Days>
-</ConstraintTeachersMinHoursDaily>
-<ConstraintTeachersActivityTagMinHoursDaily>
-    <Activity_Tag>b1</Activity_Tag>
-    <Minimum_Hours_Daily>1</Minimum_Hours_Daily>
-    <Minimum_Days_With_Tag>0</Minimum_Days_With_Tag>
-</ConstraintTeachersActivityTagMinHoursDaily>
-<ConstraintTeachersMaxHoursContinuously>
-    <Maximum_Hours_Continuously>2</Maximum_Hours_Continuously>
-</ConstraintTeachersMaxHoursContinuously>
-<ConstraintTeachersActivityTagMaxHoursContinuously>
-    <Activity_Tag>b1</Activity_Tag>
-    <Maximum_Hours_Continuously>2</Maximum_Hours_Continuously>
-</ConstraintTeachersActivityTagMaxHoursContinuously>
-<ConstraintTeachersMinGapsBetweenActivityTag>
-    <Activity_Tag>b1</Activity_Tag>
-    <MinGaps>1</MinGaps>
-</ConstraintTeachersMinGapsBetweenActivityTag>
-<ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags>
-    <First_Activity_Tag>b2</First_Activity_Tag>
-    <Second_Activity_Tag>b1</Second_Activity_Tag>
-    <MinGaps>1</MinGaps>
-</ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags>
-<ConstraintTeachersIntervalMaxDaysPerWeek>
-    <Interval_Start_Hour>H2</Interval_Start_Hour>
-    <Interval_End_Hour></Interval_End_Hour>
-    <Max_Days_Per_Week>3</Max_Days_Per_Week>
-</ConstraintTeachersIntervalMaxDaysPerWeek>
-<ConstraintTeachersMinRestingHours>
-    <Minimum_Resting_Hours>1</Minimum_Resting_Hours>
-    <Circular>true</Circular>
-</ConstraintTeachersMinRestingHours>
+
+>> Temps > Activités > Autres (2)
+Un jeu d'activités occupe un nombre maximum de créneaux dans une sélection Un jeu d'activités occupe un nombre minimum de créneaux dans une sélection
+Deux activités sont ordonnées
+Deux jeux d'activités sont ordonnés
+Deux activités sont ordonnées si elles ont lieu le même jour
+Deux activités sont consécutives
+Deux activités sont groupées
+Trois activités sont groupées
+Écart maximal horaire d'un jeu d'activités
+Un jeu d'activités est sans chevauchement
+Un jeu de codes activité est sans chevauchement
+Limite activités simultanées dans un jeu dans des créneaux horaires sélectionnés
+Minimum activités simultanées dans un jeu dans des créneaux horaires sélectionnés Vides minimum (heures) entre un jeu d'activités

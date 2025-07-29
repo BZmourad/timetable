@@ -801,6 +801,107 @@ function convertToFetXml(jsonData) {
             Comments: ''
         };
     }
+    if (jsonData.ConstraintTeachersMinHoursDaily.Active) {
+        timeConstraints.ConstraintTeachersMinHoursDaily = {
+            Weight_Percentage: 100,
+            Minimum_Hours_Daily: jsonData.ConstraintTeachersMinHoursDaily.Minimum_Hours_Daily,
+            Allow_Empty_Days: jsonData.ConstraintTeachersMinHoursDaily.Allow_Empty_Days,
+            Active: 'true',
+            Comments: ''
+        };
+    }
+    if (jsonData.ConstraintTeachersMaxHoursContinuously.Active) {
+        timeConstraints.ConstraintTeachersMaxHoursContinuously = {
+            Weight_Percentage: 100,
+            Maximum_Hours_Continuously: jsonData.ConstraintTeachersMaxHoursContinuously.Maximum_Hours_Continuously,
+            Active: 'true',
+            Comments: ''
+        };
+    }
+    if (jsonData.ConstraintTeachersMinRestingHours.Active) {
+        timeConstraints.ConstraintTeachersMinRestingHours = {
+            Weight_Percentage: 100,
+            Minimum_Resting_Hours: jsonData.ConstraintTeachersMinRestingHours.Minimum_Resting_Hours,
+            Circular: jsonData.ConstraintTeachersMinRestingHours.Circular ? 'true' : 'false',
+            Active: 'true',
+            Comments: ''
+        };
+    }
+    if (jsonData.ConstraintTeachersIntervalMaxDaysPerWeek.length) {
+        timeConstraints.ConstraintTeachersIntervalMaxDaysPerWeek = jsonData.ConstraintTeachersIntervalMaxDaysPerWeek.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Interval_Start_Hour: item.Interval_Start_Hour,
+                Interval_End_Hour: item.Interval_End_Hour,
+                Max_Days_Per_Week: item.Max_Days_Per_Week,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags.length) {
+        timeConstraints.ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags = jsonData.ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags.map(item => {
+            return {
+                Weight_Percentage: 100,
+                First_Activity_Tag: item.First_Activity_Tag,
+                Second_Activity_Tag: item.Second_Activity_Tag,
+                MinGaps: item.MinGaps,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintTeachersMinGapsBetweenActivityTag.length) {
+        timeConstraints.ConstraintTeachersMinGapsBetweenActivityTag = jsonData.ConstraintTeachersMinGapsBetweenActivityTag.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Activity_Tag: item.Activity_Tag,
+                MinGaps: item.MinGaps,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintTeachersActivityTagMaxHoursContinuously.length) {
+        timeConstraints.ConstraintTeachersActivityTagMaxHoursContinuously = jsonData.ConstraintTeachersActivityTagMaxHoursContinuously.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Activity_Tag: item.Activity_Tag,
+                Maximum_Hours_Continuously: item.Maximum_Hours_Continuously,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintTeachersActivityTagMinHoursDaily.length) {
+        timeConstraints.ConstraintTeachersActivityTagMinHoursDaily = jsonData.ConstraintTeachersActivityTagMinHoursDaily.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Activity_Tag: item.Activity_Tag,
+                Minimum_Hours_Daily: item.Minimum_Hours_Daily,
+                Minimum_Days_With_Tag: item.Minimum_Days_With_Tag,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintTeachersMaxActivityTagsPerDayFromSet.length) {
+        timeConstraints.ConstraintTeachersMaxActivityTagsPerDayFromSet = jsonData.ConstraintTeachersMaxActivityTagsPerDayFromSet.map(item => {
+            const Activity_Tags = item.Activity_Tags.map(item2 => {
+                return {
+                    Activity_Tag: item2.Activity_Tag
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Maximum_Allowed_Activity_Tags: item.Maximum_Allowed_Activity_Tags,
+                Number_of_Activity_Tags: item.Activity_Tags.length,
+                Activity_Tag: Activity_Tags.map(bt => bt.Activity_Tag),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
     fetData.fet.Time_Constraints_List = timeConstraints;
     const spaceConstraints = {
         ConstraintBasicCompulsorySpace: {
