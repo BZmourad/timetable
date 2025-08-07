@@ -26,7 +26,7 @@
                         </div>
                     </div>
                     <button type="button" class="btn btn-primary btn-add" @click="addActivity(index)">
-                        <i class="fas fa-plus me-1"></i>Ajouter une salle
+                        <i class="fas fa-plus me-1"></i>Ajouter
                     </button>
                 </div>
             </div>

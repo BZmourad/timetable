@@ -1,42 +1,185 @@
 fet-cl --inputfile="C:\laragon\www\timetable\input\test01.fet" --outputdir="C:\laragon\www\timetable\output" --htmllevel=7 --language=fr
 
 
-
->> Temps > Activités > Temps préférés
-Une activité a un temps préféré de démarrage
-Une activité a un jeu de temps préférés de démarrage
-Un activité a un jeu de créneaux horaires préférés
-Un jeu d'activités a un jeu de temps préférés de démarrage
-Un jeu d'activités a un jeu de créneaux horaires préférés
-Un jeu de sous-activités a un jeu de temps préférés de démarrage
-Un jeu de sous-activités a un jeu de créneaux horaires préférés
-
-
->> Temps > Activités > Autres (1)
-Jours minimum entre un jeu d'activités
-Limite jours entre un jeu d'activités
-Une activité débute la journée des apprenants
-Un jeu d'activités débute la journée des apprenants
-Une activité débute journée enseignants
-Un jeu d'activités débute la journée des enseignants
-Une activité termine la journée des apprenants
-Un jeu d'activités termine la journée des apprenants
-Une activité termine la journée des enseignants
-Un jeu d'activités termine la journée des enseignants
-Un jeu d'activités a le même temps de démarrage (jour et heure)
-Un jeu d'activités a le même jour de démarrage (n'importe quelle heure) Un jeu d'activités a la même heure de démarrage (n'importe quel jour)
+>> Espace > Enseignants > Un enseignant
+Un enseignant a une salle de référence
+Un enseignant a un jeu de salles de référence
+Limite changements salles quotidiens pour un enseignant
+Limite changements salles quotidiens dans un intervalle horaire pour un enseignant
+Limite changements salles hebdomadaires pour un enseignant
+Vides minimum entre changements salles pour un enseignant
+Limite changements bâtiments quotidiens pour un enseignant
+Limite changements bâtiments quotidiens dans un intervalle horaire pour un enseignant
+Limite changements bâtiments par semaine pour un enseignant
+Vides minimum entre changements bâtiments pour un enseignant
 
 
->> Temps > Activités > Autres (2)
-Un jeu d'activités occupe un nombre maximum de créneaux dans une sélection Un jeu d'activités occupe un nombre minimum de créneaux dans une sélection
-Deux activités sont ordonnées
-Deux jeux d'activités sont ordonnés
-Deux activités sont ordonnées si elles ont lieu le même jour
-Deux activités sont consécutives
-Deux activités sont groupées
-Trois activités sont groupées
-Écart maximal horaire d'un jeu d'activités
-Un jeu d'activités est sans chevauchement
-Un jeu de codes activité est sans chevauchement
-Limite activités simultanées dans un jeu dans des créneaux horaires sélectionnés
-Minimum activités simultanées dans un jeu dans des créneaux horaires sélectionnés Vides minimum (heures) entre un jeu d'activités
+<ConstraintTeacherHomeRoom>
+    <Teacher>fdgdfgdfgdf</Teacher>
+    <Room>rrrr</Room>
+</ConstraintTeacherHomeRoom>
+<ConstraintTeacherHomeRooms>
+    <Teacher>fdgdfgdfgdf</Teacher>
+    <Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
+    <Preferred_Room>s2</Preferred_Room>
+    <Preferred_Room>s3</Preferred_Room>
+</ConstraintTeacherHomeRooms>
+<ConstraintTeacherMaxRoomChangesPerDay>
+    <Teacher>fdgdfgdfgdf</Teacher>
+    <Max_Room_Changes_Per_Day>1</Max_Room_Changes_Per_Day>
+</ConstraintTeacherMaxRoomChangesPerDay>
+<ConstraintTeacherMaxRoomChangesPerDayInInterval>
+    <Teacher>fdgdfgdfgdf</Teacher>
+    <Interval_Start_Hour>H1</Interval_Start_Hour>
+    <Interval_End_Hour></Interval_End_Hour>
+    <Max_Room_Changes_Per_Day>1</Max_Room_Changes_Per_Day>
+</ConstraintTeacherMaxRoomChangesPerDayInInterval>
+<ConstraintTeacherMaxRoomChangesPerWeek>
+    <Teacher>fdgdfgdfgdf</Teacher>
+    <Max_Room_Changes_Per_Week>3</Max_Room_Changes_Per_Week>
+</ConstraintTeacherMaxRoomChangesPerWeek>
+<ConstraintTeacherMinGapsBetweenRoomChanges>
+    <Teacher>fdgdfgdfgdf</Teacher>
+    <Min_Gaps_Between_Room_Changes>1</Min_Gaps_Between_Room_Changes>
+</ConstraintTeacherMinGapsBetweenRoomChanges>
+<ConstraintTeacherMaxBuildingChangesPerDay>
+    <Teacher>fdgdfgdfgdf</Teacher>
+    <Max_Building_Changes_Per_Day>1</Max_Building_Changes_Per_Day>
+</ConstraintTeacherMaxBuildingChangesPerDay>
+<ConstraintTeacherMaxBuildingChangesPerDayInInterval>
+    <Teacher>fdgdfgdfgdf</Teacher>
+    <Interval_Start_Hour>H1</Interval_Start_Hour>
+    <Interval_End_Hour></Interval_End_Hour>
+    <Max_Building_Changes_Per_Day>1</Max_Building_Changes_Per_Day>
+</ConstraintTeacherMaxBuildingChangesPerDayInInterval>
+<ConstraintTeacherMaxBuildingChangesPerWeek>
+    <Teacher>fdgdfgdfgdf</Teacher>
+    <Max_Building_Changes_Per_Week>3</Max_Building_Changes_Per_Week>
+</ConstraintTeacherMaxBuildingChangesPerWeek>
+<ConstraintTeacherMinGapsBetweenBuildingChanges>
+    <Teacher>fdgdfgdfgdf</Teacher>
+    <Min_Gaps_Between_Building_Changes>1</Min_Gaps_Between_Building_Changes>
+</ConstraintTeacherMinGapsBetweenBuildingChanges>
+
+
+
+
+
+>> Espace > Enseignants > Tous les enseignants
+Limite changements salles quotidiens pour tous les enseignants
+Limite changements salles quotidiens dans un intervalle horaire pour tous les enseignants
+Limite changements salles hebdomadaires pour tous les enseignants
+Vides minimum entre changements salles pour tous les enseignants
+Limite changements bâtiments quotidiens pour les enseignants
+Limite changements bâtiments quotidiens dans un intervalle horaire pour tous les enseignants
+Limite changements bâtiments par semaine pour les enseignants
+Vides minimum entre changements bâtiments pour les enseignants
+
+
+<ConstraintTeachersMaxRoomChangesPerDay>
+    <Max_Room_Changes_Per_Day>1</Max_Room_Changes_Per_Day>
+</ConstraintTeachersMaxRoomChangesPerDay>
+<ConstraintTeachersMaxRoomChangesPerDayInInterval>
+    <Interval_Start_Hour>H1</Interval_Start_Hour>
+    <Interval_End_Hour></Interval_End_Hour>
+    <Max_Room_Changes_Per_Day>1</Max_Room_Changes_Per_Day>
+</ConstraintTeachersMaxRoomChangesPerDayInInterval>
+<ConstraintTeachersMaxRoomChangesPerWeek>
+    <Max_Room_Changes_Per_Week>3</Max_Room_Changes_Per_Week>
+</ConstraintTeachersMaxRoomChangesPerWeek>
+<ConstraintTeachersMinGapsBetweenRoomChanges>
+    <Min_Gaps_Between_Room_Changes>1</Min_Gaps_Between_Room_Changes>
+</ConstraintTeachersMinGapsBetweenRoomChanges>
+<ConstraintTeachersMaxBuildingChangesPerDay>
+    <Max_Building_Changes_Per_Day>1</Max_Building_Changes_Per_Day>
+</ConstraintTeachersMaxBuildingChangesPerDay>
+<ConstraintTeachersMaxBuildingChangesPerDayInInterval>
+    <Interval_Start_Hour>H1</Interval_Start_Hour>
+    <Interval_End_Hour></Interval_End_Hour>
+    <Max_Building_Changes_Per_Day>1</Max_Building_Changes_Per_Day>
+</ConstraintTeachersMaxBuildingChangesPerDayInInterval>
+<ConstraintTeachersMaxBuildingChangesPerWeek>
+    <Max_Building_Changes_Per_Week>3</Max_Building_Changes_Per_Week>
+</ConstraintTeachersMaxBuildingChangesPerWeek>
+<ConstraintTeachersMinGapsBetweenBuildingChanges>
+    <Min_Gaps_Between_Building_Changes>1</Min_Gaps_Between_Building_Changes>
+</ConstraintTeachersMinGapsBetweenBuildingChanges>
+
+
+>> Espace > Apprenants > Un groupe d'apprenant
+Un jeu d'apprenants a une salle de référence
+Un jeu d'apprenants a un jeu de salles de référence
+Limite changements salles quotidiens pour un groupe
+Limite changements salles quotidiens dans un intervalle horaire pour un groupe
+Limite changements salles hebdomadaires pour un groupe
+Vides minimum entre changements salles pour un groupe
+Limite changements bâtiments quotidiens pour un groupe
+Limite changements bâtiments quotidiens dans un intervalle horaire pour un groupe
+Limite changements bâtiments par semaine pour un groupe
+Vides minimum entre changements bâtiments pour un groupe
+
+
+>> Espace > Apprenants > Tous les apprenants
+Limite changements salles quotidiens pour tous les apprenants
+Limite changements salles quotidiens dans un intervalle horaire pour tous les apprenants
+Limite changements salles hebdomadaires pour tous les apprenants
+Vides minimum entre changements salles pour tous les apprenants
+Limite changements bâtiments quotidiens pour les apprenants
+Limite changements bâtiments quotidiens dans un intervalle horaire pour tous les apprenants
+Limite changements bâtiments par semaine pour les apprenants
+Vides minimum entre changements bâtiments pour les apprenants
+
+
+
+>> Temps > Apprenants > Un groupe d'apprenant (1)
+Un groupe a des temps non disponibles
+Limite jours par semaine pour un groupe 
+Limite vides quotidiens pour un groupe
+Limite vides par semaine pour un groupe
+Limite vide unique dans les créneaux horaires sélectionnés pour un groupe
+Un groupe débute tôt (limite débuts en seconde heure)
+Limite heures quotidiennes pour un groupe
+Limite heures quotidiennes dans un intervalle horaire pour un groupe
+Un groupe a une paire de créneaux horaires mutuellement exclusifs
+Limite amplitude quotidienne pour un groupe
+Limite heures quotidiennes avec un code activité pour un groupe
+
+
+>> Temps > Apprenants > Un groupe d'apprenant (2)
+Limite codes activité depuis un jeu par jour pour un groupe
+Heures minimum quotidiennes pour un groupe
+Minimum heures quotidiennes avec un code activité pour un groupe
+Limite heures continues pour un groupe
+Limite heures continues avec un code activité pour un groupe
+Vides minimum entre un code activité pour un groupe
+Vides minimum entre un couple ordonné de codes activité pour un groupe
+Un groupe travaille dans un intervalle horaire limite jours par semaine
+Heures de repos minimum pour un groupe
+
+
+>> Temps > Apprenants > Tous les apprenants (1)
+Temps non disponibles pour tous les apprenants
+Limite jours par semaine pour les apprenants
+Limite vides quotidiens pour les apprenants
+Limite vides par semaine pour les apprenants
+Limite vide unique dans les créneaux horaires sélectionnés pour tous les apprenants
+Tous les apprenants débutent tôt (limite débuts en seconde heure)
+Limite heures quotidiennes par les apprenants
+Limite heures quotidiennes dans un intervalle horaire pour tous les apprenants
+Tous les apprenants ont une paire de créneaux horaires mutuellement exclusifs
+Limite amplitude quotidienne pour tous les apprenants
+Limite heures quotidiennes avec un code activité pour les apprenants
+
+
+>> Temps > Apprenants > Tous les apprenants (2)
+Limite codes activité depuis un jeu par jour pour tous les apprenants
+Heures minimum quotidiennes pour les apprenants
+Minimum heures quotidiennes avec un code activité pour tous les apprenants
+Limite heures continues pour les apprenants
+Limite heures continues avec un code activité pour les apprenants
+Vides minimum entre un code activité pour tous les apprenants
+Vides minimum entre un couple ordonné de codes activité pour tous les apprenants
+Tous les apprenants travaillent dans un intervalle horaire limite jours par semaine 
+Heures de repos minimum pour tous les apprenants
+
+

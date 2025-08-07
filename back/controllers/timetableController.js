@@ -187,53 +187,6 @@ exports.getTimetableShow = async (req, res) => {
         res.status(500).json({ error: "Une erreur est survenue", "error":error });
     }
 };
-/*
-exports.getTimetableTest = async (req, res) => {
-    try {
-        const id = req.params.id;
-        const timetable = await Timetable.findByPk(id);
-
-        if (!timetable) {
-            return res.status(404).json({ error: "Emploi du temps non trouvé" });
-        }
-
-
-        const data = JSON.parse(fs.readFileSync(timetable.path_json, 'utf8'));
-        const xmlData = convertToFetXml(data);
-        const baseDir = process.env.BASE_DIR;
-        const inputDir = process.env.INPUT_DIR;
-        const outputDir = process.env.OUTPUT_DIR;
-
-
-
-        [inputDir, outputDir].forEach(dir => {
-            if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-        });
-        const filename = `timetable_${id}_${Date.now()}`;
-        const inputFilePath = path.join(inputDir, `${filename}.fet`);
-
-        fs.writeFileSync(inputFilePath, xmlData);
-        
-
-        const fetCl = process.env.FET_CL_PATH;
-        const command = `"${fetCl}" --inputfile="${inputFilePath}" --outputdir="${outputDir}" --htmllevel=7 --language=fr`;
-        const result = runFet(command);
-        const output_html = `${process.env.HTML_OUT_URL}/${filename}/${filename}_index.html`;
-
-        res.json({
-            ...timetable.toJSON(), // Inclut created_at
-            data,
-            xmlData,
-            inputFilePath,
-            command,
-            output_html,
-            result
-        });
-    } catch (error) {
-        console.error("Erreur lors de la récupération:", error);
-        res.status(500).json({ error: "Une erreur est survenue", "error":error });
-    }
-};*/
 
 async function runFet(command) {
     exec(command, (error, stdout, stderr) => {
@@ -902,6 +855,587 @@ function convertToFetXml(jsonData) {
             };
         });
     }
+    if (jsonData.ConstraintActivityPreferredStartingTime.length) {
+        timeConstraints.ConstraintActivityPreferredStartingTime = jsonData.ConstraintActivityPreferredStartingTime.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Activity_Id: getActivityId(jsonData.activities, item.Activity_Id),
+                Permanently_Locked: item.Permanently_Locked ? 'true': 'false',
+                Day: item.Day,
+                Hour: item.Hour,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintActivityPreferredStartingTimes.length) {
+        timeConstraints.ConstraintActivityPreferredStartingTimes = jsonData.ConstraintActivityPreferredStartingTimes.map(item => {
+            const Preferred_Starting_Times = item.Preferred_Starting_Time.map(item2 => {
+                return {
+                    Preferred_Starting_Time: {
+                        Day: item2.Day,
+                        Hour: item2.Hour
+                    }
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Activity_Id: getActivityId(jsonData.activities, item.Activity_Id),
+                Number_of_Preferred_Starting_Times: item.Preferred_Starting_Time.length,
+                Preferred_Starting_Time: Preferred_Starting_Times.map(bt => bt.Preferred_Starting_Time),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintActivityPreferredTimeSlots.length) {
+        timeConstraints.ConstraintActivityPreferredTimeSlots = jsonData.ConstraintActivityPreferredTimeSlots.map(item => {
+            const Preferred_Time_Slots = item.Preferred_Time_Slot.map(item2 => {
+                return {
+                    Preferred_Time_Slot: {
+                        Day: item2.Day,
+                        Hour: item2.Hour
+                    }
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Activity_Id: getActivityId(jsonData.activities, item.Activity_Id),
+                Number_of_Preferred_Time_Slots: item.Preferred_Time_Slot.length,
+                Preferred_Time_Slot: Preferred_Time_Slots.map(bt => bt.Preferred_Time_Slot),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintActivitiesPreferredStartingTimes.length) {
+        timeConstraints.ConstraintActivitiesPreferredStartingTimes = jsonData.ConstraintActivitiesPreferredStartingTimes.map(item => {
+            const Preferred_Starting_Times = item.Preferred_Starting_Time.map(item2 => {
+                return {
+                    Preferred_Starting_Time: {
+                        Day: item2.Day,
+                        Hour: item2.Hour
+                    }
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Teacher: item.Teacher,
+                Students: item.Students,
+                Subject: item.Subject,
+                Activity_Tag: item.Activity_Tag,
+                Duration: item.Duration,
+                Number_of_Preferred_Starting_Times: item.Preferred_Starting_Time.length,
+                Preferred_Starting_Time: Preferred_Starting_Times.map(bt => bt.Preferred_Starting_Time),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintActivitiesPreferredTimeSlots.length) {
+        timeConstraints.ConstraintActivitiesPreferredTimeSlots = jsonData.ConstraintActivitiesPreferredTimeSlots.map(item => {
+            const Preferred_Time_Slots = item.Preferred_Time_Slot.map(item2 => {
+                return {
+                    Preferred_Time_Slot: {
+                        Day: item2.Day,
+                        Hour: item2.Hour
+                    }
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Teacher: item.Teacher,
+                Students: item.Students,
+                Subject: item.Subject,
+                Activity_Tag: item.Activity_Tag,
+                Duration: item.Duration,
+                Number_of_Preferred_Time_Slots: item.Preferred_Time_Slot.length,
+                Preferred_Time_Slot: Preferred_Time_Slots.map(bt => bt.Preferred_Time_Slot),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintSubactivitiesPreferredStartingTimes.length) {
+        timeConstraints.ConstraintSubactivitiesPreferredStartingTimes = jsonData.ConstraintSubactivitiesPreferredStartingTimes.map(item => {
+            const Preferred_Starting_Times = item.Preferred_Starting_Time.map(item2 => {
+                return {
+                    Preferred_Starting_Time: {
+                        Day: item2.Day,
+                        Hour: item2.Hour
+                    }
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Teacher: item.Teacher,
+                Students: item.Students,
+                Subject: item.Subject,
+                Activity_Tag: item.Activity_Tag,
+                Duration: item.Duration,
+                Component_Number: item.Component_Number,
+                Number_of_Preferred_Starting_Times: item.Preferred_Starting_Time.length,
+                Preferred_Starting_Time: Preferred_Starting_Times.map(bt => bt.Preferred_Starting_Time),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintSubactivitiesPreferredTimeSlots.length) {
+        timeConstraints.ConstraintSubactivitiesPreferredTimeSlots = jsonData.ConstraintSubactivitiesPreferredTimeSlots.map(item => {
+            const Preferred_Time_Slots = item.Preferred_Time_Slot.map(item2 => {
+                return {
+                    Preferred_Time_Slot: {
+                        Day: item2.Day,
+                        Hour: item2.Hour
+                    }
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Component_Number: item.Component_Number,
+                Teacher: item.Teacher,
+                Students: item.Students,
+                Subject: item.Subject,
+                Activity_Tag: item.Activity_Tag,
+                Duration: item.Duration,
+                Number_of_Preferred_Time_Slots: item.Preferred_Time_Slot.length,
+                Preferred_Time_Slot: Preferred_Time_Slots.map(bt => bt.Preferred_Time_Slot),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintMinDaysBetweenActivities.length) {
+        timeConstraints.ConstraintMinDaysBetweenActivities = jsonData.ConstraintMinDaysBetweenActivities.map(item => {
+            const Activity_Ids = item.Activity.map(item2 => {
+                return {
+                    Activity_Id: getActivityId(jsonData.activities, item2.Activity_Id)
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                MinDays: item.MinDays,
+                Consecutive_If_Same_Day: item.Consecutive_If_Same_Day ? 'true':'false',
+                Number_of_Activities: item.Activity.length,
+                Activity_Id: Activity_Ids.map(bt => bt.Activity_Id),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintMaxDaysBetweenActivities.length) {
+        timeConstraints.ConstraintMaxDaysBetweenActivities = jsonData.ConstraintMaxDaysBetweenActivities.map(item => {
+            const Activity_Ids = item.Activity.map(item2 => {
+                return {
+                    Activity_Id: getActivityId(jsonData.activities, item2.Activity_Id)
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                MaxDays: item.MaxDays,
+                Number_of_Activities: item.Activity.length,
+                Activity_Id: Activity_Ids.map(bt => bt.Activity_Id),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintActivityBeginsStudentsDay.length) {
+        timeConstraints.ConstraintActivityBeginsStudentsDay = jsonData.ConstraintActivityBeginsStudentsDay.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Activity_Id: getActivityId(jsonData.activities, item.Activity_Id),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintActivityBeginsTeachersDay.length) {
+        timeConstraints.ConstraintActivityBeginsTeachersDay = jsonData.ConstraintActivityBeginsTeachersDay.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Activity_Id: getActivityId(jsonData.activities, item.Activity_Id),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintActivityEndsStudentsDay.length) {
+        timeConstraints.ConstraintActivityEndsStudentsDay = jsonData.ConstraintActivityEndsStudentsDay.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Activity_Id: getActivityId(jsonData.activities, item.Activity_Id),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintActivityEndsTeachersDay.length) {
+        timeConstraints.ConstraintActivityEndsTeachersDay = jsonData.ConstraintActivityEndsTeachersDay.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Activity_Id: getActivityId(jsonData.activities, item.Activity_Id),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintActivitiesBeginStudentsDay.length) {
+        timeConstraints.ConstraintActivitiesBeginStudentsDay = jsonData.ConstraintActivitiesBeginStudentsDay.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Teacher: item.Teacher,
+                Students: item.Students,
+                Subject: item.Subject,
+                Activity_Tag: item.Activity_Tag,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintActivitiesBeginTeachersDay.length) {
+        timeConstraints.ConstraintActivitiesBeginTeachersDay = jsonData.ConstraintActivitiesBeginTeachersDay.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Teacher: item.Teacher,
+                Students: item.Students,
+                Subject: item.Subject,
+                Activity_Tag: item.Activity_Tag,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintActivitiesEndStudentsDay.length) {
+        timeConstraints.ConstraintActivitiesEndStudentsDay = jsonData.ConstraintActivitiesEndStudentsDay.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Teacher: item.Teacher,
+                Students: item.Students,
+                Subject: item.Subject,
+                Activity_Tag: item.Activity_Tag,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintActivitiesEndTeachersDay.length) {
+        timeConstraints.ConstraintActivitiesEndTeachersDay = jsonData.ConstraintActivitiesEndTeachersDay.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Teacher: item.Teacher,
+                Students: item.Students,
+                Subject: item.Subject,
+                Activity_Tag: item.Activity_Tag,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintActivitiesSameStartingTime.length) {
+        timeConstraints.ConstraintActivitiesSameStartingTime = jsonData.ConstraintActivitiesSameStartingTime.map(item => {
+            const Activity_Ids = item.Activity.map(item2 => {
+                return {
+                    Activity_Id: getActivityId(jsonData.activities, item2.Activity_Id)
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Number_of_Activities: item.Activity.length,
+                Activity_Id: Activity_Ids.map(bt => bt.Activity_Id),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintActivitiesSameStartingDay.length) {
+        timeConstraints.ConstraintActivitiesSameStartingDay = jsonData.ConstraintActivitiesSameStartingDay.map(item => {
+            const Activity_Ids = item.Activity.map(item2 => {
+                return {
+                    Activity_Id: getActivityId(jsonData.activities, item2.Activity_Id)
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Number_of_Activities: item.Activity.length,
+                Activity_Id: Activity_Ids.map(bt => bt.Activity_Id),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintActivitiesSameStartingHour.length) {
+        timeConstraints.ConstraintActivitiesSameStartingHour = jsonData.ConstraintActivitiesSameStartingHour.map(item => {
+            const Activity_Ids = item.Activity.map(item2 => {
+                return {
+                    Activity_Id: getActivityId(jsonData.activities, item2.Activity_Id)
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Number_of_Activities: item.Activity.length,
+                Activity_Id: Activity_Ids.map(bt => bt.Activity_Id),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintActivitiesOccupyMaxTimeSlotsFromSelection.length) {
+        timeConstraints.ConstraintActivitiesOccupyMaxTimeSlotsFromSelection = jsonData.ConstraintActivitiesOccupyMaxTimeSlotsFromSelection.map(item => {
+            const Activity_Ids = item.Activity.map(item2 => {
+                return {
+                    Activity_Id: getActivityId(jsonData.activities, item2.Activity_Id)
+                };
+            });
+            const Selected_Time_Slots = item.Selected_Time_Slot.map(item2 => {
+                return {
+                    Selected_Time_Slot: {
+                        Day: item2.Day,
+                        Hour: item2.Hour
+                    }
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Number_of_Activities: item.Activity.length,
+                Activity_Id: Activity_Ids.map(bt => bt.Activity_Id),
+                Number_of_Selected_Time_Slots: item.Selected_Time_Slot.length,
+                Selected_Time_Slot: Selected_Time_Slots.map(bt => bt.Selected_Time_Slot),
+                Max_Number_of_Occupied_Time_Slots: item.Max_Number_of_Occupied_Time_Slots,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintActivitiesOccupyMinTimeSlotsFromSelection.length) {
+        timeConstraints.ConstraintActivitiesOccupyMinTimeSlotsFromSelection = jsonData.ConstraintActivitiesOccupyMinTimeSlotsFromSelection.map(item => {
+            const Activity_Ids = item.Activity.map(item2 => {
+                return {
+                    Activity_Id: getActivityId(jsonData.activities, item2.Activity_Id)
+                };
+            });
+            const Selected_Time_Slots = item.Selected_Time_Slot.map(item2 => {
+                return {
+                    Selected_Time_Slot: {
+                        Day: item2.Day,
+                        Hour: item2.Hour
+                    }
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Number_of_Activities: item.Activity.length,
+                Activity_Id: Activity_Ids.map(bt => bt.Activity_Id),
+                Number_of_Selected_Time_Slots: item.Selected_Time_Slot.length,
+                Selected_Time_Slot: Selected_Time_Slots.map(bt => bt.Selected_Time_Slot),
+                Min_Number_of_Occupied_Time_Slots: item.Min_Number_of_Occupied_Time_Slots,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots.length) {
+        timeConstraints.ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots = jsonData.ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots.map(item => {
+            const Activity_Ids = item.Activity.map(item2 => {
+                return {
+                    Activity_Id: getActivityId(jsonData.activities, item2.Activity_Id)
+                };
+            });
+            const Selected_Time_Slots = item.Selected_Time_Slot.map(item2 => {
+                return {
+                    Selected_Time_Slot: {
+                        Day: item2.Day,
+                        Hour: item2.Hour
+                    }
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Number_of_Activities: item.Activity.length,
+                Activity_Id: Activity_Ids.map(bt => bt.Activity_Id),
+                Number_of_Selected_Time_Slots: item.Selected_Time_Slot.length,
+                Selected_Time_Slot: Selected_Time_Slots.map(bt => bt.Selected_Time_Slot),
+                Max_Number_of_Simultaneous_Activities: item.Max_Number_of_Simultaneous_Activities,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintActivitiesMinSimultaneousInSelectedTimeSlots.length) {
+        timeConstraints.ConstraintActivitiesMinSimultaneousInSelectedTimeSlots = jsonData.ConstraintActivitiesMinSimultaneousInSelectedTimeSlots.map(item => {
+            const Activity_Ids = item.Activity.map(item2 => {
+                return {
+                    Activity_Id: getActivityId(jsonData.activities, item2.Activity_Id)
+                };
+            });
+            const Selected_Time_Slots = item.Selected_Time_Slot.map(item2 => {
+                return {
+                    Selected_Time_Slot: {
+                        Day: item2.Day,
+                        Hour: item2.Hour
+                    }
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Number_of_Activities: item.Activity.length,
+                Activity_Id: Activity_Ids.map(bt => bt.Activity_Id),
+                Number_of_Selected_Time_Slots: item.Selected_Time_Slot.length,
+                Selected_Time_Slot: Selected_Time_Slots.map(bt => bt.Selected_Time_Slot),
+                Min_Number_of_Simultaneous_Activities: item.Min_Number_of_Simultaneous_Activities,
+                Allow_Empty_Slots: item.Allow_Empty_Slots ? 'true' : 'false',
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintTwoActivitiesOrdered.length) {
+        timeConstraints.ConstraintTwoActivitiesOrdered = jsonData.ConstraintTwoActivitiesOrdered.map(item => {
+            return {
+                Weight_Percentage: 100,
+                First_Activity_Id: getActivityId(jsonData.activities, item.First_Activity_Id),
+                Second_Activity_Id: getActivityId(jsonData.activities, item.Second_Activity_Id),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintTwoActivitiesOrderedIfSameDay.length) {
+        timeConstraints.ConstraintTwoActivitiesOrderedIfSameDay = jsonData.ConstraintTwoActivitiesOrderedIfSameDay.map(item => {
+            return {
+                Weight_Percentage: 100,
+                First_Activity_Id: getActivityId(jsonData.activities, item.First_Activity_Id),
+                Second_Activity_Id: getActivityId(jsonData.activities, item.Second_Activity_Id),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintTwoActivitiesConsecutive.length) {
+        timeConstraints.ConstraintTwoActivitiesConsecutive = jsonData.ConstraintTwoActivitiesConsecutive.map(item => {
+            return {
+                Weight_Percentage: 100,
+                First_Activity_Id: getActivityId(jsonData.activities, item.First_Activity_Id),
+                Second_Activity_Id: getActivityId(jsonData.activities, item.Second_Activity_Id),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintTwoActivitiesGrouped.length) {
+        timeConstraints.ConstraintTwoActivitiesGrouped = jsonData.ConstraintTwoActivitiesGrouped.map(item => {
+            return {
+                Weight_Percentage: 100,
+                First_Activity_Id: getActivityId(jsonData.activities, item.First_Activity_Id),
+                Second_Activity_Id: getActivityId(jsonData.activities, item.Second_Activity_Id),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintThreeActivitiesGrouped.length) {
+        timeConstraints.ConstraintThreeActivitiesGrouped = jsonData.ConstraintThreeActivitiesGrouped.map(item => {
+            return {
+                Weight_Percentage: 100,
+                First_Activity_Id: getActivityId(jsonData.activities, item.First_Activity_Id),
+                Second_Activity_Id: getActivityId(jsonData.activities, item.Second_Activity_Id),
+                Third_Activity_Id: getActivityId(jsonData.activities, item.Third_Activity_Id),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintActivitiesMaxHourlySpan.length) {
+        timeConstraints.ConstraintActivitiesMaxHourlySpan = jsonData.ConstraintActivitiesMaxHourlySpan.map(item => {
+            const Activity_Ids = item.Activity.map(item2 => {
+                return {
+                    Activity_Id: getActivityId(jsonData.activities, item2.Activity_Id)
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Number_of_Activities: item.Activity.length,
+                Activity_Id: Activity_Ids.map(bt => bt.Activity_Id),
+                MaxHourlySpan: item.MaxHourlySpan,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintMinGapsBetweenActivities.length) {
+        timeConstraints.ConstraintMinGapsBetweenActivities = jsonData.ConstraintMinGapsBetweenActivities.map(item => {
+            const Activity_Ids = item.Activity.map(item2 => {
+                return {
+                    Activity_Id: getActivityId(jsonData.activities, item2.Activity_Id)
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Number_of_Activities: item.Activity.length,
+                Activity_Id: Activity_Ids.map(bt => bt.Activity_Id),
+                MinGaps: item.MinGaps,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintActivitiesNotOverlapping.length) {
+        timeConstraints.ConstraintActivitiesNotOverlapping = jsonData.ConstraintActivitiesNotOverlapping.map(item => {
+            const Activity_Ids = item.Activity.map(item2 => {
+                return {
+                    Activity_Id: getActivityId(jsonData.activities, item2.Activity_Id)
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Number_of_Activities: item.Activity.length,
+                Activity_Id: Activity_Ids.map(bt => bt.Activity_Id),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintActivityTagsNotOverlapping.length) {
+        timeConstraints.ConstraintActivityTagsNotOverlapping = jsonData.ConstraintActivityTagsNotOverlapping.map(item => {
+            const Activity_Tags = item.Activity_Tags.map(item2 => {
+                return {
+                    Activity_Tag: item2.Activity_Tag
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Number_of_Activity_Tags: item.Activity_Tags.length,
+                Activity_Tag: Activity_Tags.map(bt => bt.Activity_Tag),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintTwoSetsOfActivitiesOrdered.length) {
+        timeConstraints.ConstraintTwoSetsOfActivitiesOrdered = jsonData.ConstraintTwoSetsOfActivitiesOrdered.map(item => {
+            const First_Activities_Ids_Sets = item.First_Activities_Ids_Set.map(item2 => {
+                return {
+                    Activity_Id: getActivityId(jsonData.activities, item2.Activity_Id)
+                };
+            });
+            First_Activities_Ids_Sets.Number_of_Activities = item.First_Activities_Ids_Set.length;
+            const Second_Activities_Ids_Sets = item.Second_Activities_Ids_Set.map(item2 => {
+                return {
+                    Activity_Id: getActivityId(jsonData.activities, item2.Activity_Id)
+                };
+            });
+            Second_Activities_Ids_Sets.Number_of_Activities = item.Second_Activities_Ids_Set.length;
+            return {
+                Weight_Percentage: 100,
+                First_Activities_Ids_Set: First_Activities_Ids_Sets,
+                Second_Activities_Ids_Set: Second_Activities_Ids_Sets,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+
     fetData.fet.Time_Constraints_List = timeConstraints;
     const spaceConstraints = {
         ConstraintBasicCompulsorySpace: {

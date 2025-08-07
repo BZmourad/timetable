@@ -150,6 +150,24 @@
       <Virtual>false</Virtual>
       <Comments></Comments>
     </Room>
+    <Room>
+      <Name>s2</Name>
+      <Long_Name></Long_Name>
+      <Code></Code>
+      <Building></Building>
+      <Capacity>30000</Capacity>
+      <Virtual>false</Virtual>
+      <Comments></Comments>
+    </Room>
+    <Room>
+      <Name>s3</Name>
+      <Long_Name></Long_Name>
+      <Code></Code>
+      <Building></Building>
+      <Capacity>30000</Capacity>
+      <Virtual>false</Virtual>
+      <Comments></Comments>
+    </Room>
   </Rooms_List>
   <Time_Constraints_List>
     <ConstraintBasicCompulsoryTime>

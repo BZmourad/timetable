@@ -132,7 +132,74 @@
                             </div>
                         </div>
                     </div>
-                    <div v-for="(tab, index) in temporalTabs.slice(2)" :key="index" class="tab-pane fade" :id="tab.id" role="tabpanel"></div>
+                    <div class="tab-pane fade" id="activites" role="tabpanel">
+                        <ul class="nav nav-tabs" id="temporalActivityTab" role="tablist">
+                            <li v-for="(tab, index) in temporalActivityTabs" :key="index" class="nav-item" role="presentation">
+                                <button 
+                                    class="nav-link" 
+                                    :class="{ active: index === 0 }"
+                                    :id="`${tab.id}-tab`" 
+                                    data-bs-toggle="tab" 
+                                    :data-bs-target="`#${tab.id}`" 
+                                    type="button" 
+                                    role="tab"
+                                >
+                                    {{ tab.label }}
+                                </button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="temporalActivityTabContent">
+                            <div class="tab-pane fade show active" id="temporelactivity1" role="tabpanel">
+                                <div class="accordion p-3" id="temporalActivityConstraints1Accordion">
+                                    <div v-for="(constraint, index) in temporalActivityConstraints1" :key="index" class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="`#temporalActivityConstraints1Accordion${index < 10 ? '0' + index : index}`">
+                                                {{ constraint.label }}
+                                            </button>
+                                        </h2>
+                                        <div :id="`temporalActivityConstraints1Accordion${index < 10 ? '0' + index : index}`" class="accordion-collapse collapse" data-bs-parent="#temporalActivityConstraints1Accordion">
+                                            <div class="accordion-body">
+                                                <component :is="constraint.component" :formData="formData" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="temporelactivity2" role="tabpanel">
+                                <div class="accordion p-3" id="temporalActivityConstraints2Accordion">
+                                    <div v-for="(constraint, index) in temporalActivityConstraints2" :key="index" class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="`#temporalActivityConstraints2Accordion${index < 10 ? '0' + index : index}`">
+                                                {{ constraint.label }}
+                                            </button>
+                                        </h2>
+                                        <div :id="`temporalActivityConstraints2Accordion${index < 10 ? '0' + index : index}`" class="accordion-collapse collapse" data-bs-parent="#temporalActivityConstraints2Accordion">
+                                            <div class="accordion-body">
+                                                <component :is="constraint.component" :formData="formData" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="temporelactivity3" role="tabpanel">
+                                <div class="accordion p-3" id="temporalActivityConstraints3Accordion">
+                                    <div v-for="(constraint, index) in temporalActivityConstraints3" :key="index" class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="`#temporalActivityConstraints3Accordion${index < 10 ? '0' + index : index}`">
+                                                {{ constraint.label }}
+                                            </button>
+                                        </h2>
+                                        <div :id="`temporalActivityConstraints3Accordion${index < 10 ? '0' + index : index}`" class="accordion-collapse collapse" data-bs-parent="#temporalActivityConstraints3Accordion">
+                                            <div class="accordion-body">
+                                                <component :is="constraint.component" :formData="formData" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-for="(tab, index) in temporalTabs.slice(1)" :key="index" class="tab-pane fade" :id="tab.id" role="tabpanel"></div>
                 </div>
             </div>
             
@@ -294,6 +361,40 @@ import ConstraintTeachersMinGapsBetweenActivityTag from './contraintes/temporel/
 import ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags from './contraintes/temporel/Enseignant/Enseignants2/ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags.vue';
 import ConstraintTeachersIntervalMaxDaysPerWeek from './contraintes/temporel/Enseignant/Enseignants2/ConstraintTeachersIntervalMaxDaysPerWeek.vue';
 import ConstraintTeachersMinRestingHours from './contraintes/temporel/Enseignant/Enseignants2/ConstraintTeachersMinRestingHours.vue';
+import ConstraintActivityPreferredStartingTime from './contraintes/temporel/Activity/TempsPreferes/ConstraintActivityPreferredStartingTime.vue';
+import ConstraintActivityPreferredStartingTimes from './contraintes/temporel/Activity/TempsPreferes/ConstraintActivityPreferredStartingTimes.vue';
+import ConstraintActivityPreferredTimeSlots from './contraintes/temporel/Activity/TempsPreferes/ConstraintActivityPreferredTimeSlots.vue';
+import ConstraintActivitiesPreferredStartingTimes from './contraintes/temporel/Activity/TempsPreferes/ConstraintActivitiesPreferredStartingTimes.vue';
+import ConstraintActivitiesPreferredTimeSlots from './contraintes/temporel/Activity/TempsPreferes/ConstraintActivitiesPreferredTimeSlots.vue';
+import ConstraintSubactivitiesPreferredStartingTimes from './contraintes/temporel/Activity/TempsPreferes/ConstraintSubactivitiesPreferredStartingTimes.vue';
+import ConstraintSubactivitiesPreferredTimeSlots from './contraintes/temporel/Activity/TempsPreferes/ConstraintSubactivitiesPreferredTimeSlots.vue';
+import ConstraintMinDaysBetweenActivities from './contraintes/temporel/Activity/Autres1/ConstraintMinDaysBetweenActivities.vue';
+import ConstraintMaxDaysBetweenActivities from './contraintes/temporel/Activity/Autres1/ConstraintMaxDaysBetweenActivities.vue';
+import ConstraintActivityBeginsStudentsDay from './contraintes/temporel/Activity/Autres1/ConstraintActivityBeginsStudentsDay.vue';
+import ConstraintActivitiesBeginStudentsDay from './contraintes/temporel/Activity/Autres1/ConstraintActivitiesBeginStudentsDay.vue';
+import ConstraintActivityBeginsTeachersDay from './contraintes/temporel/Activity/Autres1/ConstraintActivityBeginsTeachersDay.vue';
+import ConstraintActivitiesBeginTeachersDay from './contraintes/temporel/Activity/Autres1/ConstraintActivitiesBeginTeachersDay.vue';
+import ConstraintActivityEndsStudentsDay from './contraintes/temporel/Activity/Autres1/ConstraintActivityEndsStudentsDay.vue';
+import ConstraintActivitiesEndStudentsDay from './contraintes/temporel/Activity/Autres1/ConstraintActivitiesEndStudentsDay.vue';
+import ConstraintActivityEndsTeachersDay from './contraintes/temporel/Activity/Autres1/ConstraintActivityEndsTeachersDay.vue';
+import ConstraintActivitiesEndTeachersDay from './contraintes/temporel/Activity/Autres1/ConstraintActivitiesEndTeachersDay.vue';
+import ConstraintActivitiesSameStartingTime from './contraintes/temporel/Activity/Autres1/ConstraintActivitiesSameStartingTime.vue';
+import ConstraintActivitiesSameStartingDay from './contraintes/temporel/Activity/Autres1/ConstraintActivitiesSameStartingDay.vue';
+import ConstraintActivitiesSameStartingHour from './contraintes/temporel/Activity/Autres1/ConstraintActivitiesSameStartingHour.vue';
+import ConstraintActivitiesOccupyMaxTimeSlotsFromSelection from './contraintes/temporel/Activity/Autres2/ConstraintActivitiesOccupyMaxTimeSlotsFromSelection.vue';
+import ConstraintActivitiesOccupyMinTimeSlotsFromSelection from './contraintes/temporel/Activity/Autres2/ConstraintActivitiesOccupyMinTimeSlotsFromSelection.vue';
+import ConstraintTwoActivitiesOrdered from './contraintes/temporel/Activity/Autres2/ConstraintTwoActivitiesOrdered.vue';
+import ConstraintTwoSetsOfActivitiesOrdered from './contraintes/temporel/Activity/Autres2/ConstraintTwoSetsOfActivitiesOrdered.vue';
+import ConstraintTwoActivitiesOrderedIfSameDay from './contraintes/temporel/Activity/Autres2/ConstraintTwoActivitiesOrderedIfSameDay.vue';
+import ConstraintTwoActivitiesConsecutive from './contraintes/temporel/Activity/Autres2/ConstraintTwoActivitiesConsecutive.vue';
+import ConstraintTwoActivitiesGrouped from './contraintes/temporel/Activity/Autres2/ConstraintTwoActivitiesGrouped.vue';
+import ConstraintThreeActivitiesGrouped from './contraintes/temporel/Activity/Autres2/ConstraintThreeActivitiesGrouped.vue';
+import ConstraintActivitiesMaxHourlySpan from './contraintes/temporel/Activity/Autres2/ConstraintActivitiesMaxHourlySpan.vue';
+import ConstraintActivitiesNotOverlapping from './contraintes/temporel/Activity/Autres2/ConstraintActivitiesNotOverlapping.vue';
+import ConstraintActivityTagsNotOverlapping from './contraintes/temporel/Activity/Autres2/ConstraintActivityTagsNotOverlapping.vue';
+import ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots from './contraintes/temporel/Activity/Autres2/ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots.vue';
+import ConstraintActivitiesMinSimultaneousInSelectedTimeSlots from './contraintes/temporel/Activity/Autres2/ConstraintActivitiesMinSimultaneousInSelectedTimeSlots.vue';
+import ConstraintMinGapsBetweenActivities from './contraintes/temporel/Activity/Autres2/ConstraintMinGapsBetweenActivities.vue';
 
 export default {
     name: 'ContraintesTab',
@@ -355,7 +456,41 @@ export default {
         ConstraintTeachersMinGapsBetweenActivityTag,
         ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags,
         ConstraintTeachersIntervalMaxDaysPerWeek,
-        ConstraintTeachersMinRestingHours
+        ConstraintTeachersMinRestingHours,
+        ConstraintActivityPreferredStartingTime,
+        ConstraintActivityPreferredStartingTimes,
+        ConstraintActivityPreferredTimeSlots,
+        ConstraintActivitiesPreferredStartingTimes,
+        ConstraintActivitiesPreferredTimeSlots,
+        ConstraintSubactivitiesPreferredStartingTimes,
+        ConstraintSubactivitiesPreferredTimeSlots,
+        ConstraintMinDaysBetweenActivities,
+        ConstraintMaxDaysBetweenActivities,
+        ConstraintActivityBeginsStudentsDay,
+        ConstraintActivitiesBeginStudentsDay,
+        ConstraintActivityBeginsTeachersDay,
+        ConstraintActivitiesBeginTeachersDay,
+        ConstraintActivityEndsStudentsDay,
+        ConstraintActivitiesEndStudentsDay,
+        ConstraintActivityEndsTeachersDay,
+        ConstraintActivitiesEndTeachersDay,
+        ConstraintActivitiesSameStartingTime,
+        ConstraintActivitiesSameStartingDay,
+        ConstraintActivitiesSameStartingHour,
+        ConstraintActivitiesOccupyMaxTimeSlotsFromSelection,
+        ConstraintActivitiesOccupyMinTimeSlotsFromSelection,
+        ConstraintTwoActivitiesOrdered,
+        ConstraintTwoSetsOfActivitiesOrdered,
+        ConstraintTwoActivitiesOrderedIfSameDay,
+        ConstraintTwoActivitiesConsecutive,
+        ConstraintTwoActivitiesGrouped,
+        ConstraintThreeActivitiesGrouped,
+        ConstraintActivitiesMaxHourlySpan,
+        ConstraintActivitiesNotOverlapping,
+        ConstraintActivityTagsNotOverlapping,
+        ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots,
+        ConstraintActivitiesMinSimultaneousInSelectedTimeSlots,
+        ConstraintMinGapsBetweenActivities
     },
     data() {
         return {
@@ -366,8 +501,8 @@ export default {
             temporalTabs: [
                 { id: 'pause', label: 'Temps de pause', icon: 'fa-solid fa-pause' },
                 { id: 'enseignants', label: 'Enseignants', icon: 'fas fa-chalkboard-teacher' },
-                { id: 'apprenants', label: 'Apprenants', icon: 'fas fa-user-graduate' },
-                { id: 'activites', label: 'Activités', icon: 'fas fa-tasks' }
+                { id: 'activites', label: 'Activités', icon: 'fas fa-tasks' },
+                { id: 'apprenants', label: 'Apprenants', icon: 'fas fa-user-graduate' }
             ],
             temporalTeacherTabs: [
                 { id: 'temporelenseignant1', label: 'Un enseignant (1)' },
@@ -510,7 +645,7 @@ export default {
                 }
             ],
             temporalAllTeachersConstraints2: [
-                                { 
+                { 
                     label: 'Limite codes activité depuis un jeu par jour pour tous les enseignants',
                     component: 'ConstraintTeachersMaxActivityTagsPerDayFromSet'
                 },
@@ -604,6 +739,153 @@ export default {
                 { 
                     label: 'Un jeu d\'activités occupe limite salles différentes',
                     component: 'ConstraintActivitiesOccupyMaxDifferentRooms'
+                }
+            ],
+            temporalActivityTabs: [
+                { id: 'temporelactivity1', label: 'Temps préférés' },
+                { id: 'temporelactivity2', label: 'Autres (1)' },
+                { id: 'temporelactivity3', label: 'Autres (2)' }
+            ],
+            temporalActivityConstraints1: [
+                { 
+                    label: 'Une activité a un temps préféré de démarrage',
+                    component: 'ConstraintActivityPreferredStartingTime'
+                },
+                { 
+                    label: 'Une activité a un jeu de temps préférés de démarrage',
+                    component: 'ConstraintActivityPreferredStartingTimes'
+                },
+                { 
+                    label: 'Un activité a un jeu de créneaux horaires préférés',
+                    component: 'ConstraintActivityPreferredTimeSlots'
+                },
+                { 
+                    label: 'Un jeu d\'activités a un jeu de temps préférés de démarrage',
+                    component: 'ConstraintActivitiesPreferredStartingTimes'
+                },
+                { 
+                    label: 'Un jeu d\'activités a un jeu de créneaux horaires préférés',
+                    component: 'ConstraintActivitiesPreferredTimeSlots'
+                },
+                { 
+                    label: 'Un jeu de sous-activités a un jeu de temps préférés de démarrage',
+                    component: 'ConstraintSubactivitiesPreferredStartingTimes'
+                },
+                { 
+                    label: 'Un jeu de sous-activités a un jeu de créneaux horaires préférés',
+                    component: 'ConstraintSubactivitiesPreferredTimeSlots'
+                }
+            ],
+            temporalActivityConstraints2: [
+                { 
+                    label: 'Jours minimum entre un jeu d\'activités',
+                    component: 'ConstraintMinDaysBetweenActivities'
+                },
+                { 
+                    label: 'Limite jours entre un jeu d\'activités',
+                    component: 'ConstraintMaxDaysBetweenActivities'
+                },
+                { 
+                    label: 'Une activité débute la journée des apprenants',
+                    component: 'ConstraintActivityBeginsStudentsDay'
+                },
+                { 
+                    label: 'Un jeu d\'activités débute la journée des apprenants',
+                    component: 'ConstraintActivitiesBeginStudentsDay'
+                },
+                { 
+                    label: 'Une activité débute journée enseignants',
+                    component: 'ConstraintActivityBeginsTeachersDay'
+                },
+                { 
+                    label: 'Un jeu d\'activités débute la journée des enseignants',
+                    component: 'ConstraintActivitiesBeginTeachersDay'
+                },
+                { 
+                    label: 'Une activité termine la journée des apprenants',
+                    component: 'ConstraintActivityEndsStudentsDay'
+                },
+                { 
+                    label: 'Un jeu d\'activités termine la journée des apprenants',
+                    component: 'ConstraintActivitiesEndStudentsDay'
+                },
+                { 
+                    label: 'Une activité termine la journée des enseignants',
+                    component: 'ConstraintActivityEndsTeachersDay'
+                },
+                { 
+                    label: 'Un jeu d\'activités termine la journée des enseignants',
+                    component: 'ConstraintActivitiesEndTeachersDay'
+                },
+                { 
+                    label: 'Un jeu d\'activités a le même temps de démarrage (jour et heure)',
+                    component: 'ConstraintActivitiesSameStartingTime'
+                },
+                { 
+                    label: 'Un jeu d\'activités a le même jour de démarrage (n\'importe quelle heure) ',
+                    component: 'ConstraintActivitiesSameStartingDay'
+                },
+                { 
+                    label: 'Un jeu d\'activités a la même heure de démarrage (n\'importe quel jour)',
+                    component: 'ConstraintActivitiesSameStartingHour'
+                }
+            ],
+            temporalActivityConstraints3: [
+                { 
+                    label: 'Un jeu d\'activités occupe un nombre maximum de créneaux dans une sélection',
+                    component: 'ConstraintActivitiesOccupyMaxTimeSlotsFromSelection'
+                },
+                { 
+                    label: 'Un jeu d\'activités occupe un nombre minimum de créneaux dans une sélection',
+                    component: 'ConstraintActivitiesOccupyMinTimeSlotsFromSelection'
+                },
+                { 
+                    label: 'Deux activités sont ordonnées',
+                    component: 'ConstraintTwoActivitiesOrdered'
+                },
+                { 
+                    label: 'Deux jeux d\'activités sont ordonnés',
+                    component: 'ConstraintTwoSetsOfActivitiesOrdered'
+                },
+                { 
+                    label: 'Deux activités sont ordonnées si elles ont lieu le même jour',
+                    component: 'ConstraintTwoActivitiesOrderedIfSameDay'
+                },
+                { 
+                    label: 'Deux activités sont consécutives',
+                    component: 'ConstraintTwoActivitiesConsecutive'
+                },
+                { 
+                    label: 'Deux activités sont groupées',
+                    component: 'ConstraintTwoActivitiesGrouped'
+                },
+                { 
+                    label: 'Trois activités sont groupées',
+                    component: 'ConstraintThreeActivitiesGrouped'
+                },
+                { 
+                    label: 'Écart maximal horaire d\'un jeu d\'activités',
+                    component: 'ConstraintActivitiesMaxHourlySpan'
+                },
+                { 
+                    label: 'Un jeu d\'activités est sans chevauchement',
+                    component: 'ConstraintActivitiesNotOverlapping'
+                },
+                { 
+                    label: 'Un jeu de codes activité est sans chevauchement',
+                    component: 'ConstraintActivityTagsNotOverlapping'
+                },
+                { 
+                    label: 'Limite activités simultanées dans un jeu dans des créneaux horaires sélectionnés',
+                    component: 'ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots'
+                },
+                { 
+                    label: 'Minimum activités simultanées dans un jeu dans des créneaux horaires sélectionnés ',
+                    component: 'ConstraintActivitiesMinSimultaneousInSelectedTimeSlots'
+                },
+                { 
+                    label: 'Vides minimum (heures) entre un jeu d\'activités',
+                    component: 'ConstraintMinGapsBetweenActivities'
                 }
             ],
         }
