@@ -175,6 +175,74 @@
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintBasicCompulsoryTime>
+    <ConstraintStudentsMaxActivityTagsPerDayFromSet>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Maximum_Allowed_Activity_Tags>2</Maximum_Allowed_Activity_Tags>
+      <Number_of_Activity_Tags>2</Number_of_Activity_Tags>
+      <Activity_Tag>b1</Activity_Tag>
+      <Activity_Tag>b2</Activity_Tag>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintStudentsMaxActivityTagsPerDayFromSet>
+    <ConstraintStudentsMinHoursDaily>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+      <Allow_Empty_Days>true</Allow_Empty_Days>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintStudentsMinHoursDaily>
+    <ConstraintStudentsActivityTagMinHoursDaily>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Activity_Tag>b1</Activity_Tag>
+      <Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+      <Minimum_Days_With_Tag>0</Minimum_Days_With_Tag>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintStudentsActivityTagMinHoursDaily>
+    <ConstraintStudentsMaxHoursContinuously>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Maximum_Hours_Continuously>2</Maximum_Hours_Continuously>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintStudentsMaxHoursContinuously>
+    <ConstraintStudentsActivityTagMaxHoursContinuously>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Activity_Tag>b1</Activity_Tag>
+      <Maximum_Hours_Continuously>2</Maximum_Hours_Continuously>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintStudentsActivityTagMaxHoursContinuously>
+    <ConstraintStudentsMinGapsBetweenActivityTag>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Activity_Tag>b1</Activity_Tag>
+      <MinGaps>1</MinGaps>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintStudentsMinGapsBetweenActivityTag>
+    <ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags>
+      <Weight_Percentage>100</Weight_Percentage>
+      <First_Activity_Tag>b1</First_Activity_Tag>
+      <Second_Activity_Tag>b2</Second_Activity_Tag>
+      <MinGaps>1</MinGaps>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags>
+    <ConstraintStudentsIntervalMaxDaysPerWeek>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Interval_Start_Hour>H2</Interval_Start_Hour>
+      <Interval_End_Hour></Interval_End_Hour>
+      <!-- Interval_End_Hour void means the end of the day (which has no name) -->
+      <Max_Days_Per_Week>3</Max_Days_Per_Week>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintStudentsIntervalMaxDaysPerWeek>
+    <ConstraintStudentsMinRestingHours>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Minimum_Resting_Hours>1</Minimum_Resting_Hours>
+      <Circular>true</Circular>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintStudentsMinRestingHours>
   </Time_Constraints_List>
   <Space_Constraints_List>
     <ConstraintBasicCompulsorySpace>

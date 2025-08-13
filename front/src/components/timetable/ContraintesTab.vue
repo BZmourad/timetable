@@ -16,8 +16,8 @@
             </li>
         </ul>
         <div class="tab-content" id="constraintsTabContent">
-            <div class="tab-pane fade show active" id="temporelles" role="tabpanel">
-                <ul class="nav nav-tabs" id="temporelTab" role="tablist">
+            <div class="tab-pane fade show active" id="temporalles" role="tabpanel">
+                <ul class="nav nav-tabs" id="temporalTab" role="tablist">
                     <li v-for="(tab, index) in temporalTabs" :key="index" class="nav-item" role="presentation">
                         <button 
                             class="nav-link" 
@@ -32,7 +32,7 @@
                         </button>
                     </li>
                 </ul>
-                <div class="tab-content" id="temporelTabContent">
+                <div class="tab-content" id="temporalTabContent">
                     <div class="tab-pane fade show active" id="pause" role="tabpanel">
                         <div class="accordion p-3" id="pauseAccordion">
                             <div class="accordion-item">
@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     <div class="tab-pane fade" id="enseignants" role="tabpanel">
-                        <ul class="nav nav-tabs" id="temporelEnseignantTab" role="tablist">
+                        <ul class="nav nav-tabs" id="temporalEnseignantTab" role="tablist">
                             <li v-for="(tab, index) in temporalTeacherTabs" :key="index" class="nav-item" role="presentation">
                                 <button 
                                     class="nav-link" 
@@ -65,16 +65,16 @@
                                 </button>
                             </li>
                         </ul>
-                        <div class="tab-content" id="temporelEnseignantTabContent">
-                            <div class="tab-pane fade show active" id="temporelenseignant1" role="tabpanel">
-                                <div class="accordion p-3" id="temporelenseignant1Accordion">
+                        <div class="tab-content" id="temporalEnseignantTabContent">
+                            <div class="tab-pane fade show active" id="temporalenseignant1" role="tabpanel">
+                                <div class="accordion p-3" id="temporalenseignant1Accordion">
                                     <div v-for="(constraint, index) in temporalTeacherConstraints" :key="index" class="accordion-item">
                                         <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="`#temporelenseignant1Accordion${index < 10 ? '0' + index : index}`">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="`#temporalenseignant1Accordion${index < 10 ? '0' + index : index}`">
                                                 {{ constraint.label }}
                                             </button>
                                         </h2>
-                                        <div :id="`temporelenseignant1Accordion${index < 10 ? '0' + index : index}`" class="accordion-collapse collapse" data-bs-parent="#temporelenseignant1Accordion">
+                                        <div :id="`temporalenseignant1Accordion${index < 10 ? '0' + index : index}`" class="accordion-collapse collapse" data-bs-parent="#temporalenseignant1Accordion">
                                             <div class="accordion-body">
                                                 <component :is="constraint.component" :formData="formData" />
                                             </div>
@@ -82,15 +82,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="temporelenseignant2" role="tabpanel">
-                                <div class="accordion p-3" id="temporelenseignant2Accordion">
+                            <div class="tab-pane fade" id="temporalenseignant2" role="tabpanel">
+                                <div class="accordion p-3" id="temporalenseignant2Accordion">
                                     <div v-for="(constraint, index) in temporalTeacherConstraints2" :key="index" class="accordion-item">
                                         <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="`#temporelenseignant2Accordion${index < 10 ? '0' + index : index}`">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="`#temporalenseignant2Accordion${index < 10 ? '0' + index : index}`">
                                                 {{ constraint.label }}
                                             </button>
                                         </h2>
-                                        <div :id="`temporelenseignant2Accordion${index < 10 ? '0' + index : index}`" class="accordion-collapse collapse" data-bs-parent="#temporelenseignant2Accordion">
+                                        <div :id="`temporalenseignant2Accordion${index < 10 ? '0' + index : index}`" class="accordion-collapse collapse" data-bs-parent="#temporalenseignant2Accordion">
                                             <div class="accordion-body">
                                                 <component :is="constraint.component" :formData="formData" />
                                             </div>
@@ -98,15 +98,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="temporelenseignants1" role="tabpanel">
-                                <div class="accordion p-3" id="temporelenseignants1Accordion">
+                            <div class="tab-pane fade" id="temporalenseignants1" role="tabpanel">
+                                <div class="accordion p-3" id="temporalenseignants1Accordion">
                                     <div v-for="(constraint, index) in temporalAllTeachersConstraints1" :key="index" class="accordion-item">
                                         <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="`#temporelenseignants1Accordion${index < 10 ? '0' + index : index}`">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="`#temporalenseignants1Accordion${index < 10 ? '0' + index : index}`">
                                                 {{ constraint.label }}
                                             </button>
                                         </h2>
-                                        <div :id="`temporelenseignants1Accordion${index < 10 ? '0' + index : index}`" class="accordion-collapse collapse" data-bs-parent="#temporelenseignants1Accordion">
+                                        <div :id="`temporalenseignants1Accordion${index < 10 ? '0' + index : index}`" class="accordion-collapse collapse" data-bs-parent="#temporalenseignants1Accordion">
                                             <div class="accordion-body">
                                                 <component :is="constraint.component" :formData="formData" />
                                             </div>
@@ -114,15 +114,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="temporelenseignants2" role="tabpanel">
-                                <div class="accordion p-3" id="temporelenseignants2Accordion">
+                            <div class="tab-pane fade" id="temporalenseignants2" role="tabpanel">
+                                <div class="accordion p-3" id="temporalenseignants2Accordion">
                                     <div v-for="(constraint, index) in temporalAllTeachersConstraints2" :key="index" class="accordion-item">
                                         <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="`#temporelenseignants2Accordion${index < 10 ? '0' + index : index}`">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="`#temporalenseignants2Accordion${index < 10 ? '0' + index : index}`">
                                                 {{ constraint.label }}
                                             </button>
                                         </h2>
-                                        <div :id="`temporelenseignants2Accordion${index < 10 ? '0' + index : index}`" class="accordion-collapse collapse" data-bs-parent="#temporelenseignants2Accordion">
+                                        <div :id="`temporalenseignants2Accordion${index < 10 ? '0' + index : index}`" class="accordion-collapse collapse" data-bs-parent="#temporalenseignants2Accordion">
                                             <div class="accordion-body">
                                                 <component :is="constraint.component" :formData="formData" />
                                             </div>
@@ -149,7 +149,7 @@
                             </li>
                         </ul>
                         <div class="tab-content" id="temporalActivityTabContent">
-                            <div class="tab-pane fade show active" id="temporelactivity1" role="tabpanel">
+                            <div class="tab-pane fade show active" id="temporalactivity1" role="tabpanel">
                                 <div class="accordion p-3" id="temporalActivityConstraints1Accordion">
                                     <div v-for="(constraint, index) in temporalActivityConstraints1" :key="index" class="accordion-item">
                                         <h2 class="accordion-header">
@@ -165,7 +165,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="temporelactivity2" role="tabpanel">
+                            <div class="tab-pane fade" id="temporalactivity2" role="tabpanel">
                                 <div class="accordion p-3" id="temporalActivityConstraints2Accordion">
                                     <div v-for="(constraint, index) in temporalActivityConstraints2" :key="index" class="accordion-item">
                                         <h2 class="accordion-header">
@@ -181,7 +181,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="temporelactivity3" role="tabpanel">
+                            <div class="tab-pane fade" id="temporalactivity3" role="tabpanel">
                                 <div class="accordion p-3" id="temporalActivityConstraints3Accordion">
                                     <div v-for="(constraint, index) in temporalActivityConstraints3" :key="index" class="accordion-item">
                                         <h2 class="accordion-header">
@@ -301,7 +301,108 @@
                             </div>
                         </div>
                     </div>
-                    <div v-for="(tab, index) in spatialTabs.slice(5)" :key="index" class="tab-pane fade" :class="{ 'show active': index === 0 }" :id="tab.id" role="tabpanel"></div>
+                    <div class="tab-pane fade" id="spatialteachers" role="tabpanel">
+                        <ul class="nav nav-tabs" id="spatialEnseignantTab" role="tablist">
+                            <li v-for="(tab, index) in spatialTeacherTabs" :key="index" class="nav-item" role="presentation">
+                                <button 
+                                    class="nav-link" 
+                                    :class="{ active: index === 0 }"
+                                    :id="`${tab.id}-tab`" 
+                                    data-bs-toggle="tab" 
+                                    :data-bs-target="`#${tab.id}`" 
+                                    type="button" 
+                                    role="tab"
+                                >
+                                    {{ tab.label }}
+                                </button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="spatialEnseignantTabContent">
+                            <div class="tab-pane fade show active" id="spatialenseignant" role="tabpanel">
+                                <div class="accordion p-3" id="spatialenseignantAccordion">
+                                    <div v-for="(constraint, index) in spatialTeacherConstraints" :key="index" class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="`#spatialenseignantAccordion${index < 10 ? '0' + index : index}`">
+                                                {{ constraint.label }}
+                                            </button>
+                                        </h2>
+                                        <div :id="`spatialenseignantAccordion${index < 10 ? '0' + index : index}`" class="accordion-collapse collapse" data-bs-parent="#spatialenseignantAccordion">
+                                            <div class="accordion-body">
+                                                <component :is="constraint.component" :formData="formData" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="spatialenseignants" role="tabpanel">
+                                <div class="accordion p-3" id="spatialenseignantsAccordion">
+                                    <div v-for="(constraint, index) in spatialAllTeachersConstraints" :key="index" class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="`#spatialenseignantsAccordion${index < 10 ? '0' + index : index}`">
+                                                {{ constraint.label }}
+                                            </button>
+                                        </h2>
+                                        <div :id="`spatialenseignantsAccordion${index < 10 ? '0' + index : index}`" class="accordion-collapse collapse" data-bs-parent="#spatialenseignantsAccordion">
+                                            <div class="accordion-body">
+                                                <component :is="constraint.component" :formData="formData" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="spatialapprenants" role="tabpanel">
+                        <ul class="nav nav-tabs" id="spatialapprenantsTab" role="tablist">
+                            <li v-for="(tab, index) in spatialStudentsTabs" :key="index" class="nav-item" role="presentation">
+                                <button 
+                                    class="nav-link" 
+                                    :class="{ active: index === 0 }"
+                                    :id="`${tab.id}-tab`" 
+                                    data-bs-toggle="tab" 
+                                    :data-bs-target="`#${tab.id}`" 
+                                    type="button" 
+                                    role="tab"
+                                >
+                                    {{ tab.label }}
+                                </button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="spatialapprenantsTabContent">
+                            <div class="tab-pane fade show active" id="spatialstudent" role="tabpanel">
+                                <div class="accordion p-3" id="spatialapprenantAccordion">
+                                    <div v-for="(constraint, index) in spatialStudentConstraints" :key="index" class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="`#spatialapprenantAccordion${index < 10 ? '0' + index : index}`">
+                                                {{ constraint.label }}
+                                            </button>
+                                        </h2>
+                                        <div :id="`spatialapprenantAccordion${index < 10 ? '0' + index : index}`" class="accordion-collapse collapse" data-bs-parent="#spatialapprenantAccordion">
+                                            <div class="accordion-body">
+                                                <component :is="constraint.component" :formData="formData" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="spatialstudents" role="tabpanel">
+                                <div class="accordion p-3" id="spatialapprenantsAccordion">
+                                    <div v-for="(constraint, index) in spatialAllStudentsConstraints" :key="index" class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="`#spatialapprenantsAccordion${index < 10 ? '0' + index : index}`">
+                                                {{ constraint.label }}
+                                            </button>
+                                        </h2>
+                                        <div :id="`spatialapprenantsAccordion${index < 10 ? '0' + index : index}`" class="accordion-collapse collapse" data-bs-parent="#spatialapprenantsAccordion">
+                                            <div class="accordion-body">
+                                                <component :is="constraint.component" :formData="formData" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -309,39 +410,39 @@
 </template>
 
 <script>
-import ConstraintBreakTimes from './contraintes/temporel/General/ConstraintBreakTimes.vue';
-import ConstraintTeacherNotAvailableTimes from './contraintes/temporel/Enseignant/Enseignant1/ConstraintTeacherNotAvailableTimes.vue';
-import ConstraintTeacherMaxDaysPerWeek from './contraintes/temporel/Enseignant/Enseignant1/ConstraintTeacherMaxDaysPerWeek.vue';
-import ConstraintTeacherMinDaysPerWeek from './contraintes/temporel/Enseignant/Enseignant1/ConstraintTeacherMinDaysPerWeek.vue';
-import ConstraintTeacherNoTwoConsecutiveDays from './contraintes/temporel/Enseignant/Enseignant1/ConstraintTeacherNoTwoConsecutiveDays.vue';
-import ConstraintTeacherMaxGapsPerDay from './contraintes/temporel/Enseignant/Enseignant1/ConstraintTeacherMaxGapsPerDay.vue';
-import ConstraintTeacherMaxGapsPerWeek from './contraintes/temporel/Enseignant/Enseignant1/ConstraintTeacherMaxGapsPerWeek.vue';
-import ConstraintTeacherMaxSingleGapsInSelectedTimeSlots from './contraintes/temporel/Enseignant/Enseignant1/ConstraintTeacherMaxSingleGapsInSelectedTimeSlots.vue';
-import ConstraintTeacherMaxHoursDailyInInterval from './contraintes/temporel/Enseignant/Enseignant1/ConstraintTeacherMaxHoursDailyInInterval.vue';
-import ConstraintTeacherMaxHoursDaily from './contraintes/temporel/Enseignant/Enseignant1/ConstraintTeacherMaxHoursDaily.vue';
-import ConstraintTeacherPairOfMutuallyExclusiveTimeSlots from './contraintes/temporel/Enseignant/Enseignant1/ConstraintTeacherPairOfMutuallyExclusiveTimeSlots.vue';
-import ConstraintTeacherMaxSpanPerDay from './contraintes/temporel/Enseignant/Enseignant1/ConstraintTeacherMaxSpanPerDay.vue';
-import ConstraintTeacherActivityTagMaxHoursDaily from './contraintes/temporel/Enseignant/Enseignant1/ConstraintTeacherActivityTagMaxHoursDaily.vue';
-import ConstraintTeacherMaxActivityTagsPerDayFromSet from './contraintes/temporel/Enseignant/Enseignant2/ConstraintTeacherMaxActivityTagsPerDayFromSet.vue';
-import ConstraintTeacherMinHoursDaily from './contraintes/temporel/Enseignant/Enseignant2/ConstraintTeacherMinHoursDaily.vue';
-import ConstraintTeacherActivityTagMinHoursDaily from './contraintes/temporel/Enseignant/Enseignant2/ConstraintTeacherActivityTagMinHoursDaily.vue';
-import ConstraintTeacherMaxHoursContinuously from './contraintes/temporel/Enseignant/Enseignant2/ConstraintTeacherMaxHoursContinuously.vue';
-import ConstraintTeacherActivityTagMaxHoursContinuously from './contraintes/temporel/Enseignant/Enseignant2/ConstraintTeacherActivityTagMaxHoursContinuously.vue';
-import ConstraintTeacherMinGapsBetweenActivityTag from './contraintes/temporel/Enseignant/Enseignant2/ConstraintTeacherMinGapsBetweenActivityTag.vue';
-import ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags from './contraintes/temporel/Enseignant/Enseignant2/ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags.vue';
-import ConstraintTeacherIntervalMaxDaysPerWeek from './contraintes/temporel/Enseignant/Enseignant2/ConstraintTeacherIntervalMaxDaysPerWeek.vue';
-import ConstraintTeacherMinRestingHours from './contraintes/temporel/Enseignant/Enseignant2/ConstraintTeacherMinRestingHours.vue';
-import ConstraintTeachersMaxDaysPerWeek from './contraintes/temporel/Enseignant/Enseignants1/ConstraintTeachersMaxDaysPerWeek.vue';
-import ConstraintTeachersMinDaysPerWeek from './contraintes/temporel/Enseignant/Enseignants1/ConstraintTeachersMinDaysPerWeek.vue';
-import ConstraintTeachersNoTwoConsecutiveDays from './contraintes/temporel/Enseignant/Enseignants1/ConstraintTeachersNoTwoConsecutiveDays.vue';
-import ConstraintTeachersMaxGapsPerDay from './contraintes/temporel/Enseignant/Enseignants1/ConstraintTeachersMaxGapsPerDay.vue';
-import ConstraintTeachersMaxGapsPerWeek from './contraintes/temporel/Enseignant/Enseignants1/ConstraintTeachersMaxGapsPerWeek.vue';
-import ConstraintTeachersMaxSingleGapsInSelectedTimeSlots from './contraintes/temporel/Enseignant/Enseignants1/ConstraintTeachersMaxSingleGapsInSelectedTimeSlots.vue';
-import ConstraintTeachersMaxHoursDaily from './contraintes/temporel/Enseignant/Enseignants1/ConstraintTeachersMaxHoursDaily.vue';
-import ConstraintTeachersMaxHoursDailyInInterval from './contraintes/temporel/Enseignant/Enseignants1/ConstraintTeachersMaxHoursDailyInInterval.vue';
-import ConstraintTeachersPairOfMutuallyExclusiveTimeSlots from './contraintes/temporel/Enseignant/Enseignants1/ConstraintTeachersPairOfMutuallyExclusiveTimeSlots.vue';
-import ConstraintTeachersMaxSpanPerDay from './contraintes/temporel/Enseignant/Enseignants1/ConstraintTeachersMaxSpanPerDay.vue';
-import ConstraintTeachersActivityTagMaxHoursDaily from './contraintes/temporel/Enseignant/Enseignants1/ConstraintTeachersActivityTagMaxHoursDaily.vue';
+import ConstraintBreakTimes from './contraintes/temporal/General/ConstraintBreakTimes.vue';
+import ConstraintTeacherNotAvailableTimes from './contraintes/temporal/Enseignant/Enseignant1/ConstraintTeacherNotAvailableTimes.vue';
+import ConstraintTeacherMaxDaysPerWeek from './contraintes/temporal/Enseignant/Enseignant1/ConstraintTeacherMaxDaysPerWeek.vue';
+import ConstraintTeacherMinDaysPerWeek from './contraintes/temporal/Enseignant/Enseignant1/ConstraintTeacherMinDaysPerWeek.vue';
+import ConstraintTeacherNoTwoConsecutiveDays from './contraintes/temporal/Enseignant/Enseignant1/ConstraintTeacherNoTwoConsecutiveDays.vue';
+import ConstraintTeacherMaxGapsPerDay from './contraintes/temporal/Enseignant/Enseignant1/ConstraintTeacherMaxGapsPerDay.vue';
+import ConstraintTeacherMaxGapsPerWeek from './contraintes/temporal/Enseignant/Enseignant1/ConstraintTeacherMaxGapsPerWeek.vue';
+import ConstraintTeacherMaxSingleGapsInSelectedTimeSlots from './contraintes/temporal/Enseignant/Enseignant1/ConstraintTeacherMaxSingleGapsInSelectedTimeSlots.vue';
+import ConstraintTeacherMaxHoursDailyInInterval from './contraintes/temporal/Enseignant/Enseignant1/ConstraintTeacherMaxHoursDailyInInterval.vue';
+import ConstraintTeacherMaxHoursDaily from './contraintes/temporal/Enseignant/Enseignant1/ConstraintTeacherMaxHoursDaily.vue';
+import ConstraintTeacherPairOfMutuallyExclusiveTimeSlots from './contraintes/temporal/Enseignant/Enseignant1/ConstraintTeacherPairOfMutuallyExclusiveTimeSlots.vue';
+import ConstraintTeacherMaxSpanPerDay from './contraintes/temporal/Enseignant/Enseignant1/ConstraintTeacherMaxSpanPerDay.vue';
+import ConstraintTeacherActivityTagMaxHoursDaily from './contraintes/temporal/Enseignant/Enseignant1/ConstraintTeacherActivityTagMaxHoursDaily.vue';
+import ConstraintTeacherMaxActivityTagsPerDayFromSet from './contraintes/temporal/Enseignant/Enseignant2/ConstraintTeacherMaxActivityTagsPerDayFromSet.vue';
+import ConstraintTeacherMinHoursDaily from './contraintes/temporal/Enseignant/Enseignant2/ConstraintTeacherMinHoursDaily.vue';
+import ConstraintTeacherActivityTagMinHoursDaily from './contraintes/temporal/Enseignant/Enseignant2/ConstraintTeacherActivityTagMinHoursDaily.vue';
+import ConstraintTeacherMaxHoursContinuously from './contraintes/temporal/Enseignant/Enseignant2/ConstraintTeacherMaxHoursContinuously.vue';
+import ConstraintTeacherActivityTagMaxHoursContinuously from './contraintes/temporal/Enseignant/Enseignant2/ConstraintTeacherActivityTagMaxHoursContinuously.vue';
+import ConstraintTeacherMinGapsBetweenActivityTag from './contraintes/temporal/Enseignant/Enseignant2/ConstraintTeacherMinGapsBetweenActivityTag.vue';
+import ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags from './contraintes/temporal/Enseignant/Enseignant2/ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags.vue';
+import ConstraintTeacherIntervalMaxDaysPerWeek from './contraintes/temporal/Enseignant/Enseignant2/ConstraintTeacherIntervalMaxDaysPerWeek.vue';
+import ConstraintTeacherMinRestingHours from './contraintes/temporal/Enseignant/Enseignant2/ConstraintTeacherMinRestingHours.vue';
+import ConstraintTeachersMaxDaysPerWeek from './contraintes/temporal/Enseignant/Enseignants1/ConstraintTeachersMaxDaysPerWeek.vue';
+import ConstraintTeachersMinDaysPerWeek from './contraintes/temporal/Enseignant/Enseignants1/ConstraintTeachersMinDaysPerWeek.vue';
+import ConstraintTeachersNoTwoConsecutiveDays from './contraintes/temporal/Enseignant/Enseignants1/ConstraintTeachersNoTwoConsecutiveDays.vue';
+import ConstraintTeachersMaxGapsPerDay from './contraintes/temporal/Enseignant/Enseignants1/ConstraintTeachersMaxGapsPerDay.vue';
+import ConstraintTeachersMaxGapsPerWeek from './contraintes/temporal/Enseignant/Enseignants1/ConstraintTeachersMaxGapsPerWeek.vue';
+import ConstraintTeachersMaxSingleGapsInSelectedTimeSlots from './contraintes/temporal/Enseignant/Enseignants1/ConstraintTeachersMaxSingleGapsInSelectedTimeSlots.vue';
+import ConstraintTeachersMaxHoursDaily from './contraintes/temporal/Enseignant/Enseignants1/ConstraintTeachersMaxHoursDaily.vue';
+import ConstraintTeachersMaxHoursDailyInInterval from './contraintes/temporal/Enseignant/Enseignants1/ConstraintTeachersMaxHoursDailyInInterval.vue';
+import ConstraintTeachersPairOfMutuallyExclusiveTimeSlots from './contraintes/temporal/Enseignant/Enseignants1/ConstraintTeachersPairOfMutuallyExclusiveTimeSlots.vue';
+import ConstraintTeachersMaxSpanPerDay from './contraintes/temporal/Enseignant/Enseignants1/ConstraintTeachersMaxSpanPerDay.vue';
+import ConstraintTeachersActivityTagMaxHoursDaily from './contraintes/temporal/Enseignant/Enseignants1/ConstraintTeachersActivityTagMaxHoursDaily.vue';
 import ConstraintSubjectPreferredRooms from './contraintes/spatial/Matiere/ConstraintSubjectPreferredRooms.vue';
 import ConstraintActivityTagPreferredRooms from './contraintes/spatial/Balise/ConstraintActivityTagPreferredRooms.vue';
 import ConstraintSubjectActivityTagPreferredRooms from './contraintes/spatial/MatiereBalise/ConstraintSubjectActivityTagPreferredRooms.vue';
@@ -352,49 +453,124 @@ import ConstraintRoomMaxActivityTagsPerWeekFromSet from './contraintes/spatial/S
 import ConstraintActivityPreferredRooms from './contraintes/spatial/Activity/ConstraintActivityPreferredRooms.vue';
 import ConstraintActivitiesSameRoomIfConsecutive from './contraintes/spatial/Activity/ConstraintActivitiesSameRoomIfConsecutive.vue';
 import ConstraintActivitiesOccupyMaxDifferentRooms from './contraintes/spatial/Activity/ConstraintActivitiesOccupyMaxDifferentRooms.vue';
-import ConstraintTeachersMaxActivityTagsPerDayFromSet from './contraintes/temporel/Enseignant/Enseignants2/ConstraintTeachersMaxActivityTagsPerDayFromSet.vue';
-import ConstraintTeachersMinHoursDaily from './contraintes/temporel/Enseignant/Enseignants2/ConstraintTeachersMinHoursDaily.vue';
-import ConstraintTeachersActivityTagMinHoursDaily from './contraintes/temporel/Enseignant/Enseignants2/ConstraintTeachersActivityTagMinHoursDaily.vue';
-import ConstraintTeachersMaxHoursContinuously from './contraintes/temporel/Enseignant/Enseignants2/ConstraintTeachersMaxHoursContinuously.vue';
-import ConstraintTeachersActivityTagMaxHoursContinuously from './contraintes/temporel/Enseignant/Enseignants2/ConstraintTeachersActivityTagMaxHoursContinuously.vue';
-import ConstraintTeachersMinGapsBetweenActivityTag from './contraintes/temporel/Enseignant/Enseignants2/ConstraintTeachersMinGapsBetweenActivityTag.vue';
-import ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags from './contraintes/temporel/Enseignant/Enseignants2/ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags.vue';
-import ConstraintTeachersIntervalMaxDaysPerWeek from './contraintes/temporel/Enseignant/Enseignants2/ConstraintTeachersIntervalMaxDaysPerWeek.vue';
-import ConstraintTeachersMinRestingHours from './contraintes/temporel/Enseignant/Enseignants2/ConstraintTeachersMinRestingHours.vue';
-import ConstraintActivityPreferredStartingTime from './contraintes/temporel/Activity/TempsPreferes/ConstraintActivityPreferredStartingTime.vue';
-import ConstraintActivityPreferredStartingTimes from './contraintes/temporel/Activity/TempsPreferes/ConstraintActivityPreferredStartingTimes.vue';
-import ConstraintActivityPreferredTimeSlots from './contraintes/temporel/Activity/TempsPreferes/ConstraintActivityPreferredTimeSlots.vue';
-import ConstraintActivitiesPreferredStartingTimes from './contraintes/temporel/Activity/TempsPreferes/ConstraintActivitiesPreferredStartingTimes.vue';
-import ConstraintActivitiesPreferredTimeSlots from './contraintes/temporel/Activity/TempsPreferes/ConstraintActivitiesPreferredTimeSlots.vue';
-import ConstraintSubactivitiesPreferredStartingTimes from './contraintes/temporel/Activity/TempsPreferes/ConstraintSubactivitiesPreferredStartingTimes.vue';
-import ConstraintSubactivitiesPreferredTimeSlots from './contraintes/temporel/Activity/TempsPreferes/ConstraintSubactivitiesPreferredTimeSlots.vue';
-import ConstraintMinDaysBetweenActivities from './contraintes/temporel/Activity/Autres1/ConstraintMinDaysBetweenActivities.vue';
-import ConstraintMaxDaysBetweenActivities from './contraintes/temporel/Activity/Autres1/ConstraintMaxDaysBetweenActivities.vue';
-import ConstraintActivityBeginsStudentsDay from './contraintes/temporel/Activity/Autres1/ConstraintActivityBeginsStudentsDay.vue';
-import ConstraintActivitiesBeginStudentsDay from './contraintes/temporel/Activity/Autres1/ConstraintActivitiesBeginStudentsDay.vue';
-import ConstraintActivityBeginsTeachersDay from './contraintes/temporel/Activity/Autres1/ConstraintActivityBeginsTeachersDay.vue';
-import ConstraintActivitiesBeginTeachersDay from './contraintes/temporel/Activity/Autres1/ConstraintActivitiesBeginTeachersDay.vue';
-import ConstraintActivityEndsStudentsDay from './contraintes/temporel/Activity/Autres1/ConstraintActivityEndsStudentsDay.vue';
-import ConstraintActivitiesEndStudentsDay from './contraintes/temporel/Activity/Autres1/ConstraintActivitiesEndStudentsDay.vue';
-import ConstraintActivityEndsTeachersDay from './contraintes/temporel/Activity/Autres1/ConstraintActivityEndsTeachersDay.vue';
-import ConstraintActivitiesEndTeachersDay from './contraintes/temporel/Activity/Autres1/ConstraintActivitiesEndTeachersDay.vue';
-import ConstraintActivitiesSameStartingTime from './contraintes/temporel/Activity/Autres1/ConstraintActivitiesSameStartingTime.vue';
-import ConstraintActivitiesSameStartingDay from './contraintes/temporel/Activity/Autres1/ConstraintActivitiesSameStartingDay.vue';
-import ConstraintActivitiesSameStartingHour from './contraintes/temporel/Activity/Autres1/ConstraintActivitiesSameStartingHour.vue';
-import ConstraintActivitiesOccupyMaxTimeSlotsFromSelection from './contraintes/temporel/Activity/Autres2/ConstraintActivitiesOccupyMaxTimeSlotsFromSelection.vue';
-import ConstraintActivitiesOccupyMinTimeSlotsFromSelection from './contraintes/temporel/Activity/Autres2/ConstraintActivitiesOccupyMinTimeSlotsFromSelection.vue';
-import ConstraintTwoActivitiesOrdered from './contraintes/temporel/Activity/Autres2/ConstraintTwoActivitiesOrdered.vue';
-import ConstraintTwoSetsOfActivitiesOrdered from './contraintes/temporel/Activity/Autres2/ConstraintTwoSetsOfActivitiesOrdered.vue';
-import ConstraintTwoActivitiesOrderedIfSameDay from './contraintes/temporel/Activity/Autres2/ConstraintTwoActivitiesOrderedIfSameDay.vue';
-import ConstraintTwoActivitiesConsecutive from './contraintes/temporel/Activity/Autres2/ConstraintTwoActivitiesConsecutive.vue';
-import ConstraintTwoActivitiesGrouped from './contraintes/temporel/Activity/Autres2/ConstraintTwoActivitiesGrouped.vue';
-import ConstraintThreeActivitiesGrouped from './contraintes/temporel/Activity/Autres2/ConstraintThreeActivitiesGrouped.vue';
-import ConstraintActivitiesMaxHourlySpan from './contraintes/temporel/Activity/Autres2/ConstraintActivitiesMaxHourlySpan.vue';
-import ConstraintActivitiesNotOverlapping from './contraintes/temporel/Activity/Autres2/ConstraintActivitiesNotOverlapping.vue';
-import ConstraintActivityTagsNotOverlapping from './contraintes/temporel/Activity/Autres2/ConstraintActivityTagsNotOverlapping.vue';
-import ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots from './contraintes/temporel/Activity/Autres2/ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots.vue';
-import ConstraintActivitiesMinSimultaneousInSelectedTimeSlots from './contraintes/temporel/Activity/Autres2/ConstraintActivitiesMinSimultaneousInSelectedTimeSlots.vue';
-import ConstraintMinGapsBetweenActivities from './contraintes/temporel/Activity/Autres2/ConstraintMinGapsBetweenActivities.vue';
+import ConstraintTeachersMaxActivityTagsPerDayFromSet from './contraintes/temporal/Enseignant/Enseignants2/ConstraintTeachersMaxActivityTagsPerDayFromSet.vue';
+import ConstraintTeachersMinHoursDaily from './contraintes/temporal/Enseignant/Enseignants2/ConstraintTeachersMinHoursDaily.vue';
+import ConstraintTeachersActivityTagMinHoursDaily from './contraintes/temporal/Enseignant/Enseignants2/ConstraintTeachersActivityTagMinHoursDaily.vue';
+import ConstraintTeachersMaxHoursContinuously from './contraintes/temporal/Enseignant/Enseignants2/ConstraintTeachersMaxHoursContinuously.vue';
+import ConstraintTeachersActivityTagMaxHoursContinuously from './contraintes/temporal/Enseignant/Enseignants2/ConstraintTeachersActivityTagMaxHoursContinuously.vue';
+import ConstraintTeachersMinGapsBetweenActivityTag from './contraintes/temporal/Enseignant/Enseignants2/ConstraintTeachersMinGapsBetweenActivityTag.vue';
+import ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags from './contraintes/temporal/Enseignant/Enseignants2/ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags.vue';
+import ConstraintTeachersIntervalMaxDaysPerWeek from './contraintes/temporal/Enseignant/Enseignants2/ConstraintTeachersIntervalMaxDaysPerWeek.vue';
+import ConstraintTeachersMinRestingHours from './contraintes/temporal/Enseignant/Enseignants2/ConstraintTeachersMinRestingHours.vue';
+import ConstraintActivityPreferredStartingTime from './contraintes/temporal/Activity/TempsPreferes/ConstraintActivityPreferredStartingTime.vue';
+import ConstraintActivityPreferredStartingTimes from './contraintes/temporal/Activity/TempsPreferes/ConstraintActivityPreferredStartingTimes.vue';
+import ConstraintActivityPreferredTimeSlots from './contraintes/temporal/Activity/TempsPreferes/ConstraintActivityPreferredTimeSlots.vue';
+import ConstraintActivitiesPreferredStartingTimes from './contraintes/temporal/Activity/TempsPreferes/ConstraintActivitiesPreferredStartingTimes.vue';
+import ConstraintActivitiesPreferredTimeSlots from './contraintes/temporal/Activity/TempsPreferes/ConstraintActivitiesPreferredTimeSlots.vue';
+import ConstraintSubactivitiesPreferredStartingTimes from './contraintes/temporal/Activity/TempsPreferes/ConstraintSubactivitiesPreferredStartingTimes.vue';
+import ConstraintSubactivitiesPreferredTimeSlots from './contraintes/temporal/Activity/TempsPreferes/ConstraintSubactivitiesPreferredTimeSlots.vue';
+import ConstraintMinDaysBetweenActivities from './contraintes/temporal/Activity/Autres1/ConstraintMinDaysBetweenActivities.vue';
+import ConstraintMaxDaysBetweenActivities from './contraintes/temporal/Activity/Autres1/ConstraintMaxDaysBetweenActivities.vue';
+import ConstraintActivityBeginsStudentsDay from './contraintes/temporal/Activity/Autres1/ConstraintActivityBeginsStudentsDay.vue';
+import ConstraintActivitiesBeginStudentsDay from './contraintes/temporal/Activity/Autres1/ConstraintActivitiesBeginStudentsDay.vue';
+import ConstraintActivityBeginsTeachersDay from './contraintes/temporal/Activity/Autres1/ConstraintActivityBeginsTeachersDay.vue';
+import ConstraintActivitiesBeginTeachersDay from './contraintes/temporal/Activity/Autres1/ConstraintActivitiesBeginTeachersDay.vue';
+import ConstraintActivityEndsStudentsDay from './contraintes/temporal/Activity/Autres1/ConstraintActivityEndsStudentsDay.vue';
+import ConstraintActivitiesEndStudentsDay from './contraintes/temporal/Activity/Autres1/ConstraintActivitiesEndStudentsDay.vue';
+import ConstraintActivityEndsTeachersDay from './contraintes/temporal/Activity/Autres1/ConstraintActivityEndsTeachersDay.vue';
+import ConstraintActivitiesEndTeachersDay from './contraintes/temporal/Activity/Autres1/ConstraintActivitiesEndTeachersDay.vue';
+import ConstraintActivitiesSameStartingTime from './contraintes/temporal/Activity/Autres1/ConstraintActivitiesSameStartingTime.vue';
+import ConstraintActivitiesSameStartingDay from './contraintes/temporal/Activity/Autres1/ConstraintActivitiesSameStartingDay.vue';
+import ConstraintActivitiesSameStartingHour from './contraintes/temporal/Activity/Autres1/ConstraintActivitiesSameStartingHour.vue';
+import ConstraintActivitiesOccupyMaxTimeSlotsFromSelection from './contraintes/temporal/Activity/Autres2/ConstraintActivitiesOccupyMaxTimeSlotsFromSelection.vue';
+import ConstraintActivitiesOccupyMinTimeSlotsFromSelection from './contraintes/temporal/Activity/Autres2/ConstraintActivitiesOccupyMinTimeSlotsFromSelection.vue';
+import ConstraintTwoActivitiesOrdered from './contraintes/temporal/Activity/Autres2/ConstraintTwoActivitiesOrdered.vue';
+import ConstraintTwoSetsOfActivitiesOrdered from './contraintes/temporal/Activity/Autres2/ConstraintTwoSetsOfActivitiesOrdered.vue';
+import ConstraintTwoActivitiesOrderedIfSameDay from './contraintes/temporal/Activity/Autres2/ConstraintTwoActivitiesOrderedIfSameDay.vue';
+import ConstraintTwoActivitiesConsecutive from './contraintes/temporal/Activity/Autres2/ConstraintTwoActivitiesConsecutive.vue';
+import ConstraintTwoActivitiesGrouped from './contraintes/temporal/Activity/Autres2/ConstraintTwoActivitiesGrouped.vue';
+import ConstraintThreeActivitiesGrouped from './contraintes/temporal/Activity/Autres2/ConstraintThreeActivitiesGrouped.vue';
+import ConstraintActivitiesMaxHourlySpan from './contraintes/temporal/Activity/Autres2/ConstraintActivitiesMaxHourlySpan.vue';
+import ConstraintActivitiesNotOverlapping from './contraintes/temporal/Activity/Autres2/ConstraintActivitiesNotOverlapping.vue';
+import ConstraintActivityTagsNotOverlapping from './contraintes/temporal/Activity/Autres2/ConstraintActivityTagsNotOverlapping.vue';
+import ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots from './contraintes/temporal/Activity/Autres2/ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots.vue';
+import ConstraintActivitiesMinSimultaneousInSelectedTimeSlots from './contraintes/temporal/Activity/Autres2/ConstraintActivitiesMinSimultaneousInSelectedTimeSlots.vue';
+import ConstraintMinGapsBetweenActivities from './contraintes/temporal/Activity/Autres2/ConstraintMinGapsBetweenActivities.vue';
+import ConstraintTeacherHomeRoom from './contraintes/spatial/Enseignant/Enseignant/ConstraintTeacherHomeRoom.vue';
+import ConstraintTeacherHomeRooms from './contraintes/spatial/Enseignant/Enseignant/ConstraintTeacherHomeRooms.vue';
+import ConstraintTeacherMaxRoomChangesPerDay from './contraintes/spatial/Enseignant/Enseignant/ConstraintTeacherMaxRoomChangesPerDay.vue';
+import ConstraintTeacherMaxRoomChangesPerDayInInterval from './contraintes/spatial/Enseignant/Enseignant/ConstraintTeacherMaxRoomChangesPerDayInInterval.vue';
+import ConstraintTeacherMaxRoomChangesPerWeek from './contraintes/spatial/Enseignant/Enseignant/ConstraintTeacherMaxRoomChangesPerWeek.vue';
+import ConstraintTeacherMinGapsBetweenRoomChanges from './contraintes/spatial/Enseignant/Enseignant/ConstraintTeacherMinGapsBetweenRoomChanges.vue';
+import ConstraintTeacherMaxBuildingChangesPerDay from './contraintes/spatial/Enseignant/Enseignant/ConstraintTeacherMaxBuildingChangesPerDay.vue';
+import ConstraintTeacherMaxBuildingChangesPerDayInInterval from './contraintes/spatial/Enseignant/Enseignant/ConstraintTeacherMaxBuildingChangesPerDayInInterval.vue';
+import ConstraintTeacherMaxBuildingChangesPerWeek from './contraintes/spatial/Enseignant/Enseignant/ConstraintTeacherMaxBuildingChangesPerWeek.vue';
+import ConstraintTeacherMinGapsBetweenBuildingChanges from './contraintes/spatial/Enseignant/Enseignant/ConstraintTeacherMinGapsBetweenBuildingChanges.vue';
+import ConstraintTeachersMaxRoomChangesPerDay from './contraintes/spatial/Enseignant/Enseignants/ConstraintTeachersMaxRoomChangesPerDay.vue';
+import ConstraintTeachersMaxRoomChangesPerDayInInterval from './contraintes/spatial/Enseignant/Enseignants/ConstraintTeachersMaxRoomChangesPerDayInInterval.vue';
+import ConstraintTeachersMaxRoomChangesPerWeek from './contraintes/spatial/Enseignant/Enseignants/ConstraintTeachersMaxRoomChangesPerWeek.vue';
+import ConstraintTeachersMinGapsBetweenRoomChanges from './contraintes/spatial/Enseignant/Enseignants/ConstraintTeachersMinGapsBetweenRoomChanges.vue';
+import ConstraintTeachersMaxBuildingChangesPerDay from './contraintes/spatial/Enseignant/Enseignants/ConstraintTeachersMaxBuildingChangesPerDay.vue';
+import ConstraintTeachersMaxBuildingChangesPerDayInInterval from './contraintes/spatial/Enseignant/Enseignants/ConstraintTeachersMaxBuildingChangesPerDayInInterval.vue';
+import ConstraintTeachersMaxBuildingChangesPerWeek from './contraintes/spatial/Enseignant/Enseignants/ConstraintTeachersMaxBuildingChangesPerWeek.vue';
+import ConstraintTeachersMinGapsBetweenBuildingChanges from './contraintes/spatial/Enseignant/Enseignants/ConstraintTeachersMinGapsBetweenBuildingChanges.vue';
+import ConstraintStudentsSetHomeRoom from './contraintes/spatial/Apprenant/Apprenant/ConstraintStudentsSetHomeRoom.vue';
+import ConstraintStudentsSetHomeRooms from './contraintes/spatial/Apprenant/Apprenant/ConstraintStudentsSetHomeRooms.vue';
+import ConstraintStudentsSetMaxRoomChangesPerDay from './contraintes/spatial/Apprenant/Apprenant/ConstraintStudentsSetMaxRoomChangesPerDay.vue';
+import ConstraintStudentsSetMaxRoomChangesPerDayInInterval from './contraintes/spatial/Apprenant/Apprenant/ConstraintStudentsSetMaxRoomChangesPerDayInInterval.vue';
+import ConstraintStudentsSetMaxRoomChangesPerWeek from './contraintes/spatial/Apprenant/Apprenant/ConstraintStudentsSetMaxRoomChangesPerWeek.vue';
+import ConstraintStudentsSetMinGapsBetweenRoomChanges from './contraintes/spatial/Apprenant/Apprenant/ConstraintStudentsSetMinGapsBetweenRoomChanges.vue';
+import ConstraintStudentsSetMaxBuildingChangesPerDay from './contraintes/spatial/Apprenant/Apprenant/ConstraintStudentsSetMaxBuildingChangesPerDay.vue';
+import ConstraintStudentsSetMaxBuildingChangesPerDayInInterval from './contraintes/spatial/Apprenant/Apprenant/ConstraintStudentsSetMaxBuildingChangesPerDayInInterval.vue';
+import ConstraintStudentsSetMaxBuildingChangesPerWeek from './contraintes/spatial/Apprenant/Apprenant/ConstraintStudentsSetMaxBuildingChangesPerWeek.vue';
+import ConstraintStudentsSetMinGapsBetweenBuildingChanges from './contraintes/spatial/Apprenant/Apprenant/ConstraintStudentsSetMinGapsBetweenBuildingChanges.vue';
+import ConstraintStudentsMaxRoomChangesPerDay from './contraintes/spatial/Apprenant/Apprenants/ConstraintStudentsMaxRoomChangesPerDay.vue';
+import ConstraintStudentsMaxRoomChangesPerDayInInterval from './contraintes/spatial/Apprenant/Apprenants/ConstraintStudentsMaxRoomChangesPerDayInInterval.vue';
+import ConstraintStudentsMaxRoomChangesPerWeek from './contraintes/spatial/Apprenant/Apprenants/ConstraintStudentsMaxRoomChangesPerWeek.vue';
+import ConstraintStudentsMinGapsBetweenRoomChanges from './contraintes/spatial/Apprenant/Apprenants/ConstraintStudentsMinGapsBetweenRoomChanges.vue';
+import ConstraintStudentsMaxBuildingChangesPerDay from './contraintes/spatial/Apprenant/Apprenants/ConstraintStudentsMaxBuildingChangesPerDay.vue';
+import ConstraintStudentsMaxBuildingChangesPerDayInInterval from './contraintes/spatial/Apprenant/Apprenants/ConstraintStudentsMaxBuildingChangesPerDayInInterval.vue';
+import ConstraintStudentsMaxBuildingChangesPerWeek from './contraintes/spatial/Apprenant/Apprenants/ConstraintStudentsMaxBuildingChangesPerWeek.vue';
+import ConstraintStudentsMinGapsBetweenBuildingChanges from './contraintes/spatial/Apprenant/Apprenants/ConstraintStudentsMinGapsBetweenBuildingChanges.vue';
+import ConstraintStudentsSetNotAvailableTimes from './contraintes/temporal/Student/Student1/ConstraintStudentsSetNotAvailableTimes.vue';
+import ConstraintStudentsSetMaxDaysPerWeek from './contraintes/temporal/Student/Student1/ConstraintStudentsSetMaxDaysPerWeek.vue';
+import ConstraintStudentsSetMaxGapsPerDay from './contraintes/temporal/Student/Student1/ConstraintStudentsSetMaxGapsPerDay.vue';
+import ConstraintStudentsSetMaxGapsPerWeek from './contraintes/temporal/Student/Student1/ConstraintStudentsSetMaxGapsPerWeek.vue';
+import ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots from './contraintes/temporal/Student/Student1/ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots.vue';
+import ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour from './contraintes/temporal/Student/Student1/ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour.vue';
+import ConstraintStudentsSetMaxHoursDaily from './contraintes/temporal/Student/Student1/ConstraintStudentsSetMaxHoursDaily.vue';
+import ConstraintStudentsSetMaxHoursDailyInInterval from './contraintes/temporal/Student/Student1/ConstraintStudentsSetMaxHoursDailyInInterval.vue';
+import ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots from './contraintes/temporal/Student/Student1/ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots.vue';
+import ConstraintStudentsSetMaxSpanPerDay from './contraintes/temporal/Student/Student1/ConstraintStudentsSetMaxSpanPerDay.vue';
+import ConstraintStudentsSetActivityTagMaxHoursDaily from './contraintes/temporal/Student/Student1/ConstraintStudentsSetActivityTagMaxHoursDaily.vue';
+import ConstraintStudentsSetMaxActivityTagsPerDayFromSet from './contraintes/temporal/Student/Student2/ConstraintStudentsSetMaxActivityTagsPerDayFromSet.vue';
+import ConstraintStudentsSetMinHoursDaily from './contraintes/temporal/Student/Student2/ConstraintStudentsSetMinHoursDaily.vue';
+import ConstraintStudentsSetActivityTagMinHoursDaily from './contraintes/temporal/Student/Student2/ConstraintStudentsSetActivityTagMinHoursDaily.vue';
+import ConstraintStudentsSetMaxHoursContinuously from './contraintes/temporal/Student/Student2/ConstraintStudentsSetMaxHoursContinuously.vue';
+import ConstraintStudentsSetActivityTagMaxHoursContinuously from './contraintes/temporal/Student/Student2/ConstraintStudentsSetActivityTagMaxHoursContinuously.vue';
+import ConstraintStudentsSetMinGapsBetweenActivityTag from './contraintes/temporal/Student/Student2/ConstraintStudentsSetMinGapsBetweenActivityTag.vue';
+import ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags from './contraintes/temporal/Student/Student2/ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags.vue';
+import ConstraintStudentsSetIntervalMaxDaysPerWeek from './contraintes/temporal/Student/Student2/ConstraintStudentsSetIntervalMaxDaysPerWeek.vue';
+import ConstraintStudentsSetMinRestingHours from './contraintes/temporal/Student/Student2/ConstraintStudentsSetMinRestingHours.vue';
+import ConstraintStudentsMaxDaysPerWeek from './contraintes/temporal/Student/Students1/ConstraintStudentsMaxDaysPerWeek.vue';
+import ConstraintStudentsMaxGapsPerDay from './contraintes/temporal/Student/Students1/ConstraintStudentsMaxGapsPerDay.vue';
+import ConstraintStudentsMaxGapsPerWeek from './contraintes/temporal/Student/Students1/ConstraintStudentsMaxGapsPerWeek.vue';
+import ConstraintStudentsMaxSingleGapsInSelectedTimeSlots from './contraintes/temporal/Student/Students1/ConstraintStudentsMaxSingleGapsInSelectedTimeSlots.vue';
+import ConstraintStudentsEarlyMaxBeginningsAtSecondHour from './contraintes/temporal/Student/Students1/ConstraintStudentsEarlyMaxBeginningsAtSecondHour.vue';
+import ConstraintStudentsMaxHoursDaily from './contraintes/temporal/Student/Students1/ConstraintStudentsMaxHoursDaily.vue';
+import ConstraintStudentsMaxHoursDailyInInterval from './contraintes/temporal/Student/Students1/ConstraintStudentsMaxHoursDailyInInterval.vue';
+import ConstraintStudentsPairOfMutuallyExclusiveTimeSlots from './contraintes/temporal/Student/Students1/ConstraintStudentsPairOfMutuallyExclusiveTimeSlots.vue';
+import ConstraintStudentsMaxSpanPerDay from './contraintes/temporal/Student/Students1/ConstraintStudentsMaxSpanPerDay.vue';
+import ConstraintStudentsActivityTagMaxHoursDaily from './contraintes/temporal/Student/Students1/ConstraintStudentsActivityTagMaxHoursDaily.vue';
+import ConstraintStudentsMaxActivityTagsPerDayFromSet from './contraintes/temporal/Student/Students2/ConstraintStudentsMaxActivityTagsPerDayFromSet.vue';
+import ConstraintStudentsMinHoursDaily from './contraintes/temporal/Student/Students2/ConstraintStudentsMinHoursDaily.vue';
+import ConstraintStudentsActivityTagMinHoursDaily from './contraintes/temporal/Student/Students2/ConstraintStudentsActivityTagMinHoursDaily.vue';
+import ConstraintStudentsMaxHoursContinuously from './contraintes/temporal/Student/Students2/ConstraintStudentsMaxHoursContinuously.vue';
+import ConstraintStudentsActivityTagMaxHoursContinuously from './contraintes/temporal/Student/Students2/ConstraintStudentsActivityTagMaxHoursContinuously.vue';
+import ConstraintStudentsMinGapsBetweenActivityTag from './contraintes/temporal/Student/Students2/ConstraintStudentsMinGapsBetweenActivityTag.vue';
+import ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags from './contraintes/temporal/Student/Students2/ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags.vue';
+import ConstraintStudentsIntervalMaxDaysPerWeek from './contraintes/temporal/Student/Students2/ConstraintStudentsIntervalMaxDaysPerWeek.vue';
+import ConstraintStudentsMinRestingHours from './contraintes/temporal/Student/Students2/ConstraintStudentsMinRestingHours.vue';
 
 export default {
     name: 'ContraintesTab',
@@ -490,12 +666,87 @@ export default {
         ConstraintActivityTagsNotOverlapping,
         ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots,
         ConstraintActivitiesMinSimultaneousInSelectedTimeSlots,
-        ConstraintMinGapsBetweenActivities
+        ConstraintMinGapsBetweenActivities,
+        ConstraintTeacherHomeRoom,
+        ConstraintTeacherHomeRooms,
+        ConstraintTeacherMaxRoomChangesPerDay,
+        ConstraintTeacherMaxRoomChangesPerDayInInterval,
+        ConstraintTeacherMaxRoomChangesPerWeek,
+        ConstraintTeacherMinGapsBetweenRoomChanges,
+        ConstraintTeacherMaxBuildingChangesPerDay,
+        ConstraintTeacherMaxBuildingChangesPerDayInInterval,
+        ConstraintTeacherMaxBuildingChangesPerWeek,
+        ConstraintTeacherMinGapsBetweenBuildingChanges,
+        ConstraintTeachersMaxRoomChangesPerDay,
+        ConstraintTeachersMaxRoomChangesPerDayInInterval,
+        ConstraintTeachersMaxRoomChangesPerWeek,
+        ConstraintTeachersMinGapsBetweenRoomChanges,
+        ConstraintTeachersMaxBuildingChangesPerDay,
+        ConstraintTeachersMaxBuildingChangesPerDayInInterval,
+        ConstraintTeachersMaxBuildingChangesPerWeek,
+        ConstraintTeachersMinGapsBetweenBuildingChanges,
+        ConstraintStudentsSetHomeRoom,
+        ConstraintStudentsSetHomeRooms,
+        ConstraintStudentsSetMaxRoomChangesPerDay,
+        ConstraintStudentsSetMaxRoomChangesPerDayInInterval,
+        ConstraintStudentsSetMaxRoomChangesPerWeek,
+        ConstraintStudentsSetMinGapsBetweenRoomChanges,
+        ConstraintStudentsSetMaxBuildingChangesPerDay,
+        ConstraintStudentsSetMaxBuildingChangesPerDayInInterval,
+        ConstraintStudentsSetMaxBuildingChangesPerWeek,
+        ConstraintStudentsSetMinGapsBetweenBuildingChanges,
+        ConstraintStudentsMaxRoomChangesPerDay,
+        ConstraintStudentsMaxRoomChangesPerDayInInterval,
+        ConstraintStudentsMaxRoomChangesPerWeek,
+        ConstraintStudentsMinGapsBetweenRoomChanges,
+        ConstraintStudentsMaxBuildingChangesPerDay,
+        ConstraintStudentsMaxBuildingChangesPerDayInInterval,
+        ConstraintStudentsMaxBuildingChangesPerWeek,
+        ConstraintStudentsMinGapsBetweenBuildingChanges,
+        ConstraintStudentsSetNotAvailableTimes,
+        ConstraintStudentsSetMaxDaysPerWeek,
+        ConstraintStudentsSetMaxGapsPerDay,
+        ConstraintStudentsSetMaxGapsPerWeek,
+        ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots,
+        ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour,
+        ConstraintStudentsSetMaxHoursDaily,
+        ConstraintStudentsSetMaxHoursDailyInInterval,
+        ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots,
+        ConstraintStudentsSetMaxSpanPerDay,
+        ConstraintStudentsSetActivityTagMaxHoursDaily,
+        ConstraintStudentsSetMaxActivityTagsPerDayFromSet,
+        ConstraintStudentsSetMinHoursDaily,
+        ConstraintStudentsSetActivityTagMinHoursDaily,
+        ConstraintStudentsSetMaxHoursContinuously,
+        ConstraintStudentsSetActivityTagMaxHoursContinuously,
+        ConstraintStudentsSetMinGapsBetweenActivityTag,
+        ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags,
+        ConstraintStudentsSetIntervalMaxDaysPerWeek,
+        ConstraintStudentsSetMinRestingHours,
+        ConstraintStudentsMaxDaysPerWeek,
+        ConstraintStudentsMaxGapsPerDay,
+        ConstraintStudentsMaxGapsPerWeek,
+        ConstraintStudentsMaxSingleGapsInSelectedTimeSlots,
+        ConstraintStudentsEarlyMaxBeginningsAtSecondHour,
+        ConstraintStudentsMaxHoursDaily,
+        ConstraintStudentsMaxHoursDailyInInterval,
+        ConstraintStudentsPairOfMutuallyExclusiveTimeSlots,
+        ConstraintStudentsMaxSpanPerDay,
+        ConstraintStudentsActivityTagMaxHoursDaily,
+        ConstraintStudentsMaxActivityTagsPerDayFromSet,
+        ConstraintStudentsMinHoursDaily,
+        ConstraintStudentsActivityTagMinHoursDaily,
+        ConstraintStudentsMaxHoursContinuously,
+        ConstraintStudentsActivityTagMaxHoursContinuously,
+        ConstraintStudentsMinGapsBetweenActivityTag,
+        ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags,
+        ConstraintStudentsIntervalMaxDaysPerWeek,
+        ConstraintStudentsMinRestingHours,
     },
     data() {
         return {
             mainTabs: [
-                { id: 'temporelles', label: 'Contraintes temporelles', icon: 'fas fa-clock' },
+                { id: 'temporalles', label: 'Contraintes temporalles', icon: 'fas fa-clock' },
                 { id: 'spatiales', label: 'Contraintes spatiales', icon: 'fas fa-building' }
             ],
             temporalTabs: [
@@ -505,10 +756,10 @@ export default {
                 { id: 'apprenants', label: 'Apprenants', icon: 'fas fa-user-graduate' }
             ],
             temporalTeacherTabs: [
-                { id: 'temporelenseignant1', label: 'Un enseignant (1)' },
-                { id: 'temporelenseignant2', label: 'Un enseignant (2)' },
-                { id: 'temporelenseignants1', label: 'Tous les enseignants (1)' },
-                { id: 'temporelenseignants2', label: 'Tous les enseignants (2)' }
+                { id: 'temporalenseignant1', label: 'Un enseignant (1)' },
+                { id: 'temporalenseignant2', label: 'Un enseignant (2)' },
+                { id: 'temporalenseignants1', label: 'Tous les enseignants (1)' },
+                { id: 'temporalenseignants2', label: 'Tous les enseignants (2)' }
             ],
             temporalTeacherConstraints: [
                 { 
@@ -682,69 +933,10 @@ export default {
                     component: 'ConstraintTeachersMinRestingHours'
                 }
             ],
-            spatialTabs: [
-                { id: 'spatialmatieres', label: 'Matières', icon: 'fas fa-book' },
-                { id: 'spatialbalises', label: 'Balises', icon: 'fas fa-tag' },
-                { id: 'spatialmatieresbalises', label: 'Matières et Balises', icon: 'fas fa-brain' },
-                { id: 'spatialsalles', label: 'Salles', icon: 'fas fa-door-open' },
-                { id: 'spatialactivites', label: 'Activités', icon: 'fas fa-tasks' },
-                { id: 'spatialenseignants', label: 'Enseignants', icon: 'fas fa-chalkboard-teacher' },
-                { id: 'spatialapprenants', label: 'Apprenants', icon: 'fas fa-user-graduate' },
-            ],
-            spatialMatiereConstraints: [
-                { 
-                    label: 'Une matière a un jeu de salles préférées',
-                    component: 'ConstraintSubjectPreferredRooms'
-                }
-            ],
-            spatialBaliseConstraints: [
-                { 
-                    label: 'Un code activité a un jeu de salles préférées',
-                    component: 'ConstraintActivityTagPreferredRooms'
-                }
-            ],
-            spatialMatiereBaliseConstraints: [
-                { 
-                    label: 'Une matière et un code activité ont un jeu de salles préférées',
-                    component: 'ConstraintSubjectActivityTagPreferredRooms'
-                }
-            ],
-            spatialSalleConstraints: [
-                { 
-                    label: 'Une salle a des temps non disponibles',
-                    component: 'ConstraintRoomNotAvailableTimes'
-                },
-                { 
-                    label: 'Temps non disponibles pour un enseignant + une salle',
-                    component: 'ConstraintTeacherRoomNotAvailableTimes'
-                },
-                { 
-                    label: 'Limite codes activité depuis un jeu par jour pour une salle',
-                    component: 'ConstraintRoomMaxActivityTagsPerDayFromSet'
-                },
-                { 
-                    label: 'Limite codes activité depuis un jeu par semaine pour une salle',
-                    component: 'ConstraintRoomMaxActivityTagsPerWeekFromSet'
-                }
-            ],
-            spatialActivitesConstraints: [
-                { 
-                    label: 'Une activité a un jeu de salles préférées',
-                    component: 'ConstraintActivityPreferredRooms'
-                },
-                { 
-                    label: 'Un jeu d\'activités est dans la même salle si consécutives',
-                    component: 'ConstraintActivitiesSameRoomIfConsecutive'
-                },
-                { 
-                    label: 'Un jeu d\'activités occupe limite salles différentes',
-                    component: 'ConstraintActivitiesOccupyMaxDifferentRooms'
-                }
-            ],
             temporalActivityTabs: [
-                { id: 'temporelactivity1', label: 'Temps préférés' },
-                { id: 'temporelactivity2', label: 'Autres (1)' },
-                { id: 'temporelactivity3', label: 'Autres (2)' }
+                { id: 'temporalactivity1', label: 'Temps préférés' },
+                { id: 'temporalactivity2', label: 'Autres (1)' },
+                { id: 'temporalactivity3', label: 'Autres (2)' }
             ],
             temporalActivityConstraints1: [
                 { 
@@ -886,6 +1078,225 @@ export default {
                 { 
                     label: 'Vides minimum (heures) entre un jeu d\'activités',
                     component: 'ConstraintMinGapsBetweenActivities'
+                }
+            ],
+            spatialTabs: [
+                { id: 'spatialmatieres', label: 'Matières', icon: 'fas fa-book' },
+                { id: 'spatialbalises', label: 'Balises', icon: 'fas fa-tag' },
+                { id: 'spatialteachers', label: 'Enseignants', icon: 'fas fa-chalkboard-teacher' },
+                { id: 'spatialapprenants', label: 'Apprenants', icon: 'fas fa-user-graduate' },
+                { id: 'spatialsalles', label: 'Salles', icon: 'fas fa-door-open' },
+                { id: 'spatialactivites', label: 'Activités', icon: 'fas fa-tasks' },
+                { id: 'spatialmatieresbalises', label: 'Matières et Balises', icon: 'fas fa-brain' },
+            ],
+            spatialMatiereConstraints: [
+                { 
+                    label: 'Une matière a un jeu de salles préférées',
+                    component: 'ConstraintSubjectPreferredRooms'
+                }
+            ],
+            spatialBaliseConstraints: [
+                { 
+                    label: 'Un code activité a un jeu de salles préférées',
+                    component: 'ConstraintActivityTagPreferredRooms'
+                }
+            ],
+            spatialMatiereBaliseConstraints: [
+                { 
+                    label: 'Une matière et un code activité ont un jeu de salles préférées',
+                    component: 'ConstraintSubjectActivityTagPreferredRooms'
+                }
+            ],
+            spatialSalleConstraints: [
+                { 
+                    label: 'Une salle a des temps non disponibles',
+                    component: 'ConstraintRoomNotAvailableTimes'
+                },
+                { 
+                    label: 'Temps non disponibles pour un enseignant + une salle',
+                    component: 'ConstraintTeacherRoomNotAvailableTimes'
+                },
+                { 
+                    label: 'Limite codes activité depuis un jeu par jour pour une salle',
+                    component: 'ConstraintRoomMaxActivityTagsPerDayFromSet'
+                },
+                { 
+                    label: 'Limite codes activité depuis un jeu par semaine pour une salle',
+                    component: 'ConstraintRoomMaxActivityTagsPerWeekFromSet'
+                }
+            ],
+            spatialActivitesConstraints: [
+                { 
+                    label: 'Une activité a un jeu de salles préférées',
+                    component: 'ConstraintActivityPreferredRooms'
+                },
+                { 
+                    label: 'Un jeu d\'activités est dans la même salle si consécutives',
+                    component: 'ConstraintActivitiesSameRoomIfConsecutive'
+                },
+                { 
+                    label: 'Un jeu d\'activités occupe limite salles différentes',
+                    component: 'ConstraintActivitiesOccupyMaxDifferentRooms'
+                }
+            ],
+            spatialTeacherTabs: [
+                { id: 'spatialenseignant', label: 'Un enseignant' },
+                { id: 'spatialenseignants', label: 'Tous les enseignants' }
+            ],
+            spatialTeacherConstraints: [
+                { 
+                    label: 'Un enseignant a une salle de référence',
+                    component: 'ConstraintTeacherHomeRoom'
+                },
+                { 
+                    label: 'Un enseignant a un jeu de salles de référence',
+                    component: 'ConstraintTeacherHomeRooms'
+                },
+                { 
+                    label: 'Limite changements salles quotidiens pour un enseignant',
+                    component: 'ConstraintTeacherMaxRoomChangesPerDay'
+                },
+                { 
+                    label: 'Limite changements salles quotidiens dans un intervalle horaire pour un enseignant',
+                    component: 'ConstraintTeacherMaxRoomChangesPerDayInInterval'
+                },
+                { 
+                    label: 'Limite changements salles hebdomadaires pour un enseignant',
+                    component: 'ConstraintTeacherMaxRoomChangesPerWeek'
+                },
+                { 
+                    label: 'Vides minimum entre changements salles pour un enseignant',
+                    component: 'ConstraintTeacherMinGapsBetweenRoomChanges'
+                },
+                { 
+                    label: 'Limite changements bâtiments quotidiens pour un enseignant',
+                    component: 'ConstraintTeacherMaxBuildingChangesPerDay'
+                },
+                { 
+                    label: 'Limite changements bâtiments quotidiens dans un intervalle horaire pour un enseignant',
+                    component: 'ConstraintTeacherMaxBuildingChangesPerDayInInterval'
+                },
+                { 
+                    label: 'Limite changements bâtiments par semaine pour un enseignant',
+                    component: 'ConstraintTeacherMaxBuildingChangesPerWeek'
+                },
+                { 
+                    label: 'Vides minimum entre changements bâtiments pour un enseignant',
+                    component: 'ConstraintTeacherMinGapsBetweenBuildingChanges'
+                }
+            ],
+            spatialAllTeachersConstraints: [
+                { 
+                    label: 'Limite changements salles quotidiens pour tous les enseignants',
+                    component: 'ConstraintTeachersMaxRoomChangesPerDay'
+                },
+                { 
+                    label: 'Limite changements salles quotidiens dans un intervalle horaire pour tous les enseignants',
+                    component: 'ConstraintTeachersMaxRoomChangesPerDayInInterval'
+                },
+                { 
+                    label: 'Limite changements salles hebdomadaires pour tous les enseignants',
+                    component: 'ConstraintTeachersMaxRoomChangesPerWeek'
+                },
+                { 
+                    label: 'Vides minimum entre changements salles pour tous les enseignants',
+                    component: 'ConstraintTeachersMinGapsBetweenRoomChanges'
+                },
+                { 
+                    label: 'Limite changements bâtiments quotidiens pour les enseignants',
+                    component: 'ConstraintTeachersMaxBuildingChangesPerDay'
+                },
+                { 
+                    label: 'Limite changements bâtiments quotidiens dans un intervalle horaire pour tous les enseignants',
+                    component: 'ConstraintTeachersMaxBuildingChangesPerDayInInterval'
+                },
+                { 
+                    label: 'Limite changements bâtiments par semaine pour les enseignants',
+                    component: 'ConstraintTeachersMaxBuildingChangesPerWeek'
+                },
+                { 
+                    label: 'Vides minimum entre changements bâtiments pour les enseignants',
+                    component: 'ConstraintTeachersMinGapsBetweenBuildingChanges'
+                }
+            ],
+            spatialStudentsTabs: [
+                { id: 'spatialstudent', label: 'Un groupe d\'apprenant' },
+                { id: 'spatialstudents', label: 'Tous les apprenants' }
+            ],
+            spatialStudentConstraints: [
+                { 
+                    label: 'Un jeu d\'apprenants a une salle de référence',
+                    component: 'ConstraintStudentsSetHomeRoom'
+                },
+                { 
+                    label: 'Un jeu d\'apprenants a un jeu de salles de référence',
+                    component: 'ConstraintStudentsSetHomeRooms'
+                },
+                { 
+                    label: 'Limite changements salles quotidiens pour un groupe',
+                    component: 'ConstraintStudentsSetMaxRoomChangesPerDay'
+                },
+                { 
+                    label: 'Limite changements salles quotidiens dans un intervalle horaire pour un groupe',
+                    component: 'ConstraintStudentsSetMaxRoomChangesPerDayInInterval'
+                },
+                { 
+                    label: 'Limite changements salles hebdomadaires pour un groupe',
+                    component: 'ConstraintStudentsSetMaxRoomChangesPerWeek'
+                },
+                { 
+                    label: 'Vides minimum entre changements salles pour un groupe',
+                    component: 'ConstraintStudentsSetMinGapsBetweenRoomChanges'
+                },
+                { 
+                    label: 'Limite changements bâtiments quotidiens pour un groupe',
+                    component: 'ConstraintStudentsSetMaxBuildingChangesPerDay'
+                },
+                { 
+                    label: 'Limite changements bâtiments quotidiens dans un intervalle horaire pour un groupe',
+                    component: 'ConstraintStudentsSetMaxBuildingChangesPerDayInInterval'
+                },
+                { 
+                    label: 'Limite changements bâtiments par semaine pour un groupe',
+                    component: 'ConstraintStudentsSetMaxBuildingChangesPerWeek'
+                },
+                { 
+                    label: 'Vides minimum entre changements bâtiments pour un groupe',
+                    component: 'ConstraintStudentsSetMinGapsBetweenBuildingChanges'
+                }
+            ],
+            spatialAllStudentsConstraints: [
+                { 
+                    label: 'Limite changements salles quotidiens pour tous les apprenants',
+                    component: 'ConstraintStudentsMaxRoomChangesPerDay'
+                },
+                { 
+                    label: 'Limite changements salles quotidiens dans un intervalle horaire pour tous les apprenants',
+                    component: 'ConstraintStudentsMaxRoomChangesPerDayInInterval'
+                },
+                { 
+                    label: 'Limite changements salles hebdomadaires pour tous les apprenants',
+                    component: 'ConstraintStudentsMaxRoomChangesPerWeek'
+                },
+                { 
+                    label: 'Vides minimum entre changements salles pour tous les apprenants',
+                    component: 'ConstraintStudentsMinGapsBetweenRoomChanges'
+                },
+                { 
+                    label: 'Limite changements bâtiments quotidiens pour les apprenants',
+                    component: 'ConstraintStudentsMaxBuildingChangesPerDay'
+                },
+                { 
+                    label: 'Limite changements bâtiments quotidiens dans un intervalle horaire pour tous les apprenants',
+                    component: 'ConstraintStudentsMaxBuildingChangesPerDayInInterval'
+                },
+                { 
+                    label: 'Limite changements bâtiments par semaine pour les apprenants',
+                    component: 'ConstraintStudentsMaxBuildingChangesPerWeek'
+                },
+                { 
+                    label: 'Vides minimum entre changements bâtiments pour les apprenants',
+                    component: 'ConstraintStudentsMinGapsBetweenBuildingChanges'
                 }
             ],
         }

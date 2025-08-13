@@ -292,13 +292,13 @@ export default {
                 ConstraintActivitiesOccupyMaxDifferentRooms:[],
                 ConstraintTeachersMaxActivityTagsPerDayFromSet: [],
                 ConstraintTeachersMinHoursDaily: {
-                    Active: false,
+                    Active: 0,
                     Minimum_Hours_Daily: 0,
                     Allow_Empty_Days: false
                 },
                 ConstraintTeachersActivityTagMinHoursDaily: [],
                 ConstraintTeachersMaxHoursContinuously: {
-                    Active: false,
+                    Active: 0,
                     Maximum_Hours_Continuously: 0,
                 },
                 ConstraintTeachersActivityTagMaxHoursContinuously: [],
@@ -306,7 +306,7 @@ export default {
                 ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags: [],
                 ConstraintTeachersIntervalMaxDaysPerWeek: [],
                 ConstraintTeachersMinRestingHours: {
-                    Active: false,
+                    Active: 0,
                     Minimum_Resting_Hours: 0,
                     Circular: false,
                 },
@@ -344,6 +344,166 @@ export default {
                 ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots: [],
                 ConstraintActivitiesMinSimultaneousInSelectedTimeSlots: [],
                 ConstraintMinGapsBetweenActivities: [],
+                ConstraintTeacherHomeRoom: [],
+                ConstraintTeacherHomeRooms: [],
+                ConstraintTeacherMaxRoomChangesPerDay: [],
+                ConstraintTeacherMaxRoomChangesPerDayInInterval: [],
+                ConstraintTeacherMaxRoomChangesPerWeek: [],
+                ConstraintTeacherMinGapsBetweenRoomChanges: [],
+                ConstraintTeacherMaxBuildingChangesPerDay: [],
+                ConstraintTeacherMaxBuildingChangesPerDayInInterval: [],
+                ConstraintTeacherMaxBuildingChangesPerWeek: [],
+                ConstraintTeacherMinGapsBetweenBuildingChanges: [],
+                ConstraintTeachersMaxRoomChangesPerDay: {
+                    Active: 0,
+                    Max_Room_Changes_Per_Day: 0
+                },
+                ConstraintTeachersMaxRoomChangesPerDayInInterval: {
+                    Active: 0,
+                    Max_Room_Changes_Per_Day: 0,
+                    Interval_Start_Hour: '',
+                    Interval_End_Hour: ''
+                },
+                ConstraintTeachersMaxRoomChangesPerWeek: {
+                    Active: 0,
+                    Max_Room_Changes_Per_Week: 0
+                },
+                ConstraintTeachersMinGapsBetweenRoomChanges: {
+                    Active: 0,
+                    Min_Gaps_Between_Room_Changes: 0
+                },
+                ConstraintTeachersMaxBuildingChangesPerDay: {
+                    Active: 0,
+                    Max_Building_Changes_Per_Day: 0
+                },
+                ConstraintTeachersMaxBuildingChangesPerDayInInterval: {
+                    Active: 0,
+                    Max_Building_Changes_Per_Day: 0,
+                    Interval_Start_Hour: '',
+                    Interval_End_Hour: ''
+                },
+                ConstraintTeachersMaxBuildingChangesPerWeek: {
+                    Active: 0,
+                    Max_Building_Changes_Per_Week: 0
+                },
+                ConstraintTeachersMinGapsBetweenBuildingChanges: {
+                    Active: 0,
+                    Min_Gaps_Between_Building_Changes: 0
+                },
+                ConstraintStudentsSetHomeRoom: [],
+                ConstraintStudentsSetHomeRooms: [],
+                ConstraintStudentsSetMaxRoomChangesPerDay: [],
+                ConstraintStudentsSetMaxRoomChangesPerDayInInterval: [],
+                ConstraintStudentsSetMaxRoomChangesPerWeek: [],
+                ConstraintStudentsSetMinGapsBetweenRoomChanges: [],
+                ConstraintStudentsSetMaxBuildingChangesPerDay: [],
+                ConstraintStudentsSetMaxBuildingChangesPerDayInInterval: [],
+                ConstraintStudentsSetMaxBuildingChangesPerWeek: [],
+                ConstraintStudentsSetMinGapsBetweenBuildingChanges: [],
+                ConstraintStudentsMaxRoomChangesPerDay: {
+                    Active: 0,
+                    Max_Room_Changes_Per_Day: 0
+                },
+                ConstraintStudentsMaxRoomChangesPerDayInInterval: {
+                    Active: 0,
+                    Max_Room_Changes_Per_Day: 0,
+                    Interval_Start_Hour: '',
+                    Interval_End_Hour: ''
+                },
+                ConstraintStudentsMaxRoomChangesPerWeek: {
+                    Active: 0,
+                    Max_Room_Changes_Per_Week: 0
+                },
+                ConstraintStudentsMinGapsBetweenRoomChanges: {
+                    Active: 0,
+                    Min_Gaps_Between_Room_Changes: 0
+                },
+                ConstraintStudentsMaxBuildingChangesPerDay: {
+                    Active: 0,
+                    Max_Building_Changes_Per_Day: 0
+                },
+                ConstraintStudentsMaxBuildingChangesPerDayInInterval: {
+                    Active: 0,
+                    Max_Building_Changes_Per_Day: 0,
+                    Interval_Start_Hour: '',
+                    Interval_End_Hour: ''
+                },
+                ConstraintStudentsMaxBuildingChangesPerWeek: {
+                    Active: 0,
+                    Max_Building_Changes_Per_Week: 0
+                },
+                ConstraintStudentsMinGapsBetweenBuildingChanges: {
+                    Active: 0,
+                    Min_Gaps_Between_Building_Changes: 0
+                },
+                ConstraintStudentsSetNotAvailableTimes: [],
+                ConstraintStudentsSetMaxDaysPerWeek: [],
+                ConstraintStudentsSetMaxGapsPerDay: [],
+                ConstraintStudentsSetMaxGapsPerWeek: [],
+                ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots: [],
+                ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour: [],
+                ConstraintStudentsSetMaxHoursDaily: [],
+                ConstraintStudentsSetMaxHoursDailyInInterval: [],
+                ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots: [],
+                ConstraintStudentsSetMaxSpanPerDay: [],
+                ConstraintStudentsSetActivityTagMaxHoursDaily: [],
+                ConstraintStudentsSetMaxActivityTagsPerDayFromSet: [],
+                ConstraintStudentsSetMinHoursDaily: [],
+                ConstraintStudentsSetActivityTagMinHoursDaily: [],
+                ConstraintStudentsSetMaxHoursContinuously: [],
+                ConstraintStudentsSetActivityTagMaxHoursContinuously: [],
+                ConstraintStudentsSetMinGapsBetweenActivityTag: [],
+                ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags: [],
+                ConstraintStudentsSetIntervalMaxDaysPerWeek: [],
+                ConstraintStudentsSetMinRestingHours: [],
+                ConstraintStudentsMaxDaysPerWeek: {
+                    Active: 0,
+                    Max_Days_Per_Week: 0
+                },
+                ConstraintStudentsMaxGapsPerDay: {
+                    Active: 0,
+                    Max_Gaps: 0
+                },
+                ConstraintStudentsMaxGapsPerWeek: {
+                    Active: 0,
+                    Max_Gaps: 0
+                },
+                ConstraintStudentsMaxSingleGapsInSelectedTimeSlots: [],
+                ConstraintStudentsEarlyMaxBeginningsAtSecondHour: {
+                    Active: 0,
+                    Max_Beginnings_At_Second_Hour: 0
+                },
+                ConstraintStudentsMaxHoursDaily: {
+                    Active: 0,
+                    Maximum_Hours_Daily: 0
+                },
+                ConstraintStudentsMaxHoursDailyInInterval: [],
+                ConstraintStudentsPairOfMutuallyExclusiveTimeSlots: [],
+                ConstraintStudentsMaxSpanPerDay: {
+                    Active: 0,
+                    Max_Span: 0
+                },
+                ConstraintStudentsActivityTagMaxHoursDaily: [],
+                ConstraintStudentsMaxActivityTagsPerDayFromSet: [],
+                ConstraintStudentsMinHoursDaily: {
+                    Active: 0,
+                    Minimum_Hours_Daily: 0,
+                    Allow_Empty_Days: 0
+                },
+                ConstraintStudentsActivityTagMinHoursDaily: [],
+                ConstraintStudentsMaxHoursContinuously: {
+                    Active: 0,
+                    Maximum_Hours_Continuously: 0
+                },
+                ConstraintStudentsActivityTagMaxHoursContinuously: [],
+                ConstraintStudentsMinGapsBetweenActivityTag: [],
+                ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags: [],
+                ConstraintStudentsIntervalMaxDaysPerWeek: [],
+                ConstraintStudentsMinRestingHours: {
+                    Active: 0,
+                    Minimum_Resting_Hours: 0,
+                    Circular: 0
+                },
             },
             errors: {},
             submitted: false,

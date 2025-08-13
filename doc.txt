@@ -1,136 +1,5 @@
 fet-cl --inputfile="C:\laragon\www\timetable\input\test01.fet" --outputdir="C:\laragon\www\timetable\output" --htmllevel=7 --language=fr
 
-
->> Espace > Enseignants > Un enseignant
-Un enseignant a une salle de référence
-Un enseignant a un jeu de salles de référence
-Limite changements salles quotidiens pour un enseignant
-Limite changements salles quotidiens dans un intervalle horaire pour un enseignant
-Limite changements salles hebdomadaires pour un enseignant
-Vides minimum entre changements salles pour un enseignant
-Limite changements bâtiments quotidiens pour un enseignant
-Limite changements bâtiments quotidiens dans un intervalle horaire pour un enseignant
-Limite changements bâtiments par semaine pour un enseignant
-Vides minimum entre changements bâtiments pour un enseignant
-
-
-<ConstraintTeacherHomeRoom>
-    <Teacher>fdgdfgdfgdf</Teacher>
-    <Room>rrrr</Room>
-</ConstraintTeacherHomeRoom>
-<ConstraintTeacherHomeRooms>
-    <Teacher>fdgdfgdfgdf</Teacher>
-    <Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
-    <Preferred_Room>s2</Preferred_Room>
-    <Preferred_Room>s3</Preferred_Room>
-</ConstraintTeacherHomeRooms>
-<ConstraintTeacherMaxRoomChangesPerDay>
-    <Teacher>fdgdfgdfgdf</Teacher>
-    <Max_Room_Changes_Per_Day>1</Max_Room_Changes_Per_Day>
-</ConstraintTeacherMaxRoomChangesPerDay>
-<ConstraintTeacherMaxRoomChangesPerDayInInterval>
-    <Teacher>fdgdfgdfgdf</Teacher>
-    <Interval_Start_Hour>H1</Interval_Start_Hour>
-    <Interval_End_Hour></Interval_End_Hour>
-    <Max_Room_Changes_Per_Day>1</Max_Room_Changes_Per_Day>
-</ConstraintTeacherMaxRoomChangesPerDayInInterval>
-<ConstraintTeacherMaxRoomChangesPerWeek>
-    <Teacher>fdgdfgdfgdf</Teacher>
-    <Max_Room_Changes_Per_Week>3</Max_Room_Changes_Per_Week>
-</ConstraintTeacherMaxRoomChangesPerWeek>
-<ConstraintTeacherMinGapsBetweenRoomChanges>
-    <Teacher>fdgdfgdfgdf</Teacher>
-    <Min_Gaps_Between_Room_Changes>1</Min_Gaps_Between_Room_Changes>
-</ConstraintTeacherMinGapsBetweenRoomChanges>
-<ConstraintTeacherMaxBuildingChangesPerDay>
-    <Teacher>fdgdfgdfgdf</Teacher>
-    <Max_Building_Changes_Per_Day>1</Max_Building_Changes_Per_Day>
-</ConstraintTeacherMaxBuildingChangesPerDay>
-<ConstraintTeacherMaxBuildingChangesPerDayInInterval>
-    <Teacher>fdgdfgdfgdf</Teacher>
-    <Interval_Start_Hour>H1</Interval_Start_Hour>
-    <Interval_End_Hour></Interval_End_Hour>
-    <Max_Building_Changes_Per_Day>1</Max_Building_Changes_Per_Day>
-</ConstraintTeacherMaxBuildingChangesPerDayInInterval>
-<ConstraintTeacherMaxBuildingChangesPerWeek>
-    <Teacher>fdgdfgdfgdf</Teacher>
-    <Max_Building_Changes_Per_Week>3</Max_Building_Changes_Per_Week>
-</ConstraintTeacherMaxBuildingChangesPerWeek>
-<ConstraintTeacherMinGapsBetweenBuildingChanges>
-    <Teacher>fdgdfgdfgdf</Teacher>
-    <Min_Gaps_Between_Building_Changes>1</Min_Gaps_Between_Building_Changes>
-</ConstraintTeacherMinGapsBetweenBuildingChanges>
-
-
-
-
-
->> Espace > Enseignants > Tous les enseignants
-Limite changements salles quotidiens pour tous les enseignants
-Limite changements salles quotidiens dans un intervalle horaire pour tous les enseignants
-Limite changements salles hebdomadaires pour tous les enseignants
-Vides minimum entre changements salles pour tous les enseignants
-Limite changements bâtiments quotidiens pour les enseignants
-Limite changements bâtiments quotidiens dans un intervalle horaire pour tous les enseignants
-Limite changements bâtiments par semaine pour les enseignants
-Vides minimum entre changements bâtiments pour les enseignants
-
-
-<ConstraintTeachersMaxRoomChangesPerDay>
-    <Max_Room_Changes_Per_Day>1</Max_Room_Changes_Per_Day>
-</ConstraintTeachersMaxRoomChangesPerDay>
-<ConstraintTeachersMaxRoomChangesPerDayInInterval>
-    <Interval_Start_Hour>H1</Interval_Start_Hour>
-    <Interval_End_Hour></Interval_End_Hour>
-    <Max_Room_Changes_Per_Day>1</Max_Room_Changes_Per_Day>
-</ConstraintTeachersMaxRoomChangesPerDayInInterval>
-<ConstraintTeachersMaxRoomChangesPerWeek>
-    <Max_Room_Changes_Per_Week>3</Max_Room_Changes_Per_Week>
-</ConstraintTeachersMaxRoomChangesPerWeek>
-<ConstraintTeachersMinGapsBetweenRoomChanges>
-    <Min_Gaps_Between_Room_Changes>1</Min_Gaps_Between_Room_Changes>
-</ConstraintTeachersMinGapsBetweenRoomChanges>
-<ConstraintTeachersMaxBuildingChangesPerDay>
-    <Max_Building_Changes_Per_Day>1</Max_Building_Changes_Per_Day>
-</ConstraintTeachersMaxBuildingChangesPerDay>
-<ConstraintTeachersMaxBuildingChangesPerDayInInterval>
-    <Interval_Start_Hour>H1</Interval_Start_Hour>
-    <Interval_End_Hour></Interval_End_Hour>
-    <Max_Building_Changes_Per_Day>1</Max_Building_Changes_Per_Day>
-</ConstraintTeachersMaxBuildingChangesPerDayInInterval>
-<ConstraintTeachersMaxBuildingChangesPerWeek>
-    <Max_Building_Changes_Per_Week>3</Max_Building_Changes_Per_Week>
-</ConstraintTeachersMaxBuildingChangesPerWeek>
-<ConstraintTeachersMinGapsBetweenBuildingChanges>
-    <Min_Gaps_Between_Building_Changes>1</Min_Gaps_Between_Building_Changes>
-</ConstraintTeachersMinGapsBetweenBuildingChanges>
-
-
->> Espace > Apprenants > Un groupe d'apprenant
-Un jeu d'apprenants a une salle de référence
-Un jeu d'apprenants a un jeu de salles de référence
-Limite changements salles quotidiens pour un groupe
-Limite changements salles quotidiens dans un intervalle horaire pour un groupe
-Limite changements salles hebdomadaires pour un groupe
-Vides minimum entre changements salles pour un groupe
-Limite changements bâtiments quotidiens pour un groupe
-Limite changements bâtiments quotidiens dans un intervalle horaire pour un groupe
-Limite changements bâtiments par semaine pour un groupe
-Vides minimum entre changements bâtiments pour un groupe
-
-
->> Espace > Apprenants > Tous les apprenants
-Limite changements salles quotidiens pour tous les apprenants
-Limite changements salles quotidiens dans un intervalle horaire pour tous les apprenants
-Limite changements salles hebdomadaires pour tous les apprenants
-Vides minimum entre changements salles pour tous les apprenants
-Limite changements bâtiments quotidiens pour les apprenants
-Limite changements bâtiments quotidiens dans un intervalle horaire pour tous les apprenants
-Limite changements bâtiments par semaine pour les apprenants
-Vides minimum entre changements bâtiments pour les apprenants
-
-
-
 >> Temps > Apprenants > Un groupe d'apprenant (1)
 Un groupe a des temps non disponibles
 Limite jours par semaine pour un groupe 
@@ -143,6 +12,78 @@ Limite heures quotidiennes dans un intervalle horaire pour un groupe
 Un groupe a une paire de créneaux horaires mutuellement exclusifs
 Limite amplitude quotidienne pour un groupe
 Limite heures quotidiennes avec un code activité pour un groupe
+
+<ConstraintStudentsSetNotAvailableTimes>
+    <Students>2025-2026</Students>
+    <Number_of_Not_Available_Times>2</Number_of_Not_Available_Times>
+    <Not_Available_Time>
+        <Day>D1</Day>
+        <Hour>H1</Hour>
+    </Not_Available_Time>
+    <Not_Available_Time>
+        <Day>D2</Day>
+        <Hour>H1</Hour>
+    </Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetMaxDaysPerWeek>
+    <Students>2025-2026</Students>
+    <Max_Days_Per_Week>3</Max_Days_Per_Week>
+</ConstraintStudentsSetMaxDaysPerWeek>
+<ConstraintStudentsSetMaxGapsPerDay>
+    <Max_Gaps>1</Max_Gaps>
+    <Students>2025-2026</Students>
+</ConstraintStudentsSetMaxGapsPerDay>
+<ConstraintStudentsSetMaxGapsPerWeek>
+    <Max_Gaps>1</Max_Gaps>
+    <Students>ergerg</Students>
+</ConstraintStudentsSetMaxGapsPerWeek>
+<ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots>
+    <Students>2025-2026</Students>
+    <Max_Single_Gaps>1</Max_Single_Gaps>
+    <Number_of_Selected_Time_Slots>2</Number_of_Selected_Time_Slots>
+    <Selected_Time_Slot>
+        <Day>D1</Day>
+        <Hour>H1</Hour>
+    </Selected_Time_Slot>
+    <Selected_Time_Slot>
+        <Day>D2</Day>
+        <Hour>H2</Hour>
+    </Selected_Time_Slot>
+</ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots>
+<ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour>
+    <Max_Beginnings_At_Second_Hour>1</Max_Beginnings_At_Second_Hour>
+    <Students>2025-2026</Students>
+</ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour>
+<ConstraintStudentsSetMaxHoursDaily>
+    <Maximum_Hours_Daily>2</Maximum_Hours_Daily>
+    <Students>2025-2026</Students>
+</ConstraintStudentsSetMaxHoursDaily>
+<ConstraintStudentsSetMaxHoursDailyInInterval>
+    <Students>2025-2026</Students>
+    <Interval_Start_Hour>H2</Interval_Start_Hour>
+    <Interval_End_Hour></Interval_End_Hour>
+    <Maximum_Hours_Daily>1</Maximum_Hours_Daily>
+</ConstraintStudentsSetMaxHoursDailyInInterval>
+<ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots>
+    <Students>2025-2026</Students>
+    <First_Time_Slot>
+        <Day>D1</Day>
+        <Hour>H1</Hour>
+    </First_Time_Slot>
+    <Second_Time_Slot>
+        <Day>D1</Day>
+        <Hour>H2</Hour>
+    </Second_Time_Slot>
+</ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots>
+<ConstraintStudentsSetMaxSpanPerDay>
+    <Max_Span>2</Max_Span>
+    <Students>2025-2026</Students>
+</ConstraintStudentsSetMaxSpanPerDay>
+<ConstraintStudentsSetActivityTagMaxHoursDaily>
+    <Maximum_Hours_Daily>2</Maximum_Hours_Daily>
+    <Students>2025-2026</Students>
+    <Activity_Tag>b1</Activity_Tag>
+</ConstraintStudentsSetActivityTagMaxHoursDaily>
 
 
 >> Temps > Apprenants > Un groupe d'apprenant (2)
@@ -157,8 +98,59 @@ Un groupe travaille dans un intervalle horaire limite jours par semaine
 Heures de repos minimum pour un groupe
 
 
+<ConstraintStudentsSetMaxActivityTagsPerDayFromSet>
+    <Students>2025-2026</Students>
+    <Maximum_Allowed_Activity_Tags>2</Maximum_Allowed_Activity_Tags>
+    <Number_of_Activity_Tags>2</Number_of_Activity_Tags>
+    <Activity_Tag>b1</Activity_Tag>
+    <Activity_Tag>b2</Activity_Tag>
+</ConstraintStudentsSetMaxActivityTagsPerDayFromSet>
+<ConstraintStudentsSetMinHoursDaily>
+    <Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+    <Students>2025-2026</Students>
+    <Allow_Empty_Days>false</Allow_Empty_Days>
+</ConstraintStudentsSetMinHoursDaily>
+<ConstraintStudentsSetActivityTagMinHoursDaily>
+    <Students>2025-2026</Students>
+    <Activity_Tag>b1</Activity_Tag>
+    <Minimum_Hours_Daily>1</Minimum_Hours_Daily>
+    <Minimum_Days_With_Tag>0</Minimum_Days_With_Tag>
+</ConstraintStudentsSetActivityTagMinHoursDaily>
+<ConstraintStudentsSetMaxHoursContinuously>
+    <Maximum_Hours_Continuously>2</Maximum_Hours_Continuously>
+    <Students>2025-2026</Students>
+</ConstraintStudentsSetMaxHoursContinuously>
+<ConstraintStudentsSetActivityTagMaxHoursContinuously>
+    <Maximum_Hours_Continuously>2</Maximum_Hours_Continuously>
+    <Students>2025-2026</Students>
+    <Activity_Tag>b1</Activity_Tag>
+</ConstraintStudentsSetActivityTagMaxHoursContinuously>
+<ConstraintStudentsSetMinGapsBetweenActivityTag>
+    <Students>2025-2026</Students>
+    <Activity_Tag>b1</Activity_Tag>
+    <MinGaps>1</MinGaps>
+</ConstraintStudentsSetMinGapsBetweenActivityTag>
+<ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags>
+    <Students>2025-2026</Students>
+    <First_Activity_Tag>b1</First_Activity_Tag>
+    <Second_Activity_Tag>b2</Second_Activity_Tag>
+    <MinGaps>1</MinGaps>
+</ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags>
+<ConstraintStudentsSetIntervalMaxDaysPerWeek>
+    <Students>2025-2026</Students>
+    <Interval_Start_Hour>H2</Interval_Start_Hour>
+    <Interval_End_Hour></Interval_End_Hour>
+    <Max_Days_Per_Week>3</Max_Days_Per_Week>
+</ConstraintStudentsSetIntervalMaxDaysPerWeek>
+<ConstraintStudentsSetMinRestingHours>
+    <Minimum_Resting_Hours>1</Minimum_Resting_Hours>
+    <Students>2025-2026</Students>
+    <Circular>true</Circular>
+</ConstraintStudentsSetMinRestingHours>
+
+
+
 >> Temps > Apprenants > Tous les apprenants (1)
-Temps non disponibles pour tous les apprenants
 Limite jours par semaine pour les apprenants
 Limite vides quotidiens pour les apprenants
 Limite vides par semaine pour les apprenants
@@ -169,6 +161,59 @@ Limite heures quotidiennes dans un intervalle horaire pour tous les apprenants
 Tous les apprenants ont une paire de créneaux horaires mutuellement exclusifs
 Limite amplitude quotidienne pour tous les apprenants
 Limite heures quotidiennes avec un code activité pour les apprenants
+
+
+
+<ConstraintStudentsMaxDaysPerWeek>
+    <Max_Days_Per_Week>3</Max_Days_Per_Week>
+</ConstraintStudentsMaxDaysPerWeek>
+<ConstraintStudentsMaxGapsPerDay>
+    <Max_Gaps>1</Max_Gaps>
+</ConstraintStudentsMaxGapsPerDay>
+<ConstraintStudentsMaxGapsPerWeek>
+    <Max_Gaps>0</Max_Gaps>
+</ConstraintStudentsMaxGapsPerWeek>
+<ConstraintStudentsMaxSingleGapsInSelectedTimeSlots>
+    <Max_Single_Gaps>1</Max_Single_Gaps>
+    <Number_of_Selected_Time_Slots>2</Number_of_Selected_Time_Slots>
+    <Selected_Time_Slot>
+        <Day>D1</Day>
+        <Hour>H1</Hour>
+    </Selected_Time_Slot>
+    <Selected_Time_Slot>
+        <Day>D2</Day>
+        <Hour>H2</Hour>
+    </Selected_Time_Slot>
+</ConstraintStudentsMaxSingleGapsInSelectedTimeSlots>
+<ConstraintStudentsEarlyMaxBeginningsAtSecondHour>
+    <Max_Beginnings_At_Second_Hour>1</Max_Beginnings_At_Second_Hour>
+</ConstraintStudentsEarlyMaxBeginningsAtSecondHour>
+<ConstraintStudentsMaxHoursDaily>
+    <Maximum_Hours_Daily>2</Maximum_Hours_Daily>
+</ConstraintStudentsMaxHoursDaily>
+<ConstraintStudentsMaxHoursDailyInInterval>
+    <Interval_Start_Hour>H2</Interval_Start_Hour>
+    <Interval_End_Hour></Interval_End_Hour>
+    <Maximum_Hours_Daily>1</Maximum_Hours_Daily>
+</ConstraintStudentsMaxHoursDailyInInterval>
+<ConstraintStudentsPairOfMutuallyExclusiveTimeSlots>
+    <First_Time_Slot>
+        <Day>D1</Day>
+        <Hour>H1</Hour>
+    </First_Time_Slot>
+    <Second_Time_Slot>
+        <Day>D1</Day>
+        <Hour>H2</Hour>
+    </Second_Time_Slot>
+</ConstraintStudentsPairOfMutuallyExclusiveTimeSlots>
+<ConstraintStudentsMaxSpanPerDay>
+    <Max_Span>2</Max_Span>
+</ConstraintStudentsMaxSpanPerDay>
+<ConstraintStudentsActivityTagMaxHoursDaily>
+    <Activity_Tag>b1</Activity_Tag>
+    <Maximum_Hours_Daily>2</Maximum_Hours_Daily>
+</ConstraintStudentsActivityTagMaxHoursDaily>
+
 
 
 >> Temps > Apprenants > Tous les apprenants (2)
@@ -183,3 +228,43 @@ Tous les apprenants travaillent dans un intervalle horaire limite jours par sema
 Heures de repos minimum pour tous les apprenants
 
 
+<ConstraintStudentsMaxActivityTagsPerDayFromSet>
+    <Maximum_Allowed_Activity_Tags>2</Maximum_Allowed_Activity_Tags>
+    <Number_of_Activity_Tags>2</Number_of_Activity_Tags>
+    <Activity_Tag>b1</Activity_Tag>
+    <Activity_Tag>b2</Activity_Tag>
+</ConstraintStudentsMaxActivityTagsPerDayFromSet>
+<ConstraintStudentsMinHoursDaily>
+    <Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+    <Allow_Empty_Days>true</Allow_Empty_Days>
+</ConstraintStudentsMinHoursDaily>
+<ConstraintStudentsActivityTagMinHoursDaily>
+    <Activity_Tag>b1</Activity_Tag>
+    <Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+    <Minimum_Days_With_Tag>0</Minimum_Days_With_Tag>
+</ConstraintStudentsActivityTagMinHoursDaily>
+<ConstraintStudentsMaxHoursContinuously>
+    <Maximum_Hours_Continuously>2</Maximum_Hours_Continuously>
+</ConstraintStudentsMaxHoursContinuously>
+<ConstraintStudentsActivityTagMaxHoursContinuously>
+    <Activity_Tag>b1</Activity_Tag>
+    <Maximum_Hours_Continuously>2</Maximum_Hours_Continuously>
+</ConstraintStudentsActivityTagMaxHoursContinuously>
+<ConstraintStudentsMinGapsBetweenActivityTag>
+    <Activity_Tag>b1</Activity_Tag>
+    <MinGaps>1</MinGaps>
+</ConstraintStudentsMinGapsBetweenActivityTag>
+<ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags>
+    <First_Activity_Tag>b1</First_Activity_Tag>
+    <Second_Activity_Tag>b2</Second_Activity_Tag>
+    <MinGaps>1</MinGaps>
+</ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags>
+<ConstraintStudentsIntervalMaxDaysPerWeek>
+    <Interval_Start_Hour>H2</Interval_Start_Hour>
+    <Interval_End_Hour></Interval_End_Hour>
+    <Max_Days_Per_Week>3</Max_Days_Per_Week>
+</ConstraintStudentsIntervalMaxDaysPerWeek>
+<ConstraintStudentsMinRestingHours>
+    <Minimum_Resting_Hours>1</Minimum_Resting_Hours>
+    <Circular>true</Circular>
+</ConstraintStudentsMinRestingHours>

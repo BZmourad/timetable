@@ -1617,6 +1617,382 @@ function convertToFetXml(jsonData) {
             };
         });
     }
+    if (jsonData.ConstraintTeacherHomeRoom.length) {
+        spaceConstraints.ConstraintTeacherHomeRoom = jsonData.ConstraintTeacherHomeRoom.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Room: item.Room,
+                Teacher: item.Teacher,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintTeacherHomeRooms.length) {
+        spaceConstraints.ConstraintTeacherHomeRooms = jsonData.ConstraintTeacherHomeRooms.map(item => {
+            const Preferred_Rooms = item.Preferred_Room.map(item2 => {
+                return {
+                    Preferred_Room: item2.Preferred_Room
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Teacher: item.Teacher,
+                Number_of_Preferred_Rooms: item.Preferred_Room.length,
+                Preferred_Room: Preferred_Rooms.map(bt => bt.Preferred_Room),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintTeacherMaxRoomChangesPerDay.length) {
+        spaceConstraints.ConstraintTeacherMaxRoomChangesPerDay = jsonData.ConstraintTeacherMaxRoomChangesPerDay.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Teacher: item.Teacher,
+                Max_Room_Changes_Per_Day: item.Max_Room_Changes_Per_Day,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintTeacherMaxRoomChangesPerDayInInterval.length) {
+        spaceConstraints.ConstraintTeacherMaxRoomChangesPerDayInInterval = jsonData.ConstraintTeacherMaxRoomChangesPerDayInInterval.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Teacher: item.Teacher,
+                Max_Room_Changes_Per_Day: item.Max_Room_Changes_Per_Day,
+                Interval_Start_Hour: item.Interval_Start_Hour,
+                Interval_End_Hour: item.Interval_End_Hour,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintTeacherMaxRoomChangesPerWeek.length) {
+        spaceConstraints.ConstraintTeacherMaxRoomChangesPerWeek = jsonData.ConstraintTeacherMaxRoomChangesPerWeek.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Teacher: item.Teacher,
+                Max_Room_Changes_Per_Week: item.Max_Room_Changes_Per_Week,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintTeacherMinGapsBetweenRoomChanges.length) {
+        spaceConstraints.ConstraintTeacherMinGapsBetweenRoomChanges = jsonData.ConstraintTeacherMinGapsBetweenRoomChanges.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Teacher: item.Teacher,
+                Min_Gaps_Between_Room_Changes: item.Min_Gaps_Between_Room_Changes,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintTeacherMaxBuildingChangesPerDay.length) {
+        spaceConstraints.ConstraintTeacherMaxBuildingChangesPerDay = jsonData.ConstraintTeacherMaxBuildingChangesPerDay.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Teacher: item.Teacher,
+                Max_Building_Changes_Per_Day: item.Max_Building_Changes_Per_Day,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintTeacherMaxBuildingChangesPerDayInInterval.length) {
+        spaceConstraints.ConstraintTeacherMaxBuildingChangesPerDayInInterval = jsonData.ConstraintTeacherMaxBuildingChangesPerDayInInterval.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Teacher: item.Teacher,
+                Max_Building_Changes_Per_Day: item.Max_Building_Changes_Per_Day,
+                Interval_Start_Hour: item.Interval_Start_Hour,
+                Interval_End_Hour: item.Interval_End_Hour,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintTeacherMaxBuildingChangesPerWeek.length) {
+        spaceConstraints.ConstraintTeacherMaxBuildingChangesPerWeek = jsonData.ConstraintTeacherMaxBuildingChangesPerWeek.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Teacher: item.Teacher,
+                Max_Building_Changes_Per_Week: item.Max_Building_Changes_Per_Week,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintTeacherMinGapsBetweenBuildingChanges.length) {
+        spaceConstraints.ConstraintTeacherMinGapsBetweenBuildingChanges = jsonData.ConstraintTeacherMinGapsBetweenBuildingChanges.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Teacher: item.Teacher,
+                Min_Gaps_Between_Building_Changes: item.Min_Gaps_Between_Building_Changes,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintTeachersMaxRoomChangesPerDay.Active) {
+        spaceConstraints.ConstraintTeachersMaxRoomChangesPerDay = {
+            Weight_Percentage: 100,
+            Max_Room_Changes_Per_Day: jsonData.ConstraintTeachersMaxRoomChangesPerDay.Max_Room_Changes_Per_Day,
+            Active: 'true',
+            Comments: ''
+        };
+    }
+    if (jsonData.ConstraintTeachersMaxRoomChangesPerDayInInterval.Active) {
+        spaceConstraints.ConstraintTeachersMaxRoomChangesPerDayInInterval = {
+            Weight_Percentage: 100,
+            Max_Room_Changes_Per_Day: jsonData.ConstraintTeachersMaxRoomChangesPerDayInInterval.Max_Room_Changes_Per_Day,
+            Interval_Start_Hour: jsonData.ConstraintTeachersMaxRoomChangesPerDayInInterval.Interval_Start_Hour,
+            Interval_End_Hour: jsonData.ConstraintTeachersMaxRoomChangesPerDayInInterval.Interval_End_Hour,
+            Active: 'true',
+            Comments: ''
+        };
+    }
+    if (jsonData.ConstraintTeachersMaxRoomChangesPerWeek.Active) {
+        spaceConstraints.ConstraintTeachersMaxRoomChangesPerWeek = {
+            Weight_Percentage: 100,
+            Max_Room_Changes_Per_Week: jsonData.ConstraintTeachersMaxRoomChangesPerWeek.Max_Room_Changes_Per_Week,
+            Active: 'true',
+            Comments: ''
+        };
+    }
+    if (jsonData.ConstraintTeachersMinGapsBetweenRoomChanges.Active) {
+        spaceConstraints.ConstraintTeachersMinGapsBetweenRoomChanges = {
+            Weight_Percentage: 100,
+            Min_Gaps_Between_Room_Changes: jsonData.ConstraintTeachersMinGapsBetweenRoomChanges.Min_Gaps_Between_Room_Changes,
+            Active: 'true',
+            Comments: ''
+        };
+    }
+    if (jsonData.ConstraintTeachersMaxBuildingChangesPerDay.Active) {
+        spaceConstraints.ConstraintTeachersMaxBuildingChangesPerDay = {
+            Weight_Percentage: 100,
+            Max_Building_Changes_Per_Day: jsonData.ConstraintTeachersMaxBuildingChangesPerDay.Max_Building_Changes_Per_Day,
+            Active: 'true',
+            Comments: ''
+        };
+    }
+    if (jsonData.ConstraintTeachersMaxBuildingChangesPerWeek.Active) {
+        spaceConstraints.ConstraintTeachersMaxBuildingChangesPerWeek = {
+            Weight_Percentage: 100,
+            Max_Building_Changes_Per_Week: jsonData.ConstraintTeachersMaxBuildingChangesPerWeek.Max_Building_Changes_Per_Week,
+            Active: 'true',
+            Comments: ''
+        };
+    }
+    if (jsonData.ConstraintTeachersMinGapsBetweenBuildingChanges.Active) {
+        spaceConstraints.ConstraintTeachersMinGapsBetweenBuildingChanges = {
+            Weight_Percentage: 100,
+            Min_Gaps_Between_Building_Changes: jsonData.ConstraintTeachersMinGapsBetweenBuildingChanges.Min_Gaps_Between_Building_Changes,
+            Active: 'true',
+            Comments: ''
+        };
+    }
+    if (jsonData.ConstraintTeachersMaxBuildingChangesPerDayInInterval.Active) {
+        spaceConstraints.ConstraintTeachersMaxBuildingChangesPerDayInInterval = {
+            Weight_Percentage: 100,
+            Max_Building_Changes_Per_Day: jsonData.ConstraintTeachersMaxBuildingChangesPerDayInInterval.Max_Building_Changes_Per_Day,
+            Interval_Start_Hour: jsonData.ConstraintTeachersMaxBuildingChangesPerDayInInterval.Interval_Start_Hour,
+            Interval_End_Hour: jsonData.ConstraintTeachersMaxBuildingChangesPerDayInInterval.Interval_End_Hour,
+            Active: 'true',
+            Comments: ''
+        };
+    }
+    if (jsonData.ConstraintStudentsSetHomeRoom.length) {
+        spaceConstraints.ConstraintStudentsSetHomeRoom = jsonData.ConstraintStudentsSetHomeRoom.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Room: item.Room,
+                Students: item.Students,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintStudentsSetHomeRooms.length) {
+        spaceConstraints.ConstraintStudentsSetHomeRooms = jsonData.ConstraintStudentsSetHomeRooms.map(item => {
+            const Preferred_Rooms = item.Preferred_Room.map(item2 => {
+                return {
+                    Preferred_Room: item2.Preferred_Room
+                };
+            });
+            return {
+                Weight_Percentage: 100,
+                Students: item.Students,
+                Number_of_Preferred_Rooms: item.Preferred_Room.length,
+                Preferred_Room: Preferred_Rooms.map(bt => bt.Preferred_Room),
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintStudentsSetMaxRoomChangesPerDay.length) {
+        spaceConstraints.ConstraintStudentsSetMaxRoomChangesPerDay = jsonData.ConstraintStudentsSetMaxRoomChangesPerDay.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Max_Room_Changes_Per_Day: item.Max_Room_Changes_Per_Day,
+                Students: item.Students,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintStudentsSetMaxRoomChangesPerDayInInterval.length) {
+        spaceConstraints.ConstraintStudentsSetMaxRoomChangesPerDayInInterval = jsonData.ConstraintStudentsSetMaxRoomChangesPerDayInInterval.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Students: item.Students,
+                Max_Room_Changes_Per_Day: item.Max_Room_Changes_Per_Day,
+                Interval_Start_Hour: item.Interval_Start_Hour,
+                Interval_End_Hour: item.Interval_End_Hour,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintStudentsSetMaxRoomChangesPerWeek.length) {
+        spaceConstraints.ConstraintStudentsSetMaxRoomChangesPerWeek = jsonData.ConstraintStudentsSetMaxRoomChangesPerWeek.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Max_Room_Changes_Per_Week: item.Max_Room_Changes_Per_Week,
+                Students: item.Students,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintStudentsSetMinGapsBetweenRoomChanges.length) {
+        spaceConstraints.ConstraintStudentsSetMinGapsBetweenRoomChanges = jsonData.ConstraintStudentsSetMinGapsBetweenRoomChanges.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Min_Gaps_Between_Room_Changes: item.Min_Gaps_Between_Room_Changes,
+                Students: item.Students,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintStudentsSetMaxBuildingChangesPerDay.length) {
+        spaceConstraints.ConstraintStudentsSetMaxBuildingChangesPerDay = jsonData.ConstraintStudentsSetMaxBuildingChangesPerDay.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Max_Building_Changes_Per_Day: item.Max_Building_Changes_Per_Day,
+                Students: item.Students,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintStudentsSetMaxBuildingChangesPerDayInInterval.length) {
+        spaceConstraints.ConstraintStudentsSetMaxBuildingChangesPerDayInInterval = jsonData.ConstraintStudentsSetMaxBuildingChangesPerDayInInterval.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Students: item.Students,
+                Max_Building_Changes_Per_Day: item.Max_Building_Changes_Per_Day,
+                Interval_Start_Hour: item.Interval_Start_Hour,
+                Interval_End_Hour: item.Interval_End_Hour,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintStudentsSetMaxBuildingChangesPerWeek.length) {
+        spaceConstraints.ConstraintStudentsSetMaxBuildingChangesPerWeek = jsonData.ConstraintStudentsSetMaxBuildingChangesPerWeek.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Max_Building_Changes_Per_Week: item.Max_Building_Changes_Per_Week,
+                Students: item.Students,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintStudentsSetMinGapsBetweenBuildingChanges.length) {
+        spaceConstraints.ConstraintStudentsSetMinGapsBetweenBuildingChanges = jsonData.ConstraintStudentsSetMinGapsBetweenBuildingChanges.map(item => {
+            return {
+                Weight_Percentage: 100,
+                Min_Gaps_Between_Building_Changes: item.Min_Gaps_Between_Building_Changes,
+                Students: item.Students,
+                Active: 'true',
+                Comments: ''
+            };
+        });
+    }
+    if (jsonData.ConstraintStudentsMaxRoomChangesPerDay.Active) {
+        spaceConstraints.ConstraintStudentsMaxRoomChangesPerDay = {
+            Weight_Percentage: 100,
+            Max_Room_Changes_Per_Day: jsonData.ConstraintStudentsMaxRoomChangesPerDay.Max_Room_Changes_Per_Day,
+            Active: 'true',
+            Comments: ''
+        };
+    }
+    if (jsonData.ConstraintStudentsMaxRoomChangesPerWeek.Active) {
+        spaceConstraints.ConstraintStudentsMaxRoomChangesPerWeek = {
+            Weight_Percentage: 100,
+            Max_Room_Changes_Per_Week: jsonData.ConstraintStudentsMaxRoomChangesPerWeek.Max_Room_Changes_Per_Week,
+            Active: 'true',
+            Comments: ''
+        };
+    }
+    if (jsonData.ConstraintStudentsMinGapsBetweenRoomChanges.Active) {
+        spaceConstraints.ConstraintStudentsMinGapsBetweenRoomChanges = {
+            Weight_Percentage: 100,
+            Min_Gaps_Between_Room_Changes: jsonData.ConstraintStudentsMinGapsBetweenRoomChanges.Min_Gaps_Between_Room_Changes,
+            Active: 'true',
+            Comments: ''
+        };
+    }
+    if (jsonData.ConstraintStudentsMaxBuildingChangesPerDay.Active) {
+        spaceConstraints.ConstraintStudentsMaxBuildingChangesPerDay = {
+            Weight_Percentage: 100,
+            Max_Building_Changes_Per_Day: jsonData.ConstraintStudentsMaxBuildingChangesPerDay.Max_Building_Changes_Per_Day,
+            Active: 'true',
+            Comments: ''
+        };
+    }
+    if (jsonData.ConstraintStudentsMaxBuildingChangesPerWeek.Active) {
+        spaceConstraints.ConstraintStudentsMaxBuildingChangesPerWeek = {
+            Weight_Percentage: 100,
+            Max_Building_Changes_Per_Week: jsonData.ConstraintStudentsMaxBuildingChangesPerWeek.Max_Building_Changes_Per_Week,
+            Active: 'true',
+            Comments: ''
+        };
+    }
+    if (jsonData.ConstraintStudentsMinGapsBetweenBuildingChanges.Active) {
+        spaceConstraints.ConstraintStudentsMinGapsBetweenBuildingChanges = {
+            Weight_Percentage: 100,
+            Min_Gaps_Between_Building_Changes: jsonData.ConstraintStudentsMinGapsBetweenBuildingChanges.Min_Gaps_Between_Building_Changes,
+            Active: 'true',
+            Comments: ''
+        };
+    }
+    if (jsonData.ConstraintStudentsMaxRoomChangesPerDayInInterval.Active) {
+        spaceConstraints.ConstraintStudentsMaxRoomChangesPerDayInInterval = {
+            Weight_Percentage: 100,
+            Max_Room_Changes_Per_Day: jsonData.ConstraintStudentsMaxRoomChangesPerDayInInterval.Max_Room_Changes_Per_Day,
+            Interval_Start_Hour: jsonData.ConstraintStudentsMaxRoomChangesPerDayInInterval.Interval_Start_Hour,
+            Interval_End_Hour: jsonData.ConstraintStudentsMaxRoomChangesPerDayInInterval.Interval_End_Hour,
+            Active: 'true',
+            Comments: ''
+        };
+    }
+    if (jsonData.ConstraintStudentsMaxBuildingChangesPerDayInInterval.Active) {
+        spaceConstraints.ConstraintStudentsMaxBuildingChangesPerDayInInterval = {
+            Weight_Percentage: 100,
+            Max_Building_Changes_Per_Day: jsonData.ConstraintStudentsMaxBuildingChangesPerDayInInterval.Max_Building_Changes_Per_Day,
+            Interval_Start_Hour: jsonData.ConstraintStudentsMaxBuildingChangesPerDayInInterval.Interval_Start_Hour,
+            Interval_End_Hour: jsonData.ConstraintStudentsMaxBuildingChangesPerDayInInterval.Interval_End_Hour,
+            Active: 'true',
+            Comments: ''
+        };
+    }
     fetData.fet.Space_Constraints_List = spaceConstraints;
 
     return js2xml(fetData, { compact: true, spaces: 4, fullTagEmptyElement: true });
