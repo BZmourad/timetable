@@ -199,7 +199,89 @@
                             </div>
                         </div>
                     </div>
-                    <div v-for="(tab, index) in temporalTabs.slice(1)" :key="index" class="tab-pane fade" :id="tab.id" role="tabpanel"></div>
+                    <div class="tab-pane fade" id="apprenants" role="tabpanel">
+                        <ul class="nav nav-tabs" id="temporalApprenantTab" role="tablist">
+                            <li v-for="(tab, index) in temporalStudentTabs" :key="index" class="nav-item" role="presentation">
+                                <button 
+                                    class="nav-link" 
+                                    :class="{ active: index === 0 }"
+                                    :id="`${tab.id}-tab`" 
+                                    data-bs-toggle="tab" 
+                                    :data-bs-target="`#${tab.id}`" 
+                                    type="button" 
+                                    role="tab"
+                                >
+                                    {{ tab.label }}
+                                </button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="temporalApprenantTabContent">
+                            <div class="tab-pane fade show active" id="temporalapprenant1" role="tabpanel">
+                                <div class="accordion p-3" id="temporalapprenant1Accordion">
+                                    <div v-for="(constraint, index) in temporalStudentConstraints" :key="index" class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="`#temporalapprenant1Accordion${index < 10 ? '0' + index : index}`">
+                                                {{ constraint.label }}
+                                            </button>
+                                        </h2>
+                                        <div :id="`temporalapprenant1Accordion${index < 10 ? '0' + index : index}`" class="accordion-collapse collapse" data-bs-parent="#temporalapprenant1Accordion">
+                                            <div class="accordion-body">
+                                                <component :is="constraint.component" :formData="formData" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="temporalapprenant2" role="tabpanel">
+                                <div class="accordion p-3" id="temporalapprenant2Accordion">
+                                    <div v-for="(constraint, index) in temporalStudentConstraints2" :key="index" class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="`#temporalapprenant2Accordion${index < 10 ? '0' + index : index}`">
+                                                {{ constraint.label }}
+                                            </button>
+                                        </h2>
+                                        <div :id="`temporalapprenant2Accordion${index < 10 ? '0' + index : index}`" class="accordion-collapse collapse" data-bs-parent="#temporalapprenant2Accordion">
+                                            <div class="accordion-body">
+                                                <component :is="constraint.component" :formData="formData" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="temporalapprenants1" role="tabpanel">
+                                <div class="accordion p-3" id="temporalapprenants1Accordion">
+                                    <div v-for="(constraint, index) in temporalAllStudentsConstraints1" :key="index" class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="`#temporalapprenants1Accordion${index < 10 ? '0' + index : index}`">
+                                                {{ constraint.label }}
+                                            </button>
+                                        </h2>
+                                        <div :id="`temporalapprenants1Accordion${index < 10 ? '0' + index : index}`" class="accordion-collapse collapse" data-bs-parent="#temporalapprenants1Accordion">
+                                            <div class="accordion-body">
+                                                <component :is="constraint.component" :formData="formData" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="temporalapprenants2" role="tabpanel">
+                                <div class="accordion p-3" id="temporalapprenants2Accordion">
+                                    <div v-for="(constraint, index) in temporalAllStudentsConstraints2" :key="index" class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="`#temporalapprenants2Accordion${index < 10 ? '0' + index : index}`">
+                                                {{ constraint.label }}
+                                            </button>
+                                        </h2>
+                                        <div :id="`temporalapprenants2Accordion${index < 10 ? '0' + index : index}`" class="accordion-collapse collapse" data-bs-parent="#temporalapprenants2Accordion">
+                                            <div class="accordion-body">
+                                                <component :is="constraint.component" :formData="formData" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -752,8 +834,8 @@ export default {
             temporalTabs: [
                 { id: 'pause', label: 'Temps de pause', icon: 'fa-solid fa-pause' },
                 { id: 'enseignants', label: 'Enseignants', icon: 'fas fa-chalkboard-teacher' },
-                { id: 'activites', label: 'Activités', icon: 'fas fa-tasks' },
-                { id: 'apprenants', label: 'Apprenants', icon: 'fas fa-user-graduate' }
+                { id: 'apprenants', label: 'Apprenants', icon: 'fas fa-user-graduate' },
+                { id: 'activites', label: 'Activités', icon: 'fas fa-tasks' }
             ],
             temporalTeacherTabs: [
                 { id: 'temporalenseignant1', label: 'Un enseignant (1)' },
@@ -1297,6 +1379,176 @@ export default {
                 { 
                     label: 'Vides minimum entre changements bâtiments pour les apprenants',
                     component: 'ConstraintStudentsMinGapsBetweenBuildingChanges'
+                }
+            ],
+            temporalStudentTabs: [
+                { id: 'temporalenseignant1', label: 'Un groupe d\'apprenant (1)' },
+                { id: 'temporalenseignant2', label: 'Un groupe d\'apprenant (2)' },
+                { id: 'temporalenseignants1', label: 'Tous les apprenants (1)' },
+                { id: 'temporalenseignants2', label: 'Tous les apprenants (2)' }
+            ],
+            temporalStudentConstraints: [
+                { 
+                    label: 'Un groupe a des temps non disponibles',
+                    component: 'ConstraintStudentsSetNotAvailableTimes'
+                },
+                { 
+                    label: 'Limite jours par semaine pour un groupe',
+                    component: 'ConstraintStudentsSetMaxDaysPerWeek'
+                },
+                { 
+                    label: 'Limite vides quotidiens pour un groupe',
+                    component: 'ConstraintStudentsSetMaxGapsPerDay'
+                },
+                { 
+                    label: 'Limite vides par semaine pour un groupe',
+                    component: 'ConstraintStudentsSetMaxGapsPerWeek'
+                },
+                { 
+                    label: 'Limite vide unique dans les créneaux horaires sélectionnés pour un groupe',
+                    component: 'ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots'
+                },
+                { 
+                    label: 'Un groupe débute tôt (limite débuts en seconde heure)',
+                    component: 'ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour'
+                },
+                { 
+                    label: 'Limite heures quotidiennes pour un groupe',
+                    component: 'ConstraintStudentsSetMaxHoursDaily'
+                },
+                { 
+                    label: 'Limite heures quotidiennes dans un intervalle horaire pour un groupe',
+                    component: 'ConstraintStudentsSetMaxHoursDailyInInterval'
+                },
+                { 
+                    label: 'Un groupe a une paire de créneaux horaires mutuellement exclusifs',
+                    component: 'ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots'
+                },
+                { 
+                    label: 'Limite amplitude quotidienne pour un groupe',
+                    component: 'ConstraintStudentsSetMaxSpanPerDay'
+                },
+                { 
+                    label: 'Limite heures quotidiennes avec un code activité pour un groupe',
+                    component: 'ConstraintStudentsSetActivityTagMaxHoursDaily'
+                }
+            ],
+            temporalStudentConstraints2: [
+                { 
+                    label: 'Limite codes activité depuis un jeu par jour pour un groupe',
+                    component: 'ConstraintStudentsSetMaxActivityTagsPerDayFromSet'
+                },
+                { 
+                    label: 'Heures minimum quotidiennes pour un groupe',
+                    component: 'ConstraintStudentsSetMinHoursDaily'
+                },
+                { 
+                    label: 'Minimum heures quotidiennes avec un code activité pour un groupe',
+                    component: 'ConstraintStudentsSetActivityTagMinHoursDaily'
+                },
+                { 
+                    label: 'Limite heures continues pour un groupe',
+                    component: 'ConstraintStudentsSetMaxHoursContinuously'
+                },
+                { 
+                    label: 'Limite heures continues avec un code activité pour un groupe',
+                    component: 'ConstraintStudentsSetActivityTagMaxHoursContinuously'
+                },
+                { 
+                    label: 'Vides minimum entre un code activité pour un groupe',
+                    component: 'ConstraintStudentsSetMinGapsBetweenActivityTag'
+                },
+                { 
+                    label: 'Vides minimum entre un couple ordonné de codes activité pour un groupe',
+                    component: 'ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags'
+                },
+                { 
+                    label: 'Un groupe travaille dans un intervalle horaire limite jours par semaine',
+                    component: 'ConstraintStudentsSetIntervalMaxDaysPerWeek'
+                },
+                { 
+                    label: 'Heures de repos minimum pour un groupe',
+                    component: 'ConstraintStudentsSetMinRestingHours'
+                }
+            ],
+            temporalAllStudentsConstraints1: [
+                { 
+                    label: 'Limite jours par semaine pour les apprenants',
+                    component: 'ConstraintStudentsMaxDaysPerWeek'
+                },
+                { 
+                    label: 'Limite vides quotidiens pour les apprenants',
+                    component: 'ConstraintStudentsMaxGapsPerDay'
+                },
+                { 
+                    label: 'Limite vides par semaine pour les apprenants',
+                    component: 'ConstraintStudentsMaxGapsPerWeek'
+                },
+                { 
+                    label: 'Limite vide unique dans les créneaux horaires sélectionnés pour tous les apprenants',
+                    component: 'ConstraintStudentsMaxSingleGapsInSelectedTimeSlots'
+                },
+                { 
+                    label: 'Tous les apprenants débutent tôt (limite débuts en seconde heure)',
+                    component: 'ConstraintStudentsEarlyMaxBeginningsAtSecondHour'
+                },
+                { 
+                    label: 'Limite heures quotidiennes par les apprenants',
+                    component: 'ConstraintStudentsMaxHoursDaily'
+                },
+                { 
+                    label: 'Limite heures quotidiennes dans un intervalle horaire pour tous les apprenants',
+                    component: 'ConstraintStudentsMaxHoursDailyInInterval'
+                },
+                { 
+                    label: 'Tous les apprenants ont une paire de créneaux horaires mutuellement exclusifs',
+                    component: 'ConstraintStudentsPairOfMutuallyExclusiveTimeSlots'
+                },
+                { 
+                    label: 'Limite amplitude quotidienne pour tous les apprenants',
+                    component: 'ConstraintStudentsMaxSpanPerDay'
+                },
+                { 
+                    label: 'Limite heures quotidiennes avec un code activité pour les apprenants',
+                    component: 'ConstraintStudentsActivityTagMaxHoursDaily'
+                }
+            ],
+            temporalAllStudentsConstraints2: [
+                {
+                    label: 'Limite codes activité depuis un jeu par jour pour tous les apprenants',
+                    component: 'ConstraintStudentsMaxActivityTagsPerDayFromSet'
+                },
+                {
+                    label: 'Heures minimum quotidiennes pour les apprenants',
+                    component: 'ConstraintStudentsMinHoursDaily'
+                },
+                {
+                    label: 'Minimum heures quotidiennes avec un code activité pour tous les apprenants',
+                    component: 'ConstraintStudentsActivityTagMinHoursDaily'
+                },
+                {
+                    label: 'Limite heures continues pour les apprenants',
+                    component: 'ConstraintStudentsMaxHoursContinuously'
+                },
+                {
+                    label: 'Limite heures continues avec un code activité pour les apprenants',
+                    component: 'ConstraintStudentsActivityTagMaxHoursContinuously'
+                },
+                {
+                    label: 'Vides minimum entre un code activité pour tous les apprenants',
+                    component: 'ConstraintStudentsMinGapsBetweenActivityTag'
+                },
+                {
+                    label: 'Vides minimum entre un couple ordonné de codes activité pour tous les apprenants',
+                    component: 'ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags'
+                },
+                {
+                    label: 'Tous les apprenants travaillent dans un intervalle horaire limite jours par semaine',
+                    component: 'ConstraintStudentsIntervalMaxDaysPerWeek'
+                },
+                {
+                    label: 'Heures de repos minimum pour tous les apprenants',
+                    component: 'ConstraintStudentsMinRestingHours'
                 }
             ],
         }
