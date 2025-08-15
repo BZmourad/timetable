@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Students_Timetable>
+  <Subgroup name="c1 Sous-groupe automatique">
+    <Day name="Lundi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Mardi">
+      <Hour name="P1">
+        <Activity id="1"></Activity>
+        <Teacher name="e1"></Teacher>
+        <Subject name="m1"></Subject>
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Mercredi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+        <Activity id="7"></Activity>
+        <Teacher name="e5"></Teacher>
+        <Subject name="m5"></Subject>
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+        <Activity id="5"></Activity>
+        <Teacher name="e3"></Teacher>
+        <Subject name="m3"></Subject>
+      </Hour>
+    </Day>
+    <Day name="Jeudi">
+      <Hour name="P1">
+        <Activity id="3"></Activity>
+        <Teacher name="e2"></Teacher>
+        <Subject name="m2"></Subject>
+      </Hour>
+      <Hour name="P2">
+        <Activity id="6"></Activity>
+        <Teacher name="e4"></Teacher>
+        <Subject name="m4"></Subject>
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Vendredi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+  </Subgroup>
+  <Subgroup name="c2 Sous-groupe automatique">
+    <Day name="Lundi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+        <Activity id="8"></Activity>
+        <Teacher name="e6"></Teacher>
+        <Subject name="m6"></Subject>
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+        <Activity id="2"></Activity>
+        <Teacher name="e1"></Teacher>
+        <Subject name="m1"></Subject>
+      </Hour>
+    </Day>
+    <Day name="Mardi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Mercredi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+        <Activity id="4"></Activity>
+        <Teacher name="e2"></Teacher>
+        <Subject name="m2"></Subject>
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Jeudi">
+      <Hour name="P1">
+        <Activity id="9"></Activity>
+        <Teacher name="e7"></Teacher>
+        <Subject name="m7"></Subject>
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Vendredi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+  </Subgroup>
+</Students_Timetable>

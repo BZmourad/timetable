@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Teachers_Timetable>
+  <Teacher name="e1">
+    <Day name="Lundi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+        <Activity id="1"></Activity>
+        <Subject name="m1"></Subject>
+        <Students name="c1"></Students>
+      </Hour>
+      <Hour name="P4">
+        <Activity id="2"></Activity>
+        <Subject name="m1"></Subject>
+        <Students name="c2"></Students>
+      </Hour>
+    </Day>
+    <Day name="Mardi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Mercredi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Jeudi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Vendredi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+  </Teacher>
+  <Teacher name="e2">
+    <Day name="Lundi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Mardi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Mercredi">
+      <Hour name="P1">
+        <Activity id="3"></Activity>
+        <Subject name="m2"></Subject>
+        <Students name="c1"></Students>
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+        <Activity id="4"></Activity>
+        <Subject name="m2"></Subject>
+        <Students name="c2"></Students>
+      </Hour>
+    </Day>
+    <Day name="Jeudi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Vendredi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+  </Teacher>
+  <Teacher name="e3">
+    <Day name="Lundi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Mardi">
+      <Hour name="P1">
+        <Activity id="5"></Activity>
+        <Subject name="m3"></Subject>
+        <Students name="c1"></Students>
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Mercredi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Jeudi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Vendredi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+  </Teacher>
+  <Teacher name="e4">
+    <Day name="Lundi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Mardi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Mercredi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Jeudi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+        <Activity id="6"></Activity>
+        <Subject name="m4"></Subject>
+        <Students name="c1"></Students>
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Vendredi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+  </Teacher>
+  <Teacher name="e5">
+    <Day name="Lundi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Mardi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+        <Activity id="7"></Activity>
+        <Subject name="m5"></Subject>
+        <Students name="c1"></Students>
+      </Hour>
+    </Day>
+    <Day name="Mercredi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Jeudi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Vendredi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+  </Teacher>
+  <Teacher name="e6">
+    <Day name="Lundi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Mardi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Mercredi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+        <Activity id="8"></Activity>
+        <Subject name="m6"></Subject>
+        <Students name="c2"></Students>
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Jeudi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Vendredi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+  </Teacher>
+  <Teacher name="e7">
+    <Day name="Lundi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Mardi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Mercredi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Jeudi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+        <Activity id="9"></Activity>
+        <Subject name="m7"></Subject>
+        <Students name="c2"></Students>
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+    <Day name="Vendredi">
+      <Hour name="P1">
+      </Hour>
+      <Hour name="P2">
+      </Hour>
+      <Hour name="P3">
+      </Hour>
+      <Hour name="P4">
+      </Hour>
+    </Day>
+  </Teacher>
+</Teachers_Timetable>

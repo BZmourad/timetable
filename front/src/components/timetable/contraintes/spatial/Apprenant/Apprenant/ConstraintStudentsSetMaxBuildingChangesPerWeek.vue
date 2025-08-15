@@ -5,7 +5,7 @@
                 <label class="form-label">Apprenants:</label>
                 <select class="form-select" v-model="item.Students">
                     <option value="" disabled>Sélectionnez un groupe</option>
-                    <option v-for="student in students.filter(student => student.name !== '')" :value="student.name">{{ student.name }}</option>
+                    <option v-for="student in formData.students.filter(student => student.name !== '')" :value="student.name">{{ student.name }}</option>
                 </select>
             </div>
             <div class="col-5">

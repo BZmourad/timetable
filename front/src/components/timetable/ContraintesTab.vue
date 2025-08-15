@@ -1382,10 +1382,10 @@ export default {
                 }
             ],
             temporalStudentTabs: [
-                { id: 'temporalenseignant1', label: 'Un groupe d\'apprenant (1)' },
-                { id: 'temporalenseignant2', label: 'Un groupe d\'apprenant (2)' },
-                { id: 'temporalenseignants1', label: 'Tous les apprenants (1)' },
-                { id: 'temporalenseignants2', label: 'Tous les apprenants (2)' }
+                { id: 'temporalapprenant1', label: 'Un groupe d\'apprenant (1)' },
+                { id: 'temporalapprenant2', label: 'Un groupe d\'apprenant (2)' },
+                { id: 'temporalapprenants1', label: 'Tous les apprenants (1)' },
+                { id: 'temporalapprenants2', label: 'Tous les apprenants (2)' }
             ],
             temporalStudentConstraints: [
                 { 

@@ -1,0 +1,4 @@
+﻿Titre : FET Avertissement
+Message : Impossible de lire le fichier - erreur d'analyse XML à la ligne 129, colonne 57 :
+L'enseignant e4 est lié à une matière qualifiée m4 non existante. Veuillez noter que depuis la version 5.30.0 de FET, la liste des matières (balise <Subjects_List> dans le fichier XML .fet) doit apparaître avant la liste des enseignants (balise <Teachers_List> dans le fichier XML .fet)
+

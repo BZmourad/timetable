@@ -1,0 +1,7 @@
+﻿Génération débutée à : 17/07/2025 08:53
+
+Le noyau aléatoire en début de génération est :
+	s10=1752738814, s11=956306000, s12=0,
+	s20=1752738814, s21=956306000, s22=0.
+
+Ce fichier a été généré automatiquement avec FET 7.2.6.

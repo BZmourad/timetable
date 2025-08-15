@@ -1,0 +1,10 @@
+﻿Conflits légers de test01.fet
+Généré avec FET 7.2.6 le 16/07/2025 20:02
+
+Nombre de contraintes légères rompues : 0
+Total des conflits légers : 0
+
+Liste des conflits légers (par ordre décroissant) :
+
+
+Fin de fichier.

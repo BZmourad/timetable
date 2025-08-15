@@ -1,0 +1,7 @@
+﻿Génération terminée à : 17/07/2025 13:05
+
+Le noyau aléatoire en fin de génération est :
+	s10=2483848435, s11=3558431477, s12=2053372641,
+	s20=1871532266, s21=39961722, s22=1487678449.
+
+Ce fichier a été généré automatiquement avec FET 7.2.6.
