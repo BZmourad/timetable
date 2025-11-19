@@ -9,7 +9,7 @@ github_pat_11AYGRKII0ahVN7u9F5HHy_WErz1Bl2kAmLcfoldN9y3Iwv2OVfxsUucn75VseXNxhNU5
 
 
 
-pm2 start npm --name "TimeTable" -- run start
+sudo pm2 start npm --name "TimeTable" -- run start
 pm2 stop TimeTable
 
 ********************************************************************************
@@ -47,3 +47,12 @@ http://141.94.20.121:3000
 scp ubuntu@141.94.20.121:/home/ubuntu/timetable/timetables/timetable_1744/876551019.fet "C:\FET\fet\fet-7.1.2\examples\TESTS"
 
 fet-cl --inputfile="C:\FET\fet\fet-7.1.2\examples\TESTS\timetable_1744876551019.fet" --outputdir="C:\FET\fet\fet-7.1.2\examples\TESTS\OUT" --language=fr
+
+
+scp -r "C:\laragon\www\apps\timetable\front\src\components" ubuntu@141.94.20.121:/home/ubuntu/project/timetable/front/src/components/
+
+scp -r "C:\laragon\www\apps\timetable\front\src\views" ubuntu@141.94.20.121:/home/ubuntu/project/timetable/front/src/views
+
+scp "C:\laragon\www\apps\timetable\back\controllers\timetableController.js" ubuntu@141.94.20.121:/home/ubuntu/project/timetable/back/controllers/
+
+scp "C:\laragon\www\apps\timetable\back\routes\timetableRoutes.js" ubuntu@141.94.20.121:/home/ubuntu/project/timetable/back/routes/
