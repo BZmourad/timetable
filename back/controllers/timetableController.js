@@ -62,6 +62,45 @@ exports.submitTimetable = async (req, res) => {
     }
 };
 
+exports.copyTimetable = async (req, res) => {
+    try {
+        // Validation des données
+        if (!req.body.institutionName) {
+            return res.status(400).json({ error: "Le nom de l'institution est obligatoire" });
+        }
+        const id = req.body.id;
+        const oldtimetable = await Timetable.findByPk(id);
+
+        if (!oldtimetable) {
+            return res.status(404).json({ error: "Emploi du temps non trouvé" });
+        }
+
+        // Lire le fichier JSON
+        const oldData = JSON.parse(fs.readFileSync(oldtimetable.path_json, 'utf8'));
+
+        // Créer un nom de fichier unique
+        const filename = `timetable_${uuidv4()}.json`;
+        const filePath = path.join(storagePath, filename);
+
+        // Sauvegarder les données dans un fichier JSON
+        fs.writeFileSync(filePath, JSON.stringify(oldData, null, 2));
+
+        // Enregistrer dans la base de données
+        const timetable = await Timetable.create({
+            institutionName: req.body.institutionName,
+            path_json: filePath
+        });
+
+        res.status(201).json({
+            message: "Données enregistrées avec succès",
+            data: timetable
+        });
+    } catch (error) {
+        console.error("Erreur lors de l'enregistrement:", error);
+        res.status(500).json({ error: "Une erreur est survenue lors de l'enregistrement" });
+    }
+};
+
 exports.getTimetable = async (req, res) => {
     try {
         const id = req.params.id;

@@ -40,13 +40,42 @@
                             <router-link :to="'/edit/' + timetable.id" class="btn btn-sm btn-info me-2">
                                 <i class="fas fa-edit"></i> Modifier
                             </router-link>
-                            <button @click="deleteTimetable(timetable.id)" class="btn btn-sm btn-danger">
+                            <button @click="deleteTimetable(timetable.id)" class="btn btn-sm btn-danger me-2">
                                 <i class="fas fa-trash"></i> Supprimer
+                            </button>
+                            <button class="btn btn-sm btn-success" @click="openCopyTimetableModal(timetable.id, timetable.institutionName)">
+                                <i class="fas fa-copy"></i> Dupliquer
                             </button>
                         </td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+    </div>
+    <div v-if="showCopyModal" class="modal fade show" style="display: block; background-color: rgba(0,0,0,0.5)">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Dupliquer l'emploi du temps</h5>
+                    <button type="button" class="btn-close" @click="closeCopyModal"></button>
+                </div>
+                <form @submit.prevent="submitCopyForm">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="institutionName" class="form-label">Nom de l'institution *</label>
+                            <input type="text" class="form-control" id="institutionName" v-model="copyForm.institutionName" required >
+                        </div>
+                        <input type="hidden" v-model="copyForm.id">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" @click="closeCopyModal">Annuler</button>
+                        <button type="submit" class="btn btn-primary" :disabled="loading">
+                            <span v-if="loading" class="spinner-border spinner-border-sm me-2"></span>
+                            {{ loading ? 'Duplication...' : 'Dupliquer' }}
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </template>
@@ -57,7 +86,13 @@ export default {
     data() {
         return {
             timetables: [],
-            loading: true
+            loading: true,
+            showCopyModal: false,
+            copyLoading: false,
+            copyForm: {
+                id: '',
+                institutionName: ''
+            }
         }
     },
     created() {
@@ -95,29 +130,64 @@ export default {
                     alert('Erreur lors de la suppression');
                 }
             }
+        },
+        openCopyTimetableModal(id, institutionName) {
+            this.copyForm.id = id;
+            this.copyForm.institutionName = institutionName + ' - Copie';
+            this.showCopyModal = true;
+        },
+        closeCopyModal() {
+            this.showCopyModal = false;
+            this.copyForm.id = '';
+            this.copyForm.institutionName = '';
+            this.copyLoading = false;
+        },
+        async submitCopyForm() {
+            if (!this.copyForm.institutionName.trim()) {
+                alert('Le nom de l\'institution est obligatoire');
+                return;
+            }
+            this.copyLoading = true;
+            try {
+                const response = await this.$http.post(
+                    `${process.env.VUE_APP_API_BASE_URL}/timetables/copy`,
+                    this.copyForm
+                );
+                // Fermer le modal
+                this.closeCopyModal();
+                // Afficher un message de succès
+                alert('Emploi du temps dupliqué avec succès!');
+                // Rafraîchir la liste
+                this.loadTimetables();
+            } catch (error) {
+                console.error('Erreur lors de la duplication:', error);
+                alert('Erreur lors de la duplication: ' + 
+                    (error.response?.data?.error || error.message || 'Une erreur est survenue'));
+            } finally {
+                this.copyLoading = false;
+            }
         }
     }
 }
 </script>
 
 <style scoped>
-.loading-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.8);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.loading-overlay p {
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    color: #333;
-}
+    .loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.8);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+    .loading-overlay p {
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        color: #333;
+    }
 </style>

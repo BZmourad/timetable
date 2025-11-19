@@ -10,5 +10,6 @@ router.put('/timetables/:id', timetableController.updateTimetable);
 router.delete('/timetables/:id', timetableController.deleteTimetable);
 router.get('/timetables/:id/show', timetableController.getTimetableShow);
 router.get('/timetables/:id/data', timetableController.getTimetableTest);
+router.post('/timetables/copy', timetableController.copyTimetable);
 
 module.exports = router;
