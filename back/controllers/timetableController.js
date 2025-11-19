@@ -238,7 +238,7 @@ function convertToFetXml(jsonData) {
             },
             Subjects_List: {
                 Subject: jsonData.subjects.map(subject => ({
-                    Name: subject.code || subject.name.replace(/\s+/g, ''),
+                    Name: subject.name,
                     Long_Name: subject.longName || '',
                     Code: subject.code || '',
                     Comments: subject.comments || ''
@@ -246,7 +246,7 @@ function convertToFetXml(jsonData) {
             },
             Teachers_List: {
                 Teacher: jsonData.teachers.map(teacher => ({
-                    Name: teacher.code || teacher.name.replace(/\s+/g, ''),
+                    Name: teacher.name,
                     Long_Name: teacher.longName || '',
                     Code: teacher.code || '',
                     Target_Number_of_Hours: teacher.targetHours || 0,
@@ -261,7 +261,7 @@ function convertToFetXml(jsonData) {
                     Name: new Date().getFullYear() + '-' + (new Date().getFullYear()+1),
                     Number_of_Students: jsonData.students.reduce((sum, s) => sum + (s.studentCount || 0), 0),
                     Group: jsonData.students.map(student => ({
-                        Name: student.code || student.name.replace(/\s+/g, ''),
+                        Name: student.name,
                         Long_Name: student.longName || '',
                         Code: student.code || '',
                         Number_of_Students: student.studentCount || 0,
@@ -283,7 +283,7 @@ function convertToFetXml(jsonData) {
             },
             Rooms_List: {
                 Room: jsonData.rooms.map(room => ({
-                    Name: room.code || room.name.replace(/\s+/g, ''),
+                    Name: room.name,
                     Long_Name: room.longName || '',
                     Code: room.code || '',
                     Capacity: room.capacity || 0,

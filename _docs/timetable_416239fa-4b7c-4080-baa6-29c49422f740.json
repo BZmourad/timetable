@@ -1,137 +1,283 @@
 {
-  "institutionName": "srgfesgr",
-  "institutionComment": "rgzrgrg  gergerg erg erg",
+  "institutionName": "ecole hannibal",
+  "institutionComment": "",
   "selectedDays": [
     "Lundi",
     "Mardi",
-    "Mercredi"
+    "Mercredi",
+    "Jeudi",
+    "Vendredi"
   ],
   "periods": [
     {
-      "name": "p1",
-      "description": "ergerger"
+      "name": "08:00-09:00",
+      "description": ""
     },
     {
-      "name": "p2",
-      "description": "rgergerg"
+      "name": " 09:00-10:00",
+      "description": ""
+    },
+    {
+      "name": "10:00-11:00",
+      "description": ""
+    },
+    {
+      "name": "11:00-12:00",
+      "description": ""
+    },
+    {
+      "name": "12:00-13:30",
+      "description": ""
+    },
+    {
+      "name": "13:30-14:30",
+      "description": ""
+    },
+    {
+      "name": "14:30-15:30",
+      "description": ""
+    },
+    {
+      "name": "15:30-16:30",
+      "description": ""
+    },
+    {
+      "name": "16:30-17:30",
+      "description": ""
     }
   ],
   "subjects": [
     {
-      "name": "ergerger",
-      "longName": "",
+      "name": "عربية",
+      "longName": "عربية",
       "code": "",
       "comments": ""
     },
     {
-      "name": "ergerg",
-      "longName": "",
+      "name": "فرنسية",
+      "longName": "فرنسية",
       "code": "",
       "comments": ""
     },
     {
-      "name": "ergergerdd",
-      "longName": "",
+      "name": "انجليزية",
+      "longName": "انجليزية",
+      "code": "",
+      "comments": ""
+    },
+    {
+      "name": "رياضة",
+      "longName": "رياضة",
       "code": "",
       "comments": ""
     }
   ],
   "teachers": [
     {
-      "name": "fdgdfgdfgdf",
+      "name": "Mrabet",
       "longName": "",
-      "code": "fdgdfgdfgdf",
-      "targetHours": 0,
+      "code": "",
+      "targetHours": 18,
       "qualifiedSubjects": [
-        "ergerg",
-        "ergerger"
+        "عربية"
       ],
       "comments": ""
     },
     {
-      "name": "dfbdbfb",
+      "name": "ksantini",
       "longName": "",
-      "code": "dfbdbfb",
-      "targetHours": 3,
-      "qualifiedSubjects": [],
+      "code": "",
+      "targetHours": 10,
+      "qualifiedSubjects": [
+        "فرنسية"
+      ],
+      "comments": ""
+    },
+    {
+      "name": "Salma",
+      "longName": "",
+      "code": "",
+      "targetHours": 2,
+      "qualifiedSubjects": [
+        "انجليزية"
+      ],
+      "comments": ""
+    },
+    {
+      "name": "sport",
+      "longName": "",
+      "code": "",
+      "targetHours": 1,
+      "qualifiedSubjects": [
+        "رياضة"
+      ],
       "comments": ""
     }
   ],
   "students": [
     {
-      "name": "ergerg",
+      "name": "MASSINISSA",
       "longName": "",
       "code": "",
-      "studentCount": 7,
-      "comments": ""
-    },
-    {
-      "name": "rrrrr",
-      "longName": "",
-      "code": "",
-      "studentCount": 0,
+      "studentCount": 1,
       "comments": ""
     }
   ],
   "rooms": [
     {
-      "name": "rrrr",
+      "name": "s1",
       "longName": "",
       "code": "",
-      "capacity": 0,
+      "capacity": 1,
       "comments": ""
     },
     {
-      "name": "ffff",
+      "name": "s2",
       "longName": "",
       "code": "",
-      "capacity": 0,
+      "capacity": 1,
       "comments": ""
     }
   ],
   "balises": [
     {
-      "name": "b1",
+      "name": "ar",
       "longName": "",
       "code": "",
-      "comments": "",
-      "Imprimable": "true"
+      "Imprimable": "true",
+      "comments": ""
     },
     {
-      "name": "b2",
+      "name": "fr",
       "longName": "",
       "code": "",
-      "comments": "",
-      "Imprimable": "true"
+      "Imprimable": "true",
+      "comments": ""
+    },
+    {
+      "name": "sp",
+      "longName": "",
+      "code": "",
+      "Imprimable": "true",
+      "comments": ""
+    },
+    {
+      "name": "an",
+      "longName": "",
+      "code": "",
+      "Imprimable": "true",
+      "comments": ""
     }
   ],
   "activities": [
     {
-      "subject": "ergerger",
-      "teacher": "fdgdfgdfgdf",
-      "student": "ergerg",
+      "subject": "عربية",
+      "student": "MASSINISSA",
+      "teacher": "Mrabet",
+      "balise": "ar",
       "durations": [
-        1
-      ],
-      "balise": ""
+        3,
+        3,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
     },
     {
-      "subject": "ergerg",
-      "teacher": "dfbdbfb",
-      "student": "rrrrr",
+      "subject": "فرنسية",
+      "student": "MASSINISSA",
+      "teacher": "ksantini",
+      "balise": "fr",
+      "durations": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "subject": "انجليزية",
+      "student": "MASSINISSA",
+      "teacher": "Salma",
+      "balise": "an",
       "durations": [
         2
-      ],
-      "balise": ""
+      ]
+    },
+    {
+      "subject": "رياضة",
+      "student": "MASSINISSA",
+      "teacher": "sport",
+      "balise": "sp",
+      "durations": [
+        1
+      ]
     }
   ],
   "ConstraintBreakTimes": [],
-  "ConstraintTeacherNotAvailableTimes": [],
-  "ConstraintTeacherMaxDaysPerWeek": [],
-  "ConstraintTeacherMinDaysPerWeek": [],
-  "ConstraintTeacherNoTwoConsecutiveDays": [],
+  "ConstraintTeacherNotAvailableTimes": [
+    {
+      "Teacher": "Mrabet",
+      "Not_Available_Time": [
+        {
+          "Day": "Lundi",
+          "Hour": "13:30-14:30"
+        },
+        {
+          "Day": "Lundi",
+          "Hour": "14:30-15:30"
+        },
+        {
+          "Day": "Lundi",
+          "Hour": "15:30-16:30"
+        }
+      ]
+    },
+    {
+      "Teacher": "ksantini",
+      "Not_Available_Time": [
+        {
+          "Day": "Lundi",
+          "Hour": "10:00-11:00"
+        },
+        {
+          "Day": "Lundi",
+          "Hour": "11:00-12:00"
+        }
+      ]
+    }
+  ],
+  "ConstraintTeacherMaxDaysPerWeek": [
+    {
+      "Teacher": "ksantini",
+      "Max_Days_Per_Week": 5
+    }
+  ],
+  "ConstraintTeacherMinDaysPerWeek": [
+    {
+      "Teacher": "Mrabet",
+      "Minimum_Days_Per_Week": 5
+    }
+  ],
+  "ConstraintTeacherNoTwoConsecutiveDays": [
+    {
+      "Teacher": "Salma"
+    },
+    {
+      "Teacher": "sport"
+    }
+  ],
   "ConstraintTeacherMaxGapsPerDay": [],
-  "ConstraintTeacherMaxGapsPerWeek": [],
+  "ConstraintTeacherMaxGapsPerWeek": [
+    {
+      "Teacher": "Mrabet",
+      "Max_Gaps": 1
+    }
+  ],
   "ConstraintTeacherMaxSingleGapsInSelectedTimeSlots": [],
   "ConstraintTeacherMaxHoursDailyInInterval": [],
   "ConstraintTeacherMaxHoursDaily": [],
@@ -213,18 +359,18 @@
   "ConstraintTeacherRoomNotAvailableTimes": [],
   "ConstraintRoomMaxActivityTagsPerDayFromSet": [],
   "ConstraintRoomMaxActivityTagsPerWeekFromSet": [],
-  "ConstraintActivityPreferredRooms":[],
-  "ConstraintActivitiesSameRoomIfConsecutive":[],
-  "ConstraintActivitiesOccupyMaxDifferentRooms":[],
+  "ConstraintActivityPreferredRooms": [],
+  "ConstraintActivitiesSameRoomIfConsecutive": [],
+  "ConstraintActivitiesOccupyMaxDifferentRooms": [],
   "ConstraintTeachersMaxActivityTagsPerDayFromSet": [],
   "ConstraintTeachersMinHoursDaily": {
-    "Active": false,
+    "Active": 0,
     "Minimum_Hours_Daily": 0,
     "Allow_Empty_Days": false
   },
   "ConstraintTeachersActivityTagMinHoursDaily": [],
   "ConstraintTeachersMaxHoursContinuously": {
-    "Active": false,
+    "Active": 0,
     "Maximum_Hours_Continuously": 0
   },
   "ConstraintTeachersActivityTagMaxHoursContinuously": [],
@@ -232,7 +378,7 @@
   "ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags": [],
   "ConstraintTeachersIntervalMaxDaysPerWeek": [],
   "ConstraintTeachersMinRestingHours": {
-    "Active": false,
+    "Active": 0,
     "Minimum_Resting_Hours": 0,
     "Circular": false
   },
@@ -281,40 +427,40 @@
   "ConstraintTeacherMaxBuildingChangesPerWeek": [],
   "ConstraintTeacherMinGapsBetweenBuildingChanges": [],
   "ConstraintTeachersMaxRoomChangesPerDay": {
-      "Active": 0,
-      "Max_Room_Changes_Per_Day": 0
+    "Active": 0,
+    "Max_Room_Changes_Per_Day": 0
   },
   "ConstraintTeachersMaxRoomChangesPerDayInInterval": {
-      "Active": 0,
-      "Max_Room_Changes_Per_Day": 0,
-      "Interval_Start_Hour": "",
-      "Interval_End_Hour": ""
+    "Active": 0,
+    "Max_Room_Changes_Per_Day": 0,
+    "Interval_Start_Hour": "",
+    "Interval_End_Hour": ""
   },
   "ConstraintTeachersMaxRoomChangesPerWeek": {
-      "Active": 0,
-      "Max_Room_Changes_Per_Week": 0
+    "Active": 0,
+    "Max_Room_Changes_Per_Week": 0
   },
   "ConstraintTeachersMinGapsBetweenRoomChanges": {
-      "Active": 0,
-      "Min_Gaps_Between_Room_Changes": 0
+    "Active": 0,
+    "Min_Gaps_Between_Room_Changes": 0
   },
   "ConstraintTeachersMaxBuildingChangesPerDay": {
-      "Active": 0,
-      "Max_Building_Changes_Per_Day": 0
+    "Active": 0,
+    "Max_Building_Changes_Per_Day": 0
   },
   "ConstraintTeachersMaxBuildingChangesPerDayInInterval": {
-      "Active": 0,
-      "Max_Building_Changes_Per_Day": 0,
-      "Interval_Start_Hour": "",
-      "Interval_End_Hour": ""
+    "Active": 0,
+    "Max_Building_Changes_Per_Day": 0,
+    "Interval_Start_Hour": "",
+    "Interval_End_Hour": ""
   },
   "ConstraintTeachersMaxBuildingChangesPerWeek": {
-      "Active": 0,
-      "Max_Building_Changes_Per_Week": 0
+    "Active": 0,
+    "Max_Building_Changes_Per_Week": 0
   },
   "ConstraintTeachersMinGapsBetweenBuildingChanges": {
-      "Active": 0,
-      "Min_Gaps_Between_Building_Changes": 0
+    "Active": 0,
+    "Min_Gaps_Between_Building_Changes": 0
   },
   "ConstraintStudentsSetHomeRoom": [],
   "ConstraintStudentsSetHomeRooms": [],
@@ -327,42 +473,100 @@
   "ConstraintStudentsSetMaxBuildingChangesPerWeek": [],
   "ConstraintStudentsSetMinGapsBetweenBuildingChanges": [],
   "ConstraintStudentsMaxRoomChangesPerDay": {
-      "Active": 0,
-      "Max_Room_Changes_Per_Day": 0
+    "Active": 0,
+    "Max_Room_Changes_Per_Day": 0
   },
   "ConstraintStudentsMaxRoomChangesPerDayInInterval": {
-      "Active": 0,
-      "Max_Room_Changes_Per_Day": 0,
-      "Interval_Start_Hour": "",
-      "Interval_End_Hour": ""
+    "Active": 0,
+    "Max_Room_Changes_Per_Day": 0,
+    "Interval_Start_Hour": "",
+    "Interval_End_Hour": ""
   },
   "ConstraintStudentsMaxRoomChangesPerWeek": {
-      "Active": 0,
-      "Max_Room_Changes_Per_Week": 0
+    "Active": 0,
+    "Max_Room_Changes_Per_Week": 0
   },
   "ConstraintStudentsMinGapsBetweenRoomChanges": {
-      "Active": 0,
-      "Min_Gaps_Between_Room_Changes": 0
+    "Active": 0,
+    "Min_Gaps_Between_Room_Changes": 0
   },
   "ConstraintStudentsMaxBuildingChangesPerDay": {
-      "Active": 0,
-      "Max_Building_Changes_Per_Day": 0
+    "Active": 0,
+    "Max_Building_Changes_Per_Day": 0
   },
   "ConstraintStudentsMaxBuildingChangesPerDayInInterval": {
-      "Active": 0,
-      "Max_Building_Changes_Per_Day": 0,
-      "Interval_Start_Hour": "",
-      "Interval_End_Hour": ""
+    "Active": 0,
+    "Max_Building_Changes_Per_Day": 0,
+    "Interval_Start_Hour": "",
+    "Interval_End_Hour": ""
   },
   "ConstraintStudentsMaxBuildingChangesPerWeek": {
-      "Active": 0,
-      "Max_Building_Changes_Per_Week": 0
+    "Active": 0,
+    "Max_Building_Changes_Per_Week": 0
   },
   "ConstraintStudentsMinGapsBetweenBuildingChanges": {
-      "Active": 0,
-      "Min_Gaps_Between_Building_Changes": 0
+    "Active": 0,
+    "Min_Gaps_Between_Building_Changes": 0
   },
-  "ConstraintStudentsSetNotAvailableTimes": [],
+  "ConstraintStudentsSetNotAvailableTimes": [
+    {
+      "Students": "MASSINISSA",
+      "Not_Available_Time": [
+        {
+          "Day": "Lundi",
+          "Hour": "12:00-13:30"
+        },
+        {
+          "Day": "Lundi",
+          "Hour": "16:30-17:30"
+        },
+        {
+          "Day": "Mardi",
+          "Hour": "12:00-13:30"
+        },
+        {
+          "Day": "Mardi",
+          "Hour": "16:30-17:30"
+        },
+        {
+          "Day": "Mercredi",
+          "Hour": "12:00-13:30"
+        },
+        {
+          "Day": "Mercredi",
+          "Hour": "13:30-14:30"
+        },
+        {
+          "Day": "Mercredi",
+          "Hour": "14:30-15:30"
+        },
+        {
+          "Day": "Mercredi",
+          "Hour": "15:30-16:30"
+        },
+        {
+          "Day": "Mercredi",
+          "Hour": "16:30-17:30"
+        },
+        {
+          "Day": "Jeudi",
+          "Hour": "12:00-13:30"
+        },
+        {
+          "Day": "Jeudi",
+          "Hour": "16:30-17:30"
+        },
+        {
+          "Day": "Vendredi",
+          "Hour": "12:00-13:30"
+        },
+        {
+          "Day": "Vendredi",
+          "Hour": "16:30-17:30"
+        }
+      ]
+    }
+  ],
   "ConstraintStudentsSetMaxDaysPerWeek": [],
   "ConstraintStudentsSetMaxGapsPerDay": [],
   "ConstraintStudentsSetMaxGapsPerWeek": [],
@@ -383,51 +587,51 @@
   "ConstraintStudentsSetIntervalMaxDaysPerWeek": [],
   "ConstraintStudentsSetMinRestingHours": [],
   "ConstraintStudentsMaxDaysPerWeek": {
-      "Active": 0,
-      "Max_Days_Per_Week": 0
+    "Active": 0,
+    "Max_Days_Per_Week": 0
   },
   "ConstraintStudentsMaxGapsPerDay": {
-      "Active": 0,
-      "Max_Gaps": 0
+    "Active": 0,
+    "Max_Gaps": 0
   },
   "ConstraintStudentsMaxGapsPerWeek": {
-      "Active": 0,
-      "Max_Gaps": 0
+    "Active": 0,
+    "Max_Gaps": 0
   },
   "ConstraintStudentsMaxSingleGapsInSelectedTimeSlots": [],
   "ConstraintStudentsEarlyMaxBeginningsAtSecondHour": {
-      "Active": 0,
-      "Max_Beginnings_At_Second_Hour": 0
+    "Active": false,
+    "Max_Beginnings_At_Second_Hour": 0
   },
   "ConstraintStudentsMaxHoursDaily": {
-      "Active": 0,
-      "Maximum_Hours_Daily": 0
+    "Active": 0,
+    "Maximum_Hours_Daily": 0
   },
   "ConstraintStudentsMaxHoursDailyInInterval": [],
   "ConstraintStudentsPairOfMutuallyExclusiveTimeSlots": [],
   "ConstraintStudentsMaxSpanPerDay": {
-      "Active": 0,
-      "Max_Span": 0
+    "Active": 0,
+    "Max_Span": 0
   },
   "ConstraintStudentsActivityTagMaxHoursDaily": [],
   "ConstraintStudentsMaxActivityTagsPerDayFromSet": [],
   "ConstraintStudentsMinHoursDaily": {
-      "Active": 0,
-      "Minimum_Hours_Daily": 0,
-      "Allow_Empty_Days": 0
+    "Active": 0,
+    "Minimum_Hours_Daily": 0,
+    "Allow_Empty_Days": 0
   },
   "ConstraintStudentsActivityTagMinHoursDaily": [],
   "ConstraintStudentsMaxHoursContinuously": {
-      "Active": 0,
-      "Maximum_Hours_Continuously": 0
+    "Active": false,
+    "Maximum_Hours_Continuously": 0
   },
   "ConstraintStudentsActivityTagMaxHoursContinuously": [],
   "ConstraintStudentsMinGapsBetweenActivityTag": [],
   "ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags": [],
   "ConstraintStudentsIntervalMaxDaysPerWeek": [],
   "ConstraintStudentsMinRestingHours": {
-      "Active": 0,
-      "Minimum_Resting_Hours": 0,
-      "Circular": 0
+    "Active": false,
+    "Minimum_Resting_Hours": 0,
+    "Circular": 0
   }
 }

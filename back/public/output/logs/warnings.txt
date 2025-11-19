@@ -1,0 +1,10 @@
+﻿Titre : FET Avertissement
+Message : Astuce d'optimisation : Il y a 2 sous-groupes (sur un total de 5 sous-groupes) qui ont les mêmes activités que les autres sous-groupes. Ils sont listés ci-dessous. Si les contraintes relatives à ces sous-groupes sont aussi les mêmes, vous pouvez rendre la génération (directement proportionnelle) plus rapide en retirant complètement les sous-groupes qui sont équivalents aux autres sous-groupes (en ne laissant qu'un seul représentant pour chaque jeu équivalent). (L'algorithme de génération ne retirera pas complètement les sous-groupes équivalents automatiquement.)
+
+Si vous n'aviez pas encore ajouté toutes les activités ou si le nombre de sous-groupes équivalents est faible en comparaison du nombre total de sous-groupes, vous pouvez probablement ignorer ce message en toute sécurité.
+
+Vous pouvez désactiver ce message depuis le menu Réglages.
+
+Le sous-groupe خامسة بلاريجيا Sous-groupe automatique a les mêmes activités que le sous-groupe خامسة حنّبعل Sous-groupe automatique.
+Le sous-groupe خامسة أوتيك Sous-groupe automatique a les mêmes activités que le sous-groupe خامسة بلاريجيا Sous-groupe automatique.
+

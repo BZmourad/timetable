@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fet version="7.2.6">
+    <Mode>Official</Mode>
+    <Institution_Name>école avicenne</Institution_Name>
+    <Comments>Commentaire par défaut</Comments>
+    <Days_List>
+        <Number_of_Days>5</Number_of_Days>
+        <Day>
+            <Name>Lundi</Name>
+            <Long_Name></Long_Name>
+        </Day>
+        <Day>
+            <Name>Mardi</Name>
+            <Long_Name></Long_Name>
+        </Day>
+        <Day>
+            <Name>Mercredi</Name>
+            <Long_Name></Long_Name>
+        </Day>
+        <Day>
+            <Name>Jeudi</Name>
+            <Long_Name></Long_Name>
+        </Day>
+        <Day>
+            <Name>Vendredi</Name>
+            <Long_Name></Long_Name>
+        </Day>
+    </Days_List>
+    <Hours_List>
+        <Number_of_Hours>9</Number_of_Hours>
+        <Hour>
+            <Name>08:00-09:00</Name>
+            <Long_Name></Long_Name>
+        </Hour>
+        <Hour>
+            <Name>09:00-10:00</Name>
+            <Long_Name></Long_Name>
+        </Hour>
+        <Hour>
+            <Name>10:00-11:00</Name>
+            <Long_Name></Long_Name>
+        </Hour>
+        <Hour>
+            <Name>11:00-12:00</Name>
+            <Long_Name></Long_Name>
+        </Hour>
+        <Hour>
+            <Name>12:00-12:30</Name>
+            <Long_Name></Long_Name>
+        </Hour>
+        <Hour>
+            <Name>12:30-13:00</Name>
+            <Long_Name></Long_Name>
+        </Hour>
+        <Hour>
+            <Name>13:00-14:00</Name>
+            <Long_Name></Long_Name>
+        </Hour>
+        <Hour>
+            <Name>14:00-15:00</Name>
+            <Long_Name></Long_Name>
+        </Hour>
+        <Hour>
+            <Name>15:00-16:00</Name>
+            <Long_Name></Long_Name>
+        </Hour>
+    </Hours_List>
+    <Subjects_List>
+        <Subject>
+            <Name>عربية</Name>
+            <Long_Name>عربية</Long_Name>
+            <Code></Code>
+            <Comments></Comments>
+        </Subject>
+        <Subject>
+            <Name>فرنسية</Name>
+            <Long_Name>فرنسية</Long_Name>
+            <Code></Code>
+            <Comments></Comments>
+        </Subject>
+        <Subject>
+            <Name>علوم</Name>
+            <Long_Name>علوم</Long_Name>
+            <Code></Code>
+            <Comments></Comments>
+        </Subject>
+        <Subject>
+            <Name>انجليزية</Name>
+            <Long_Name>انجليزية</Long_Name>
+            <Code></Code>
+            <Comments></Comments>
+        </Subject>
+        <Subject>
+            <Name>إعلامية</Name>
+            <Long_Name>إعلامية</Long_Name>
+            <Code></Code>
+            <Comments></Comments>
+        </Subject>
+        <Subject>
+            <Name>رياضة</Name>
+            <Long_Name>رياضة</Long_Name>
+            <Code></Code>
+            <Comments></Comments>
+        </Subject>
+    </Subjects_List>
+    <Teachers_List>
+        <Teacher>
+            <Name>عادل شنوفي</Name>
+            <Long_Name></Long_Name>
+            <Code></Code>
+            <Target_Number_of_Hours>9</Target_Number_of_Hours>
+            <Qualified_Subjects>
+                <Qualified_Subject>عربية</Qualified_Subject>
+            </Qualified_Subjects>
+            <Comments></Comments>
+        </Teacher>
+        <Teacher>
+            <Name>سمير الصباح</Name>
+            <Long_Name></Long_Name>
+            <Code></Code>
+            <Target_Number_of_Hours>9</Target_Number_of_Hours>
+            <Qualified_Subjects>
+                <Qualified_Subject>عربية</Qualified_Subject>
+            </Qualified_Subjects>
+            <Comments></Comments>
+        </Teacher>
+        <Teacher>
+            <Name>سنية سليم</Name>
+            <Long_Name></Long_Name>
+            <Code></Code>
+            <Target_Number_of_Hours>9</Target_Number_of_Hours>
+            <Qualified_Subjects>
+                <Qualified_Subject>عربية</Qualified_Subject>
+            </Qualified_Subjects>
+            <Comments></Comments>
+        </Teacher>
+        <Teacher>
+            <Name>سمير البوغانمي</Name>
+            <Long_Name></Long_Name>
+            <Code></Code>
+            <Target_Number_of_Hours>9</Target_Number_of_Hours>
+            <Qualified_Subjects>
+                <Qualified_Subject>علوم</Qualified_Subject>
+            </Qualified_Subjects>
+            <Comments></Comments>
+        </Teacher>
+        <Teacher>
+            <Name>هناء العماري</Name>
+            <Long_Name></Long_Name>
+            <Code></Code>
+            <Target_Number_of_Hours>9</Target_Number_of_Hours>
+            <Qualified_Subjects>
+                <Qualified_Subject>علوم</Qualified_Subject>
+            </Qualified_Subjects>
+            <Comments></Comments>
+        </Teacher>
+        <Teacher>
+            <Name>سيمة وداي</Name>
+            <Long_Name></Long_Name>
+            <Code></Code>
+            <Target_Number_of_Hours>9</Target_Number_of_Hours>
+            <Qualified_Subjects>
+                <Qualified_Subject>علوم</Qualified_Subject>
+            </Qualified_Subjects>
+            <Comments></Comments>
+        </Teacher>
+        <Teacher>
+            <Name>سارة بن علي</Name>
+            <Long_Name></Long_Name>
+            <Code></Code>
+            <Target_Number_of_Hours>9</Target_Number_of_Hours>
+            <Qualified_Subjects>
+                <Qualified_Subject>فرنسية</Qualified_Subject>
+            </Qualified_Subjects>
+            <Comments></Comments>
+        </Teacher>
+        <Teacher>
+            <Name>سيرين الرزقي</Name>
+            <Long_Name></Long_Name>
+            <Code></Code>
+            <Target_Number_of_Hours>9</Target_Number_of_Hours>
+            <Qualified_Subjects>
+                <Qualified_Subject>فرنسية</Qualified_Subject>
+            </Qualified_Subjects>
+            <Comments></Comments>
+        </Teacher>
+        <Teacher>
+            <Name>عجمية عبد الدايم</Name>
+            <Long_Name></Long_Name>
+            <Code></Code>
+            <Target_Number_of_Hours>9</Target_Number_of_Hours>
+            <Qualified_Subjects>
+                <Qualified_Subject>فرنسية</Qualified_Subject>
+            </Qualified_Subjects>
+            <Comments></Comments>
+        </Teacher>
+        <Teacher>
+            <Name>رجاء حمدي</Name>
+            <Long_Name></Long_Name>
+            <Code></Code>
+            <Target_Number_of_Hours>2</Target_Number_of_Hours>
+            <Qualified_Subjects>
+                <Qualified_Subject>انجليزية</Qualified_Subject>
+            </Qualified_Subjects>
+            <Comments></Comments>
+        </Teacher>
+        <Teacher>
+            <Name>أميرة لمين</Name>
+            <Long_Name></Long_Name>
+            <Code></Code>
+            <Target_Number_of_Hours>1</Target_Number_of_Hours>
+            <Qualified_Subjects>
+                <Qualified_Subject>إعلامية</Qualified_Subject>
+            </Qualified_Subjects>
+            <Comments></Comments>
+        </Teacher>
+        <Teacher>
+            <Name>أسامة بالشيخ</Name>
+            <Long_Name></Long_Name>
+            <Code></Code>
+            <Target_Number_of_Hours>1</Target_Number_of_Hours>
+            <Qualified_Subjects>
+                <Qualified_Subject>رياضة</Qualified_Subject>
+            </Qualified_Subjects>
+            <Comments></Comments>
+        </Teacher>
+        <Teacher>
+            <Name>sdhvs dj sjkdhf j</Name>
+            <Long_Name></Long_Name>
+            <Code></Code>
+            <Target_Number_of_Hours>1</Target_Number_of_Hours>
+            <Qualified_Subjects>
+                <Qualified_Subject>فرنسية</Qualified_Subject>
+            </Qualified_Subjects>
+            <Comments></Comments>
+        </Teacher>
+    </Teachers_List>
+    <Students_List>
+        <Year>
+            <Name>2025-2026</Name>
+            <Number_of_Students>5</Number_of_Students>
+            <Group>
+                <Name>خامسة علّيسة</Name>
+                <Long_Name></Long_Name>
+                <Code></Code>
+                <Number_of_Students>1</Number_of_Students>
+                <Comments></Comments>
+            </Group>
+            <Group>
+                <Name>خامسة قرطاج</Name>
+                <Long_Name></Long_Name>
+                <Code></Code>
+                <Number_of_Students>1</Number_of_Students>
+                <Comments></Comments>
+            </Group>
+            <Group>
+                <Name>خامسة حنّبعل</Name>
+                <Long_Name></Long_Name>
+                <Code></Code>
+                <Number_of_Students>1</Number_of_Students>
+                <Comments></Comments>
+            </Group>
+            <Group>
+                <Name>خامسة بلاريجيا</Name>
+                <Long_Name></Long_Name>
+                <Code></Code>
+                <Number_of_Students>1</Number_of_Students>
+                <Comments></Comments>
+            </Group>
+            <Group>
+                <Name>خامسة أوتيك</Name>
+                <Long_Name></Long_Name>
+                <Code></Code>
+                <Number_of_Students>1</Number_of_Students>
+                <Comments></Comments>
+            </Group>
+        </Year>
+    </Students_List>
+    <Activity_Tags_List>
+        <Activity_Tag>
+            <Name>AR</Name>
+            <Long_Name></Long_Name>
+            <Code></Code>
+            <Comments></Comments>
+            <Printable>true</Printable>
+        </Activity_Tag>
+        <Activity_Tag>
+            <Name>FR</Name>
+            <Long_Name></Long_Name>
+            <Code></Code>
+            <Comments></Comments>
+            <Printable>true</Printable>
+        </Activity_Tag>
+        <Activity_Tag>
+            <Name>SC</Name>
+            <Long_Name></Long_Name>
+            <Code></Code>
+            <Comments></Comments>
+            <Printable>true</Printable>
+        </Activity_Tag>
+        <Activity_Tag>
+            <Name>AN</Name>
+            <Long_Name></Long_Name>
+            <Code></Code>
+            <Comments></Comments>
+            <Printable>true</Printable>
+        </Activity_Tag>
+        <Activity_Tag>
+            <Name>SP</Name>
+            <Long_Name></Long_Name>
+            <Code></Code>
+            <Comments></Comments>
+            <Printable>true</Printable>
+        </Activity_Tag>
+        <Activity_Tag>
+            <Name>INF</Name>
+            <Long_Name></Long_Name>
+            <Code></Code>
+            <Comments></Comments>
+            <Printable>true</Printable>
+        </Activity_Tag>
+    </Activity_Tags_List>
+    <Activities_List>
+        <Activity>
+            <Teacher>عادل شنوفي</Teacher>
+            <Subject>عربية</Subject>
+            <Students>خامسة علّيسة</Students>
+            <Activity_Tag>AR</Activity_Tag>
+            <Duration>2</Duration>
+            <Total_Duration>10</Total_Duration>
+            <Id>1</Id>
+            <Activity_Group_Id>1</Activity_Group_Id>
+            <Active>true</Active>
+            <Comments></Comments>
+        </Activity>
+        <Activity>
+            <Teacher>عادل شنوفي</Teacher>
+            <Subject>عربية</Subject>
+            <Students>خامسة علّيسة</Students>
+            <Activity_Tag>AR</Activity_Tag>
+            <Duration>2</Duration>
+            <Total_Duration>10</Total_Duration>
+            <Id>2</Id>
+            <Activity_Group_Id>1</Activity_Group_Id>
+            <Active>true</Active>
+            <Comments></Comments>
+        </Activity>
+        <Activity>
+            <Teacher>عادل شنوفي</Teacher>
+            <Subject>عربية</Subject>
+            <Students>خامسة علّيسة</Students>
+            <Activity_Tag>AR</Activity_Tag>
+            <Duration>3</Duration>
+            <Total_Duration>10</Total_Duration>
+            <Id>3</Id>
+            <Activity_Group_Id>1</Activity_Group_Id>
+            <Active>true</Active>
+            <Comments></Comments>
+        </Activity>
+        <Activity>
+            <Teacher>عادل شنوفي</Teacher>
+            <Subject>عربية</Subject>
+            <Students>خامسة علّيسة</Students>
+            <Activity_Tag>AR</Activity_Tag>
+            <Duration>3</Duration>
+            <Total_Duration>10</Total_Duration>
+            <Id>4</Id>
+            <Activity_Group_Id>1</Activity_Group_Id>
+            <Active>true</Active>
+            <Comments></Comments>
+        </Activity>
+        <Activity>
+            <Teacher>سمير البوغانمي</Teacher>
+            <Subject>علوم</Subject>
+            <Students>خامسة علّيسة</Students>
+            <Activity_Tag>SC</Activity_Tag>
+            <Duration>2</Duration>
+            <Total_Duration>10</Total_Duration>
+            <Id>5</Id>
+            <Activity_Group_Id>5</Activity_Group_Id>
+            <Active>true</Active>
+            <Comments></Comments>
+        </Activity>
+        <Activity>
+            <Teacher>سمير البوغانمي</Teacher>
+            <Subject>علوم</Subject>
+            <Students>خامسة علّيسة</Students>
+            <Activity_Tag>SC</Activity_Tag>
+            <Duration>2</Duration>
+            <Total_Duration>10</Total_Duration>
+            <Id>6</Id>
+            <Activity_Group_Id>5</Activity_Group_Id>
+            <Active>true</Active>
+            <Comments></Comments>
+        </Activity>
+        <Activity>
+            <Teacher>سمير البوغانمي</Teacher>
+            <Subject>علوم</Subject>
+            <Students>خامسة علّيسة</Students>
+            <Activity_Tag>SC</Activity_Tag>
+            <Duration>3</Duration>
+            <Total_Duration>10</Total_Duration>
+            <Id>7</Id>
+            <Activity_Group_Id>5</Activity_Group_Id>
+            <Active>true</Active>
+            <Comments></Comments>
+        </Activity>
+        <Activity>
+            <Teacher>سمير البوغانمي</Teacher>
+            <Subject>علوم</Subject>
+            <Students>خامسة علّيسة</Students>
+            <Activity_Tag>SC</Activity_Tag>
+            <Duration>3</Duration>
+            <Total_Duration>10</Total_Duration>
+            <Id>8</Id>
+            <Activity_Group_Id>5</Activity_Group_Id>
+            <Active>true</Active>
+            <Comments></Comments>
+        </Activity>
+        <Activity>
+            <Teacher>سارة بن علي</Teacher>
+            <Subject>فرنسية</Subject>
+            <Students>خامسة علّيسة</Students>
+            <Activity_Tag>FR</Activity_Tag>
+            <Duration>3</Duration>
+            <Total_Duration>10</Total_Duration>
+            <Id>9</Id>
+            <Activity_Group_Id>9</Activity_Group_Id>
+            <Active>true</Active>
+            <Comments></Comments>
+        </Activity>
+        <Activity>
+            <Teacher>سارة بن علي</Teacher>
+            <Subject>فرنسية</Subject>
+            <Students>خامسة علّيسة</Students>
+            <Activity_Tag>FR</Activity_Tag>
+            <Duration>3</Duration>
+            <Total_Duration>10</Total_Duration>
+            <Id>10</Id>
+            <Activity_Group_Id>9</Activity_Group_Id>
+            <Active>true</Active>
+            <Comments></Comments>
+        </Activity>
+        <Activity>
+            <Teacher>سارة بن علي</Teacher>
+            <Subject>فرنسية</Subject>
+            <Students>خامسة علّيسة</Students>
+            <Activity_Tag>FR</Activity_Tag>
+            <Duration>2</Duration>
+            <Total_Duration>10</Total_Duration>
+            <Id>11</Id>
+            <Activity_Group_Id>9</Activity_Group_Id>
+            <Active>true</Active>
+            <Comments></Comments>
+        </Activity>
+        <Activity>
+            <Teacher>سارة بن علي</Teacher>
+            <Subject>فرنسية</Subject>
+            <Students>خامسة علّيسة</Students>
+            <Activity_Tag>FR</Activity_Tag>
+            <Duration>2</Duration>
+            <Total_Duration>10</Total_Duration>
+            <Id>12</Id>
+            <Activity_Group_Id>9</Activity_Group_Id>
+            <Active>true</Active>
+            <Comments></Comments>
+        </Activity>
+        <Activity>
+            <Teacher>رجاء حمدي</Teacher>
+            <Subject>انجليزية</Subject>
+            <Students>خامسة علّيسة</Students>
+            <Activity_Tag>AN</Activity_Tag>
+            <Duration>1</Duration>
+            <Total_Duration>2</Total_Duration>
+            <Id>13</Id>
+            <Activity_Group_Id>13</Activity_Group_Id>
+            <Active>true</Active>
+            <Comments></Comments>
+        </Activity>
+        <Activity>
+            <Teacher>رجاء حمدي</Teacher>
+            <Subject>انجليزية</Subject>
+            <Students>خامسة علّيسة</Students>
+            <Activity_Tag>AN</Activity_Tag>
+            <Duration>1</Duration>
+            <Total_Duration>2</Total_Duration>
+            <Id>14</Id>
+            <Activity_Group_Id>13</Activity_Group_Id>
+            <Active>true</Active>
+            <Comments></Comments>
+        </Activity>
+        <Activity>
+            <Teacher>أميرة لمين</Teacher>
+            <Subject>إعلامية</Subject>
+            <Students>خامسة علّيسة</Students>
+            <Activity_Tag>INF</Activity_Tag>
+            <Duration>1</Duration>
+            <Total_Duration>1</Total_Duration>
+            <Id>15</Id>
+            <Activity_Group_Id>0</Activity_Group_Id>
+            <Active>true</Active>
+            <Comments></Comments>
+        </Activity>
+        <Activity>
+            <Teacher>أسامة بالشيخ</Teacher>
+            <Subject>رياضة</Subject>
+            <Students>خامسة علّيسة</Students>
+            <Activity_Tag>SP</Activity_Tag>
+            <Duration>1</Duration>
+            <Total_Duration>1</Total_Duration>
+            <Id>16</Id>
+            <Activity_Group_Id>0</Activity_Group_Id>
+            <Active>true</Active>
+            <Comments></Comments>
+        </Activity>
+        <Activity>
+            <Teacher>عادل شنوفي</Teacher>
+            <Subject>عربية</Subject>
+            <Students>خامسة قرطاج</Students>
+            <Activity_Tag>AR</Activity_Tag>
+            <Duration>3</Duration>
+            <Total_Duration>10</Total_Duration>
+            <Id>17</Id>
+            <Activity_Group_Id>17</Activity_Group_Id>
+            <Active>true</Active>
+            <Comments></Comments>
+        </Activity>
+        <Activity>
+            <Teacher>عادل شنوفي</Teacher>
+            <Subject>عربية</Subject>
+            <Students>خامسة قرطاج</Students>
+            <Activity_Tag>AR</Activity_Tag>
+            <Duration>3</Duration>
+            <Total_Duration>10</Total_Duration>
+            <Id>18</Id>
+            <Activity_Group_Id>17</Activity_Group_Id>
+            <Active>true</Active>
+            <Comments></Comments>
+        </Activity>
+        <Activity>
+            <Teacher>عادل شنوفي</Teacher>
+            <Subject>عربية</Subject>
+            <Students>خامسة قرطاج</Students>
+            <Activity_Tag>AR</Activity_Tag>
+            <Duration>2</Duration>
+            <Total_Duration>10</Total_Duration>
+            <Id>19</Id>
+            <Activity_Group_Id>17</Activity_Group_Id>
+            <Active>true</Active>
+            <Comments></Comments>
+        </Activity>
+        <Activity>
+            <Teacher>عادل شنوفي</Teacher>
+            <Subject>عربية</Subject>
+            <Students>خامسة قرطاج</Students>
+            <Activity_Tag>AR</Activity_Tag>
+            <Duration>2</Duration>
+            <Total_Duration>10</Total_Duration>
+            <Id>20</Id>
+            <Activity_Group_Id>17</Activity_Group_Id>
+            <Active>true</Active>
+            <Comments></Comments>
+        </Activity>
+        <Activity>
+            <Teacher>سارة بن علي</Teacher>
+            <Subject>فرنسية</Subject>
+            <Students>خامسة قرطاج</Students>
+            <Activity_Tag>FR</Activity_Tag>
+            <Duration>3</Duration>
+            <Total_Duration>10</Total_Duration>
+            <Id>21</Id>
+            <Activity_Group_Id>21</Activity_Group_Id>
+            <Active>true</Active>
+            <Comments></Comments>
+        </Activity>
+        <Activity>
+            <Teacher>سارة بن علي</Teacher>
+            <Subject>فرنسية</Subject>
+            <Students>خامسة قرطاج</Students>
+            <Activity_Tag>FR</Activity_Tag>
+            <Duration>3</Duration>
+            <Total_Duration>10</Total_Duration>
+            <Id>22</Id>
+            <Activity_Group_Id>21</Activity_Group_Id>
+            <Active>true</Active>
+            <Comments></Comments>
+        </Activity>
+        <Activity>
+            <Teacher>سارة بن علي</Teacher>
+            <Subject>فرنسية</Subject>
+            <Students>خامسة قرطاج</Students>
+            <Activity_Tag>FR</Activity_Tag>
+            <Duration>2</Duration>
+            <Total_Duration>10</Total_Duration>
+            <Id>23</Id>
+            <Activity_Group_Id>21</Activity_Group_Id>
+            <Active>true</Active>
+            <Comments></Comments>
+        </Activity>
+        <Activity>
+            <Teacher>سارة بن علي</Teacher>
+            <Subject>فرنسية</Subject>
+            <Students>خامسة قرطاج</Students>
+            <Activity_Tag>FR</Activity_Tag>
+            <Duration>2</Duration>
+            <Total_Duration>10</Total_Duration>
+            <Id>24</Id>
+            <Activity_Group_Id>21</Activity_Group_Id>
+            <Active>true</Active>
+            <Comments></Comments>
+        </Activity>
+        <Activity>
+            <Teacher>هناء العماري</Teacher>
+            <Subject>علوم</Subject>
+            <Students>خامسة قرطاج</Students>
+            <Activity_Tag>SC</Activity_Tag>
+            <Duration>1</Duration>
+            <Total_Duration>1</Total_Duration>
+            <Id>25</Id>
+            <Activity_Group_Id>0</Activity_Group_Id>
+            <Active>true</Active>
+            <Comments></Comments>
+        </Activity>
+        <Activity>
+            <Teacher>رجاء حمدي</Teacher>
+            <Subject>انجليزية</Subject>
+            <Students>خامسة قرطاج</Students>
+            <Activity_Tag>AN</Activity_Tag>
+            <Duration>1</Duration>
+            <Total_Duration>2</Total_Duration>
+            <Id>26</Id>
+            <Activity_Group_Id>26</Activity_Group_Id>
+            <Active>true</Active>
+            <Comments></Comments>
+        </Activity>
+        <Activity>
+            <Teacher>رجاء حمدي</Teacher>
+            <Subject>انجليزية</Subject>
+            <Students>خامسة قرطاج</Students>
+            <Activity_Tag>AN</Activity_Tag>
+            <Duration>1</Duration>
+            <Total_Duration>2</Total_Duration>
+            <Id>27</Id>
+            <Activity_Group_Id>26</Activity_Group_Id>
+            <Active>true</Active>
+            <Comments></Comments>
+        </Activity>
+        <Activity>
+            <Teacher>أميرة لمين</Teacher>
+            <Subject>إعلامية</Subject>
+            <Students>خامسة قرطاج</Students>
+            <Activity_Tag>INF</Activity_Tag>
+            <Duration>1</Duration>
+            <Total_Duration>1</Total_Duration>
+            <Id>28</Id>
+            <Activity_Group_Id>0</Activity_Group_Id>
+            <Active>true</Active>
+            <Comments></Comments>
+        </Activity>
+        <Activity>
+            <Teacher>أسامة بالشيخ</Teacher>
+            <Subject>رياضة</Subject>
+            <Students>خامسة قرطاج</Students>
+            <Activity_Tag>SP</Activity_Tag>
+            <Duration>1</Duration>
+            <Total_Duration>1</Total_Duration>
+            <Id>29</Id>
+            <Activity_Group_Id>0</Activity_Group_Id>
+            <Active>true</Active>
+            <Comments></Comments>
+        </Activity>
+    </Activities_List>
+    <Rooms_List>
+        <Room>
+            <Name>S1</Name>
+            <Long_Name></Long_Name>
+            <Code></Code>
+            <Capacity>1</Capacity>
+            <Virtual>false</Virtual>
+            <Comments></Comments>
+        </Room>
+        <Room>
+            <Name>S2</Name>
+            <Long_Name></Long_Name>
+            <Code></Code>
+            <Capacity>1</Capacity>
+            <Virtual>false</Virtual>
+            <Comments></Comments>
+        </Room>
+        <Room>
+            <Name>S3</Name>
+            <Long_Name></Long_Name>
+            <Code></Code>
+            <Capacity>1</Capacity>
+            <Virtual>false</Virtual>
+            <Comments></Comments>
+        </Room>
+        <Room>
+            <Name>S4</Name>
+            <Long_Name></Long_Name>
+            <Code></Code>
+            <Capacity>1</Capacity>
+            <Virtual>false</Virtual>
+            <Comments></Comments>
+        </Room>
+        <Room>
+            <Name>S5</Name>
+            <Long_Name></Long_Name>
+            <Code></Code>
+            <Capacity>1</Capacity>
+            <Virtual>false</Virtual>
+            <Comments></Comments>
+        </Room>
+    </Rooms_List>
+    <Time_Constraints_List>
+        <ConstraintBasicCompulsoryTime>
+            <Weight_Percentage>100</Weight_Percentage>
+            <Active>true</Active>
+            <Comments></Comments>
+        </ConstraintBasicCompulsoryTime>
+        <ConstraintStudentsSetNotAvailableTimes>
+            <Weight_Percentage>100</Weight_Percentage>
+            <Students>خامسة علّيسة</Students>
+            <Number_of_Not_Available_Times>11</Number_of_Not_Available_Times>
+            <Not_Available_Time>
+                <Day>Lundi</Day>
+                <Hour>12:30-13:00</Hour>
+            </Not_Available_Time>
+            <Not_Available_Time>
+                <Day>Lundi</Day>
+                <Hour>13:00-14:00</Hour>
+            </Not_Available_Time>
+            <Not_Available_Time>
+                <Day>Mardi</Day>
+                <Hour>12:30-13:00</Hour>
+            </Not_Available_Time>
+            <Not_Available_Time>
+                <Day>Mardi</Day>
+                <Hour>13:00-14:00</Hour>
+            </Not_Available_Time>
+            <Not_Available_Time>
+                <Day>Mercredi</Day>
+                <Hour>13:00-14:00</Hour>
+            </Not_Available_Time>
+            <Not_Available_Time>
+                <Day>Mercredi</Day>
+                <Hour>14:00-15:00</Hour>
+            </Not_Available_Time>
+            <Not_Available_Time>
+                <Day>Mercredi</Day>
+                <Hour>15:00-16:00</Hour>
+            </Not_Available_Time>
+            <Not_Available_Time>
+                <Day>Jeudi</Day>
+                <Hour>12:30-13:00</Hour>
+            </Not_Available_Time>
+            <Not_Available_Time>
+                <Day>Jeudi</Day>
+                <Hour>13:00-14:00</Hour>
+            </Not_Available_Time>
+            <Not_Available_Time>
+                <Day>Vendredi</Day>
+                <Hour>12:30-13:00</Hour>
+            </Not_Available_Time>
+            <Not_Available_Time>
+                <Day>Vendredi</Day>
+                <Hour>13:00-14:00</Hour>
+            </Not_Available_Time>
+            <Active>true</Active>
+            <Comments></Comments>
+        </ConstraintStudentsSetNotAvailableTimes>
+        <ConstraintStudentsSetNotAvailableTimes>
+            <Weight_Percentage>100</Weight_Percentage>
+            <Students>خامسة قرطاج</Students>
+            <Number_of_Not_Available_Times>11</Number_of_Not_Available_Times>
+            <Not_Available_Time>
+                <Day>Lundi</Day>
+                <Hour>12:30-13:00</Hour>
+            </Not_Available_Time>
+            <Not_Available_Time>
+                <Day>Lundi</Day>
+                <Hour>13:00-14:00</Hour>
+            </Not_Available_Time>
+            <Not_Available_Time>
+                <Day>Mardi</Day>
+                <Hour>12:30-13:00</Hour>
+            </Not_Available_Time>
+            <Not_Available_Time>
+                <Day>Mardi</Day>
+                <Hour>13:00-14:00</Hour>
+            </Not_Available_Time>
+            <Not_Available_Time>
+                <Day>Mercredi</Day>
+                <Hour>13:00-14:00</Hour>
+            </Not_Available_Time>
+            <Not_Available_Time>
+                <Day>Mercredi</Day>
+                <Hour>14:00-15:00</Hour>
+            </Not_Available_Time>
+            <Not_Available_Time>
+                <Day>Mercredi</Day>
+                <Hour>15:00-16:00</Hour>
+            </Not_Available_Time>
+            <Not_Available_Time>
+                <Day>Jeudi</Day>
+                <Hour>12:30-13:00</Hour>
+            </Not_Available_Time>
+            <Not_Available_Time>
+                <Day>Jeudi</Day>
+                <Hour>13:00-14:00</Hour>
+            </Not_Available_Time>
+            <Not_Available_Time>
+                <Day>Vendredi</Day>
+                <Hour>12:30-13:00</Hour>
+            </Not_Available_Time>
+            <Not_Available_Time>
+                <Day>Vendredi</Day>
+                <Hour>13:00-14:00</Hour>
+            </Not_Available_Time>
+            <Active>true</Active>
+            <Comments></Comments>
+        </ConstraintStudentsSetNotAvailableTimes>
+    </Time_Constraints_List>
+    <Space_Constraints_List>
+        <ConstraintBasicCompulsorySpace>
+            <Weight_Percentage>100</Weight_Percentage>
+            <Active>true</Active>
+            <Comments></Comments>
+        </ConstraintBasicCompulsorySpace>
+    </Space_Constraints_List>
+</fet>

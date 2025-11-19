@@ -1,0 +1,301 @@
+﻿@charset "UTF-8";
+
+/* Feuille de styles CSS de timetable_1_1763544115366.fet
+   Feuille de styles générée avec TimeTable le 19/11/2025 10:21 */
+
+/* Pour faire un saut de page uniquement après chaque second planning, supprimer "page-break-before: always;" dans "table.even_table". */
+/* Supprimer "page-break-before: always;" dans "table.even_table" et dans "table.odd_table" pour passer les sauts de page. */
+/* Pour masquer un élément, écrivez simplement la phrase suivante sous l'élément : "display: none;" (sans guillemet). */
+
+p.back {
+  margin-top: 4ex;
+  margin-bottom: 5ex;
+}
+
+table {
+  text-align: center;
+  page-break-inside: avoid;
+}
+
+table.odd_table {
+  page-break-before: always;
+}
+
+table.even_table {
+  page-break-before: always;
+}
+
+table.detailed {
+  margin-left: auto; margin-right: auto;
+  text-align: center;
+  border: 0px;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+caption {
+
+}
+
+span.institution {
+  font-weight: bold;
+}
+
+span.name {
+
+}
+
+span.comment {
+  /*font-style: italic;*/
+}
+
+span.legend_title {
+  font-weight: bold;
+}
+
+thead {
+
+}
+
+/* Certains programmes importent incorrectement "tfoot". Donc nous utilisons "tr.foot" au lieu de "tfoot". */
+
+tr.foot {
+
+}
+
+tbody {
+
+}
+
+th {
+
+}
+
+td {
+
+}
+
+td.detailed {
+  border: 1px dashed silver;
+  border-bottom: 0;
+  border-top: 0;
+}
+
+th.xAxis {
+/* width: 8em; */
+}
+
+th.yAxis {
+  height: 8ex;
+}
+
+td.c_1 { /* Activity id: 1 (subject) */
+ background-color: rgb(231, 146, 173);
+ color: black;
+}
+
+td.c_2 { /* Activity id: 5 (subject) */
+ background-color: rgb(198, 121, 135);
+ color: black;
+}
+
+td.c_3 { /* Activity id: 9 (subject) */
+ background-color: rgb(184, 82, 157);
+ color: white;
+}
+
+td.c_4 { /* Activity id: 13 (subject) */
+ background-color: rgb(142, 199, 31);
+ color: black;
+}
+
+td.c_5 { /* Activity id: 15 (subject) */
+ background-color: rgb(250, 186, 216);
+ color: black;
+}
+
+td.c_6 { /* Activity id: 16 (subject) */
+ background-color: rgb(119, 123, 132);
+ color: white;
+}
+
+td.c_7 { /* Activity id: 1 (subject+students) */
+ background-color: rgb(192, 6, 68);
+ color: white;
+}
+
+td.c_8 { /* Activity id: 5 (subject+students) */
+ background-color: rgb(179, 177, 66);
+ color: black;
+}
+
+td.c_9 { /* Activity id: 9 (subject+students) */
+ background-color: rgb(163, 112, 213);
+ color: black;
+}
+
+td.c_10 { /* Activity id: 13 (subject+students) */
+ background-color: rgb(118, 30, 227);
+ color: white;
+}
+
+td.c_11 { /* Activity id: 15 (subject+students) */
+ background-color: rgb(87, 176, 206);
+ color: black;
+}
+
+td.c_12 { /* Activity id: 16 (subject+students) */
+ background-color: rgb(83, 29, 10);
+ color: white;
+}
+
+td.c_13 { /* Activity id: 17 (subject+students) */
+ background-color: rgb(215, 9, 1);
+ color: white;
+}
+
+td.c_14 { /* Activity id: 21 (subject+students) */
+ background-color: rgb(16, 193, 157);
+ color: black;
+}
+
+td.c_15 { /* Activity id: 25 (subject+students) */
+ background-color: rgb(238, 94, 253);
+ color: black;
+}
+
+td.c_16 { /* Activity id: 26 (subject+students) */
+ background-color: rgb(162, 211, 218);
+ color: black;
+}
+
+td.c_17 { /* Activity id: 28 (subject+students) */
+ background-color: rgb(189, 184, 189);
+ color: black;
+}
+
+td.c_18 { /* Activity id: 29 (subject+students) */
+ background-color: rgb(226, 234, 80);
+ color: black;
+}
+
+span.subject {
+
+}
+
+span.activitytag {
+
+}
+
+span.empty {
+  color: gray;
+}
+
+td.empty {
+  border-color: silver;
+  border-right-style: none;
+  border-bottom-style: none;
+  border-left-style: dotted;
+  border-top-style: dotted;
+}
+
+span.notAvailable {
+  color: gray;
+}
+
+td.notAvailable {
+  border-color: silver;
+  border-right-style: none;
+  border-bottom-style: none;
+  border-left-style: dotted;
+  border-top-style: dotted;
+}
+
+span.break {
+  color: gray;
+}
+
+td.break {
+  border-color: silver;
+  border-right-style: none;
+  border-bottom-style: none;
+  border-left-style: dotted;
+  border-top-style: dotted;
+}
+
+tr.studentsset, div.studentsset {
+
+}
+
+tr.teacher, div.teacher {
+
+}
+
+tr.room, div.room {
+
+}
+
+tr.line0, div.line0 {
+  font-size: smaller;
+}
+
+tr.line1, div.line1 {
+
+}
+
+tr.line2, div.line2 {
+  font-size: smaller;
+}
+
+tr.line3, div.line3 {
+  font-size: smaller;
+}
+
+/* Mettre en forme les périodes libres des enseignants */
+
+div.DESCRIPTION {
+  text-align: left;
+  font-size: smaller;
+}
+
+div.TEACHER_HAS_SINGLE_GAP {
+  color: black;
+}
+
+div.TEACHER_HAS_BORDER_GAP {
+  color: gray;
+}
+
+div.TEACHER_HAS_BIG_GAP {
+  color: silver;
+}
+
+div.TEACHER_MUST_COME_EARLIER {
+  color: purple;
+}
+
+div.TEACHER_MUST_COME_MUCH_EARLIER {
+  font-size: smaller;
+  color: fuchsia;
+}
+
+div.TEACHER_MUST_STAY_LONGER {
+  color: teal;
+}
+
+div.TEACHER_MUST_STAY_MUCH_LONGER {
+  font-size: smaller;
+  color: aqua;
+}
+
+div.TEACHER_HAS_A_FREE_DAY {
+  font-size: smaller;
+  color: red;
+}
+
+div.TEACHER_IS_NOT_AVAILABLE {
+  font-size: smaller;
+  color: olive;
+}
+
+/* Fin de fichier. */

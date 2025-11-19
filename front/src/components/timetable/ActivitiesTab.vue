@@ -39,7 +39,7 @@
           <label class="form-label">Durées (heures):</label>
           <div class="row">
             <div v-for="(duration, durIndex) in activity.durations" :key="durIndex" class="duration-item mb-2 d-flex align-items-center col-md-3">
-              <input type="number" min="1" class="form-control me-2" v-model="activity.durations[durIndex]" 
+              <input type="number" min="1" step="1" class="form-control me-2" v-model.number="activity.durations[durIndex]" 
                     :class="{'is-invalid': errors[index] && errors[index].durations && errors[index].durations[durIndex]}">
               <button type="button" class="btn btn-outline-danger btn-sm" @click="$emit('remove-duration', index, durIndex)" 
                       v-if="activity.durations.length > 1">

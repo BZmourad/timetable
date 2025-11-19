@@ -1,0 +1,749 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Students_Timetable>
+  <Subgroup name="خامسة علّيسة Sous-groupe automatique">
+    <Day name="Lundi">
+      <Hour name="08:00-09:00">
+        <Activity id="16"></Activity>
+        <Teacher name="أسامة بالشيخ"></Teacher>
+        <Subject name="رياضة"></Subject>
+        <Activity_Tag name="SP"></Activity_Tag>
+      </Hour>
+      <Hour name="09:00-10:00">
+        <Activity id="8"></Activity>
+        <Teacher name="سمير البوغانمي"></Teacher>
+        <Subject name="علوم"></Subject>
+        <Activity_Tag name="SC"></Activity_Tag>
+      </Hour>
+      <Hour name="10:00-11:00">
+        <Activity id="8"></Activity>
+        <Teacher name="سمير البوغانمي"></Teacher>
+        <Subject name="علوم"></Subject>
+        <Activity_Tag name="SC"></Activity_Tag>
+      </Hour>
+      <Hour name="11:00-12:00">
+        <Activity id="8"></Activity>
+        <Teacher name="سمير البوغانمي"></Teacher>
+        <Subject name="علوم"></Subject>
+        <Activity_Tag name="SC"></Activity_Tag>
+      </Hour>
+      <Hour name="12:00-12:30">
+        <Activity id="14"></Activity>
+        <Teacher name="رجاء حمدي"></Teacher>
+        <Subject name="انجليزية"></Subject>
+        <Activity_Tag name="AN"></Activity_Tag>
+      </Hour>
+      <Hour name="12:30-13:00">
+      </Hour>
+      <Hour name="13:00-14:00">
+      </Hour>
+      <Hour name="14:00-15:00">
+        <Activity id="12"></Activity>
+        <Teacher name="سارة بن علي"></Teacher>
+        <Subject name="فرنسية"></Subject>
+        <Activity_Tag name="FR"></Activity_Tag>
+      </Hour>
+      <Hour name="15:00-16:00">
+        <Activity id="12"></Activity>
+        <Teacher name="سارة بن علي"></Teacher>
+        <Subject name="فرنسية"></Subject>
+        <Activity_Tag name="FR"></Activity_Tag>
+      </Hour>
+    </Day>
+    <Day name="Mardi">
+      <Hour name="08:00-09:00">
+        <Activity id="15"></Activity>
+        <Teacher name="أميرة لمين"></Teacher>
+        <Subject name="إعلامية"></Subject>
+        <Activity_Tag name="INF"></Activity_Tag>
+      </Hour>
+      <Hour name="09:00-10:00">
+        <Activity id="7"></Activity>
+        <Teacher name="سمير البوغانمي"></Teacher>
+        <Subject name="علوم"></Subject>
+        <Activity_Tag name="SC"></Activity_Tag>
+      </Hour>
+      <Hour name="10:00-11:00">
+        <Activity id="7"></Activity>
+        <Teacher name="سمير البوغانمي"></Teacher>
+        <Subject name="علوم"></Subject>
+        <Activity_Tag name="SC"></Activity_Tag>
+      </Hour>
+      <Hour name="11:00-12:00">
+        <Activity id="7"></Activity>
+        <Teacher name="سمير البوغانمي"></Teacher>
+        <Subject name="علوم"></Subject>
+        <Activity_Tag name="SC"></Activity_Tag>
+      </Hour>
+      <Hour name="12:00-12:30">
+        <Activity id="13"></Activity>
+        <Teacher name="رجاء حمدي"></Teacher>
+        <Subject name="انجليزية"></Subject>
+        <Activity_Tag name="AN"></Activity_Tag>
+      </Hour>
+      <Hour name="12:30-13:00">
+      </Hour>
+      <Hour name="13:00-14:00">
+      </Hour>
+      <Hour name="14:00-15:00">
+        <Activity id="1"></Activity>
+        <Teacher name="عادل شنوفي"></Teacher>
+        <Subject name="عربية"></Subject>
+        <Activity_Tag name="AR"></Activity_Tag>
+      </Hour>
+      <Hour name="15:00-16:00">
+        <Activity id="1"></Activity>
+        <Teacher name="عادل شنوفي"></Teacher>
+        <Subject name="عربية"></Subject>
+        <Activity_Tag name="AR"></Activity_Tag>
+      </Hour>
+    </Day>
+    <Day name="Mercredi">
+      <Hour name="08:00-09:00">
+        <Activity id="3"></Activity>
+        <Teacher name="عادل شنوفي"></Teacher>
+        <Subject name="عربية"></Subject>
+        <Activity_Tag name="AR"></Activity_Tag>
+      </Hour>
+      <Hour name="09:00-10:00">
+        <Activity id="3"></Activity>
+        <Teacher name="عادل شنوفي"></Teacher>
+        <Subject name="عربية"></Subject>
+        <Activity_Tag name="AR"></Activity_Tag>
+      </Hour>
+      <Hour name="10:00-11:00">
+        <Activity id="3"></Activity>
+        <Teacher name="عادل شنوفي"></Teacher>
+        <Subject name="عربية"></Subject>
+        <Activity_Tag name="AR"></Activity_Tag>
+      </Hour>
+      <Hour name="11:00-12:00">
+        <Activity id="10"></Activity>
+        <Teacher name="سارة بن علي"></Teacher>
+        <Subject name="فرنسية"></Subject>
+        <Activity_Tag name="FR"></Activity_Tag>
+      </Hour>
+      <Hour name="12:00-12:30">
+        <Activity id="10"></Activity>
+        <Teacher name="سارة بن علي"></Teacher>
+        <Subject name="فرنسية"></Subject>
+        <Activity_Tag name="FR"></Activity_Tag>
+      </Hour>
+      <Hour name="12:30-13:00">
+        <Activity id="10"></Activity>
+        <Teacher name="سارة بن علي"></Teacher>
+        <Subject name="فرنسية"></Subject>
+        <Activity_Tag name="FR"></Activity_Tag>
+      </Hour>
+      <Hour name="13:00-14:00">
+      </Hour>
+      <Hour name="14:00-15:00">
+      </Hour>
+      <Hour name="15:00-16:00">
+      </Hour>
+    </Day>
+    <Day name="Jeudi">
+      <Hour name="08:00-09:00">
+        <Activity id="9"></Activity>
+        <Teacher name="سارة بن علي"></Teacher>
+        <Subject name="فرنسية"></Subject>
+        <Activity_Tag name="FR"></Activity_Tag>
+      </Hour>
+      <Hour name="09:00-10:00">
+        <Activity id="9"></Activity>
+        <Teacher name="سارة بن علي"></Teacher>
+        <Subject name="فرنسية"></Subject>
+        <Activity_Tag name="FR"></Activity_Tag>
+      </Hour>
+      <Hour name="10:00-11:00">
+        <Activity id="9"></Activity>
+        <Teacher name="سارة بن علي"></Teacher>
+        <Subject name="فرنسية"></Subject>
+        <Activity_Tag name="FR"></Activity_Tag>
+      </Hour>
+      <Hour name="11:00-12:00">
+        <Activity id="11"></Activity>
+        <Teacher name="سارة بن علي"></Teacher>
+        <Subject name="فرنسية"></Subject>
+        <Activity_Tag name="FR"></Activity_Tag>
+      </Hour>
+      <Hour name="12:00-12:30">
+        <Activity id="11"></Activity>
+        <Teacher name="سارة بن علي"></Teacher>
+        <Subject name="فرنسية"></Subject>
+        <Activity_Tag name="FR"></Activity_Tag>
+      </Hour>
+      <Hour name="12:30-13:00">
+      </Hour>
+      <Hour name="13:00-14:00">
+      </Hour>
+      <Hour name="14:00-15:00">
+        <Activity id="6"></Activity>
+        <Teacher name="سمير البوغانمي"></Teacher>
+        <Subject name="علوم"></Subject>
+        <Activity_Tag name="SC"></Activity_Tag>
+      </Hour>
+      <Hour name="15:00-16:00">
+        <Activity id="6"></Activity>
+        <Teacher name="سمير البوغانمي"></Teacher>
+        <Subject name="علوم"></Subject>
+        <Activity_Tag name="SC"></Activity_Tag>
+      </Hour>
+    </Day>
+    <Day name="Vendredi">
+      <Hour name="08:00-09:00">
+        <Activity id="4"></Activity>
+        <Teacher name="عادل شنوفي"></Teacher>
+        <Subject name="عربية"></Subject>
+        <Activity_Tag name="AR"></Activity_Tag>
+      </Hour>
+      <Hour name="09:00-10:00">
+        <Activity id="4"></Activity>
+        <Teacher name="عادل شنوفي"></Teacher>
+        <Subject name="عربية"></Subject>
+        <Activity_Tag name="AR"></Activity_Tag>
+      </Hour>
+      <Hour name="10:00-11:00">
+        <Activity id="4"></Activity>
+        <Teacher name="عادل شنوفي"></Teacher>
+        <Subject name="عربية"></Subject>
+        <Activity_Tag name="AR"></Activity_Tag>
+      </Hour>
+      <Hour name="11:00-12:00">
+        <Activity id="5"></Activity>
+        <Teacher name="سمير البوغانمي"></Teacher>
+        <Subject name="علوم"></Subject>
+        <Activity_Tag name="SC"></Activity_Tag>
+      </Hour>
+      <Hour name="12:00-12:30">
+        <Activity id="5"></Activity>
+        <Teacher name="سمير البوغانمي"></Teacher>
+        <Subject name="علوم"></Subject>
+        <Activity_Tag name="SC"></Activity_Tag>
+      </Hour>
+      <Hour name="12:30-13:00">
+      </Hour>
+      <Hour name="13:00-14:00">
+      </Hour>
+      <Hour name="14:00-15:00">
+        <Activity id="2"></Activity>
+        <Teacher name="عادل شنوفي"></Teacher>
+        <Subject name="عربية"></Subject>
+        <Activity_Tag name="AR"></Activity_Tag>
+      </Hour>
+      <Hour name="15:00-16:00">
+        <Activity id="2"></Activity>
+        <Teacher name="عادل شنوفي"></Teacher>
+        <Subject name="عربية"></Subject>
+        <Activity_Tag name="AR"></Activity_Tag>
+      </Hour>
+    </Day>
+  </Subgroup>
+  <Subgroup name="خامسة قرطاج Sous-groupe automatique">
+    <Day name="Lundi">
+      <Hour name="08:00-09:00">
+        <Activity id="19"></Activity>
+        <Teacher name="عادل شنوفي"></Teacher>
+        <Subject name="عربية"></Subject>
+        <Activity_Tag name="AR"></Activity_Tag>
+      </Hour>
+      <Hour name="09:00-10:00">
+        <Activity id="19"></Activity>
+        <Teacher name="عادل شنوفي"></Teacher>
+        <Subject name="عربية"></Subject>
+        <Activity_Tag name="AR"></Activity_Tag>
+      </Hour>
+      <Hour name="10:00-11:00">
+        <Activity id="18"></Activity>
+        <Teacher name="عادل شنوفي"></Teacher>
+        <Subject name="عربية"></Subject>
+        <Activity_Tag name="AR"></Activity_Tag>
+      </Hour>
+      <Hour name="11:00-12:00">
+        <Activity id="18"></Activity>
+        <Teacher name="عادل شنوفي"></Teacher>
+        <Subject name="عربية"></Subject>
+        <Activity_Tag name="AR"></Activity_Tag>
+      </Hour>
+      <Hour name="12:00-12:30">
+        <Activity id="18"></Activity>
+        <Teacher name="عادل شنوفي"></Teacher>
+        <Subject name="عربية"></Subject>
+        <Activity_Tag name="AR"></Activity_Tag>
+      </Hour>
+      <Hour name="12:30-13:00">
+      </Hour>
+      <Hour name="13:00-14:00">
+      </Hour>
+      <Hour name="14:00-15:00">
+      </Hour>
+      <Hour name="15:00-16:00">
+      </Hour>
+    </Day>
+    <Day name="Mardi">
+      <Hour name="08:00-09:00">
+        <Activity id="17"></Activity>
+        <Teacher name="عادل شنوفي"></Teacher>
+        <Subject name="عربية"></Subject>
+        <Activity_Tag name="AR"></Activity_Tag>
+      </Hour>
+      <Hour name="09:00-10:00">
+        <Activity id="17"></Activity>
+        <Teacher name="عادل شنوفي"></Teacher>
+        <Subject name="عربية"></Subject>
+        <Activity_Tag name="AR"></Activity_Tag>
+      </Hour>
+      <Hour name="10:00-11:00">
+        <Activity id="17"></Activity>
+        <Teacher name="عادل شنوفي"></Teacher>
+        <Subject name="عربية"></Subject>
+        <Activity_Tag name="AR"></Activity_Tag>
+      </Hour>
+      <Hour name="11:00-12:00">
+      </Hour>
+      <Hour name="12:00-12:30">
+      </Hour>
+      <Hour name="12:30-13:00">
+      </Hour>
+      <Hour name="13:00-14:00">
+      </Hour>
+      <Hour name="14:00-15:00">
+      </Hour>
+      <Hour name="15:00-16:00">
+        <Activity id="26"></Activity>
+        <Teacher name="رجاء حمدي"></Teacher>
+        <Subject name="انجليزية"></Subject>
+        <Activity_Tag name="AN"></Activity_Tag>
+      </Hour>
+    </Day>
+    <Day name="Mercredi">
+      <Hour name="08:00-09:00">
+        <Activity id="22"></Activity>
+        <Teacher name="سارة بن علي"></Teacher>
+        <Subject name="فرنسية"></Subject>
+        <Activity_Tag name="FR"></Activity_Tag>
+      </Hour>
+      <Hour name="09:00-10:00">
+        <Activity id="22"></Activity>
+        <Teacher name="سارة بن علي"></Teacher>
+        <Subject name="فرنسية"></Subject>
+        <Activity_Tag name="FR"></Activity_Tag>
+      </Hour>
+      <Hour name="10:00-11:00">
+        <Activity id="22"></Activity>
+        <Teacher name="سارة بن علي"></Teacher>
+        <Subject name="فرنسية"></Subject>
+        <Activity_Tag name="FR"></Activity_Tag>
+      </Hour>
+      <Hour name="11:00-12:00">
+        <Activity id="20"></Activity>
+        <Teacher name="عادل شنوفي"></Teacher>
+        <Subject name="عربية"></Subject>
+        <Activity_Tag name="AR"></Activity_Tag>
+      </Hour>
+      <Hour name="12:00-12:30">
+        <Activity id="20"></Activity>
+        <Teacher name="عادل شنوفي"></Teacher>
+        <Subject name="عربية"></Subject>
+        <Activity_Tag name="AR"></Activity_Tag>
+      </Hour>
+      <Hour name="12:30-13:00">
+        <Activity id="29"></Activity>
+        <Teacher name="أسامة بالشيخ"></Teacher>
+        <Subject name="رياضة"></Subject>
+        <Activity_Tag name="SP"></Activity_Tag>
+      </Hour>
+      <Hour name="13:00-14:00">
+      </Hour>
+      <Hour name="14:00-15:00">
+      </Hour>
+      <Hour name="15:00-16:00">
+      </Hour>
+    </Day>
+    <Day name="Jeudi">
+      <Hour name="08:00-09:00">
+        <Activity id="25"></Activity>
+        <Teacher name="هناء العماري"></Teacher>
+        <Subject name="علوم"></Subject>
+        <Activity_Tag name="SC"></Activity_Tag>
+      </Hour>
+      <Hour name="09:00-10:00">
+        <Activity id="27"></Activity>
+        <Teacher name="رجاء حمدي"></Teacher>
+        <Subject name="انجليزية"></Subject>
+        <Activity_Tag name="AN"></Activity_Tag>
+      </Hour>
+      <Hour name="10:00-11:00">
+      </Hour>
+      <Hour name="11:00-12:00">
+        <Activity id="28"></Activity>
+        <Teacher name="أميرة لمين"></Teacher>
+        <Subject name="إعلامية"></Subject>
+        <Activity_Tag name="INF"></Activity_Tag>
+      </Hour>
+      <Hour name="12:00-12:30">
+      </Hour>
+      <Hour name="12:30-13:00">
+      </Hour>
+      <Hour name="13:00-14:00">
+      </Hour>
+      <Hour name="14:00-15:00">
+        <Activity id="24"></Activity>
+        <Teacher name="سارة بن علي"></Teacher>
+        <Subject name="فرنسية"></Subject>
+        <Activity_Tag name="FR"></Activity_Tag>
+      </Hour>
+      <Hour name="15:00-16:00">
+        <Activity id="24"></Activity>
+        <Teacher name="سارة بن علي"></Teacher>
+        <Subject name="فرنسية"></Subject>
+        <Activity_Tag name="FR"></Activity_Tag>
+      </Hour>
+    </Day>
+    <Day name="Vendredi">
+      <Hour name="08:00-09:00">
+        <Activity id="21"></Activity>
+        <Teacher name="سارة بن علي"></Teacher>
+        <Subject name="فرنسية"></Subject>
+        <Activity_Tag name="FR"></Activity_Tag>
+      </Hour>
+      <Hour name="09:00-10:00">
+        <Activity id="21"></Activity>
+        <Teacher name="سارة بن علي"></Teacher>
+        <Subject name="فرنسية"></Subject>
+        <Activity_Tag name="FR"></Activity_Tag>
+      </Hour>
+      <Hour name="10:00-11:00">
+        <Activity id="21"></Activity>
+        <Teacher name="سارة بن علي"></Teacher>
+        <Subject name="فرنسية"></Subject>
+        <Activity_Tag name="FR"></Activity_Tag>
+      </Hour>
+      <Hour name="11:00-12:00">
+      </Hour>
+      <Hour name="12:00-12:30">
+      </Hour>
+      <Hour name="12:30-13:00">
+      </Hour>
+      <Hour name="13:00-14:00">
+      </Hour>
+      <Hour name="14:00-15:00">
+        <Activity id="23"></Activity>
+        <Teacher name="سارة بن علي"></Teacher>
+        <Subject name="فرنسية"></Subject>
+        <Activity_Tag name="FR"></Activity_Tag>
+      </Hour>
+      <Hour name="15:00-16:00">
+        <Activity id="23"></Activity>
+        <Teacher name="سارة بن علي"></Teacher>
+        <Subject name="فرنسية"></Subject>
+        <Activity_Tag name="FR"></Activity_Tag>
+      </Hour>
+    </Day>
+  </Subgroup>
+  <Subgroup name="خامسة حنّبعل Sous-groupe automatique">
+    <Day name="Lundi">
+      <Hour name="08:00-09:00">
+      </Hour>
+      <Hour name="09:00-10:00">
+      </Hour>
+      <Hour name="10:00-11:00">
+      </Hour>
+      <Hour name="11:00-12:00">
+      </Hour>
+      <Hour name="12:00-12:30">
+      </Hour>
+      <Hour name="12:30-13:00">
+      </Hour>
+      <Hour name="13:00-14:00">
+      </Hour>
+      <Hour name="14:00-15:00">
+      </Hour>
+      <Hour name="15:00-16:00">
+      </Hour>
+    </Day>
+    <Day name="Mardi">
+      <Hour name="08:00-09:00">
+      </Hour>
+      <Hour name="09:00-10:00">
+      </Hour>
+      <Hour name="10:00-11:00">
+      </Hour>
+      <Hour name="11:00-12:00">
+      </Hour>
+      <Hour name="12:00-12:30">
+      </Hour>
+      <Hour name="12:30-13:00">
+      </Hour>
+      <Hour name="13:00-14:00">
+      </Hour>
+      <Hour name="14:00-15:00">
+      </Hour>
+      <Hour name="15:00-16:00">
+      </Hour>
+    </Day>
+    <Day name="Mercredi">
+      <Hour name="08:00-09:00">
+      </Hour>
+      <Hour name="09:00-10:00">
+      </Hour>
+      <Hour name="10:00-11:00">
+      </Hour>
+      <Hour name="11:00-12:00">
+      </Hour>
+      <Hour name="12:00-12:30">
+      </Hour>
+      <Hour name="12:30-13:00">
+      </Hour>
+      <Hour name="13:00-14:00">
+      </Hour>
+      <Hour name="14:00-15:00">
+      </Hour>
+      <Hour name="15:00-16:00">
+      </Hour>
+    </Day>
+    <Day name="Jeudi">
+      <Hour name="08:00-09:00">
+      </Hour>
+      <Hour name="09:00-10:00">
+      </Hour>
+      <Hour name="10:00-11:00">
+      </Hour>
+      <Hour name="11:00-12:00">
+      </Hour>
+      <Hour name="12:00-12:30">
+      </Hour>
+      <Hour name="12:30-13:00">
+      </Hour>
+      <Hour name="13:00-14:00">
+      </Hour>
+      <Hour name="14:00-15:00">
+      </Hour>
+      <Hour name="15:00-16:00">
+      </Hour>
+    </Day>
+    <Day name="Vendredi">
+      <Hour name="08:00-09:00">
+      </Hour>
+      <Hour name="09:00-10:00">
+      </Hour>
+      <Hour name="10:00-11:00">
+      </Hour>
+      <Hour name="11:00-12:00">
+      </Hour>
+      <Hour name="12:00-12:30">
+      </Hour>
+      <Hour name="12:30-13:00">
+      </Hour>
+      <Hour name="13:00-14:00">
+      </Hour>
+      <Hour name="14:00-15:00">
+      </Hour>
+      <Hour name="15:00-16:00">
+      </Hour>
+    </Day>
+  </Subgroup>
+  <Subgroup name="خامسة بلاريجيا Sous-groupe automatique">
+    <Day name="Lundi">
+      <Hour name="08:00-09:00">
+      </Hour>
+      <Hour name="09:00-10:00">
+      </Hour>
+      <Hour name="10:00-11:00">
+      </Hour>
+      <Hour name="11:00-12:00">
+      </Hour>
+      <Hour name="12:00-12:30">
+      </Hour>
+      <Hour name="12:30-13:00">
+      </Hour>
+      <Hour name="13:00-14:00">
+      </Hour>
+      <Hour name="14:00-15:00">
+      </Hour>
+      <Hour name="15:00-16:00">
+      </Hour>
+    </Day>
+    <Day name="Mardi">
+      <Hour name="08:00-09:00">
+      </Hour>
+      <Hour name="09:00-10:00">
+      </Hour>
+      <Hour name="10:00-11:00">
+      </Hour>
+      <Hour name="11:00-12:00">
+      </Hour>
+      <Hour name="12:00-12:30">
+      </Hour>
+      <Hour name="12:30-13:00">
+      </Hour>
+      <Hour name="13:00-14:00">
+      </Hour>
+      <Hour name="14:00-15:00">
+      </Hour>
+      <Hour name="15:00-16:00">
+      </Hour>
+    </Day>
+    <Day name="Mercredi">
+      <Hour name="08:00-09:00">
+      </Hour>
+      <Hour name="09:00-10:00">
+      </Hour>
+      <Hour name="10:00-11:00">
+      </Hour>
+      <Hour name="11:00-12:00">
+      </Hour>
+      <Hour name="12:00-12:30">
+      </Hour>
+      <Hour name="12:30-13:00">
+      </Hour>
+      <Hour name="13:00-14:00">
+      </Hour>
+      <Hour name="14:00-15:00">
+      </Hour>
+      <Hour name="15:00-16:00">
+      </Hour>
+    </Day>
+    <Day name="Jeudi">
+      <Hour name="08:00-09:00">
+      </Hour>
+      <Hour name="09:00-10:00">
+      </Hour>
+      <Hour name="10:00-11:00">
+      </Hour>
+      <Hour name="11:00-12:00">
+      </Hour>
+      <Hour name="12:00-12:30">
+      </Hour>
+      <Hour name="12:30-13:00">
+      </Hour>
+      <Hour name="13:00-14:00">
+      </Hour>
+      <Hour name="14:00-15:00">
+      </Hour>
+      <Hour name="15:00-16:00">
+      </Hour>
+    </Day>
+    <Day name="Vendredi">
+      <Hour name="08:00-09:00">
+      </Hour>
+      <Hour name="09:00-10:00">
+      </Hour>
+      <Hour name="10:00-11:00">
+      </Hour>
+      <Hour name="11:00-12:00">
+      </Hour>
+      <Hour name="12:00-12:30">
+      </Hour>
+      <Hour name="12:30-13:00">
+      </Hour>
+      <Hour name="13:00-14:00">
+      </Hour>
+      <Hour name="14:00-15:00">
+      </Hour>
+      <Hour name="15:00-16:00">
+      </Hour>
+    </Day>
+  </Subgroup>
+  <Subgroup name="خامسة أوتيك Sous-groupe automatique">
+    <Day name="Lundi">
+      <Hour name="08:00-09:00">
+      </Hour>
+      <Hour name="09:00-10:00">
+      </Hour>
+      <Hour name="10:00-11:00">
+      </Hour>
+      <Hour name="11:00-12:00">
+      </Hour>
+      <Hour name="12:00-12:30">
+      </Hour>
+      <Hour name="12:30-13:00">
+      </Hour>
+      <Hour name="13:00-14:00">
+      </Hour>
+      <Hour name="14:00-15:00">
+      </Hour>
+      <Hour name="15:00-16:00">
+      </Hour>
+    </Day>
+    <Day name="Mardi">
+      <Hour name="08:00-09:00">
+      </Hour>
+      <Hour name="09:00-10:00">
+      </Hour>
+      <Hour name="10:00-11:00">
+      </Hour>
+      <Hour name="11:00-12:00">
+      </Hour>
+      <Hour name="12:00-12:30">
+      </Hour>
+      <Hour name="12:30-13:00">
+      </Hour>
+      <Hour name="13:00-14:00">
+      </Hour>
+      <Hour name="14:00-15:00">
+      </Hour>
+      <Hour name="15:00-16:00">
+      </Hour>
+    </Day>
+    <Day name="Mercredi">
+      <Hour name="08:00-09:00">
+      </Hour>
+      <Hour name="09:00-10:00">
+      </Hour>
+      <Hour name="10:00-11:00">
+      </Hour>
+      <Hour name="11:00-12:00">
+      </Hour>
+      <Hour name="12:00-12:30">
+      </Hour>
+      <Hour name="12:30-13:00">
+      </Hour>
+      <Hour name="13:00-14:00">
+      </Hour>
+      <Hour name="14:00-15:00">
+      </Hour>
+      <Hour name="15:00-16:00">
+      </Hour>
+    </Day>
+    <Day name="Jeudi">
+      <Hour name="08:00-09:00">
+      </Hour>
+      <Hour name="09:00-10:00">
+      </Hour>
+      <Hour name="10:00-11:00">
+      </Hour>
+      <Hour name="11:00-12:00">
+      </Hour>
+      <Hour name="12:00-12:30">
+      </Hour>
+      <Hour name="12:30-13:00">
+      </Hour>
+      <Hour name="13:00-14:00">
+      </Hour>
+      <Hour name="14:00-15:00">
+      </Hour>
+      <Hour name="15:00-16:00">
+      </Hour>
+    </Day>
+    <Day name="Vendredi">
+      <Hour name="08:00-09:00">
+      </Hour>
+      <Hour name="09:00-10:00">
+      </Hour>
+      <Hour name="10:00-11:00">
+      </Hour>
+      <Hour name="11:00-12:00">
+      </Hour>
+      <Hour name="12:00-12:30">
+      </Hour>
+      <Hour name="12:30-13:00">
+      </Hour>
+      <Hour name="13:00-14:00">
+      </Hour>
+      <Hour name="14:00-15:00">
+      </Hour>
+      <Hour name="15:00-16:00">
+      </Hour>
+    </Day>
+  </Subgroup>
+</Students_Timetable>

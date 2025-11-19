@@ -1,104 +1,70 @@
 {
-  "institutionName": "srgfesgr",
-  "institutionComment": "rgzrgrg  gergerg erg erg",
+  "institutionName": "ecole hannibal1",
+  "institutionComment": "",
   "selectedDays": [
     "Lundi",
     "Mardi",
-    "Mercredi"
+    "Mercredi",
+    "Vendredi",
+    "Jeudi"
   ],
   "periods": [
     {
-      "name": "p1",
-      "description": "ergerger"
+      "name": "08:00-09:00",
+      "description": ""
     },
     {
-      "name": "p2",
-      "description": "rgergerg"
+      "name": "09:00-10:00",
+      "description": ""
+    },
+    {
+      "name": "10:00-11:00",
+      "description": ""
+    },
+    {
+      "name": "11:00-12:00",
+      "description": ""
     }
   ],
   "subjects": [
     {
-      "name": "ergerger",
-      "longName": "",
-      "code": "",
-      "comments": ""
-    },
-    {
-      "name": "ergerg",
-      "longName": "",
-      "code": "",
-      "comments": ""
-    },
-    {
-      "name": "ergergerdd",
-      "longName": "",
+      "name": "عربية",
+      "longName": "عربية",
       "code": "",
       "comments": ""
     }
   ],
   "teachers": [
     {
-      "name": "fdgdfgdfgdf",
+      "name": "mohamed",
       "longName": "",
-      "code": "fdgdfgdfgdf",
-      "targetHours": 0,
-      "qualifiedSubjects": [
-        "ergerg",
-        "ergerger"
-      ],
-      "comments": ""
-    },
-    {
-      "name": "dfbdbfb",
-      "longName": "",
-      "code": "dfbdbfb",
-      "targetHours": 3,
+      "code": "",
+      "targetHours": 18,
       "qualifiedSubjects": [],
       "comments": ""
     }
   ],
   "students": [
     {
-      "name": "ergerg",
+      "name": "MASSINISSA",
       "longName": "",
       "code": "",
-      "studentCount": 7,
-      "comments": ""
-    },
-    {
-      "name": "rrrrr",
-      "longName": "",
-      "code": "",
-      "studentCount": 0,
+      "studentCount": 1,
       "comments": ""
     }
   ],
   "rooms": [
     {
-      "name": "rrrr",
+      "name": "s1",
       "longName": "",
       "code": "",
-      "capacity": 0,
-      "comments": ""
-    },
-    {
-      "name": "ffff",
-      "longName": "",
-      "code": "",
-      "capacity": 0,
+      "capacity": 1,
       "comments": ""
     }
   ],
   "balises": [
     {
-      "name": "b1",
-      "longName": "",
-      "code": "",
-      "comments": "",
-      "Imprimable": "true"
-    },
-    {
-      "name": "b2",
+      "name": "ar",
       "longName": "",
       "code": "",
       "comments": "",
@@ -107,25 +73,22 @@
   ],
   "activities": [
     {
-      "subject": "ergerger",
-      "teacher": "fdgdfgdfgdf",
-      "student": "ergerg",
+      "subject": "عربية",
+      "student": "MASSINISSA",
+      "teacher": "mohamed",
+      "balise": "ar",
       "durations": [
-        1
-      ],
-      "balise": ""
-    },
-    {
-      "subject": "ergerg",
-      "teacher": "dfbdbfb",
-      "student": "rrrrr",
-      "durations": [
+        3,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
         2
-      ],
-      "balise": ""
+      ]
     }
   ],
-  
   "ConstraintBreakTimes": [],
   "ConstraintTeacherNotAvailableTimes": [],
   "ConstraintTeacherMaxDaysPerWeek": [],
@@ -214,18 +177,18 @@
   "ConstraintTeacherRoomNotAvailableTimes": [],
   "ConstraintRoomMaxActivityTagsPerDayFromSet": [],
   "ConstraintRoomMaxActivityTagsPerWeekFromSet": [],
-  "ConstraintActivityPreferredRooms":[],
-  "ConstraintActivitiesSameRoomIfConsecutive":[],
-  "ConstraintActivitiesOccupyMaxDifferentRooms":[],
+  "ConstraintActivityPreferredRooms": [],
+  "ConstraintActivitiesSameRoomIfConsecutive": [],
+  "ConstraintActivitiesOccupyMaxDifferentRooms": [],
   "ConstraintTeachersMaxActivityTagsPerDayFromSet": [],
   "ConstraintTeachersMinHoursDaily": {
-    "Active": false,
+    "Active": 0,
     "Minimum_Hours_Daily": 0,
     "Allow_Empty_Days": false
   },
   "ConstraintTeachersActivityTagMinHoursDaily": [],
   "ConstraintTeachersMaxHoursContinuously": {
-    "Active": false,
+    "Active": 0,
     "Maximum_Hours_Continuously": 0
   },
   "ConstraintTeachersActivityTagMaxHoursContinuously": [],
@@ -233,7 +196,7 @@
   "ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags": [],
   "ConstraintTeachersIntervalMaxDaysPerWeek": [],
   "ConstraintTeachersMinRestingHours": {
-    "Active": false,
+    "Active": 0,
     "Minimum_Resting_Hours": 0,
     "Circular": false
   },
@@ -282,40 +245,40 @@
   "ConstraintTeacherMaxBuildingChangesPerWeek": [],
   "ConstraintTeacherMinGapsBetweenBuildingChanges": [],
   "ConstraintTeachersMaxRoomChangesPerDay": {
-      "Active": 0,
-      "Max_Room_Changes_Per_Day": 0
+    "Active": 0,
+    "Max_Room_Changes_Per_Day": 0
   },
   "ConstraintTeachersMaxRoomChangesPerDayInInterval": {
-      "Active": 0,
-      "Max_Room_Changes_Per_Day": 0,
-      "Interval_Start_Hour": "",
-      "Interval_End_Hour": ""
+    "Active": 0,
+    "Max_Room_Changes_Per_Day": 0,
+    "Interval_Start_Hour": "",
+    "Interval_End_Hour": ""
   },
   "ConstraintTeachersMaxRoomChangesPerWeek": {
-      "Active": 0,
-      "Max_Room_Changes_Per_Week": 0
+    "Active": 0,
+    "Max_Room_Changes_Per_Week": 0
   },
   "ConstraintTeachersMinGapsBetweenRoomChanges": {
-      "Active": 0,
-      "Min_Gaps_Between_Room_Changes": 0
+    "Active": 0,
+    "Min_Gaps_Between_Room_Changes": 0
   },
   "ConstraintTeachersMaxBuildingChangesPerDay": {
-      "Active": 0,
-      "Max_Building_Changes_Per_Day": 0
+    "Active": 0,
+    "Max_Building_Changes_Per_Day": 0
   },
   "ConstraintTeachersMaxBuildingChangesPerDayInInterval": {
-      "Active": 0,
-      "Max_Building_Changes_Per_Day": 0,
-      "Interval_Start_Hour": "",
-      "Interval_End_Hour": ""
+    "Active": 0,
+    "Max_Building_Changes_Per_Day": 0,
+    "Interval_Start_Hour": "",
+    "Interval_End_Hour": ""
   },
   "ConstraintTeachersMaxBuildingChangesPerWeek": {
-      "Active": 0,
-      "Max_Building_Changes_Per_Week": 0
+    "Active": 0,
+    "Max_Building_Changes_Per_Week": 0
   },
   "ConstraintTeachersMinGapsBetweenBuildingChanges": {
-      "Active": 0,
-      "Min_Gaps_Between_Building_Changes": 0
+    "Active": 0,
+    "Min_Gaps_Between_Building_Changes": 0
   },
   "ConstraintStudentsSetHomeRoom": [],
   "ConstraintStudentsSetHomeRooms": [],
@@ -328,40 +291,40 @@
   "ConstraintStudentsSetMaxBuildingChangesPerWeek": [],
   "ConstraintStudentsSetMinGapsBetweenBuildingChanges": [],
   "ConstraintStudentsMaxRoomChangesPerDay": {
-      "Active": 0,
-      "Max_Room_Changes_Per_Day": 0
+    "Active": 0,
+    "Max_Room_Changes_Per_Day": 0
   },
   "ConstraintStudentsMaxRoomChangesPerDayInInterval": {
-      "Active": 0,
-      "Max_Room_Changes_Per_Day": 0,
-      "Interval_Start_Hour": "",
-      "Interval_End_Hour": ""
+    "Active": 0,
+    "Max_Room_Changes_Per_Day": 0,
+    "Interval_Start_Hour": "",
+    "Interval_End_Hour": ""
   },
   "ConstraintStudentsMaxRoomChangesPerWeek": {
-      "Active": 0,
-      "Max_Room_Changes_Per_Week": 0
+    "Active": 0,
+    "Max_Room_Changes_Per_Week": 0
   },
   "ConstraintStudentsMinGapsBetweenRoomChanges": {
-      "Active": 0,
-      "Min_Gaps_Between_Room_Changes": 0
+    "Active": 0,
+    "Min_Gaps_Between_Room_Changes": 0
   },
   "ConstraintStudentsMaxBuildingChangesPerDay": {
-      "Active": 0,
-      "Max_Building_Changes_Per_Day": 0
+    "Active": 0,
+    "Max_Building_Changes_Per_Day": 0
   },
   "ConstraintStudentsMaxBuildingChangesPerDayInInterval": {
-      "Active": 0,
-      "Max_Building_Changes_Per_Day": 0,
-      "Interval_Start_Hour": "",
-      "Interval_End_Hour": ""
+    "Active": 0,
+    "Max_Building_Changes_Per_Day": 0,
+    "Interval_Start_Hour": "",
+    "Interval_End_Hour": ""
   },
   "ConstraintStudentsMaxBuildingChangesPerWeek": {
-      "Active": 0,
-      "Max_Building_Changes_Per_Week": 0
+    "Active": 0,
+    "Max_Building_Changes_Per_Week": 0
   },
   "ConstraintStudentsMinGapsBetweenBuildingChanges": {
-      "Active": 0,
-      "Min_Gaps_Between_Building_Changes": 0
+    "Active": 0,
+    "Min_Gaps_Between_Building_Changes": 0
   },
   "ConstraintStudentsSetNotAvailableTimes": [],
   "ConstraintStudentsSetMaxDaysPerWeek": [],
@@ -384,51 +347,51 @@
   "ConstraintStudentsSetIntervalMaxDaysPerWeek": [],
   "ConstraintStudentsSetMinRestingHours": [],
   "ConstraintStudentsMaxDaysPerWeek": {
-      "Active": 0,
-      "Max_Days_Per_Week": 0
+    "Active": 0,
+    "Max_Days_Per_Week": 0
   },
   "ConstraintStudentsMaxGapsPerDay": {
-      "Active": 0,
-      "Max_Gaps": 0
+    "Active": 0,
+    "Max_Gaps": 0
   },
   "ConstraintStudentsMaxGapsPerWeek": {
-      "Active": 0,
-      "Max_Gaps": 0
+    "Active": 0,
+    "Max_Gaps": 0
   },
   "ConstraintStudentsMaxSingleGapsInSelectedTimeSlots": [],
   "ConstraintStudentsEarlyMaxBeginningsAtSecondHour": {
-      "Active": 0,
-      "Max_Beginnings_At_Second_Hour": 0
+    "Active": 0,
+    "Max_Beginnings_At_Second_Hour": 0
   },
   "ConstraintStudentsMaxHoursDaily": {
-      "Active": 0,
-      "Maximum_Hours_Daily": 0
+    "Active": 0,
+    "Maximum_Hours_Daily": 0
   },
   "ConstraintStudentsMaxHoursDailyInInterval": [],
   "ConstraintStudentsPairOfMutuallyExclusiveTimeSlots": [],
   "ConstraintStudentsMaxSpanPerDay": {
-      "Active": 0,
-      "Max_Span": 0
+    "Active": 0,
+    "Max_Span": 0
   },
   "ConstraintStudentsActivityTagMaxHoursDaily": [],
   "ConstraintStudentsMaxActivityTagsPerDayFromSet": [],
   "ConstraintStudentsMinHoursDaily": {
-      "Active": 0,
-      "Minimum_Hours_Daily": 0,
-      "Allow_Empty_Days": 0
+    "Active": 0,
+    "Minimum_Hours_Daily": 0,
+    "Allow_Empty_Days": 0
   },
   "ConstraintStudentsActivityTagMinHoursDaily": [],
   "ConstraintStudentsMaxHoursContinuously": {
-      "Active": 0,
-      "Maximum_Hours_Continuously": 0
+    "Active": 0,
+    "Maximum_Hours_Continuously": 0
   },
   "ConstraintStudentsActivityTagMaxHoursContinuously": [],
   "ConstraintStudentsMinGapsBetweenActivityTag": [],
   "ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags": [],
   "ConstraintStudentsIntervalMaxDaysPerWeek": [],
   "ConstraintStudentsMinRestingHours": {
-      "Active": 0,
-      "Minimum_Resting_Hours": 0,
-      "Circular": 0
+    "Active": 0,
+    "Minimum_Resting_Hours": 0,
+    "Circular": 0
   }
 }
